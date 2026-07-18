@@ -1,0 +1,31 @@
+# BRIEF V3: Triple S — WebFX-style LIGHT redesign
+
+## Task
+Overwrite `index.html` with a LIGHT-theme redesign that closely mirrors webfx.com's homepage look (see layout spec below), keeping the green brand accent. All content facts, case studies, offers, links and images from the current index.html carry over — reuse its copy verbatim unless this brief says otherwise. Single self-contained file, inline CSS/JS, Google Fonts only external request. Keep fonts: Bricolage Grotesque (display), Spline Sans (body), Spline Sans Mono (labels).
+
+## New palette (WebFX-like light, green brand)
+--bg:#F6FAF7 (page) · --bg-tint:#EAF4EE (hero/alt sections, very light green like WebFX's light blue) · --surface:#FFFFFF (cards) · --navy:#0E1F17 (headline/dark text — near-black green, plays the role of WebFX's navy) · --body:#3D4F46 (body text) · --dim:#6B7F74 · --green:#17A05E (primary accent, buttons/links) · --green-dark:#0E7A45 (hover) · --gold:#C79A2E (money/price highlights) · --line:#DCE8E0 (borders) · Dark band sections: --dark:#0E1F17 background with light text.
+Buttons: green filled with white text, radius 8px (WebFX uses rectangles, not pills). Cards: white, 1px --line border, 12px radius, soft shadow rgba(14,31,23,.06). Headlines: --navy, font-weight 800, tight leading. NO dark page background — the page is light; dark is reserved for the top utility bar, the founder/CTA band, and the footer.
+
+## Layout (mirror WebFX top to bottom)
+1. **Utility bar** (dark --dark, small text): left "CPL CUT FOR OUR CLIENTS · up to 90%" (green arrow-up glyph ▲ ok as text); right: mailto link "abzal.bolatkhan.01@gmail.com" + "Upwork" link.
+2. **Main nav** (white, sticky, subtle bottom border): S³ logo mark (green rounded square, white S³) + two-line wordmark "Triple S / Performance Marketing That Drives Profit" (small tagline under name, like WebFX's "Digital Marketing That Drives Revenue"); center links Results · Services · Process · About · Contact; right green button "Get a Proposal" → #contact.
+3. **Hero** (on --bg-tint, generous padding): LEFT: huge navy H1 "Your Performance Marketing Partner in the AI Era" (keep "unit economics" line as the paragraph instead: "Most agencies sell clicks — we sell unit economics. Founder-led performance marketing for e-commerce and B2B in the US, UK, Australia and beyond. Every dollar tracked from click to conversion."), then a WebFX-style inline proposal form: text input placeholder "Enter your website" + dark navy button "Get My Free Proposal" — on submit, JS opens mailto:abzal.bolatkhan.01@gmail.com with subject "Proposal Request" and the typed website in the body (no backend; if empty still open mailto). Under it small mono line "Free 3-minute video audit included · Reply within 24 hours".
+   RIGHT: the "Unit Economics Engine" — a circular diagram built in inline SVG mimicking WebFX's Revenue Engine ring: 4 thick arc segments around a white circle, colors green #17A05E, teal #2AB3A6, gold #C79A2E, navy #0E1F17, labelled Acquisition / Tracking / Optimization / Revenue (labels on or beside arcs, small callout lines ok), center white disc with "S³" small and "Up to 90% CPL reduction" + sub "unit-economics framework". Pure SVG+CSS, no external images, must scale down cleanly on mobile (stacks below the form).
+4. **Client strip** (white): "Campaigns run for" + the same 7 client names as text chips (light gray chips, navy text). Keep the marquee behavior.
+5. **Stats band**: 4 white cards, green count-up numbers (keep existing countup JS + values 8,492 / 90% / 200%+ / $30K+).
+6. **Results** (#results): keep the three existing case studies with the same screenshots and copy, restyled: white cards, light browser-chrome frames (light gray top bar, colored dots stay), navy headings, green links.
+7. **Services** (#services): same three offers verbatim, white cards, green tag chips, gold prices, green → bullets.
+8. **Process** (#process): same 4 steps, but as a horizontal numbered stepper with a connecting line (WebFX-style tidy). Beside/above it, place `assets/funnel-art.jpg` in a rounded dark card (class "art-frame") — dark image on light page as a visual anchor. 
+9. **About the founder** (#about, NEW, dark band --dark full-bleed): left `assets/founder.jpg` (rounded 16px, max-width 300px, subtle border; CSS filter: grayscale(.2) contrast(1.05)); right: H2 "Founder-led. Literally." + bio paragraph: "Triple S is run by Aviel Bolatkhan — a software engineer turned performance marketer. 4+ years across Google, Meta, TikTok and LinkedIn. Fluent in GA4, GTM and server-side tracking. Based remotely, working with clients in the US, UK, Australia and worldwide." + 3 mini-stats row (4+ years / 6 platforms / 7 markets) + certifications pills (reuse existing pill list, light-on-dark styling). Google Partner badge image moves here too (white padded card).
+10. **CTA band** (#contact, dark --dark, full-bleed): background image `assets/s3-glow.jpg` (cover, right-aligned, with dark green overlay gradient so text stays readable; apply CSS filter hue-rotate(105deg) saturate(.85) to shift its amber glow toward green — use a ::before/img layer so the filter doesn't affect text). H2 white "Get a free proposal." sub "Or start with the $200 48-hour audit — applied to your first month if we work together." Buttons: green "Get My Free Proposal" (mailto), outline-white "Upwork", "LinkedIn". Meta line "Reply within 24 hours · Remote, any timezone · English / Russian / Kazakh".
+11. **Footer** (dark, below CTA, separated by border): S³ + mini stats (reuse) + links + "Triple S · Founded 2022 · Remote from anywhere".
+
+## Keep / carry over exactly
+- All numbers, case study copy, offers, deliverables, certifications, links (mailto, Upwork agency URL, LinkedIn) from current index.html.
+- countup + reveal + marquee + smooth-scroll JS (adapt selectors as needed); prefers-reduced-motion handling.
+- All meta/OG tags; og:image stays assets/og-image.jpg. Update theme-color to #F6FAF7. Favicon: same SVG but green square #17A05E with white S path (invert current colors).
+- Image width/height attrs, lazy loading, alt text.
+
+## Anti-slop rules (same as before)
+No invented numbers/testimonials. Banned words list unchanged. No copy that references this brief or its labels. Headline hierarchy clean, one h1.
