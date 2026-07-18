@@ -1076,6 +1076,83 @@
   }
   .footer-links a{color:#fff}
 
+  .browser-frame{transition:transform .28s ease, box-shadow .28s ease}
+  .browser-frame:hover{transform:translateY(-4px);box-shadow:var(--shadow-strong)}
+  .engine-svg .segment{transform-origin:280px 280px;animation:ringspin 90s linear infinite}
+  @keyframes ringspin{to{transform:rotate(360deg)}}
+
+  .partner-chip{
+    display:inline-flex;
+    align-items:center;
+    gap:12px;
+    padding:14px 18px;
+    border-radius:14px;
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.14);
+  }
+  .partner-g{
+    width:40px;
+    height:40px;
+    border-radius:10px;
+    background:#fff;
+    color:#4285F4;
+    display:grid;
+    place-items:center;
+    font-family:var(--display);
+    font-size:22px;
+    font-weight:800;
+    flex:none;
+  }
+  .partner-chip strong{
+    display:block;
+    color:#fff;
+    font-family:var(--display);
+    font-size:16px;
+    letter-spacing:-.02em;
+  }
+  .partner-chip span:not(.partner-g){
+    display:block;
+    margin-top:2px;
+    color:#A8D7BC;
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+  }
+
+  .cpl-compare{margin-top:16px;display:grid;gap:10px;max-width:420px}
+  .cpl-side{display:grid;grid-template-columns:118px 64px 1fr;align-items:center;gap:10px}
+  .cpl-side .clabel{color:var(--dim);font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase}
+  .cpl-side .num{color:var(--navy);font-family:var(--display);font-weight:800;font-size:18px}
+  .cpl-side i{display:block;height:10px;border-radius:999px;background:var(--bg-tint);overflow:hidden;position:relative}
+  .cpl-side i::after{content:"";position:absolute;inset:0 auto 0 0;width:0;border-radius:999px;background:#B9C6BE;transition:width 1.3s ease .2s}
+  .cpl-side.after i::after{background:var(--green)}
+  .reveal.is-visible .cpl-side i::after{width:var(--w)}
+
+  .calc-card{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:22px;
+    box-shadow:var(--shadow);
+    max-width:860px;
+    display:grid;
+    gap:18px;
+  }
+  .calc-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+  .calc-label{color:var(--dim);font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+  .calc-value{color:var(--navy);font-family:var(--display);font-size:30px;font-weight:800;letter-spacing:-.03em}
+  .calc-card input[type=range]{width:100%;accent-color:var(--green);cursor:pointer}
+  .calc-grid{display:grid;gap:12px}
+  .calc-stat{border:1px solid var(--line);border-radius:12px;padding:14px}
+  .calc-stat .label{display:block;color:var(--dim);font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase}
+  .calc-stat .value{display:block;margin-top:6px;color:var(--navy);font-family:var(--display);font-size:20px;font-weight:800;letter-spacing:-.02em}
+  .calc-stat.waste .value{color:#B0483A}
+  .calc-stat.audit .value{color:var(--green-dark)}
+  .calc-card .btn{justify-self:start}
+  .calc-note{color:var(--dim);font-size:13px;max-width:60ch}
+  @media (min-width:700px){.calc-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+
   .faq-list{
     max-width:820px;
     display:grid;
@@ -1281,7 +1358,7 @@
         <div class="hero-copy reveal">
           <div class="eyebrow">Performance marketing agency · Google · Meta · TikTok</div>
           <h1>Your Performance Marketing Partner in the AI Era</h1>
-          <p class="hero-lede">Most agencies sell clicks — we sell unit economics. Full-funnel performance marketing for e-commerce and B2B in the US, UK, Australia and beyond. Every dollar tracked from click to conversion.</p>
+          <p class="hero-lede">Most agencies sell clicks — we sell unit economics. Full-funnel performance marketing for e-commerce, clinics and B2B in the US, UK, Australia and beyond. Every dollar tracked from click to conversion.</p>
           <form class="proposal-form" id="proposal-form">
             <label class="sr-only" for="hero-website">Enter your website</label>
             <input id="hero-website" name="website" type="text" placeholder="Enter your website" autocomplete="url">
@@ -1344,18 +1421,30 @@
               <span class="marquee-item">Leroy Merlin</span>
               <span class="marquee-item">BIC</span>
               <span class="marquee-item">Askona</span>
+              <span class="marquee-item">Dr Madnani</span>
+              <span class="marquee-item">Harmony Medical Aesthetics</span>
+              <span class="marquee-item">EndoSlim Clinic</span>
               <span class="marquee-item">Center Matrasov</span>
+              <span class="marquee-item">Beauty Space Clinic</span>
               <span class="marquee-item">Noodlers</span>
+              <span class="marquee-item">Twenty Four Carrots</span>
               <span class="marquee-item">Fortex</span>
+              <span class="marquee-item">Croissant Atelier</span>
               <span class="marquee-item">Emotion Technology</span>
             </div>
             <div class="marquee-group" aria-hidden="true">
               <span class="marquee-item">Leroy Merlin</span>
               <span class="marquee-item">BIC</span>
               <span class="marquee-item">Askona</span>
+              <span class="marquee-item">Dr Madnani</span>
+              <span class="marquee-item">Harmony Medical Aesthetics</span>
+              <span class="marquee-item">EndoSlim Clinic</span>
               <span class="marquee-item">Center Matrasov</span>
+              <span class="marquee-item">Beauty Space Clinic</span>
               <span class="marquee-item">Noodlers</span>
+              <span class="marquee-item">Twenty Four Carrots</span>
               <span class="marquee-item">Fortex</span>
+              <span class="marquee-item">Croissant Atelier</span>
               <span class="marquee-item">Emotion Technology</span>
             </div>
           </div>
@@ -1403,6 +1492,18 @@
               <p>8 months of multi-channel optimization. Google Ads CPL $0.82 → $0.18. Meta CPL $1.02 → $0.36. 200%+ lead growth. Channels: Google, Meta, TikTok.</p>
               <div class="receipt-points">
                 <p><span class="mono">In the screenshot:</span> 8,492 conversions at $0.14 each, 66.8% conversion rate.</p>
+              </div>
+              <div class="cpl-compare" role="img" aria-label="Google Ads cost per lead: $0.82 before, $0.18 after eight months">
+                <div class="cpl-side before">
+                  <span class="clabel">CPL before</span>
+                  <span class="num">$0.82</span>
+                  <i style="--w:100%"></i>
+                </div>
+                <div class="cpl-side after">
+                  <span class="clabel">CPL after 8 mo</span>
+                  <span class="num">$0.18</span>
+                  <i style="--w:22%"></i>
+                </div>
               </div>
               <a class="case-link" href="#contact">Get results like this →</a>
             </div>
@@ -1489,7 +1590,7 @@
               <p>$30K+/mo across Google Ads, DV360, Search Ads 360 and Meta for enterprise retail. Work contributed to the agency's Google Partner badge.</p>
               <div class="receipt-points">
                 <p>Also: EV dealership CPL $10 → $1 in one month (full account rebuild); 300% ROAS on Meta for a DTC brand.</p>
-                <p>Right now: auditing and rebuilding underperforming accounts for US, UK and Australia clients.</p>
+                <p>Right now: managing medical-aesthetics and clinic accounts in the US, UK and Australia — dermatology, medspa and healthcare brands among them.</p>
               </div>
               <a class="case-link" href="#contact">Get results like this →</a>
             </div>
@@ -1629,7 +1730,7 @@
         <div class="founder-copy reveal">
           <div class="eyebrow eyebrow--dark">About Triple S</div>
           <h2>Built by engineers, not account managers.</h2>
-          <p>Triple S was founded in 2022 at the intersection of software engineering and media buying. We run acquisition for e-commerce and B2B brands across seven markets — with GA4, GTM and server-side tracking built in-house, and AI systems that answer every lead within minutes. Remote by design, working with clients in the US, UK, Australia and worldwide.</p>
+          <p>Triple S was founded in 2022 at the intersection of software engineering and media buying. We run acquisition for e-commerce and B2B brands across seven markets — with GA4, GTM and server-side tracking built in-house, and AI systems that answer every lead within minutes. Working with clients in the US, UK, Australia and worldwide.</p>
           <div class="about-stats" aria-label="Agency stats">
             <div class="mini-stat">
               <span class="value">4+ years</span>
@@ -1644,10 +1745,13 @@
               <span class="label">global reach</span>
             </div>
           </div>
-          <figure class="badge-card">
-            <img src="assets/google-partner-badge.png" width="320" height="180" alt="Google Partner contributor badge." loading="lazy" decoding="async">
-            <figcaption class="badge-copy">Contributed to the agency's Google Partner badge (2023).</figcaption>
-          </figure>
+          <div class="partner-chip" aria-label="Google Partner contributor 2023">
+            <span class="partner-g" aria-hidden="true">G</span>
+            <div>
+              <strong>Google Partner</strong>
+              <span>Contributor · 2023</span>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -1729,6 +1833,38 @@
       </div>
     </section>
 
+    <section id="calculator" class="section section--tint">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <h2>What is wasted spend costing you?</h2>
+        </div>
+        <p class="section-intro reveal">Drag to your monthly ad spend. The range uses the 25–40% waste we typically find in first audits — your audit shows the real number.</p>
+        <div class="calc-card reveal">
+          <div class="calc-row">
+            <label class="calc-label" for="spend-range">Monthly ad spend</label>
+            <div class="calc-value" id="spend-value">$5,000</div>
+          </div>
+          <input type="range" id="spend-range" min="500" max="50000" step="500" value="5000" aria-label="Monthly ad spend in dollars">
+          <div class="calc-grid">
+            <div class="calc-stat waste">
+              <span class="label">Likely wasted / month</span>
+              <span class="value" id="waste-month">$1,250 – $2,000</span>
+            </div>
+            <div class="calc-stat waste">
+              <span class="label">Likely wasted / year</span>
+              <span class="value" id="waste-year">$15,000 – $24,000</span>
+            </div>
+            <div class="calc-stat audit">
+              <span class="label">Cost to find it: 48-hour audit</span>
+              <span class="value">$200</span>
+            </div>
+          </div>
+          <a class="btn btn-green" href="#contact">Find my wasted spend</a>
+          <p class="calc-note">Estimate, not a promise — every account is different. The audit replaces this range with your actual number in 48 hours.</p>
+        </div>
+      </div>
+    </section>
+
     <section id="faq" class="section">
       <div class="wrap">
         <div class="section-head reveal">
@@ -1779,7 +1915,7 @@
             <a class="btn btn-outline-light" href="https://www.upwork.com/agencies/1553470846164299776/" target="_blank" rel="noreferrer">Upwork</a>
             <a class="btn btn-outline-light" href="https://www.linkedin.com/in/aviel-bolatkhan" target="_blank" rel="noreferrer">LinkedIn</a>
           </div>
-          <div class="cta-meta">Reply within 24 hours · Remote, any timezone · English / Russian / Kazakh</div>
+          <div class="cta-meta">Reply within 24 hours</div>
         </div>
       </div>
     </section>
@@ -1789,7 +1925,7 @@
     <div class="wrap footer-grid">
       <div>
         <div class="footer-brand"><span>S</span>³</div>
-        <div class="footer-note">Triple S · Founded 2022 · Remote from anywhere</div>
+        <div class="footer-note">Triple S · Founded 2022</div>
       </div>
       <div class="footer-mini" aria-label="Mini stats">
         <div class="footer-stat">
@@ -1895,6 +2031,19 @@
           }, { threshold: 0.22 });
           revealTargets.forEach((node) => revealObserver.observe(node));
         }
+      }
+
+      const spendRange = document.getElementById('spend-range');
+      if (spendRange) {
+        const fmt = (n) => '$' + Math.round(n).toLocaleString('en-US');
+        const update = () => {
+          const v = Number(spendRange.value);
+          document.getElementById('spend-value').textContent = fmt(v);
+          document.getElementById('waste-month').textContent = fmt(v * 0.25) + ' – ' + fmt(v * 0.4);
+          document.getElementById('waste-year').textContent = fmt(v * 0.25 * 12) + ' – ' + fmt(v * 0.4 * 12);
+        };
+        spendRange.addEventListener('input', update);
+        update();
       }
 
       const marquee = document.querySelector('[data-marquee]');
