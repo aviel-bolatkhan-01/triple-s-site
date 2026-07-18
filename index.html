@@ -1076,6 +1076,47 @@
   }
   .footer-links a{color:#fff}
 
+  .faq-list{
+    max-width:820px;
+    display:grid;
+    gap:10px;
+  }
+  .faq-list details{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    padding:0 18px;
+  }
+  .faq-list summary{
+    cursor:pointer;
+    list-style:none;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    padding:16px 0;
+    color:var(--navy);
+    font-family:var(--display);
+    font-size:17px;
+    font-weight:700;
+    letter-spacing:-.02em;
+  }
+  .faq-list summary::-webkit-details-marker{display:none}
+  .faq-list summary::after{
+    content:"+";
+    color:var(--green);
+    font-size:20px;
+    line-height:1;
+    flex:none;
+  }
+  .faq-list details[open] summary::after{content:"–"}
+  .faq-list details p{
+    margin:0;
+    padding:0 0 16px;
+    color:var(--body);
+    max-width:64ch;
+  }
   .reveal{
     opacity:0;
     transform:translateY(18px);
@@ -1688,12 +1729,51 @@
       </div>
     </section>
 
+    <section id="faq" class="section">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <h2>Questions clients actually ask.</h2>
+        </div>
+        <div class="faq-list reveal">
+          <details>
+            <summary>How fast will I see results?</summary>
+            <p>Tracking fixes land within the first weeks. Meaningful CPL improvements typically take 60–90 days of data collection and optimization. Anyone promising overnight results is guessing.</p>
+          </details>
+          <details>
+            <summary>What does it cost?</summary>
+            <p>The 48-Hour Ads Audit is $200 flat. Monthly management starts at $800/mo — flat fee or 10–15% of spend. AI Lead Response is $400–800 setup plus $150/mo. Minimum engagement $1K+.</p>
+          </details>
+          <details>
+            <summary>What ad spend do I need?</summary>
+            <p>Monthly management is built for accounts spending $1–10K/mo. Below that, start with the audit instead — you'll know exactly what to fix before spending more.</p>
+          </details>
+          <details>
+            <summary>Which platforms do you work with?</summary>
+            <p>Google (Search, PMax, Demand Gen, YouTube), Meta, TikTok, LinkedIn, DV360 and Search Ads 360 — with GA4, GTM and server-side tracking handled in-house.</p>
+          </details>
+          <details>
+            <summary>How is Triple S different from a big agency?</summary>
+            <p>Senior work on every account — no juniors, no hand-offs. And engineering-grade measurement: if the data is wrong, everything downstream is wrong, so tracking gets fixed first.</p>
+          </details>
+          <details>
+            <summary>Do you require long-term contracts?</summary>
+            <p>No. Engagements are month-to-month. If the numbers stop justifying the fee, you leave — no lock-in.</p>
+          </details>
+          <details>
+            <summary>How do we start?</summary>
+            <p>With the audit. Send your account, get a Loom walkthrough and a prioritized fix list within 48 hours. The $200 is credited to your first month if we work together.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
     <section id="contact" class="cta-band">
       <div class="wrap">
         <div class="cta-panel reveal">
           <div class="eyebrow eyebrow--dark">Contact</div>
           <h2>Get a free proposal.</h2>
-          <p class="cta-sub">Or start with the $200 48-hour audit — applied to your first month if we work together.</p>
+          <p class="cta-sub">Every proposal starts with a free 3-minute video audit of your account — no call needed. Or go straight to the $200 48-hour audit, credited to your first month if we work together.</p>
+          <p class="cta-sub">We take on a maximum of 3 new accounts per month — senior attention doesn't scale past that.</p>
           <div class="cta-buttons" aria-label="Contact links">
             <a class="btn btn-green" href="mailto:contact@triples.agency?subject=Proposal%20Request">Get My Free Proposal</a>
             <a class="btn btn-outline-light" href="https://www.upwork.com/agencies/1553470846164299776/" target="_blank" rel="noreferrer">Upwork</a>
