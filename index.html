@@ -838,6 +838,73 @@
   .thumb-grid .browser-shot{aspect-ratio:16 / 9;object-fit:cover}
   .frame-row .browser-shot{aspect-ratio:auto;object-fit:cover}
 
+  .audit-band{
+    display:grid;
+    gap:22px;
+    margin-top:46px;
+    padding:30px;
+    background:var(--dark);
+    border-radius:20px;
+    color:#C9D7D0;
+  }
+  .audit-tag{
+    display:inline-flex;
+    padding:5px 11px;
+    border-radius:999px;
+    background:rgba(23,160,94,.18);
+    border:1px solid rgba(23,160,94,.42);
+    color:#7FC9A2;
+    font-family:var(--mono);
+    font-size:10.5px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+  }
+  .audit-copy h3{
+    margin:14px 0 10px;
+    color:#fff;
+    font-family:var(--display);
+    font-size:clamp(24px,3vw,30px);
+    font-weight:800;
+    line-height:1.1;
+  }
+  .audit-copy p{
+    max-width:62ch;
+    line-height:1.66;
+  }
+  .audit-action{
+    display:grid;
+    align-content:start;
+    justify-items:start;
+    gap:10px;
+    padding-top:22px;
+    border-top:1px solid rgba(255,255,255,.12);
+  }
+  .audit-price{
+    color:#fff;
+    font-family:var(--display);
+    font-size:38px;
+    font-weight:800;
+    line-height:1;
+    font-variant-numeric:tabular-nums;
+  }
+  .audit-price .per{
+    margin-left:8px;
+    color:#8FAFA0;
+    font-family:var(--mono);
+    font-size:12px;
+    font-weight:400;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+  }
+  .audit-note{
+    color:#8FAFA0;
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+  }
+  .audit-action .btn{margin-top:6px}
+
   .tiers{
     margin-top:34px;
     padding-top:30px;
@@ -872,7 +939,7 @@
     text-transform:uppercase;
     color:var(--green-dark);
   }
-  .tier h4{
+  .tier h3{
     font-family:var(--display);
     font-size:21px;
     font-weight:800;
@@ -1629,6 +1696,18 @@
     .tier-grid{
       grid-template-columns:repeat(3,minmax(0,1fr));
     }
+    .audit-band{
+      grid-template-columns:minmax(0,1fr) minmax(240px,auto);
+      gap:44px;
+      padding:38px 40px;
+      align-items:center;
+    }
+    .audit-action{
+      padding-top:0;
+      border-top:0;
+      border-left:1px solid rgba(255,255,255,.12);
+      padding-left:40px;
+    }
     .brand-row{
       grid-template-columns:repeat(2,minmax(0,1fr));
       align-items:stretch;
@@ -2141,76 +2220,43 @@
     <section id="services" class="section">
       <div class="wrap">
         <div class="section-head reveal">
-          <h2>Three offers. Same operating system.</h2>
+          <h2>Monthly management, priced by ad budget.</h2>
         </div>
-        <p class="section-intro reveal">Fixed deliverables in writing. No vague retainers. No scope creep. Minimum engagement $1K+.</p>
+        <p class="section-intro reveal">Fixed deliverables in writing. No vague retainers, no scope creep, no lock-in. Campaign setup, weekly optimization and a monthly Looker Studio report at every tier.</p>
 
-        <div class="offers-grid">
-          <article class="offer-card reveal">
-            <span class="tag">Start here</span>
+        <div class="tier-grid reveal">
+          <article class="tier">
+            <span class="tier-band">Under $5K/mo ad spend</span>
+            <h3>Starter</h3>
+            <span class="tier-price">$800<span class="per">/mo</span></span>
+            <p>Flat fee. One platform, one market. Weekly optimization and a monthly report.</p>
+          </article>
+          <article class="tier tier--mid">
+            <span class="tier-band">$5K–$25K/mo ad spend</span>
+            <h3>Growth</h3>
+            <span class="tier-price">12%<span class="per">of spend</span></span>
+            <p>Minimum $1,200/mo. Multi-platform, multi-market, server-side tracking included.</p>
+          </article>
+          <article class="tier">
+            <span class="tier-band">$25K+/mo ad spend</span>
+            <h3>Enterprise</h3>
+            <span class="tier-price">Custom</span>
+            <p>Scope, reporting cadence and fee agreed together. Talk to us about what the account needs.</p>
+          </article>
+        </div>
+        <p class="tier-note reveal">Minimum engagement $1K+. Month-to-month — no lock-in at any tier. Pricing is confirmed after the audit, never before.</p>
+
+        <div class="audit-band reveal">
+          <div class="audit-copy">
+            <span class="audit-tag">Start here</span>
             <h3>48-Hour Ads Audit</h3>
-            <span class="price">$200 flat</span>
-            <p>Account scan, tracking gaps, wasted spend and the first fixes.</p>
-            <ul class="deliverables">
-              <li>Loom walkthrough with the account issues in order.</li>
-              <li>Prioritized fix list.</li>
-              <li>Google or Meta account review.</li>
-              <li>Non-running campaigns diagnosed and restored.</li>
-              <li>Delivered in 48 hours.</li>
-            </ul>
-          </article>
-          <article class="offer-card reveal">
-            <span class="tag">Core service</span>
-            <h3>Monthly Ads Management</h3>
-            <span class="price">from $800/mo</span>
-            <p>Flat fee or a share of spend — three tiers by ad budget, below.</p>
-            <ul class="deliverables">
-              <li>Campaign setup.</li>
-              <li>Weekly optimization.</li>
-              <li>Monthly Looker Studio report.</li>
-              <li>Fixed deliverables in writing.</li>
-            </ul>
-          </article>
-          <article class="offer-card reveal">
-            <span class="tag">The differentiator</span>
-            <h3>AI Lead Response</h3>
-            <span class="price">$400–800 setup + $150/mo</span>
-            <p>Voice and WhatsApp agent that answers leads in minutes.</p>
-            <ul class="deliverables">
-              <li>Lead qualification flows.</li>
-              <li>Voice or WhatsApp agent setup.</li>
-              <li>Fast routing to sales or CRM.</li>
-              <li>Built to catch every response.</li>
-            </ul>
-          </article>
-        </div>
-
-        <div class="tiers reveal" aria-labelledby="tiers-head">
-          <div class="tiers-head">
-            <h3 id="tiers-head">Retainers by ad budget</h3>
-            <p>Management pricing follows the size of the account. Confirmed after the audit, never before.</p>
+            <p>Before any retainer: a full account scan, every tracking gap, where the spend leaks, and a prioritized fix list — walked through on a Loom. Non-running campaigns diagnosed and restored. Delivered in 48 hours.</p>
           </div>
-          <div class="tier-grid">
-            <article class="tier">
-              <span class="tier-band">Under $5K/mo ad spend</span>
-              <h4>Starter</h4>
-              <span class="tier-price">$800<span class="per">/mo</span></span>
-              <p>Flat fee. One platform, one market. Weekly optimization and a monthly report.</p>
-            </article>
-            <article class="tier tier--mid">
-              <span class="tier-band">$5K–$25K/mo ad spend</span>
-              <h4>Growth</h4>
-              <span class="tier-price">12%<span class="per">of spend</span></span>
-              <p>Minimum $1,200/mo. Multi-platform, multi-market, server-side tracking included.</p>
-            </article>
-            <article class="tier">
-              <span class="tier-band">$25K+/mo ad spend</span>
-              <h4>Enterprise</h4>
-              <span class="tier-price">Custom</span>
-              <p>Scope, reporting cadence and fee agreed together. Talk to us about what the account needs.</p>
-            </article>
+          <div class="audit-action">
+            <span class="audit-price">$200<span class="per">flat</span></span>
+            <span class="audit-note">Credited to your first month</span>
+            <a class="btn btn-green" href="#contact">Start with the audit</a>
           </div>
-          <p class="tier-note">Minimum engagement $1K+. Month-to-month — no lock-in at any tier.</p>
         </div>
       </div>
     </section>
@@ -2304,7 +2350,7 @@
           </details>
           <details>
             <summary>What does it cost?</summary>
-            <p>The 48-Hour Ads Audit is $200 flat. Monthly management runs in three tiers by ad budget: $800/mo flat under $5K spend, 12% of spend from $5K–$25K (minimum $1,200/mo), and custom above $25K. AI Lead Response is $400–800 setup plus $150/mo. Minimum engagement $1K+.</p>
+            <p>The 48-Hour Ads Audit is $200 flat. Monthly management runs in three tiers by ad budget: $800/mo flat under $5K spend, 12% of spend from $5K–$25K (minimum $1,200/mo), and custom above $25K. Minimum engagement $1K+.</p>
           </details>
           <details>
             <summary>What ad spend do I need?</summary>
