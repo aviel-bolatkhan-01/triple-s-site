@@ -21,6 +21,11 @@ All numbers real (from CV/dashboards): 8,492 conv @ $0.14; CPL $0.82→$0.18 Goo
   - CTA band background: CSS-only (radial green glows + faint grid + outlined S³ monogram watermark)
   - `assets/og-image.jpg` regenerated from a hand-built HTML card rendered in headless Chrome (source: scratchpad `og-card.html`)
 
+## 2026-09-08 round 2 — ad-spend ceiling removed
+The `$1–10K/mo` range is gone from both the Monthly Ads Management card ("Flat fee or 10–15% of spend — at any account size.") and the "What ad spend do I need?" FAQ — some clients spend well above $10K/mo and the cap was screening them out. Minimum engagement $1K+ stays.
+
+Note: a report of "iCloud emails on the site" was a false alarm — the site only ever contains abzal.business.01@gmail.com. Apple Mail composes `mailto:` drafts From: the Mac's default (iCloud) account; visitors never see that.
+
 ## History
 - V1 dark amber one-pager → V2 WebFX-structure dark → V3 green dark → V4 light (backups of each in repo root)
 - Built via codex (cdx) from BRIEF.md / BRIEF-V2.md / BRIEF-V3.md; every codex build needed a copy-review pass (leaks spec language). Small surgical edit lists: do directly, codex hangs on them.
