@@ -327,6 +327,13 @@
     letter-spacing:.1em;
     text-transform:uppercase;
   }
+  .hero-fineprint a{
+    color:var(--green-dark);
+    text-decoration:none;
+    border-bottom:1px solid rgba(23,160,94,.4);
+    padding-bottom:1px;
+  }
+  .hero-fineprint a:hover{border-bottom-color:var(--green)}
   .proof-chip{
     margin-top:22px;
     padding:18px 18px 17px;
@@ -780,6 +787,102 @@
     border-radius:14px;
   }
 
+  .funnel-art{
+    padding:22px 22px 20px;
+    background:
+      radial-gradient(520px 300px at 82% -10%, rgba(23,160,94,.20), transparent 62%),
+      linear-gradient(180deg,#12271C 0%, #0B1712 100%);
+  }
+  .funnel-head{
+    display:grid;
+    gap:8px;
+    margin-bottom:6px;
+    padding-bottom:16px;
+    border-bottom:1px solid rgba(255,255,255,.08);
+  }
+  .funnel-eyebrow{
+    color:#7FC9A2;
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+  }
+  .funnel-head strong{
+    color:#F2F8F4;
+    font-family:var(--display);
+    font-size:clamp(19px,2.1vw,23px);
+    font-weight:800;
+    line-height:1.2;
+  }
+  .funnel-svg{
+    display:block;
+    width:100%;
+    height:auto;
+    margin-top:14px;
+    overflow:visible;
+  }
+  .funnel-band path{
+    fill:url(#funnelBand);
+    stroke:rgba(23,160,94,.42);
+    stroke-width:1;
+  }
+  .funnel-band--deep path{fill:url(#funnelBandDeep)}
+  .funnel-stage{
+    fill:#F2F8F4;
+    font-family:var(--sans);
+    font-size:15px;
+    font-weight:600;
+  }
+  .funnel-tag{
+    fill:#7FC9A2;
+    font-family:var(--mono);
+    font-size:10px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+  }
+  .funnel-stem{fill:rgba(23,160,94,.5)}
+  .funnel-dot{
+    fill:#4CD693;
+    opacity:0;
+    animation:funnelFlow 4.2s linear infinite;
+  }
+  .funnel-dot--b{animation-delay:1.4s}
+  .funnel-dot--c{animation-delay:2.8s}
+  @keyframes funnelFlow{
+    0%{transform:translate(398px,70px);opacity:0}
+    12%{opacity:.85}
+    88%{opacity:.85}
+    100%{transform:translate(318px,372px);opacity:0}
+  }
+  .funnel-result rect{
+    fill:rgba(23,160,94,.12);
+    stroke:rgba(23,160,94,.42);
+    stroke-width:1;
+  }
+  .funnel-result-label{
+    fill:#7FC9A2;
+    font-family:var(--mono);
+    font-size:10px;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+  }
+  .funnel-result-value{
+    fill:#fff;
+    font-family:var(--display);
+    font-size:32px;
+    font-weight:800;
+  }
+  .funnel-result-unit{
+    fill:#C7E3D4;
+    font-family:var(--sans);
+    font-size:14px;
+  }
+  .funnel-result-note{
+    fill:#8FAFA0;
+    font-family:var(--mono);
+    font-size:10.5px;
+  }
+
   .about-band{
     position:relative;
     padding:92px 0;
@@ -968,16 +1071,25 @@
     content:"";
     position:absolute;
     inset:0;
-    background:url("assets/s3-glow.jpg") right center / cover no-repeat;
-    filter:hue-rotate(105deg) saturate(.85);
-    opacity:.42;
-    transform:scale(1.04);
+    background:
+      radial-gradient(820px 460px at 88% 6%, rgba(23,160,94,.28), transparent 62%),
+      radial-gradient(640px 400px at 4% 98%, rgba(23,160,94,.14), transparent 66%),
+      repeating-linear-gradient(90deg, rgba(255,255,255,.035) 0 1px, transparent 1px 78px),
+      repeating-linear-gradient(0deg, rgba(255,255,255,.028) 0 1px, transparent 1px 78px);
   }
   .cta-band::after{
-    content:"";
+    content:"S³";
     position:absolute;
-    inset:0;
-    background:linear-gradient(90deg, rgba(14,31,23,.98) 0%, rgba(14,31,23,.9) 44%, rgba(14,31,23,.96) 100%);
+    right:-2%;
+    bottom:-26%;
+    font-family:var(--display);
+    font-size:clamp(300px,42vw,560px);
+    font-weight:800;
+    line-height:.8;
+    color:transparent;
+    -webkit-text-stroke:1.5px rgba(23,160,94,.22);
+    opacity:.85;
+    pointer-events:none;
   }
   .cta-band .wrap{
     position:relative;
@@ -1011,6 +1123,128 @@
     letter-spacing:.12em;
     text-transform:uppercase;
   }
+
+  .route-grid{
+    display:grid;
+    gap:16px;
+    margin-top:30px;
+  }
+  .route-card{
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    padding:26px 26px 22px;
+    border-radius:20px;
+    background:rgba(255,255,255,.045);
+    border:1px solid rgba(255,255,255,.1);
+    color:#F4FAF6;
+    text-decoration:none;
+    transition:transform .25s ease, border-color .25s ease, background .25s ease, box-shadow .25s ease;
+  }
+  .route-card:hover{
+    transform:translateY(-4px);
+    background:rgba(255,255,255,.07);
+    border-color:rgba(23,160,94,.55);
+    box-shadow:0 22px 44px rgba(0,0,0,.28);
+  }
+  .route-card--primary{
+    background:rgba(23,160,94,.12);
+    border-color:rgba(23,160,94,.5);
+    box-shadow:0 18px 40px rgba(0,0,0,.24), inset 0 1px 0 rgba(255,255,255,.06);
+  }
+  .route-card--primary:hover{
+    background:rgba(23,160,94,.17);
+  }
+  .route-top{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+  }
+  .route-kicker{color:#7FC9A2}
+  .route-time{
+    padding:5px 10px;
+    border-radius:999px;
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.12);
+    color:#C9D7D0;
+    font-size:10px;
+    white-space:nowrap;
+  }
+  .route-card h3{
+    margin-top:16px;
+    font-family:var(--display);
+    font-size:clamp(22px,2.6vw,27px);
+    font-weight:800;
+    line-height:1.12;
+    color:#fff;
+  }
+  .route-card p{
+    margin-top:10px;
+    color:#C9D7D0;
+    line-height:1.62;
+    max-width:44ch;
+  }
+  .route-list{
+    list-style:none;
+    margin-top:16px;
+    display:grid;
+    gap:8px;
+  }
+  .route-list li{
+    position:relative;
+    padding-left:22px;
+    color:#A8C7B7;
+    font-size:14px;
+    line-height:1.5;
+  }
+  .route-list li::before{
+    content:"";
+    position:absolute;
+    left:2px;
+    top:8px;
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:rgba(23,160,94,.85);
+  }
+  .route-action{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    margin-top:auto;
+    padding-top:20px;
+    color:#4CD693;
+    font-family:var(--mono);
+    font-size:12px;
+    letter-spacing:.06em;
+    word-break:break-word;
+  }
+  .route-arrow{transition:transform .25s ease}
+  .route-card:hover .route-arrow{transform:translateX(4px)}
+
+  .cta-secondary{
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:16px;
+    margin-top:24px;
+  }
+  .cta-secondary .cta-meta{margin-top:0}
+  .cta-secondary a{
+    color:#C9D7D0;
+    font-family:var(--mono);
+    font-size:12px;
+    letter-spacing:.06em;
+    text-decoration:none;
+    border-bottom:1px solid rgba(255,255,255,.22);
+    padding-bottom:2px;
+  }
+  .cta-secondary a:hover{color:#fff;border-bottom-color:rgba(23,160,94,.8)}
 
   footer{
     background:var(--dark);
@@ -1194,6 +1428,13 @@
     color:var(--body);
     max-width:64ch;
   }
+  .faq-list details p a{
+    color:var(--green-dark);
+    font-weight:600;
+    text-decoration:none;
+    border-bottom:1px solid rgba(23,160,94,.4);
+  }
+  .faq-list details p a:hover{border-bottom-color:var(--green)}
   .reveal{
     opacity:0;
     transform:translateY(18px);
@@ -1227,6 +1468,10 @@
     .process-grid{
       grid-template-columns:minmax(0,1.05fr) minmax(320px,.95fr);
       align-items:start;
+    }
+    .route-grid{
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:20px;
     }
     .about-grid{
       grid-template-columns:minmax(0,1fr);
@@ -1326,7 +1571,8 @@
     <div class="wrap utility-inner">
       <div class="utility-left">CPL CUT FOR OUR CLIENTS <strong>▲</strong> up to 90%</div>
       <div class="utility-right">
-        <a href="mailto:contact@triples.agency">contact@triples.agency</a>
+        <a href="https://calendly.com/abzal-bolatkhan-01/30min" target="_blank" rel="noreferrer">Book a 30-min call</a>
+        <a href="mailto:abzal.business.01@gmail.com">abzal.business.01@gmail.com</a>
         <a href="https://www.upwork.com/agencies/1553470846164299776/" target="_blank" rel="noreferrer">Upwork</a>
       </div>
     </div>
@@ -1364,7 +1610,7 @@
             <input id="hero-website" name="website" type="text" placeholder="Enter your website" autocomplete="url">
             <button class="btn btn-dark" type="submit">Get My Free Proposal</button>
           </form>
-          <div class="hero-fineprint">Free 3-minute video audit included · Reply within 24 hours</div>
+          <div class="hero-fineprint">Free 3-minute video audit included · Reply within 24 hours · <a href="https://calendly.com/abzal-bolatkhan-01/30min" target="_blank" rel="noreferrer">or book a 30-min call</a></div>
           <div class="proof-chip">
             <div class="proof-label"><span class="dot" aria-hidden="true"></span>From a live client account</div>
             <span class="proof-value">8,492 conversions at $0.14 each</span>
@@ -1719,8 +1965,62 @@
             </article>
           </div>
         </div>
-        <figure class="art-frame reveal">
-          <img src="assets/funnel-art.jpg" width="1600" height="893" alt="Glowing wireframe funnel turning ad traffic into revenue." loading="lazy" decoding="async">
+        <figure class="art-frame funnel-art reveal">
+          <figcaption class="funnel-head">
+            <span class="funnel-eyebrow">The tracked funnel</span>
+            <strong>Every stage measured — or it doesn't count.</strong>
+          </figcaption>
+
+          <svg class="funnel-svg" viewBox="0 0 460 512" role="img" aria-label="Funnel diagram: impressions measured by platform data, clicks by GTM, tracked conversions by GA4 and server-side tracking, reported revenue by Looker Studio.">
+            <defs>
+              <linearGradient id="funnelBand" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#17A05E" stop-opacity=".10"></stop>
+                <stop offset="100%" stop-color="#17A05E" stop-opacity=".26"></stop>
+              </linearGradient>
+              <linearGradient id="funnelBandDeep" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#17A05E" stop-opacity=".26"></stop>
+                <stop offset="100%" stop-color="#17A05E" stop-opacity=".46"></stop>
+              </linearGradient>
+            </defs>
+
+            <g class="funnel-band">
+              <path d="M30 60 H430 L410 130 H50 Z"></path>
+              <text class="funnel-stage" x="66" y="93">Impressions</text>
+              <text class="funnel-tag" x="66" y="112">Platform data</text>
+            </g>
+
+            <g class="funnel-band">
+              <path d="M54 142 H406 L386 212 H74 Z"></path>
+              <text class="funnel-stage" x="90" y="175">Clicks</text>
+              <text class="funnel-tag" x="90" y="194">GTM</text>
+            </g>
+
+            <g class="funnel-band">
+              <path d="M78 224 H382 L362 294 H98 Z"></path>
+              <text class="funnel-stage" x="114" y="257">Tracked conversions</text>
+              <text class="funnel-tag" x="114" y="276">GA4 + server-side</text>
+            </g>
+
+            <g class="funnel-band funnel-band--deep">
+              <path d="M102 306 H358 L338 376 H122 Z"></path>
+              <text class="funnel-stage" x="138" y="339">Reported revenue</text>
+              <text class="funnel-tag" x="138" y="358">Looker Studio</text>
+            </g>
+
+            <rect class="funnel-stem" x="206" y="376" width="48" height="26"></rect>
+
+            <circle class="funnel-dot" cx="0" cy="0" r="3"></circle>
+            <circle class="funnel-dot funnel-dot--b" cx="0" cy="0" r="3"></circle>
+            <circle class="funnel-dot funnel-dot--c" cx="0" cy="0" r="3"></circle>
+
+            <g class="funnel-result">
+              <rect x="30" y="406" width="400" height="92" rx="16"></rect>
+              <text class="funnel-result-label" x="54" y="438">Outcome</text>
+              <text class="funnel-result-value" x="54" y="468">$0.14</text>
+              <text class="funnel-result-unit" x="160" y="468">per conversion</text>
+              <text class="funnel-result-note" x="54" y="488">8,492 conversions · one live client account</text>
+            </g>
+          </svg>
         </figure>
       </div>
     </section>
@@ -1897,7 +2197,7 @@
           </details>
           <details>
             <summary>How do we start?</summary>
-            <p>With the audit. Send your account, get a Loom walkthrough and a prioritized fix list within 48 hours. The $200 is credited to your first month if we work together.</p>
+            <p>With the audit. Send your account, get a Loom walkthrough and a prioritized fix list within 48 hours. The $200 is credited to your first month if we work together. If you'd rather talk it through first, <a href="https://calendly.com/abzal-bolatkhan-01/30min" target="_blank" rel="noreferrer">book a 30-minute call</a> — same agenda, live.</p>
           </details>
         </div>
       </div>
@@ -1907,15 +2207,45 @@
       <div class="wrap">
         <div class="cta-panel reveal">
           <div class="eyebrow eyebrow--dark">Contact</div>
-          <h2>Get a free proposal.</h2>
-          <p class="cta-sub">Every proposal starts with a free 3-minute video audit of your account — no call needed. Or go straight to the $200 48-hour audit, credited to your first month if we work together.</p>
+          <h2>Two ways to start.</h2>
+          <p class="cta-sub">Both end the same way: you get a prioritized list of what's wrong in the account and what we'd fix first. Pick whichever suits you.</p>
           <p class="cta-sub">We take on a maximum of 3 new accounts per month — senior attention doesn't scale past that.</p>
-          <div class="cta-buttons" aria-label="Contact links">
-            <a class="btn btn-green" href="mailto:contact@triples.agency?subject=Proposal%20Request">Get My Free Proposal</a>
-            <a class="btn btn-outline-light" href="https://www.upwork.com/agencies/1553470846164299776/" target="_blank" rel="noreferrer">Upwork</a>
-            <a class="btn btn-outline-light" href="https://www.linkedin.com/in/aviel-bolatkhan" target="_blank" rel="noreferrer">LinkedIn</a>
-          </div>
-          <div class="cta-meta">Reply within 24 hours</div>
+        </div>
+
+        <div class="route-grid reveal">
+          <a class="route-card route-card--primary" href="https://calendly.com/abzal-bolatkhan-01/30min" target="_blank" rel="noreferrer">
+            <div class="route-top">
+              <span class="route-kicker">Option 01</span>
+              <span class="route-time">30 min · free</span>
+            </div>
+            <h3>Book a strategy call</h3>
+            <p>Screen-share the account. We go through the tracking, where the spend leaks, and the two or three changes worth making first.</p>
+            <ul class="route-list">
+              <li>No deck, no pitch</li>
+              <li>You keep the fix list either way</li>
+            </ul>
+            <span class="route-action">Pick a time on Calendly <span class="route-arrow" aria-hidden="true">→</span></span>
+          </a>
+
+          <a class="route-card" href="mailto:abzal.business.01@gmail.com?subject=Proposal%20Request">
+            <div class="route-top">
+              <span class="route-kicker">Option 02</span>
+              <span class="route-time">24 h reply</span>
+            </div>
+            <h3>Send the account</h3>
+            <p>Email us the account you want reviewed and get a free 3-minute video audit back — no call needed.</p>
+            <ul class="route-list">
+              <li>Free 3-minute video audit</li>
+              <li>Or go straight to the $200 48-hour audit</li>
+            </ul>
+            <span class="route-action">abzal.business.01@gmail.com <span class="route-arrow" aria-hidden="true">→</span></span>
+          </a>
+        </div>
+
+        <div class="cta-secondary reveal">
+          <span class="cta-meta">Also on</span>
+          <a href="https://www.upwork.com/agencies/1553470846164299776/" target="_blank" rel="noreferrer">Upwork</a>
+          <a href="https://www.linkedin.com/in/aviel-bolatkhan" target="_blank" rel="noreferrer">LinkedIn</a>
         </div>
       </div>
     </section>
@@ -1947,7 +2277,8 @@
       </div>
       <div>
         <div class="footer-links">
-          <a href="mailto:contact@triples.agency">Email</a>
+          <a href="https://calendly.com/abzal-bolatkhan-01/30min" target="_blank" rel="noreferrer">Book a call</a>
+          <a href="mailto:abzal.business.01@gmail.com">Email</a>
           <a href="https://www.upwork.com/agencies/1553470846164299776/" target="_blank" rel="noreferrer">Upwork</a>
           <a href="https://www.linkedin.com/in/aviel-bolatkhan" target="_blank" rel="noreferrer">LinkedIn</a>
         </div>
@@ -2062,7 +2393,7 @@
           const website = input.value.trim();
           const subject = encodeURIComponent('Proposal Request');
           const body = website ? encodeURIComponent(`Website: ${website}`) : '';
-          const href = `mailto:contact@triples.agency?subject=${subject}${body ? `&body=${body}` : ''}`;
+          const href = `mailto:abzal.business.01@gmail.com?subject=${subject}${body ? `&body=${body}` : ''}`;
           window.location.href = href;
         });
       }
