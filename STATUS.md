@@ -26,6 +26,15 @@ The `$1–10K/mo` range is gone from both the Monthly Ads Management card ("Flat
 
 Note: a report of "iCloud emails on the site" was a false alarm — the site only ever contains abzal.business.01@gmail.com. Apple Mail composes `mailto:` drafts From: the Mac's default (iCloud) account; visitors never see that.
 
+## 2026-09-08 round 3 — hero form actually captures leads
+The hero form used to be a `mailto:` link — it opened the visitor's mail app with a draft they still had to send, and did nothing at all on machines with no mail client. Now:
+- Two fields (website + email, both required) posting to **Web3Forms** via fetch, with inline "Sending…" / success / error states. No page reload, no backend.
+- Second action next to it: **Book a 30-min call** → Calendly (`.btn-outline-dark`).
+- **ACTION REQUIRED:** `index.html` still has `value="REPLACE_WITH_WEB3FORMS_ACCESS_KEY"` in the hidden `access_key` field. Get a free key at web3forms.com (enter email, key is emailed) and paste it there. **Until then the form safely falls back to the old mailto behaviour** — nothing is broken, but nothing is captured either.
+- Honeypot field `botcheck` included for spam.
+
+Still missing: the site has **no analytics at all** (0 gtag/GTM). An agency selling tracking should measure its own funnel.
+
 ## History
 - V1 dark amber one-pager → V2 WebFX-structure dark → V3 green dark → V4 light (backups of each in repo root)
 - Built via codex (cdx) from BRIEF.md / BRIEF-V2.md / BRIEF-V3.md; every codex build needed a copy-review pass (leaks spec language). Small surgical edit lists: do directly, codex hangs on them.

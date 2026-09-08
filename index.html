@@ -292,12 +292,26 @@
     line-height:1.62;
   }
   .proposal-form{
+    display:grid;
+    gap:10px;
+    margin-top:22px;
+    max-width:620px;
+  }
+  .form-trap{
+    position:absolute;
+    left:-9999px;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+  }
+  .proposal-fields,
+  .proposal-actions{
     display:flex;
     flex-wrap:wrap;
     gap:10px;
-    margin-top:22px;
   }
-  .proposal-form input{
+  .proposal-form input[type="text"],
+  .proposal-form input[type="email"]{
     flex:1 1 260px;
     min-height:52px;
     padding:0 16px;
@@ -318,6 +332,26 @@
     min-height:52px;
     padding:0 18px;
   }
+  .btn-outline-dark{
+    background:transparent;
+    color:var(--navy);
+    border-color:var(--line);
+  }
+  .btn-outline-dark:hover{
+    background:rgba(23,160,94,.06);
+    color:var(--green-dark);
+    border-color:rgba(23,160,94,.6);
+  }
+  .form-status{
+    margin:2px 0 0;
+    font-family:var(--mono);
+    font-size:12px;
+    line-height:1.55;
+    color:var(--body);
+  }
+  .form-status--ok{color:var(--green-dark)}
+  .form-status--err{color:#B3452F}
+  .form-status a{color:inherit;text-decoration:underline}
   .hero-fineprint{
     margin-top:10px;
     color:var(--dim);
@@ -1606,11 +1640,26 @@
           <h1>Your Performance Marketing Partner in the AI Era</h1>
           <p class="hero-lede">Most agencies sell clicks — we sell unit economics. Full-funnel performance marketing for e-commerce, clinics and B2B in the US, UK, Australia and beyond. Every dollar tracked from click to conversion.</p>
           <form class="proposal-form" id="proposal-form">
-            <label class="sr-only" for="hero-website">Enter your website</label>
-            <input id="hero-website" name="website" type="text" placeholder="Enter your website" autocomplete="url">
-            <button class="btn btn-dark" type="submit">Get My Free Proposal</button>
+            <input type="hidden" name="access_key" value="REPLACE_WITH_WEB3FORMS_ACCESS_KEY">
+            <input type="hidden" name="subject" value="New proposal request — triples.agency">
+            <input type="hidden" name="from_name" value="Triple S website">
+            <div class="form-trap" aria-hidden="true">
+              <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off">
+            </div>
+
+            <div class="proposal-fields">
+              <label class="sr-only" for="hero-website">Your website</label>
+              <input id="hero-website" name="website" type="text" placeholder="Your website" autocomplete="url" required>
+              <label class="sr-only" for="hero-email">Your email</label>
+              <input id="hero-email" name="email" type="email" placeholder="Your email" autocomplete="email" required>
+            </div>
+            <div class="proposal-actions">
+              <button class="btn btn-dark" type="submit">Get My Free Proposal</button>
+              <a class="btn btn-outline-dark" href="https://calendly.com/abzal-bolatkhan-01/30min" target="_blank" rel="noreferrer">Book a 30-min call</a>
+            </div>
+            <p class="form-status" id="form-status" role="status" aria-live="polite" hidden></p>
           </form>
-          <div class="hero-fineprint">Free 3-minute video audit included · Reply within 24 hours · <a href="https://calendly.com/abzal-bolatkhan-01/30min" target="_blank" rel="noreferrer">or book a 30-min call</a></div>
+          <div class="hero-fineprint">Free 3-minute video audit included · Reply within 24 hours</div>
           <div class="proof-chip">
             <div class="proof-label"><span class="dot" aria-hidden="true"></span>From a live client account</div>
             <span class="proof-value">8,492 conversions at $0.14 each</span>
@@ -2388,13 +2437,74 @@
       }
 
       if (form && input) {
-        form.addEventListener('submit', (event) => {
+        const email = document.getElementById('hero-email');
+        const status = document.getElementById('form-status');
+        const button = form.querySelector('button[type="submit"]');
+        const buttonLabel = button ? button.textContent : '';
+        const keyField = form.querySelector('[name="access_key"]');
+        const PLACEHOLDER_KEY = 'REPLACE_WITH_WEB3FORMS_ACCESS_KEY';
+        const MAIL = 'abzal.business.01@gmail.com';
+
+        const say = (message, tone) => {
+          if (!status) return;
+          status.innerHTML = message;
+          status.className = tone ? `form-status form-status--${tone}` : 'form-status';
+          status.hidden = false;
+        };
+
+        const mailtoFallback = (website, address) => {
+          const subject = encodeURIComponent('Proposal Request');
+          const lines = [website ? `Website: ${website}` : '', address ? `Email: ${address}` : ''].filter(Boolean);
+          const body = lines.length ? `&body=${encodeURIComponent(lines.join('\n'))}` : '';
+          window.location.href = `mailto:${MAIL}?subject=${subject}${body}`;
+        };
+
+        form.addEventListener('submit', async (event) => {
           event.preventDefault();
           const website = input.value.trim();
-          const subject = encodeURIComponent('Proposal Request');
-          const body = website ? encodeURIComponent(`Website: ${website}`) : '';
-          const href = `mailto:abzal.business.01@gmail.com?subject=${subject}${body ? `&body=${body}` : ''}`;
-          window.location.href = href;
+          const address = email ? email.value.trim() : '';
+
+          if (!website) {
+            say('Add your website so we know what to look at.', 'err');
+            input.focus();
+            return;
+          }
+          if (!address || !/^\S+@\S+\.\S+$/.test(address)) {
+            say('Add an email we can send the audit to.', 'err');
+            if (email) email.focus();
+            return;
+          }
+
+          const key = keyField ? keyField.value.trim() : '';
+          if (!key || key === PLACEHOLDER_KEY) {
+            mailtoFallback(website, address);
+            return;
+          }
+
+          if (button) {
+            button.disabled = true;
+            button.textContent = 'Sending…';
+          }
+          say('Sending…');
+
+          try {
+            const response = await fetch('https://api.web3forms.com/submit', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+              body: JSON.stringify(Object.fromEntries(new FormData(form)))
+            });
+            const result = await response.json();
+            if (!result.success) throw new Error(result.message || 'Submission failed');
+            form.reset();
+            say('Got it. We’ll reply within 24 hours with your free video audit.', 'ok');
+          } catch (error) {
+            say(`Couldn’t send that. Email <a href="mailto:${MAIL}">${MAIL}</a> instead, or <a href="https://calendly.com/abzal-bolatkhan-01/30min" target="_blank" rel="noreferrer">book a call</a>.`, 'err');
+          } finally {
+            if (button) {
+              button.disabled = false;
+              button.textContent = buttonLabel;
+            }
+          }
         });
       }
 
