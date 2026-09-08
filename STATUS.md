@@ -48,11 +48,18 @@ Still missing: the site has **no analytics at all** (0 gtag/GTM). An agency sell
 - **`/privacy.html`** added and footer-linked. It states no analytics or tracking cookies run — **update that section when GA4 goes in.**
 - **All in-page images are WebP now.** Assets 1.6MB → 800KB via `cwebp -q 82 -m 6` (needed `brew install webp`). `og-image.jpg` stays JPEG for social scrapers.
 
+## 2026-09-09 — case studies lead with the brand, reports on demand
+Ad dashboards no longer front the case studies. Each one shows a `.brand-tile` (a captured homepage in `--shot`, or a typographic mark in `--mark`) and the screenshots sit inside `<details class="report">` behind "View performance report" — native element, no JS.
+
+CIS de-emphasised per positioning: Center Matrasov is now an unnamed "DTC mattress brand" (numbers intact), **Askona and Fortex deleted entirely**, marquee cleaned and the US/UK clinics added. BIC's live homepage captured to `assets/brand-bic.webp`.
+
 ## Open items
 - [ ] **Test the contact form in a real browser** — never verified (Cloudflare blocks automated testing)
 - [ ] **Check the site on a real phone** — layout now verified at 390/600/860px (load the page in fixed-width iframes; media queries respond to iframe width, unlike `--window-size`), but a real device check is still worth doing once
 - [ ] GA4 / GTM — still zero analytics ("i'll add the analytics later")
 - [ ] Client testimonials — still the biggest conversion gap
+- [ ] **Brand assets for the case studies.** Need from user: URLs for Noodlers, Dr Madnani, Harmony Medical Aesthetics, EndoSlim Clinic, Beauty Space Clinic, Twenty Four Carrots, Croissant Atelier, Atelier Beaute, Dr Kellyann Kosma. Any logo files go in `assets/` and take priority over homepages. Note: **leroymerlin.fr 403s headless browsers** so it cannot be captured automatically.
+- [ ] Consider a 4th case study built around the US/UK medical-aesthetics clinics — best proof for the target market (suggested, not approved)
 
 ## History
 - V1 dark amber one-pager → V2 WebFX-structure dark → V3 green dark → V4 light (backups of each in repo root)
