@@ -30,7 +30,8 @@ Note: a report of "iCloud emails on the site" was a false alarm — the site onl
 The hero form used to be a `mailto:` link — it opened the visitor's mail app with a draft they still had to send, and did nothing at all on machines with no mail client. Now:
 - Two fields (website + email, both required) posting to **Web3Forms** via fetch, with inline "Sending…" / success / error states. No page reload, no backend.
 - Second action next to it: **Book a 30-min call** → Calendly (`.btn-outline-dark`).
-- **ACTION REQUIRED:** `index.html` still has `value="REPLACE_WITH_WEB3FORMS_ACCESS_KEY"` in the hidden `access_key` field. Get a free key at web3forms.com (enter email, key is emailed) and paste it there. **Until then the form safely falls back to the old mailto behaviour** — nothing is broken, but nothing is captured either.
+- Access key `eaaf4af3-428e-4271-b661-1d4900d1aaf5` is in and live (it's a public client-side key by design).
+- **UNVERIFIED — needs a human test.** `api.web3forms.com` sits behind Cloudflare bot protection, so an automated browser can't complete a submission: JSON fetch fails CORS preflight, FormData fetch fails, a plain cross-origin form POST lands on a Cloudflare "Performing security verification" page, and curl is refused outright (server-side needs their Pro plan). None of that proves the code is wrong — it proves the automation is blocked. **Submit the form once in a real browser and check the inbox.** If it fails there too, the fallback message (email + Calendly link) still shows, so there's no dead end.
 - Honeypot field `botcheck` included for spam.
 
 Still missing: the site has **no analytics at all** (0 gtag/GTM). An agency selling tracking should measure its own funnel.
