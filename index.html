@@ -1603,24 +1603,33 @@
   @media (min-width:1040px){
     .nav-links{gap:18px 24px}
   }
-  @media (max-width:859px){
-    .utility-inner,
-    .nav-inner{
+  @media (max-width:999px){
+    .utility-inner{
       flex-wrap:wrap;
       justify-content:center;
     }
+    .nav-inner{
+      flex-wrap:wrap;
+      justify-content:space-between;
+      gap:12px 14px;
+      min-height:0;
+    }
     .brand{
       order:1;
-      width:100%;
-      justify-content:center;
+      flex:1 1 auto;
+    }
+    .btn-nav{
+      order:2;
+      flex:none;
+      margin-left:auto;
+      min-height:40px;
+      padding:0 14px;
+      font-size:10px;
+      letter-spacing:.1em;
     }
     .nav-links{
       order:3;
       width:100%;
-    }
-    .btn-nav{
-      order:2;
-      margin-left:0;
     }
     .stepper{
       grid-template-columns:1fr 1fr;
@@ -1654,6 +1663,9 @@
     }
     .marquee{width:100%}
     .cta-panel h2{max-width:10ch}
+  }
+  @media (max-width:560px){
+    .brand-copy span{display:none}
   }
   @media (prefers-reduced-motion:reduce){
     html{scroll-behavior:auto}
