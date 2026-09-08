@@ -647,6 +647,130 @@
     display:grid;
     gap:12px;
   }
+  .brand-tile{
+    position:relative;
+    border:1px solid var(--line);
+    border-radius:18px;
+    overflow:hidden;
+    background:#fff;
+  }
+  .brand-tile--shot{margin:0}
+  .brand-tile--shot img{
+    display:block;
+    width:100%;
+    height:auto;
+    aspect-ratio:16 / 10;
+    object-fit:cover;
+    object-position:top center;
+  }
+  .brand-tile--shot figcaption{
+    padding:11px 16px;
+    border-top:1px solid var(--line);
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--dim);
+  }
+  .brand-tile--mark{
+    display:grid;
+    align-content:center;
+    gap:7px;
+    min-height:200px;
+    padding:26px;
+    background:
+      radial-gradient(520px 240px at 88% 0%, rgba(23,160,94,.10), transparent 62%),
+      var(--bg-tint);
+  }
+  .brand-tile-kicker{
+    font-family:var(--mono);
+    font-size:10.5px;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--green-dark);
+  }
+  .brand-tile--mark strong{
+    font-family:var(--display);
+    font-size:clamp(24px,3.4vw,32px);
+    font-weight:800;
+    line-height:1.08;
+    color:var(--navy);
+  }
+  .brand-tile-sector{
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--dim);
+  }
+  .brand-tile-stat{
+    display:flex;
+    align-items:baseline;
+    gap:10px;
+    margin-top:12px;
+    padding-top:14px;
+    border-top:1px solid var(--line);
+  }
+  .brand-tile-stat .v{
+    font-family:var(--display);
+    font-size:27px;
+    font-weight:800;
+    line-height:1;
+    color:var(--navy);
+    font-variant-numeric:tabular-nums;
+  }
+  .brand-tile-stat .l{
+    font-family:var(--mono);
+    font-size:10.5px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--dim);
+  }
+  .brand-row{
+    display:grid;
+    gap:12px;
+  }
+
+  .report{
+    border:1px solid var(--line);
+    border-radius:14px;
+    background:var(--bg-tint);
+  }
+  .report summary{
+    cursor:pointer;
+    list-style:none;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    padding:14px 18px;
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--green-dark);
+  }
+  .report summary::-webkit-details-marker{display:none}
+  .report summary::after{
+    content:"+";
+    font-size:18px;
+    line-height:1;
+    color:var(--green);
+    flex:none;
+  }
+  .report[open] summary::after{content:"–"}
+  .report summary:hover{color:var(--navy)}
+  .report summary:focus-visible{
+    outline:2px solid var(--green);
+    outline-offset:2px;
+    border-radius:14px;
+  }
+  .report-body{
+    display:grid;
+    gap:12px;
+    padding:0 12px 12px;
+  }
+
   .browser-frame{
     border:1px solid var(--line);
     border-radius:16px;
@@ -1571,6 +1695,10 @@
     .tier-grid{
       grid-template-columns:repeat(3,minmax(0,1fr));
     }
+    .brand-row{
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      align-items:stretch;
+    }
     .process-grid{
       grid-template-columns:minmax(0,1.05fr) minmax(320px,.95fr);
       align-items:start;
@@ -1861,16 +1989,16 @@
         <div class="section-head reveal">
           <h2>Results. The receipt matters.</h2>
         </div>
-        <p class="section-intro reveal">Three engagements, three real dashboards, zero filler.</p>
+        <p class="section-intro reveal">Three engagements, real numbers. Open the report on any of them.</p>
 
         <div class="results-grid">
           <article class="case-card reveal">
             <div class="case-copy">
               <div class="case-eyebrow">The receipt</div>
-              <h3>Center Matrasov — DTC mattress brand</h3>
+              <h3>8-month multi-channel rebuild</h3>
               <p>8 months of multi-channel optimization. Google Ads CPL $0.82 → $0.18. Meta CPL $1.02 → $0.36. 200%+ lead growth. Channels: Google, Meta, TikTok.</p>
               <div class="receipt-points">
-                <p><span class="mono">In the screenshot:</span> 8,492 conversions at $0.14 each, 66.8% conversion rate.</p>
+                <p><span class="mono">In the report:</span> 8,492 conversions at $0.14 each, 66.8% conversion rate.</p>
               </div>
               <div class="cpl-compare" role="img" aria-label="Google Ads cost per lead: $0.82 before, $0.18 after eight months">
                 <div class="cpl-side before">
@@ -1887,24 +2015,38 @@
               <a class="case-link" href="#contact">Get results like this →</a>
             </div>
             <div class="case-media">
-              <figure class="browser-frame frame-row">
-                <div class="browser-top" aria-hidden="true">
-                  <span class="browser-dot"></span>
-                  <span class="browser-dot"></span>
-                  <span class="browser-dot"></span>
-                  <span class="browser-url">google ads · center matrasov</span>
+              <div class="brand-tile brand-tile--mark">
+                <span class="brand-tile-kicker">Client</span>
+                <strong>DTC mattress brand</strong>
+                <span class="brand-tile-sector">Sleep &amp; home · e-commerce</span>
+                <div class="brand-tile-stat">
+                  <span class="v">$0.14</span>
+                  <span class="l">per conversion</span>
                 </div>
-                <img class="browser-shot" src="assets/center-matrasov-google-ads.webp" width="1600" height="730" alt="Google Ads dashboard for Center Matrasov showing 8,492 conversions, $0.14 per conversion, and a 66.8% conversion rate." loading="lazy" decoding="async">
-              </figure>
-              <figure class="browser-frame">
-                <div class="browser-top" aria-hidden="true">
-                  <span class="browser-dot"></span>
-                  <span class="browser-dot"></span>
-                  <span class="browser-dot"></span>
-                  <span class="browser-url">meta ads · center matrasov</span>
+              </div>
+              <details class="report">
+                <summary>View performance report</summary>
+                <div class="report-body">
+                  <figure class="browser-frame frame-row">
+                    <div class="browser-top" aria-hidden="true">
+                      <span class="browser-dot"></span>
+                      <span class="browser-dot"></span>
+                      <span class="browser-dot"></span>
+                      <span class="browser-url">google ads</span>
+                    </div>
+                    <img class="browser-shot" src="assets/center-matrasov-google-ads.webp" width="1600" height="730" alt="Google Ads dashboard showing 8,492 conversions, $0.14 per conversion, and a 66.8% conversion rate." loading="lazy" decoding="async">
+                  </figure>
+                  <figure class="browser-frame">
+                    <div class="browser-top" aria-hidden="true">
+                      <span class="browser-dot"></span>
+                      <span class="browser-dot"></span>
+                      <span class="browser-dot"></span>
+                      <span class="browser-url">meta ads</span>
+                    </div>
+                    <img class="browser-shot" src="assets/center-matrasov-meta.webp" width="1600" height="709" alt="Meta Ads dashboard screenshot for the same account." loading="lazy" decoding="async">
+                  </figure>
                 </div>
-                <img class="browser-shot" src="assets/center-matrasov-meta.webp" width="1600" height="709" alt="Meta Ads dashboard screenshot for Center Matrasov." loading="lazy" decoding="async">
-              </figure>
+              </details>
             </div>
           </article>
 
@@ -1919,42 +2061,45 @@
               <a class="case-link" href="#contact">Get results like this →</a>
             </div>
             <div class="case-media">
-              <figure class="browser-frame frame-row">
-                <div class="browser-top" aria-hidden="true">
-                  <span class="browser-dot"></span>
-                  <span class="browser-dot"></span>
-                  <span class="browser-dot"></span>
-                  <span class="browser-url">tiktok ads · noodlers</span>
+              <div class="brand-tile brand-tile--mark">
+                <span class="brand-tile-kicker">Client</span>
+                <strong>Noodlers</strong>
+                <span class="brand-tile-sector">Food delivery · UAE</span>
+                <div class="brand-tile-stat">
+                  <span class="v">$0.35</span>
+                  <span class="l">CPM, down from $0.46</span>
                 </div>
-                <img class="browser-shot" src="assets/noodlers-tiktok.webp" width="1600" height="727" alt="TikTok Ads dashboard screenshot for Noodlers." loading="lazy" decoding="async">
-              </figure>
-              <div class="thumb-grid two">
-                <figure class="browser-frame">
-                  <div class="browser-top" aria-hidden="true">
-                    <span class="browser-dot"></span>
-                    <span class="browser-dot"></span>
-                    <span class="browser-dot"></span>
-                    <span class="browser-url">cpm case</span>
-                  </div>
-                  <img class="browser-shot" src="assets/tiktok-cpm-case.webp" width="1600" height="729" alt="TikTok CPM optimization case screenshot." loading="lazy" decoding="async">
-                </figure>
-                <figure class="browser-frame">
-                  <div class="browser-top" aria-hidden="true">
-                    <span class="browser-dot"></span>
-                    <span class="browser-dot"></span>
-                    <span class="browser-dot"></span>
-                    <span class="browser-url">fortex meta</span>
-                  </div>
-                  <img class="browser-shot" src="assets/fortex-meta.webp" width="1600" height="679" alt="Meta Ads dashboard screenshot for Fortex." loading="lazy" decoding="async">
-                </figure>
               </div>
+              <details class="report">
+                <summary>View performance report</summary>
+                <div class="report-body">
+                  <figure class="browser-frame frame-row">
+                    <div class="browser-top" aria-hidden="true">
+                      <span class="browser-dot"></span>
+                      <span class="browser-dot"></span>
+                      <span class="browser-dot"></span>
+                      <span class="browser-url">tiktok ads</span>
+                    </div>
+                    <img class="browser-shot" src="assets/noodlers-tiktok.webp" width="1600" height="727" alt="TikTok Ads dashboard screenshot for Noodlers." loading="lazy" decoding="async">
+                  </figure>
+                  <figure class="browser-frame">
+                    <div class="browser-top" aria-hidden="true">
+                      <span class="browser-dot"></span>
+                      <span class="browser-dot"></span>
+                      <span class="browser-dot"></span>
+                      <span class="browser-url">cpm case</span>
+                    </div>
+                    <img class="browser-shot" src="assets/tiktok-cpm-case.webp" width="1600" height="729" alt="TikTok Ads screenshot showing CPM cut from $0.46 to $0.35." loading="lazy" decoding="async">
+                  </figure>
+                </div>
+              </details>
             </div>
           </article>
 
           <article class="case-card reveal">
             <div class="case-copy">
               <div class="case-eyebrow">The receipt</div>
-              <h3>Enterprise media buying — Leroy Merlin, BIC, Askona (via MCA, Google Partner agency)</h3>
+              <h3>Enterprise media buying — Leroy Merlin and BIC (via MCA, Google Partner agency)</h3>
               <p>$30K+/mo across Google Ads, DV360, Search Ads 360 and Meta for enterprise retail. Work contributed to the agency's Google Partner badge.</p>
               <div class="receipt-points">
                 <p>Also: EV dealership CPL $10 → $1 in one month (full account rebuild) — lead volume climbed so fast the client paused its outbound sales team until it could work the backlog. Plus 300% ROAS on Meta for a DTC brand.</p>
@@ -1963,35 +2108,40 @@
               <a class="case-link" href="#contact">Get results like this →</a>
             </div>
             <div class="case-media">
-              <figure class="browser-frame frame-row">
-                <div class="browser-top" aria-hidden="true">
-                  <span class="browser-dot"></span>
-                  <span class="browser-dot"></span>
-                  <span class="browser-dot"></span>
-                  <span class="browser-url">google ads · leroy merlin</span>
+              <div class="brand-row">
+                <figure class="brand-tile brand-tile--shot">
+                  <img src="assets/brand-bic.webp" width="1440" height="900" alt="BIC company website homepage." loading="lazy" decoding="async">
+                  <figcaption>BIC · consumer goods</figcaption>
+                </figure>
+                <div class="brand-tile brand-tile--mark">
+                  <span class="brand-tile-kicker">Client</span>
+                  <strong>Leroy Merlin</strong>
+                  <span class="brand-tile-sector">Home improvement retail</span>
                 </div>
-                <img class="browser-shot" src="assets/leroy-merlin-google-ads.webp" width="1600" height="899" alt="Google Ads dashboard screenshot for Leroy Merlin." loading="lazy" decoding="async">
-              </figure>
-              <div class="thumb-grid two">
-                <figure class="browser-frame">
-                  <div class="browser-top" aria-hidden="true">
-                    <span class="browser-dot"></span>
-                    <span class="browser-dot"></span>
-                    <span class="browser-dot"></span>
-                    <span class="browser-url">dv360</span>
-                  </div>
-                  <img class="browser-shot" src="assets/bic-dv360.webp" width="1600" height="899" alt="Display &amp; Video 360 screenshot for BIC." loading="lazy" decoding="async">
-                </figure>
-                <figure class="browser-frame">
-                  <div class="browser-top" aria-hidden="true">
-                    <span class="browser-dot"></span>
-                    <span class="browser-dot"></span>
-                    <span class="browser-dot"></span>
-                    <span class="browser-url">youtube</span>
-                  </div>
-                  <img class="browser-shot" src="assets/askona-youtube.webp" width="1600" height="899" alt="YouTube Ads screenshot for Askona." loading="lazy" decoding="async">
-                </figure>
               </div>
+              <details class="report">
+                <summary>View performance report</summary>
+                <div class="report-body">
+                  <figure class="browser-frame frame-row">
+                    <div class="browser-top" aria-hidden="true">
+                      <span class="browser-dot"></span>
+                      <span class="browser-dot"></span>
+                      <span class="browser-dot"></span>
+                      <span class="browser-url">google ads · leroy merlin</span>
+                    </div>
+                    <img class="browser-shot" src="assets/leroy-merlin-google-ads.webp" width="1600" height="899" alt="Google Ads dashboard screenshot for Leroy Merlin." loading="lazy" decoding="async">
+                  </figure>
+                  <figure class="browser-frame">
+                    <div class="browser-top" aria-hidden="true">
+                      <span class="browser-dot"></span>
+                      <span class="browser-dot"></span>
+                      <span class="browser-dot"></span>
+                      <span class="browser-url">dv360 · bic</span>
+                    </div>
+                    <img class="browser-shot" src="assets/bic-dv360.webp" width="1600" height="899" alt="Display &amp; Video 360 screenshot for BIC." loading="lazy" decoding="async">
+                  </figure>
+                </div>
+              </details>
             </div>
           </article>
         </div>
@@ -2264,9 +2414,9 @@
                   <span class="browser-dot"></span>
                   <span class="browser-dot"></span>
                   <span class="browser-dot"></span>
-                  <span class="browser-url">meta</span>
+                  <span class="browser-url">dv360</span>
                 </div>
-                <img class="browser-shot" src="assets/fortex-meta.webp" width="1600" height="679" alt="Meta Ads dashboard screenshot for Fortex." loading="lazy" decoding="async">
+                <img class="browser-shot" src="assets/bic-dv360.webp" width="1600" height="899" alt="Display &amp; Video 360 screenshot for BIC." loading="lazy" decoding="async">
               </figure>
             </div>
           </div>
