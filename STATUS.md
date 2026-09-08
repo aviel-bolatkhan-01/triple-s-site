@@ -50,7 +50,7 @@ Still missing: the site has **no analytics at all** (0 gtag/GTM). An agency sell
 
 ## Open items
 - [ ] **Test the contact form in a real browser** — never verified (Cloudflare blocks automated testing)
-- [ ] **Check the site on a real phone** — headless Chrome cannot emulate mobile
+- [ ] **Check the site on a real phone** — layout now verified at 390/600/860px (load the page in fixed-width iframes; media queries respond to iframe width, unlike `--window-size`), but a real device check is still worth doing once
 - [ ] GA4 / GTM — still zero analytics ("i'll add the analytics later")
 - [ ] Client testimonials — still the biggest conversion gap
 
