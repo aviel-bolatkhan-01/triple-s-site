@@ -53,6 +53,11 @@ Ad dashboards no longer front the case studies. Each one shows a `.brand-tile` (
 
 CIS de-emphasised per positioning: Center Matrasov is now an unnamed "DTC mattress brand" (numbers intact), **Askona and Fortex deleted entirely**, marquee cleaned and the US/UK clinics added. BIC's live homepage captured to `assets/brand-bic.webp`.
 
+## 2026-09-09 — redesign: cut the clutter
+Backup before this: `index-v5-maximalist-backup.html` + git tag `v5-before-redesign`.
+
+Grounded in KlientBoost/NoGood: length wasn't the problem, **competing CTAs and competing visual devices were**. Cut the count-up stats band, the wasted-spend calculator, the tracked-funnel SVG, the badge-wall pills, the "in the wild" strip, the four reason cards, and "Get results like this" from every case card. Case studies, offers, tiers and process steps went from boxed cards to **editorial rows on hairline rules** — the green brand tiles are now the only boxes, so they lead the eye. ~4,500 bytes of dead CSS/JS removed; page ~800px shorter. Verified at 390/700/1100px.
+
 ## Open items
 - [ ] **Test the contact form in a real browser** — never verified (Cloudflare blocks automated testing)
 - [ ] **Check the site on a real phone** — layout now verified at 390/600/860px (load the page in fixed-width iframes; media queries respond to iframe width, unlike `--window-size`), but a real device check is still worth doing once
