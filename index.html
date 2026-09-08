@@ -731,45 +731,94 @@
     gap:12px;
   }
 
-  .report{
-    border:1px solid var(--line);
-    border-radius:14px;
-    background:var(--bg-tint);
-  }
-  .report summary{
-    cursor:pointer;
-    list-style:none;
+  .report-btn{
     display:flex;
     align-items:center;
     justify-content:space-between;
     gap:12px;
+    width:100%;
     padding:14px 18px;
+    border:1px solid var(--line);
+    border-radius:14px;
+    background:var(--bg-tint);
+    color:var(--green-dark);
     font-family:var(--mono);
     font-size:11px;
     letter-spacing:.14em;
     text-transform:uppercase;
-    color:var(--green-dark);
+    cursor:pointer;
+    transition:border-color .2s ease, background .2s ease, color .2s ease;
   }
-  .report summary::-webkit-details-marker{display:none}
-  .report summary::after{
-    content:"+";
-    font-size:18px;
-    line-height:1;
-    color:var(--green);
-    flex:none;
+  .report-btn:hover{
+    border-color:rgba(23,160,94,.55);
+    background:rgba(23,160,94,.09);
+    color:var(--navy);
   }
-  .report[open] summary::after{content:"–"}
-  .report summary:hover{color:var(--navy)}
-  .report summary:focus-visible{
+  .report-btn:focus-visible{
     outline:2px solid var(--green);
     outline-offset:2px;
-    border-radius:14px;
   }
+  .report-btn-icon{font-size:14px;line-height:1}
+
+  .report-modal{
+    width:min(1080px,calc(100vw - 32px));
+    max-height:calc(100vh - 48px);
+    padding:0;
+    border:1px solid var(--line);
+    border-radius:20px;
+    background:var(--surface);
+    color:var(--body);
+    box-shadow:0 32px 80px rgba(14,31,23,.28);
+    overflow:hidden;
+  }
+  .report-modal::backdrop{
+    background:rgba(9,20,15,.62);
+    backdrop-filter:blur(3px);
+  }
+  .report-head{
+    position:sticky;
+    top:0;
+    z-index:1;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    padding:18px 20px;
+    background:var(--surface);
+    border-bottom:1px solid var(--line);
+  }
+  .report-head h4{
+    font-family:var(--display);
+    font-size:clamp(17px,2.2vw,21px);
+    font-weight:800;
+    line-height:1.15;
+    color:var(--navy);
+  }
+  .report-close{
+    flex:none;
+    display:grid;
+    place-items:center;
+    width:34px;
+    height:34px;
+    border:1px solid var(--line);
+    border-radius:50%;
+    background:#fff;
+    color:var(--body);
+    font-size:13px;
+    line-height:1;
+    cursor:pointer;
+    transition:border-color .2s ease, color .2s ease;
+  }
+  .report-close:hover{border-color:var(--green);color:var(--navy)}
+  .report-close:focus-visible{outline:2px solid var(--green);outline-offset:2px}
   .report-body{
     display:grid;
-    gap:12px;
-    padding:0 12px 12px;
+    gap:14px;
+    padding:20px;
+    max-height:calc(100vh - 130px);
+    overflow-y:auto;
   }
+  .report-body .browser-shot{aspect-ratio:auto}
 
   .browser-frame{
     border:1px solid var(--line);
@@ -1915,6 +1964,78 @@
               <text x="60" y="284" text-anchor="end">Revenue</text>
             </g>
           </svg>
+
+          <article class="case-card flip reveal">
+            <div class="case-copy">
+              <div class="case-eyebrow">The receipt</div>
+              <h3>US medical-aesthetics clinics — lead generation</h3>
+              <p>Meta and Google lead generation for US clinics: injectables, TMJ and skin treatments, plus nurse recruitment. Multi-location campaigns run to cost per lead, not reach.</p>
+              <div class="receipt-points">
+                <p><span class="mono">In the report:</span> 20 leads at $22.70 and 15 at $30.21 across two clinic locations. Antiwrinkle campaigns purchasing at $37–68.</p>
+                <p>Also running Google Ads enhanced-conversion tracking for a US e-commerce brand in the same portfolio.</p>
+              </div>
+              <a class="case-link" href="#contact">Get results like this →</a>
+            </div>
+            <div class="case-media">
+              <div class="brand-tile brand-tile--mark">
+                <span class="brand-tile-kicker">Client portfolio</span>
+                <strong>Medical aesthetics</strong>
+                <span class="brand-tile-sector">Clinics &amp; medspa · United States</span>
+                <div class="brand-tile-stat">
+                  <span class="v">$22.70</span>
+                  <span class="l">per qualified lead</span>
+                </div>
+              </div>
+              <button class="report-btn" type="button" data-dialog="report-4">
+                <span>View performance report</span>
+                <span class="report-btn-icon" aria-hidden="true">&#8599;</span>
+              </button>
+              <dialog class="report-modal" id="report-4" aria-labelledby="report-4-title">
+                <div class="report-head">
+                  <h4 id="report-4-title">US medical-aesthetics clinics — the numbers</h4>
+                  <button class="report-close" type="button" data-close aria-label="Close report">&#10005;</button>
+                </div>
+                <div class="report-body">
+                  <figure class="browser-frame frame-row">
+                    <div class="browser-top" aria-hidden="true">
+                      <span class="browser-dot"></span>
+                      <span class="browser-dot"></span>
+                      <span class="browser-dot"></span>
+                      <span class="browser-url">meta ads · lead generation</span>
+                    </div>
+                    <img class="browser-shot" src="assets/clinic-meta-leadgen.webp" width="1280" height="741" alt="Meta Ads Manager showing clinic lead generation campaigns at $22.70 and $30.21 per lead." loading="lazy" decoding="async">
+                  </figure>
+                  <figure class="browser-frame frame-row">
+                    <div class="browser-top" aria-hidden="true">
+                      <span class="browser-dot"></span>
+                      <span class="browser-dot"></span>
+                      <span class="browser-dot"></span>
+                      <span class="browser-url">meta ads · campaign level</span>
+                    </div>
+                    <img class="browser-shot" src="assets/clinic-meta-campaigns.webp" width="1600" height="464" alt="Meta Ads campaign level view across treatment and recruitment campaigns." loading="lazy" decoding="async">
+                  </figure>
+                  <figure class="browser-frame frame-row">
+                    <div class="browser-top" aria-hidden="true">
+                      <span class="browser-dot"></span>
+                      <span class="browser-dot"></span>
+                      <span class="browser-dot"></span>
+                      <span class="browser-url">meta ads · ad set level</span>
+                    </div>
+                    <img class="browser-shot" src="assets/clinic-meta-adsets.webp" width="1470" height="267" alt="Meta ad set level view with purchases at $37 to $68." loading="lazy" decoding="async">
+                  </figure>
+                  <figure class="browser-frame frame-row">
+                    <div class="browser-top" aria-hidden="true">
+                      <span class="browser-dot"></span>
+                      <span class="browser-dot"></span>
+                      <span class="browser-dot"></span>
+                      <span class="browser-url">google ads · conversion tracking</span>
+                    </div>
+                    <img class="browser-shot" src="assets/ecom-google-conversions.webp" width="1455" height="840" alt="Google Ads conversion diagnostics showing enhanced conversions and cart data." loading="lazy" decoding="async">
+                  </figure>
+                </div>
+              </dialog>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -1928,6 +2049,8 @@
               <span class="marquee-item">Leroy Merlin</span>
               <span class="marquee-item">BIC</span>
               <span class="marquee-item">Dr Madnani</span>
+              <span class="marquee-item">Premier Medical Aesthetics</span>
+              <span class="marquee-item">Defined Medical Ads</span>
               <span class="marquee-item">Harmony Medical Aesthetics</span>
               <span class="marquee-item">EndoSlim Clinic</span>
               <span class="marquee-item">Beauty Space Clinic</span>
@@ -1941,6 +2064,8 @@
               <span class="marquee-item">Leroy Merlin</span>
               <span class="marquee-item">BIC</span>
               <span class="marquee-item">Dr Madnani</span>
+              <span class="marquee-item">Premier Medical Aesthetics</span>
+              <span class="marquee-item">Defined Medical Ads</span>
               <span class="marquee-item">Harmony Medical Aesthetics</span>
               <span class="marquee-item">EndoSlim Clinic</span>
               <span class="marquee-item">Beauty Space Clinic</span>
@@ -1985,7 +2110,7 @@
         <div class="section-head reveal">
           <h2>Results. The receipt matters.</h2>
         </div>
-        <p class="section-intro reveal">Three engagements, real numbers. Open the report on any of them.</p>
+        <p class="section-intro reveal">Four engagements, real numbers. Open the report on any of them.</p>
 
         <div class="results-grid">
           <article class="case-card reveal">
@@ -2020,8 +2145,15 @@
                   <span class="l">per conversion</span>
                 </div>
               </div>
-              <details class="report">
-                <summary>View performance report</summary>
+              <button class="report-btn" type="button" data-dialog="report-1">
+                <span>View performance report</span>
+                <span class="report-btn-icon" aria-hidden="true">&#8599;</span>
+              </button>
+              <dialog class="report-modal" id="report-1" aria-labelledby="report-1-title">
+                <div class="report-head">
+                  <h4 id="report-1-title">8-month multi-channel rebuild</h4>
+                  <button class="report-close" type="button" data-close aria-label="Close report">&#10005;</button>
+                </div>
                 <div class="report-body">
                   <figure class="browser-frame frame-row">
                     <div class="browser-top" aria-hidden="true">
@@ -2042,7 +2174,7 @@
                     <img class="browser-shot" src="assets/center-matrasov-meta.webp" width="1600" height="709" alt="Meta Ads dashboard screenshot for the same account." loading="lazy" decoding="async">
                   </figure>
                 </div>
-              </details>
+              </dialog>
             </div>
           </article>
 
@@ -2066,8 +2198,15 @@
                   <span class="l">CPM, down from $0.46</span>
                 </div>
               </div>
-              <details class="report">
-                <summary>View performance report</summary>
+              <button class="report-btn" type="button" data-dialog="report-2">
+                <span>View performance report</span>
+                <span class="report-btn-icon" aria-hidden="true">&#8599;</span>
+              </button>
+              <dialog class="report-modal" id="report-2" aria-labelledby="report-2-title">
+                <div class="report-head">
+                  <h4 id="report-2-title">Noodlers — TikTok performance</h4>
+                  <button class="report-close" type="button" data-close aria-label="Close report">&#10005;</button>
+                </div>
                 <div class="report-body">
                   <figure class="browser-frame frame-row">
                     <div class="browser-top" aria-hidden="true">
@@ -2088,7 +2227,7 @@
                     <img class="browser-shot" src="assets/tiktok-cpm-case.webp" width="1600" height="729" alt="TikTok Ads screenshot showing CPM cut from $0.46 to $0.35." loading="lazy" decoding="async">
                   </figure>
                 </div>
-              </details>
+              </dialog>
             </div>
           </article>
 
@@ -2099,7 +2238,6 @@
               <p>$30K+/mo across Google Ads, DV360, Search Ads 360 and Meta for enterprise retail. Work contributed to the agency's Google Partner badge.</p>
               <div class="receipt-points">
                 <p>Also: EV dealership CPL $10 → $1 in one month (full account rebuild) — lead volume climbed so fast the client paused its outbound sales team until it could work the backlog. Plus 300% ROAS on Meta for a DTC brand.</p>
-                <p>Right now: managing medical-aesthetics and clinic accounts — dermatology, medspa and healthcare brands among them.</p>
               </div>
               <a class="case-link" href="#contact">Get results like this →</a>
             </div>
@@ -2115,8 +2253,15 @@
                   <span class="brand-tile-sector">Home improvement retail</span>
                 </div>
               </div>
-              <details class="report">
-                <summary>View performance report</summary>
+              <button class="report-btn" type="button" data-dialog="report-3">
+                <span>View performance report</span>
+                <span class="report-btn-icon" aria-hidden="true">&#8599;</span>
+              </button>
+              <dialog class="report-modal" id="report-3" aria-labelledby="report-3-title">
+                <div class="report-head">
+                  <h4 id="report-3-title">Leroy Merlin and BIC — enterprise media</h4>
+                  <button class="report-close" type="button" data-close aria-label="Close report">&#10005;</button>
+                </div>
                 <div class="report-body">
                   <figure class="browser-frame frame-row">
                     <div class="browser-top" aria-hidden="true">
@@ -2137,7 +2282,7 @@
                     <img class="browser-shot" src="assets/bic-dv360.webp" width="1600" height="899" alt="Display &amp; Video 360 screenshot for BIC." loading="lazy" decoding="async">
                   </figure>
                 </div>
-              </details>
+              </dialog>
             </div>
           </article>
         </div>
@@ -2746,6 +2891,20 @@
           }
         });
       }
+
+      document.querySelectorAll('[data-dialog]').forEach((trigger) => {
+        const dialog = document.getElementById(trigger.dataset.dialog);
+        if (!dialog) return;
+        trigger.addEventListener('click', () => dialog.showModal());
+      });
+
+      document.querySelectorAll('.report-modal').forEach((dialog) => {
+        dialog.addEventListener('click', (event) => {
+          if (event.target === dialog) dialog.close();
+        });
+        const closer = dialog.querySelector('[data-close]');
+        if (closer) closer.addEventListener('click', () => dialog.close());
+      });
 
       document.addEventListener('click', (event) => {
         const link = event.target.closest('a[href^="#"]');
