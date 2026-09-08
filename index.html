@@ -500,56 +500,45 @@
   .client-strip{
     background:#fff;
     border-block:1px solid var(--line);
-  }
-  .client-strip-inner{
-    display:flex;
-    align-items:center;
-    gap:22px;
-    padding:26px 0;
+    padding:34px 0;
   }
   .strip-label{
+    margin-bottom:18px;
     color:var(--dim);
     font-family:var(--mono);
     font-size:11px;
     letter-spacing:.16em;
     text-transform:uppercase;
-    white-space:nowrap;
-    flex:none;
   }
-  .marquee{
-    min-width:0;
-    overflow:hidden;
-    flex:1;
-  }
-  .marquee-track{
-    width:max-content;
-    display:flex;
-    gap:12px;
-    animation:marquee 26s linear infinite;
-    will-change:transform;
-  }
-  .client-strip[data-paused="true"] .marquee-track{animation-play-state:paused}
-  .marquee-group{
-    display:flex;
-    gap:12px;
-  }
-  .marquee-item{
-    display:inline-flex;
-    align-items:center;
-    min-height:38px;
-    padding:8px 12px;
+  .client-wall{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(190px,1fr));
+    gap:1px;
+    background:var(--line);
     border:1px solid var(--line);
-    border-radius:999px;
-    background:#F3F7F4;
-    color:var(--navy);
-    font-family:var(--mono);
-    font-size:11px;
-    letter-spacing:.12em;
-    text-transform:uppercase;
-    white-space:nowrap;
+    border-radius:14px;
+    overflow:hidden;
   }
-
-
+  .client-tile{
+    display:grid;
+    place-items:center;
+    min-height:74px;
+    padding:14px 16px;
+    background:#fff;
+    color:var(--navy);
+    font-family:var(--display);
+    font-size:15px;
+    font-weight:600;
+    line-height:1.2;
+    text-align:center;
+  }
+  .client-tile img{
+    max-width:100%;
+    max-height:38px;
+    width:auto;
+    height:auto;
+    object-fit:contain;
+  }
   .results-grid,
   .offers-grid{
     display:grid;
@@ -1675,10 +1664,6 @@
     transform:none;
   }
 
-  @keyframes marquee{
-    from{transform:translateX(0)}
-    to{transform:translateX(-50%)}
-  }
 
   @media (min-width:860px){
     .hero-grid{
@@ -1795,7 +1780,6 @@
       flex-direction:column;
       align-items:flex-start;
     }
-    .marquee{width:100%}
     .cta-panel h2{max-width:10ch}
   }
   @media (max-width:560px){
@@ -1808,13 +1792,6 @@
       transition:none !important;
     }
     .reveal{opacity:1;transform:none}
-    .marquee-track{
-      transform:none !important;
-      animation:none !important;
-      width:auto;
-      flex-wrap:wrap;
-    }
-    .marquee{overflow:visible}
   }
 </style>
 </head>
@@ -1996,45 +1973,27 @@
       </div>
     </section>
 
-    <section class="client-strip" data-marquee>
-      <div class="wrap client-strip-inner">
-        <div class="strip-label">Campaigns run for</div>
-        <div class="marquee" aria-label="Client names">
-          <div class="marquee-track">
-            <div class="marquee-group">
-              <span class="marquee-item">Leroy Merlin</span>
-              <span class="marquee-item">BIC</span>
-              <span class="marquee-item">Dr Madnani</span>
-              <span class="marquee-item">Premier Medical Aesthetics</span>
-              <span class="marquee-item">Defined Medical Ads</span>
-              <span class="marquee-item">Harmony Medical Aesthetics</span>
-              <span class="marquee-item">EndoSlim Clinic</span>
-              <span class="marquee-item">Beauty Space Clinic</span>
-              <span class="marquee-item">Noodlers</span>
-              <span class="marquee-item">Twenty Four Carrots</span>
-              <span class="marquee-item">Croissant Atelier</span>
-              <span class="marquee-item">Atelier Beaute</span>
-              <span class="marquee-item">Dr Kellyann Kosma</span>
-            </div>
-            <div class="marquee-group" aria-hidden="true">
-              <span class="marquee-item">Leroy Merlin</span>
-              <span class="marquee-item">BIC</span>
-              <span class="marquee-item">Dr Madnani</span>
-              <span class="marquee-item">Premier Medical Aesthetics</span>
-              <span class="marquee-item">Defined Medical Ads</span>
-              <span class="marquee-item">Harmony Medical Aesthetics</span>
-              <span class="marquee-item">EndoSlim Clinic</span>
-              <span class="marquee-item">Beauty Space Clinic</span>
-              <span class="marquee-item">Noodlers</span>
-              <span class="marquee-item">Twenty Four Carrots</span>
-              <span class="marquee-item">Croissant Atelier</span>
-              <span class="marquee-item">Atelier Beaute</span>
-              <span class="marquee-item">Dr Kellyann Kosma</span>
-            </div>
-          </div>
+    <section class="client-strip">
+      <div class="wrap">
+        <div class="strip-label reveal">Campaigns run for</div>
+        <div class="client-wall reveal" aria-label="Clients">
+          <div class="client-tile">Leroy Merlin</div>
+          <div class="client-tile">BIC</div>
+          <div class="client-tile">Dr Madnani</div>
+          <div class="client-tile">Premier Medical Aesthetics</div>
+          <div class="client-tile">Defined Medical Ads</div>
+          <div class="client-tile">Harmony Medical Aesthetics</div>
+          <div class="client-tile">EndoSlim Clinic</div>
+          <div class="client-tile">Beauty Space Clinic</div>
+          <div class="client-tile">Noodlers</div>
+          <div class="client-tile">Twenty Four Carrots</div>
+          <div class="client-tile">Croissant Atelier</div>
+          <div class="client-tile">Atelier Beaute</div>
+          <div class="client-tile">Dr Kellyann Kosma</div>
         </div>
       </div>
     </section>
+
 
     <section id="results" class="section">
       <div class="wrap">
@@ -2481,16 +2440,6 @@
           }, { threshold: 0.22 });
           revealTargets.forEach((node) => revealObserver.observe(node));
         }
-      }
-
-      const marquee = document.querySelector('[data-marquee]');
-      if (marquee && !reducedMotion) {
-        marquee.addEventListener('mouseenter', () => {
-          marquee.dataset.paused = 'true';
-        });
-        marquee.addEventListener('mouseleave', () => {
-          marquee.removeAttribute('data-paused');
-        });
       }
 
       if (form && input) {
