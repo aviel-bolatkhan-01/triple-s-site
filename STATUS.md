@@ -36,6 +36,11 @@ The hero form used to be a `mailto:` link — it opened the visitor's mail app w
 
 Still missing: the site has **no analytics at all** (0 gtag/GTM). An agency selling tracking should measure its own funnel.
 
+## 2026-09-08 round 4 — positioning reset, free audit killed
+- **No country names in case studies.** Markets are stated as regions: US, Europe, Australia, CIS, Middle East. Niches: B2B, B2C, D2C, e-commerce. Verticals named in About: restaurants, auto dealerships, medical procedures, cosmetics, furniture. "7 markets" → "5 regions" (About mini-stat + footer stat).
+- **The free 3-minute video audit is gone.** User: "i don't want to do free audits." Entry points are now the free 30-min Calendly call or the paid $200 48-hour audit (credited to first month). Hero button is "Get a Proposal"; contact Option 02 is "Start with the audit". Only one "free" remains on the page and it's the call. **Do not re-introduce a free deliverable.**
+- Internal playbook (private artifact): https://claude.ai/code/artifact/b34a98a3-def5-4d71-8ec3-6efb9303f7c2
+
 ## History
 - V1 dark amber one-pager → V2 WebFX-structure dark → V3 green dark → V4 light (backups of each in repo root)
 - Built via codex (cdx) from BRIEF.md / BRIEF-V2.md / BRIEF-V3.md; every codex build needed a copy-review pass (leaks spec language). Small surgical edit lists: do directly, codex hangs on them.
