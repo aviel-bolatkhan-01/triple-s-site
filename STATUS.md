@@ -41,6 +41,19 @@ Still missing: the site has **no analytics at all** (0 gtag/GTM). An agency sell
 - **The free 3-minute video audit is gone.** User: "i don't want to do free audits." Entry points are now the free 30-min Calendly call or the paid $200 48-hour audit (credited to first month). Hero button is "Get a Proposal"; contact Option 02 is "Start with the audit". Only one "free" remains on the page and it's the call. **Do not re-introduce a free deliverable.**
 - Internal playbook (private artifact): https://claude.ai/code/artifact/b34a98a3-def5-4d71-8ec3-6efb9303f7c2
 
+## 2026-09-08 round 5 — Russian assets out, pricing tiers, privacy, WebP
+- **Deleted the two fully-Russian screenshots** (`ad-creative-matrasov.jpg`, `emotion-linkedin.jpg`) — they undercut the US/Europe positioning. Three sections reflowed. `center-matrasov-meta` kept (English UI, some Cyrillic campaign names).
+- **Retainer tiers by ad spend:** Starter under $5K → $800/mo flat · Growth $5K–$25K → 12% of spend, min $1,200/mo · Enterprise $25K+ → custom. FAQ updated to match.
+- **NKB lead-volume story** added to the enterprise case (client paused outbound sales after CPL $10 → $1).
+- **`/privacy.html`** added and footer-linked. It states no analytics or tracking cookies run — **update that section when GA4 goes in.**
+- **All in-page images are WebP now.** Assets 1.6MB → 800KB via `cwebp -q 82 -m 6` (needed `brew install webp`). `og-image.jpg` stays JPEG for social scrapers.
+
+## Open items
+- [ ] **Test the contact form in a real browser** — never verified (Cloudflare blocks automated testing)
+- [ ] **Check the site on a real phone** — headless Chrome cannot emulate mobile
+- [ ] GA4 / GTM — still zero analytics ("i'll add the analytics later")
+- [ ] Client testimonials — still the biggest conversion gap
+
 ## History
 - V1 dark amber one-pager → V2 WebFX-structure dark → V3 green dark → V4 light (backups of each in repo root)
 - Built via codex (cdx) from BRIEF.md / BRIEF-V2.md / BRIEF-V3.md; every codex build needed a copy-review pass (leaks spec language). Small surgical edit lists: do directly, codex hangs on them.
