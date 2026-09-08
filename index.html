@@ -699,6 +699,77 @@
   .thumb-grid .browser-shot{aspect-ratio:16 / 9;object-fit:cover}
   .frame-row .browser-shot{aspect-ratio:auto;object-fit:cover}
 
+  .tiers{
+    margin-top:34px;
+    padding-top:30px;
+    border-top:1px solid var(--line);
+  }
+  .tiers-head h3{
+    font-family:var(--display);
+    font-size:clamp(21px,2.6vw,26px);
+    font-weight:800;
+    line-height:1.14;
+    color:var(--navy);
+    margin-bottom:6px;
+  }
+  .tiers-head p{max-width:62ch}
+  .tier-grid{
+    display:grid;
+    gap:12px;
+    margin-top:20px;
+  }
+  .tier{
+    display:grid;
+    align-content:start;
+    gap:8px;
+    padding:22px;
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:18px;
+    box-shadow:var(--shadow);
+  }
+  .tier--mid{border-color:rgba(23,160,94,.5)}
+  .tier-band{
+    font-family:var(--mono);
+    font-size:10.5px;
+    letter-spacing:.13em;
+    text-transform:uppercase;
+    color:var(--green-dark);
+  }
+  .tier h4{
+    font-family:var(--display);
+    font-size:21px;
+    font-weight:800;
+    line-height:1.1;
+    color:var(--navy);
+  }
+  .tier-price{
+    font-family:var(--display);
+    font-size:31px;
+    font-weight:800;
+    line-height:1;
+    color:var(--navy);
+    font-variant-numeric:tabular-nums;
+  }
+  .tier-price .per{
+    font-family:var(--mono);
+    font-size:11px;
+    font-weight:400;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--dim);
+    margin-left:7px;
+  }
+  .tier p{color:var(--body);line-height:1.6}
+  .tier-note{
+    margin-top:14px;
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--dim);
+  }
+
   .offer-card{
     padding:18px;
     background:#fff;
@@ -1496,7 +1567,8 @@
       padding:22px;
     }
     .case-card.flip .case-media{order:-1}
-    .offers-grid{
+    .offers-grid,
+    .tier-grid{
       grid-template-columns:repeat(3,minmax(0,1fr));
     }
     .process-grid{
@@ -1810,28 +1882,17 @@
                   <span class="browser-dot"></span>
                   <span class="browser-url">google ads · center matrasov</span>
                 </div>
-                <img class="browser-shot" src="assets/center-matrasov-google-ads.jpg" width="1600" height="730" alt="Google Ads dashboard for Center Matrasov showing 8,492 conversions, $0.14 per conversion, and a 66.8% conversion rate." loading="lazy" decoding="async">
+                <img class="browser-shot" src="assets/center-matrasov-google-ads.webp" width="1600" height="730" alt="Google Ads dashboard for Center Matrasov showing 8,492 conversions, $0.14 per conversion, and a 66.8% conversion rate." loading="lazy" decoding="async">
               </figure>
-              <div class="thumb-grid two">
-                <figure class="browser-frame">
-                  <div class="browser-top" aria-hidden="true">
-                    <span class="browser-dot"></span>
-                    <span class="browser-dot"></span>
-                    <span class="browser-dot"></span>
-                    <span class="browser-url">meta ads</span>
-                  </div>
-                  <img class="browser-shot" src="assets/center-matrasov-meta.jpg" width="1600" height="709" alt="Meta Ads dashboard screenshot for Center Matrasov." loading="lazy" decoding="async">
-                </figure>
-                <figure class="browser-frame">
-                  <div class="browser-top" aria-hidden="true">
-                    <span class="browser-dot"></span>
-                    <span class="browser-dot"></span>
-                    <span class="browser-dot"></span>
-                    <span class="browser-url">ad creative</span>
-                  </div>
-                  <img class="browser-shot" src="assets/ad-creative-matrasov.jpg" width="1600" height="1600" alt="Ad creative for the Center Matrasov account." loading="lazy" decoding="async">
-                </figure>
-              </div>
+              <figure class="browser-frame">
+                <div class="browser-top" aria-hidden="true">
+                  <span class="browser-dot"></span>
+                  <span class="browser-dot"></span>
+                  <span class="browser-dot"></span>
+                  <span class="browser-url">meta ads · center matrasov</span>
+                </div>
+                <img class="browser-shot" src="assets/center-matrasov-meta.webp" width="1600" height="709" alt="Meta Ads dashboard screenshot for Center Matrasov." loading="lazy" decoding="async">
+              </figure>
             </div>
           </article>
 
@@ -1853,7 +1914,7 @@
                   <span class="browser-dot"></span>
                   <span class="browser-url">tiktok ads · noodlers</span>
                 </div>
-                <img class="browser-shot" src="assets/noodlers-tiktok.jpg" width="1600" height="727" alt="TikTok Ads dashboard screenshot for Noodlers." loading="lazy" decoding="async">
+                <img class="browser-shot" src="assets/noodlers-tiktok.webp" width="1600" height="727" alt="TikTok Ads dashboard screenshot for Noodlers." loading="lazy" decoding="async">
               </figure>
               <div class="thumb-grid two">
                 <figure class="browser-frame">
@@ -1863,7 +1924,7 @@
                     <span class="browser-dot"></span>
                     <span class="browser-url">cpm case</span>
                   </div>
-                  <img class="browser-shot" src="assets/tiktok-cpm-case.jpg" width="1600" height="729" alt="TikTok CPM optimization case screenshot." loading="lazy" decoding="async">
+                  <img class="browser-shot" src="assets/tiktok-cpm-case.webp" width="1600" height="729" alt="TikTok CPM optimization case screenshot." loading="lazy" decoding="async">
                 </figure>
                 <figure class="browser-frame">
                   <div class="browser-top" aria-hidden="true">
@@ -1872,7 +1933,7 @@
                     <span class="browser-dot"></span>
                     <span class="browser-url">fortex meta</span>
                   </div>
-                  <img class="browser-shot" src="assets/fortex-meta.jpg" width="1600" height="679" alt="Meta Ads dashboard screenshot for Fortex." loading="lazy" decoding="async">
+                  <img class="browser-shot" src="assets/fortex-meta.webp" width="1600" height="679" alt="Meta Ads dashboard screenshot for Fortex." loading="lazy" decoding="async">
                 </figure>
               </div>
             </div>
@@ -1884,7 +1945,7 @@
               <h3>Enterprise media buying — Leroy Merlin, BIC, Askona (via MCA, Google Partner agency)</h3>
               <p>$30K+/mo across Google Ads, DV360, Search Ads 360 and Meta for enterprise retail. Work contributed to the agency's Google Partner badge.</p>
               <div class="receipt-points">
-                <p>Also: EV dealership CPL $10 → $1 in one month (full account rebuild); 300% ROAS on Meta for a DTC brand.</p>
+                <p>Also: EV dealership CPL $10 → $1 in one month (full account rebuild) — lead volume climbed so fast the client paused its outbound sales team until it could work the backlog. Plus 300% ROAS on Meta for a DTC brand.</p>
                 <p>Right now: managing medical-aesthetics and clinic accounts — dermatology, medspa and healthcare brands among them.</p>
               </div>
               <a class="case-link" href="#contact">Get results like this →</a>
@@ -1897,9 +1958,9 @@
                   <span class="browser-dot"></span>
                   <span class="browser-url">google ads · leroy merlin</span>
                 </div>
-                <img class="browser-shot" src="assets/leroy-merlin-google-ads.jpg" width="1600" height="899" alt="Google Ads dashboard screenshot for Leroy Merlin." loading="lazy" decoding="async">
+                <img class="browser-shot" src="assets/leroy-merlin-google-ads.webp" width="1600" height="899" alt="Google Ads dashboard screenshot for Leroy Merlin." loading="lazy" decoding="async">
               </figure>
-              <div class="thumb-grid three">
+              <div class="thumb-grid two">
                 <figure class="browser-frame">
                   <div class="browser-top" aria-hidden="true">
                     <span class="browser-dot"></span>
@@ -1907,7 +1968,7 @@
                     <span class="browser-dot"></span>
                     <span class="browser-url">dv360</span>
                   </div>
-                  <img class="browser-shot" src="assets/bic-dv360.jpg" width="1600" height="899" alt="Display &amp; Video 360 screenshot for BIC." loading="lazy" decoding="async">
+                  <img class="browser-shot" src="assets/bic-dv360.webp" width="1600" height="899" alt="Display &amp; Video 360 screenshot for BIC." loading="lazy" decoding="async">
                 </figure>
                 <figure class="browser-frame">
                   <div class="browser-top" aria-hidden="true">
@@ -1916,16 +1977,7 @@
                     <span class="browser-dot"></span>
                     <span class="browser-url">youtube</span>
                   </div>
-                  <img class="browser-shot" src="assets/askona-youtube.jpg" width="1600" height="899" alt="YouTube Ads screenshot for Askona." loading="lazy" decoding="async">
-                </figure>
-                <figure class="browser-frame">
-                  <div class="browser-top" aria-hidden="true">
-                    <span class="browser-dot"></span>
-                    <span class="browser-dot"></span>
-                    <span class="browser-dot"></span>
-                    <span class="browser-url">linkedin</span>
-                  </div>
-                  <img class="browser-shot" src="assets/emotion-linkedin.jpg" width="1600" height="726" alt="LinkedIn campaign screenshot for Emotion Technology." loading="lazy" decoding="async">
+                  <img class="browser-shot" src="assets/askona-youtube.webp" width="1600" height="899" alt="YouTube Ads screenshot for Askona." loading="lazy" decoding="async">
                 </figure>
               </div>
             </div>
@@ -1959,7 +2011,7 @@
             <span class="tag">Core service</span>
             <h3>Monthly Ads Management</h3>
             <span class="price">from $800/mo</span>
-            <p>Flat fee or 10–15% of spend — at any account size.</p>
+            <p>Flat fee or a share of spend — three tiers by ad budget, below.</p>
             <ul class="deliverables">
               <li>Campaign setup.</li>
               <li>Weekly optimization.</li>
@@ -1979,6 +2031,34 @@
               <li>Built to catch every response.</li>
             </ul>
           </article>
+        </div>
+
+        <div class="tiers reveal" aria-labelledby="tiers-head">
+          <div class="tiers-head">
+            <h3 id="tiers-head">Retainers by ad budget</h3>
+            <p>Management pricing follows the size of the account. Confirmed after the audit, never before.</p>
+          </div>
+          <div class="tier-grid">
+            <article class="tier">
+              <span class="tier-band">Under $5K/mo ad spend</span>
+              <h4>Starter</h4>
+              <span class="tier-price">$800<span class="per">/mo</span></span>
+              <p>Flat fee. One platform, one market. Weekly optimization and a monthly report.</p>
+            </article>
+            <article class="tier tier--mid">
+              <span class="tier-band">$5K–$25K/mo ad spend</span>
+              <h4>Growth</h4>
+              <span class="tier-price">12%<span class="per">of spend</span></span>
+              <p>Minimum $1,200/mo. Multi-platform, multi-market, server-side tracking included.</p>
+            </article>
+            <article class="tier">
+              <span class="tier-band">$25K+/mo ad spend</span>
+              <h4>Enterprise</h4>
+              <span class="tier-price">Custom</span>
+              <p>Scope, reporting cadence and fee agreed together. Talk to us about what the account needs.</p>
+            </article>
+          </div>
+          <p class="tier-note">Minimum engagement $1K+. Month-to-month — no lock-in at any tier.</p>
         </div>
       </div>
     </section>
@@ -2154,18 +2234,18 @@
                   <span class="browser-dot"></span>
                   <span class="browser-dot"></span>
                   <span class="browser-dot"></span>
-                  <span class="browser-url">ad creative</span>
+                  <span class="browser-url">tiktok</span>
                 </div>
-                <img class="browser-shot" src="assets/ad-creative-matrasov.jpg" width="1600" height="1600" alt="Ad creative for Center Matrasov." loading="lazy" decoding="async">
+                <img class="browser-shot" src="assets/tiktok-cpm-case.webp" width="1600" height="729" alt="TikTok Ads screenshot showing CPM cut from $0.46 to $0.35." loading="lazy" decoding="async">
               </figure>
               <figure class="browser-frame">
                 <div class="browser-top" aria-hidden="true">
                   <span class="browser-dot"></span>
                   <span class="browser-dot"></span>
                   <span class="browser-dot"></span>
-                  <span class="browser-url">linkedin</span>
+                  <span class="browser-url">google ads</span>
                 </div>
-                <img class="browser-shot" src="assets/emotion-linkedin.jpg" width="1600" height="726" alt="LinkedIn campaign screenshot for Emotion Technology." loading="lazy" decoding="async">
+                <img class="browser-shot" src="assets/leroy-merlin-google-ads.webp" width="1600" height="899" alt="Google Ads dashboard screenshot for Leroy Merlin." loading="lazy" decoding="async">
               </figure>
               <figure class="browser-frame">
                 <div class="browser-top" aria-hidden="true">
@@ -2174,7 +2254,7 @@
                   <span class="browser-dot"></span>
                   <span class="browser-url">meta</span>
                 </div>
-                <img class="browser-shot" src="assets/fortex-meta.jpg" width="1600" height="679" alt="Meta Ads dashboard screenshot for Fortex." loading="lazy" decoding="async">
+                <img class="browser-shot" src="assets/fortex-meta.webp" width="1600" height="679" alt="Meta Ads dashboard screenshot for Fortex." loading="lazy" decoding="async">
               </figure>
             </div>
           </div>
@@ -2226,7 +2306,7 @@
           </details>
           <details>
             <summary>What does it cost?</summary>
-            <p>The 48-Hour Ads Audit is $200 flat. Monthly management starts at $800/mo — flat fee or 10–15% of spend. AI Lead Response is $400–800 setup plus $150/mo. Minimum engagement $1K+.</p>
+            <p>The 48-Hour Ads Audit is $200 flat. Monthly management runs in three tiers by ad budget: $800/mo flat under $5K spend, 12% of spend from $5K–$25K (minimum $1,200/mo), and custom above $25K. AI Lead Response is $400–800 setup plus $150/mo. Minimum engagement $1K+.</p>
           </details>
           <details>
             <summary>What ad spend do I need?</summary>
@@ -2328,6 +2408,7 @@
         <div class="footer-links">
           <a href="https://calendly.com/abzal-bolatkhan-01/30min" target="_blank" rel="noreferrer">Book a call</a>
           <a href="mailto:abzal.business.01@gmail.com">Email</a>
+          <a href="/privacy.html">Privacy</a>
           <a href="https://www.upwork.com/agencies/1553470846164299776/" target="_blank" rel="noreferrer">Upwork</a>
           <a href="https://www.linkedin.com/in/aviel-bolatkhan" target="_blank" rel="noreferrer">LinkedIn</a>
         </div>
