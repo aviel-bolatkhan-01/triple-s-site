@@ -1659,7 +1659,7 @@
             </div>
             <p class="form-status" id="form-status" role="status" aria-live="polite" hidden></p>
           </form>
-          <div class="hero-fineprint">Scope and pricing within 24 hours · No retainer pitch</div>
+          <div class="hero-fineprint">Reply within 24 hours · No retainer pitch</div>
           <div class="proof-chip">
             <div class="proof-label"><span class="dot" aria-hidden="true"></span>From a live client account</div>
             <span class="proof-value">8,492 conversions at $0.14 each</span>
@@ -2496,7 +2496,7 @@
             const result = await response.json();
             if (!result.success) throw new Error(result.message || 'Submission failed');
             form.reset();
-            say('Got it. We’ll come back within 24 hours with scope and pricing.', 'ok');
+            say('Got it. We’ll reply within 24 hours.', 'ok');
           } catch (error) {
             say(`Couldn’t send that. Email <a href="mailto:${MAIL}">${MAIL}</a> instead, or <a href="https://calendly.com/abzal-bolatkhan-01/30min" target="_blank" rel="noreferrer">book a call</a>.`, 'err');
           } finally {
