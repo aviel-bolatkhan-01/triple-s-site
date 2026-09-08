@@ -58,12 +58,17 @@ Backup before this: `index-v5-maximalist-backup.html` + git tag `v5-before-redes
 
 Grounded in KlientBoost/NoGood: length wasn't the problem, **competing CTAs and competing visual devices were**. Cut the count-up stats band, the wasted-spend calculator, the tracked-funnel SVG, the badge-wall pills, the "in the wild" strip, the four reason cards, and "Get results like this" from every case card. Case studies, offers, tiers and process steps went from boxed cards to **editorial rows on hairline rules** — the green brand tiles are now the only boxes, so they lead the eye. ~4,500 bytes of dead CSS/JS removed; page ~800px shorter. Verified at 390/700/1100px.
 
+## 2026-09-09 — services restructure + client wall
+- **AI Lead Response removed** from the site and the pricing FAQ. Services is now only monthly management: h2 "Monthly management, priced by ad budget" with the three tiers as the section itself.
+- **The $200 audit is a separate `.audit-band`** below the tiers (dark panel, green CTA — it must be `btn-green`, `btn-dark` is invisible there).
+- **Client marquee → `.client-wall`**, an even grid of name tiles. Tile CSS already accepts an `<img>` (`max-height:38px; object-fit:contain`), so logos swap in 1:1.
+
 ## Open items
 - [ ] **Test the contact form in a real browser** — never verified (Cloudflare blocks automated testing)
 - [ ] **Check the site on a real phone** — layout now verified at 390/600/860px (load the page in fixed-width iframes; media queries respond to iframe width, unlike `--window-size`), but a real device check is still worth doing once
 - [ ] GA4 / GTM — still zero analytics ("i'll add the analytics later")
 - [ ] Client testimonials — still the biggest conversion gap
-- [ ] **Brand assets for the case studies.** Need from user: URLs for Noodlers, Dr Madnani, Harmony Medical Aesthetics, EndoSlim Clinic, Beauty Space Clinic, Twenty Four Carrots, Croissant Atelier, Atelier Beaute, Dr Kellyann Kosma. Any logo files go in `assets/` and take priority over homepages. Note: **leroymerlin.fr 403s headless browsers** so it cannot be captured automatically.
+- [ ] **LOGOS / CLIENT WEBSITES — blocked on the user, asked three times.** Either paste the URLs, or drop logo files into `assets/` (preferred, looks better). Needed for: Leroy Merlin (which market?), Dr Madnani, Premier Medical Aesthetics, Defined Medical Ads, Harmony Medical Aesthetics, EndoSlim Clinic, Beauty Space Clinic, Noodlers, Twenty Four Carrots, Croissant Atelier, Atelier Beaute, Dr Kellyann Kosma. Notes: **leroymerlin.fr and .it both 403 headless browsers** — that one cannot be captured at all; a full-Drive search for client URLs found nothing; do NOT guess URLs, several of these names match multiple real businesses.
 - [ ] Consider a 4th case study built around the US/UK medical-aesthetics clinics — best proof for the target market (suggested, not approved)
 
 ## History
