@@ -68,11 +68,18 @@ Email removed from the utility bar. Client identities researched and verified ag
 
 Two corrections surfaced: **Dr Kellyann Kosma co-founded Premier Medical Aesthetics** (the wall listed one business twice — deduped), and **Twenty Four Carrots is an equine e-commerce brand**, not a clinic — it now has its own case study and was removed from the medical one. Five case studies total. Six client-wall tiles link to verified sites.
 
+## 2026-09-09 — US/EU focus, testimonial, Google Partner badge
+- **Search Ads 360 removed** everywhere (enterprise case, "6 platforms" → "5 platforms", FAQ list).
+- **Cases reordered US-first:** clinics → Twenty Four Carrots → enterprise → Noodlers → anonymised rebuild.
+- **New `.trust-band`** between the client wall and results: the **NKB Group testimonial** ("We had to stop the sales department because we are flooded with leads." — Director of Marketing) + a **Google Partner badge** built from the real Google mark in inline SVG. Note: `assets/google-partner-badge.png` is a screenshot of the Partners dashboard, NOT a usable badge.
+- **LinkedIn → linkedin.com/company/triple-s-agency** (was the personal profile).
+
 ## Open items
 - [ ] **Test the contact form in a real browser** — never verified (Cloudflare blocks automated testing)
 - [ ] **Check the site on a real phone** — layout now verified at 390/600/860px (load the page in fixed-width iframes; media queries respond to iframe width, unlike `--window-size`), but a real device check is still worth doing once
 - [ ] GA4 / GTM — still zero analytics ("i'll add the analytics later")
 - [ ] Client testimonials — still the biggest conversion gap
+- [ ] **Leroy Merlin and BIC were the Kazakhstan market**, not Europe (`leroymerlin.kz.png`, `bic.kz.png`, account `MCA_KZ` in Drive). The site leads with a US/EU positioning and the EU portfolio is effectively empty. Options given: leave it, label the market plainly, or move them below the UAE case. Awaiting his call.
 - [ ] **Which "Harmony Medical Aesthetics" is yours?** `harmonymedical.uk` (Harley Street + Halifax) or `harmonymedicalaesthetics.com` — will not guess.
 - [ ] Still unidentified: Defined Medical Ads, Beauty Space Clinic, Croissant Atelier, Atelier Beaute, Noodlers.
 - [ ] Cannot be screenshotted headlessly: drmadnani.com (iframe popup), endoslimclinic.com (renders blank), leroymerlin.* (403). Logo files would solve all three.
