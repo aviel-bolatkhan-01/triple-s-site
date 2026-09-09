@@ -1865,3 +1865,7 @@
   .tier-note a:hover{color:var(--green-dark)}
   .tier-grid h3 a{color:var(--green)}
   .tier-grid h3 a:hover{color:var(--green-dark)}
+  .footer-links{max-width:380px}
+  .footer-stat{min-width:0}
+  .footer-stat .value,
+  .footer-stat .label{overflow-wrap:anywhere}
