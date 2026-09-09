@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Archived design versions — near-duplicates of the homepage, must not be indexed
+Disallow: /index-v2-amber-backup.html
+Disallow: /index-v4-founder-backup.html
+Disallow: /index-v5-maximalist-backup.html
+Disallow: /style-reference.html
+
+Sitemap: https://triples.agency/sitemap.xml
