@@ -99,3 +99,56 @@ Edit `index.html` → commit → `git push` → live. Assets in `assets/` (portf
 - [ ] Real founder headshot (if a founder section ever comes back)
 - [ ] Decide guarantee wording (month-to-month / audit-free-if-nothing-found / 90-day-results-or-free)
 - [ ] Upwork JSS badge once reviews exist
+
+## 2026-09-09 — SEO foundation + three service pages
+
+**The site had no technical SEO at all.** No `robots.txt`, no `sitemap.xml` (both 404 live),
+no canonical on the homepage, no structured data, no Twitter card. Fixed and deployed.
+
+Also found: **the four archived design files were live and crawlable at 200**
+(`index-v2-amber-backup.html`, `index-v4-founder-backup.html`, `index-v5-maximalist-backup.html`,
+`style-reference.html`) — near-duplicates of the homepage competing with it. They now carry
+`noindex,nofollow` + canonical to `/`, and are `Disallow`ed in robots.txt. **Any future backup
+file saved at the repo root must get the same treatment or it becomes a duplicate again.**
+
+Added on the homepage: `rel=canonical`, robots meta (`max-image-preview:large`),
+`og:site_name`/`og:locale`, full `twitter:*` set, and a JSON-LD `@graph`
+(ProfessionalService + WebSite + FAQPage with all 7 FAQs).
+
+### Three new service pages
+Google ranks pages, not sites — the one-pager was the ceiling on rank. Each new page targets
+one query, with its own canonical, OG/Twitter meta and Service + BreadcrumbList + FAQPage JSON-LD:
+
+| Page | Target query |
+|---|---|
+| `/google-ads-management/` | google ads management agency |
+| `/meta-ads-agency/` | meta ads agency |
+| `/ads-audit/` | google ads audit (sells the $200 48h audit) |
+
+Copy constraints held: real numbers only, no country names, **no free deliverable implied
+anywhere** — the only free thing is the 30-min call. Drafts came from the free-tool stack but
+needed heavy editing: the models fabricated service levels ("checked hourly", "reviewed daily",
+"10,000+ negative keywords") and implied a free audit. **Never ship that copy unedited.**
+
+### CSS architecture — important
+`assets/site.css` is **generated** from index.html's inline `<style>` block. The homepage keeps
+its CSS inline; the service pages link the extracted copy. **After editing homepage styles, run
+`python3 tools/build-css.py`** or the service pages drift. The service pages also ship their own
+small IntersectionObserver script — `.reveal` is `opacity:0` without JS, so content would be
+invisible otherwise (there's a `<noscript>` fallback too).
+
+Homepage now links all three pages (services section + footer). `sitemap.xml` lists 5 URLs.
+
+### Testing note (cost an iteration)
+`--window-size=390,900` on headless Chrome **does not give a 390px viewport** — it clamps to 500
+and crops the screenshot, which looks exactly like broken mobile layout. Measure inside a
+`<iframe width="390">` on a wider host page instead. Verified: `scrollWidth == 390`, no overflow.
+
+### Still open — needs the user
+- **No analytics.** Still zero GA4/GTM. Need the measurement ID. `privacy.html` currently states
+  no tracking runs — **update that section when GA4 goes in.**
+- **Google Search Console not set up.** Verify the property, then submit
+  `https://triples.agency/sitemap.xml`.
+- **Backlinks.** Nothing on-page fixes a 2-month-old domain with no links. Directories
+  (Clutch, DesignRush), Google Business Profile, LinkedIn.
+- Web3Forms hero form is still **UNVERIFIED** by a human submission (see 2026-09-08 round 3).
