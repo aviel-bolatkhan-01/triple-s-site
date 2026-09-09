@@ -152,3 +152,17 @@ and crops the screenshot, which looks exactly like broken mobile layout. Measure
 - **Backlinks.** Nothing on-page fixes a 2-month-old domain with no links. Directories
   (Clutch, DesignRush), Google Business Profile, LinkedIn.
 - Web3Forms hero form is still **UNVERIFIED** by a human submission (see 2026-09-08 round 3).
+
+### 2026-09-09 later — footer regression fixed
+Adding the three service links to the footer (same day, above) was a regression. `.footer-grid`'s
+third track is `auto`, so an 8-link row sized to its 619px max-content and starved the stats
+column to 305px — stat boxes became 69px wide with 39px of usable space while labels needed 65px
+and values 69px. **Every stat box overflowed.** User spotted it.
+
+Fix: homepage footer back to its original 5 links, service pages to 4 (their top nav and
+"Other services" section already carry the cross-links, so nothing became uncrawlable), plus
+`.footer-links{max-width:380px}` as a permanent guard so that column can never starve the stats
+again. Boxes 69px → 109px, `scrollWidth == clientWidth` on every value and label.
+
+**Rule going forward: `.footer-links` sits in an `auto` grid track — adding links there steals
+width from the stats. Check the stat boxes after touching the footer.**
