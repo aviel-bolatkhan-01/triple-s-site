@@ -63,12 +63,20 @@ Grounded in KlientBoost/NoGood: length wasn't the problem, **competing CTAs and 
 - **The $200 audit is a separate `.audit-band`** below the tiers (dark panel, green CTA — it must be `btn-green`, `btn-dark` is invisible there).
 - **Client marquee → `.client-wall`**, an even grid of name tiles. Tile CSS already accepts an `<img>` (`max-height:38px; object-fit:contain`), so logos swap in 1:1.
 
+## 2026-09-09 — client research, e-commerce split, top-bar cleanup
+Email removed from the utility bar. Client identities researched and verified against the campaign names in his own dashboards: **premiermedct.com** (Berlin & Ridgefield CT — matches the campaign names exactly), **drmadnani.com**, **endoslimclinic.com**, **twentyfourc.com**.
+
+Two corrections surfaced: **Dr Kellyann Kosma co-founded Premier Medical Aesthetics** (the wall listed one business twice — deduped), and **Twenty Four Carrots is an equine e-commerce brand**, not a clinic — it now has its own case study and was removed from the medical one. Five case studies total. Six client-wall tiles link to verified sites.
+
 ## Open items
 - [ ] **Test the contact form in a real browser** — never verified (Cloudflare blocks automated testing)
 - [ ] **Check the site on a real phone** — layout now verified at 390/600/860px (load the page in fixed-width iframes; media queries respond to iframe width, unlike `--window-size`), but a real device check is still worth doing once
 - [ ] GA4 / GTM — still zero analytics ("i'll add the analytics later")
 - [ ] Client testimonials — still the biggest conversion gap
-- [ ] **LOGOS / CLIENT WEBSITES — blocked on the user, asked three times.** Either paste the URLs, or drop logo files into `assets/` (preferred, looks better). Needed for: Leroy Merlin (which market?), Dr Madnani, Premier Medical Aesthetics, Defined Medical Ads, Harmony Medical Aesthetics, EndoSlim Clinic, Beauty Space Clinic, Noodlers, Twenty Four Carrots, Croissant Atelier, Atelier Beaute, Dr Kellyann Kosma. Notes: **leroymerlin.fr and .it both 403 headless browsers** — that one cannot be captured at all; a full-Drive search for client URLs found nothing; do NOT guess URLs, several of these names match multiple real businesses.
+- [ ] **Which "Harmony Medical Aesthetics" is yours?** `harmonymedical.uk` (Harley Street + Halifax) or `harmonymedicalaesthetics.com` — will not guess.
+- [ ] Still unidentified: Defined Medical Ads, Beauty Space Clinic, Croissant Atelier, Atelier Beaute, Noodlers.
+- [ ] Cannot be screenshotted headlessly: drmadnani.com (iframe popup), endoslimclinic.com (renders blank), leroymerlin.* (403). Logo files would solve all three.
+- [ ] **LOGOS — logo files still beat homepages.** Drop them in `assets/`; tiles already accept an `<img>`. Either paste the URLs, or drop logo files into `assets/` (preferred, looks better). Needed for: Leroy Merlin (which market?), Dr Madnani, Premier Medical Aesthetics, Defined Medical Ads, Harmony Medical Aesthetics, EndoSlim Clinic, Beauty Space Clinic, Noodlers, Twenty Four Carrots, Croissant Atelier, Atelier Beaute, Dr Kellyann Kosma. Notes: **leroymerlin.fr and .it both 403 headless browsers** — that one cannot be captured at all; a full-Drive search for client URLs found nothing; do NOT guess URLs, several of these names match multiple real businesses.
 - [ ] Consider a 4th case study built around the US/UK medical-aesthetics clinics — best proof for the target market (suggested, not approved)
 
 ## History
