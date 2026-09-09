@@ -532,6 +532,14 @@
     line-height:1.2;
     text-align:center;
   }
+  a.client-tile{
+    text-decoration:none;
+    transition:background .2s ease, color .2s ease;
+  }
+  a.client-tile:hover{
+    background:var(--bg-tint);
+    color:var(--green-dark);
+  }
   .client-tile img{
     max-width:100%;
     max-height:38px;
@@ -1801,7 +1809,6 @@
       <div class="utility-left">CPL CUT FOR OUR CLIENTS <strong>▼</strong> up to 90%</div>
       <div class="utility-right">
         <a href="https://calendly.com/abzal-bolatkhan-01/30min" target="_blank" rel="noreferrer">Book a 30-min call</a>
-        <a href="mailto:abzal.business.01@gmail.com">abzal.business.01@gmail.com</a>
         <a href="https://www.upwork.com/agencies/1553470846164299776/" target="_blank" rel="noreferrer">Upwork</a>
       </div>
     </div>
@@ -1906,10 +1913,13 @@
               <p>Meta and Google lead generation for US clinics: injectables, TMJ and skin treatments, plus nurse recruitment. Multi-location campaigns run to cost per lead, not reach.</p>
               <div class="receipt-points">
                 <p><span class="mono">In the report:</span> 20 leads at $22.70 and 15 at $30.21 across two clinic locations. Antiwrinkle campaigns purchasing at $37–68.</p>
-                <p>Also running Google Ads enhanced-conversion tracking for a US e-commerce brand in the same portfolio.</p>
               </div>
             </div>
             <div class="case-media">
+              <figure class="brand-tile brand-tile--shot">
+                <img src="assets/brand-premier.webp" width="1440" height="900" alt="Premier Medical Aesthetics website homepage." loading="lazy" decoding="async">
+                <figcaption>premiermedct.com · Berlin &amp; Ridgefield, CT</figcaption>
+              </figure>
               <div class="brand-tile brand-tile--mark">
                 <span class="brand-tile-kicker">Client portfolio</span>
                 <strong>Medical aesthetics</strong>
@@ -1956,6 +1966,35 @@
                     </div>
                     <img class="browser-shot" src="assets/clinic-meta-adsets.webp" width="1470" height="267" alt="Meta ad set level view with purchases at $37 to $68." loading="lazy" decoding="async">
                   </figure>
+                </div>
+              </dialog>
+            </div>
+          </article>
+
+          <article class="case-card reveal">
+            <div class="case-copy">
+              <div class="case-eyebrow">The receipt</div>
+              <h3>Twenty Four Carrots — equine nutrition e-commerce</h3>
+              <p>Google Ads for a US direct-to-consumer supplement brand. Enhanced conversions and cart data wired up so the account optimises on purchases and revenue, not form fills.</p>
+              <div class="receipt-points">
+                <p><span class="mono">In the report:</span> six enhanced conversion actions live, purchase conversions reporting cart data, and the diagnostics that flagged what was still misfiring.</p>
+              </div>
+            </div>
+            <div class="case-media">
+              <figure class="brand-tile brand-tile--shot">
+                <img src="assets/brand-carrots.webp" width="1440" height="900" alt="Twenty Four Carrots website homepage." loading="lazy" decoding="async">
+                <figcaption>twentyfourc.com · Santa Barbara, CA</figcaption>
+              </figure>
+              <button class="report-btn" type="button" data-dialog="report-5">
+                <span>View performance report</span>
+                <span class="report-btn-icon" aria-hidden="true">&#8599;</span>
+              </button>
+              <dialog class="report-modal" id="report-5" aria-labelledby="report-5-title">
+                <div class="report-head">
+                  <h4 id="report-5-title">Twenty Four Carrots — conversion tracking</h4>
+                  <button class="report-close" type="button" data-close aria-label="Close report">&#10005;</button>
+                </div>
+                <div class="report-body">
                   <figure class="browser-frame frame-row">
                     <div class="browser-top" aria-hidden="true">
                       <span class="browser-dot"></span>
@@ -1977,19 +2016,18 @@
       <div class="wrap">
         <div class="strip-label reveal">Campaigns run for</div>
         <div class="client-wall reveal" aria-label="Clients">
-          <div class="client-tile">Leroy Merlin</div>
-          <div class="client-tile">BIC</div>
-          <div class="client-tile">Dr Madnani</div>
-          <div class="client-tile">Premier Medical Aesthetics</div>
+          <a class="client-tile" href="https://www.leroymerlin.fr/" target="_blank" rel="noreferrer noopener">Leroy Merlin</a>
+          <a class="client-tile" href="https://www.bic.com/en" target="_blank" rel="noreferrer noopener">BIC</a>
+          <a class="client-tile" href="https://drmadnani.com/" target="_blank" rel="noreferrer noopener">Dr Madnani</a>
+          <a class="client-tile" href="https://premiermedct.com/" target="_blank" rel="noreferrer noopener">Premier Medical Aesthetics</a>
           <div class="client-tile">Defined Medical Ads</div>
           <div class="client-tile">Harmony Medical Aesthetics</div>
-          <div class="client-tile">EndoSlim Clinic</div>
+          <a class="client-tile" href="https://endoslimclinic.com/" target="_blank" rel="noreferrer noopener">EndoSlim Clinic</a>
           <div class="client-tile">Beauty Space Clinic</div>
           <div class="client-tile">Noodlers</div>
-          <div class="client-tile">Twenty Four Carrots</div>
+          <a class="client-tile" href="https://www.twentyfourc.com/" target="_blank" rel="noreferrer noopener">Twenty Four Carrots</a>
           <div class="client-tile">Croissant Atelier</div>
           <div class="client-tile">Atelier Beaute</div>
-          <div class="client-tile">Dr Kellyann Kosma</div>
         </div>
       </div>
     </section>
@@ -2000,7 +2038,7 @@
         <div class="section-head reveal">
           <h2>Results. The receipt matters.</h2>
         </div>
-        <p class="section-intro reveal">Four engagements, real numbers. Open the report on any of them.</p>
+        <p class="section-intro reveal">Five engagements, real numbers. Open the report on any of them.</p>
 
         <div class="results-grid">
           <article class="case-card reveal">
