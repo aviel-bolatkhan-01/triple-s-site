@@ -256,7 +256,7 @@
     line-height:1;
     font-weight:800;
     letter-spacing:-.05em;
-    box-shadow:none;
+    box-shadow:0 10px 24px rgba(23,160,94,.18);
     flex:none;
   }
   .brand-copy{
@@ -1390,14 +1390,14 @@
     z-index:1;
   }
   .cta-panel{
-    max-width:900px;
+    max-width:760px;
   }
   .cta-panel h2{
     color:#fff;
     font-size:clamp(30px,4.4vw,46px);
     line-height:1.04;
     font-weight:800;
-    max-width:20ch;
+    max-width:12ch;
   }
   .cta-sub{
     margin-top:12px;
@@ -1903,7 +1903,7 @@
   .hero-grid{gap:32px;align-items:center}.hero-copy{max-width:600px}.hero-lede{font-size:17px;line-height:1.6}
   .proposal-form input[type="text"],.proposal-form input[type="email"]{min-height:46px;border-radius:4px;box-shadow:none}.proposal-form .btn{min-height:46px}
   .hero-fineprint,.form-status{font-size:14px;font-weight:500;color:var(--dim)}
-  .hero-report{margin:0;justify-self:start;width:min(100%,536px)}.hero-report img{width:100%;max-width:536px;height:auto;border:1px solid var(--line);border-radius:6px;background:#fff}.hero-report figcaption{margin-top:10px;color:var(--dim);font-size:14px;font-weight:500;line-height:1.5}
+  .hero-report{margin:0}.hero-report img{width:100%;height:auto;border:1px solid var(--line);border-radius:6px;background:#fff}.hero-report figcaption{margin-top:10px;color:var(--dim);font-size:14px;font-weight:500;line-height:1.5}
   .client-strip{padding:34px 0;background:#fff}.strip-label{font-size:14px;font-weight:500;color:var(--dim)}
   .client-wall{border-radius:0}.client-tile{font-family:var(--sans);font-weight:600}.client-tile:hover{background:var(--bg-tint)}
   .trust-band{padding:48px 0;background:var(--dark)}.quote blockquote{font-family:var(--display);font-weight:700;letter-spacing:-.02em}.quote figcaption{font-size:14px;font-weight:500}.partner-badge{padding:0;background:transparent;border:0;border-radius:0;box-shadow:none}.partner-text strong{font-family:var(--display);font-weight:700}.partner-text span{font-size:14px;font-weight:500}
@@ -1959,8 +1959,8 @@
       <div class="wrap hero-grid">
         <div class="hero-copy reveal">
           <div class="eyebrow">Performance marketing agency · Google · Meta · TikTok</div>
-          <h1>Ad accounts run to your cost per lead</h1>
-          <p class="hero-lede">We manage paid ads for e-commerce, B2B, B2C and D2C brands, tracking every dollar from click to conversion.</p>
+          <h1>Google, Meta, TikTok ads, cost per lead and sale</h1>
+          <p class="hero-lede">Google, Meta and TikTok ads for e-commerce, B2B, B2C and D2C brands, with every dollar tracked from click to conversion.</p>
           <form class="proposal-form" id="proposal-form">
             <input type="hidden" name="access_key" value="eaaf4af3-428e-4271-b661-1d4900d1aaf5">
             <input type="hidden" name="subject" value="New proposal request — triples.agency">
@@ -1985,7 +1985,7 @@
         </div>
 
         <figure class="hero-report reveal">
-          <img src="assets/hero-report.jpg" width="536" height="396" alt="Google Ads campaign report: 8,492 conversions at $0.14 per conversion">
+          <img src="assets/hero-report.jpg" width="968" height="396" alt="Google Ads campaign report: 8,492 conversions at $0.14 per conversion">
           <figcaption>Google Ads, DTC mattress brand: 8,492 conversions at $0.14 each, 66.8% conversion rate.</figcaption>
         </figure>
       </div>
@@ -2345,6 +2345,7 @@
 
         <div class="audit-band reveal">
           <div class="audit-copy">
+            <span class="audit-tag">48 hours</span>
             <h3>48-hour ads audit</h3>
             <p>Before any retainer: a full account scan, every tracking gap, where the spend leaks, and a prioritized fix list, walked through on a Loom. Non-running campaigns diagnosed and restored. Delivered in 48 hours.</p>
           </div>
@@ -2489,6 +2490,7 @@
             <p>Screen-share the account. We go through the tracking, where the spend leaks, and the two or three changes worth making first.</p>
             <ul class="route-list">
               <li>No deck or pitch</li>
+              <li>Screen-share the account</li>
             </ul>
             <span class="route-action">Pick a time on Calendly <span class="route-arrow" aria-hidden="true">→</span></span>
           </a>
