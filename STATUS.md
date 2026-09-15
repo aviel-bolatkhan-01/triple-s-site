@@ -167,9 +167,18 @@ again. Boxes 69px → 109px, `scrollWidth == clientWidth` on every value and lab
 **Rule going forward: `.footer-links` sits in an `auto` grid track — adding links there steals
 width from the stats. Check the stat boxes after touching the footer.**
 
-## 2026-09-15 — "de-AI" redesign
+## 2026-09-15 — "de-AI" redesign — REVERTED the same day
 
-User: *"my triples site looks claude made. its design is too obviously claude developed. fix the design."*
+**Current state: the site is back to the pre-redesign version** (identical to tag
+`v6-before-declaude`). After seeing the redesign live the user said: *"revert back to what it was.
+this looks terrible"*. Both design commits were undone with `git revert` (history kept);
+`assets/hero-report.jpg` was removed with them. Everything below this line describes the rejected
+attempt, kept for reference only — none of it is on the site now.
+
+**Next time:** any redesign gets a preview (screenshots or a private preview page) and the user's
+yes BEFORE it is pushed to main.
+
+User's original request: *"my triples site looks claude made. its design is too obviously claude developed. fix the design."*
 
 **Restore point:** git tag `v6-before-declaude` (pushed). `git checkout v6-before-declaude -- index.html assets/site.css tools/build-css.py` brings the old look back.
 
