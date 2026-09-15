@@ -166,3 +166,61 @@ again. Boxes 69px → 109px, `scrollWidth == clientWidth` on every value and lab
 
 **Rule going forward: `.footer-links` sits in an `auto` grid track — adding links there steals
 width from the stats. Check the stat boxes after touching the footer.**
+
+## 2026-09-15 — "de-AI" redesign
+
+User: *"my triples site looks claude made. its design is too obviously claude developed. fix the design."*
+
+**Restore point:** git tag `v6-before-declaude` (pushed). `git checkout v6-before-declaude -- index.html assets/site.css tools/build-css.py` brings the old look back.
+
+### What made it look AI-built (removed)
+- Monospace, UPPERCASE, wide-letter-spaced labels on everything (eyebrows, nav, buttons, pills, footer)
+- Bricolage Grotesque with very tight tracking
+- The "Unit Economics Engine" ring diagram in the hero (a made-up framework graphic)
+- Mint glow gradients, grid-line background + giant S³ watermark, pill badges, pulsing "live" dot,
+  green glow shadows, the same rounded corners on every box
+- Formula headlines ("Results. The receipt matters.", "Built by engineers, not account managers.",
+  "Partner in the AI Era") and 26 em dashes
+
+### New look
+- **One font: Archivo.** Sentence case everywhere. Warm paper background `#F5F3EE`, near-black ink
+  `#121412`, deeper brand green `#0F7A45` (better contrast for small green text). Flat colours, no
+  shadows, 4px corners on buttons, square section bands.
+- **Hero = a real Google Ads report** (`assets/hero-report.jpg`, from the DTC mattress account):
+  only the Cost / Conv. rate / Conversions / Cost-per-conv columns. Campaign names ("_KZ"), account
+  IDs and agency name were cropped out on purpose (US/EU-first positioning).
+- **H1:** "Ad accounts run to your cost per lead". Section heads: "Recent client work", "Monthly
+  management, priced by ad budget", "How we work", "Founded by software engineers", "Frequently
+  asked questions", "Book a call or ask for a proposal".
+- Verified: no number on the page added or removed (scripted before/after diff), JS + JSON-LD
+  valid, no horizontal scroll at 390/768px on the homepage and service pages.
+
+### How fonts reach the service pages
+`tools/build-css.py` now copies the Google Fonts URL from index.html's `<link>` into an `@import`
+at the top of the generated `assets/site.css`. Change the font in index.html → run the script →
+service pages follow. (Their old Bricolage `<link>` tags still load but are unused: one-line cleanup
+per page, not done yet.)
+
+### Not done / follow-ups
+- **Service pages' COPY still reads AI-written** (their styling updated automatically via site.css
+  and looks right). Title Case H1s ("Google Ads Management, Built on Tracking You Can Trust"),
+  "not X" formulas ("Start with the account, not the pitch.", "It is paid, and that is
+  deliberate.", "What management actually covers."), em dashes, and "CPL CUT FOR OUR CLIENTS" typed
+  in capitals in their utility bar. Needs edits in 3 files — offered to the user, not done.
+- `privacy.html` has its own inline styles and still has the OLD look.
+- Remove the unused Bricolage/Spline font `<link>` from the 3 service pages + privacy.html.
+- Everything under "Still open — needs the user" above is still open (GA4, Search Console,
+  backlinks, Web3Forms test submission).
+
+### Known debt: CSS override block (NOT cleaned up)
+The first redesign pass appended an override block near the END of the `<style>` block in
+index.html (starts at the comment `/* Homepage reset: restrained editorial system ... */`, ~line
+1864) instead of editing the original rules above it. The page renders correctly, but **editing an
+original rule higher up will appear to do nothing, because the override block wins. Edit the rule
+in the override block instead** (or fold it back in first).
+
+The cleanup pass was written (brief kept in the session scratchpad) and a pixel-for-pixel check was
+set up (headless renders proven byte-identical across runs at 1440px and 390px), but **Codex hit its
+usage limit mid-run — locked until 2026-10-15** — and made no changes. Not delegated to Codestral:
+too risky for a 1,800-line cascade rewrite. Redo it when Codex is back, and only keep it if the
+screenshots match byte for byte.
