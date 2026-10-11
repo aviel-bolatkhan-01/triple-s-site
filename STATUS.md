@@ -273,3 +273,13 @@ Owner: new email hello@triples.agency everywhere, new Calendly, remove "ad budge
 - **Screenshots that can't be edited:** `ecom-google-conversions.webp` (Twenty Four Carrots case) and `leroy-merlin-google-ads.webp` (enterprise case) show `abzal.business.01@gmail.com` in the Google Ads header; `center-matrasov-meta.webp` (DTC mattress case) shows "logged in as Abzal Bolatkhan". No image shows Upwork or $30K.
 - Pre-existing, not fixed: at ~860–1000px wide the footer stat boxes are still narrow enough to break words ("Glob/al"). Was worse before (58px boxes, now 81–85px).
 - Previews: `_preview/v5c/` (gitignored).
+
+## 2026-10-12 — v5d consistency + agency voice (branch `site-fixes-consistency` off main c1b4944, NOT pushed, NOT merged)
+Owner: "ev dealership case doesn't match. fix that. and all similar issues." + founder block should be founder-only (agency, not one person running every account).
+- **New case page `/case-studies/ev-dealership-lead-gen/`** (NKB Group, EV dealership, CPL $10 → $1 in one month, outbound sales paused, NKB quote). Uses only existing site/CV wording. Hero $10→$1 chip, NKB testimonial ("Read the case →") and a new homepage case card point at it; added to /case-studies/ (card + ItemList), every "More case studies" list, sitemap (now 17 URLs).
+- **Enterprise (Leroy Merlin/BIC) case cleaned:** its KPI tiles, results and quote were the EV dealership + 300% ROAS (other clients). Now describes only the Leroy/BIC work shown. Homepage enterprise card "Also: EV… 300% ROAS" line replaced.
+- **Service pages:** Google page called the EV result "an enterprise funnel" and claimed "300% ROAS across managed accounts" (CV: one DTC brand, on Meta) → attributed + linked; Meta page 300% scoped to one DTC brand; Audit page dropped unverifiable "after an audit" + "enterprise funnel".
+- Footer "200%+ average lead growth" → "lead growth, DTC case" (17 pages; source is one account). Clinic $22.70 "per qualified lead" → "per lead".
+- **Founder block:** "Founded by Aviel Bolatkhan." / title "Founder" / 2-sentence third-person bio; promise line removed. Person JSON-LD jobTitle "Founder".
+- **Voice sweep:** senior specialist/buyer, no juniors/hand-offs, "I reply personally", "Brands I've managed", "senior attention", "one senior media buyer", "lead media buyer" bylines all gone. New meta description (155 chars max) + hero lede. OG image regenerated (source `_preview/v5d/og-card-source.html`).
+- Previews: `_preview/v5d/` (gitignored). TODO(aviel) new: confirm NKB = EV dealership + platform/market; EV screenshot; Leroy/BIC numbers; 300% ROAS brand/screenshot.
