@@ -252,3 +252,13 @@ screenshots match byte for byte.
 - **Correction:** the "$0.35 CPM, down from $0.46" stat was on Noodlers but the screenshot is the mattress brand's TikTok account. Moved to the mattress case.
 - All TODOs are marked `TODO(aviel)` in the HTML: `grep -rn "TODO(aviel)" --include=*.html .`
 - Previews: `_preview/v5/` (gitignored). New pages are generated from scratchpad scripts. They are plain HTML now; edit them directly.
+
+## 2026-10-12 — v5b universal positioning (branch `site-v5b-universal`, NOT pushed, NOT merged)
+Owner: "it's an universal agency… mostly Ecom, DTC, B2B… keep [medspa] very optional."
+- Homepage H1 → "Meta & Google ads for e-commerce, DTC and B2B brands — every sale tracked to revenue."; eyebrow "E-commerce · DTC · B2B · Worldwide"; title/meta/OG/Twitter/JSON-LD rewritten to match; new `assets/og-image.jpg` (source: `_preview/v5b/og-card-source.html`). 2 alternative H1s in the TODO(aviel) comment above the H1.
+- Hero proof: $0.14 DTC chip first, new $30K+/mo enterprise retail chip (Leroy Merlin/BIC, existing claim), $22.70 clinic chip now a compact full-width third chip (`.proof-chip--compact`).
+- Case order everywhere (homepage, /case-studies/ + ItemList, "More case studies"): enterprise → DTC mattress → Twenty Four Carrots → Noodlers → clinics last.
+- "For medspas" removed from the nav on every page. /medspa-ads/ now reached from a footer link ("Medspa ads", all pages) and an "Industries we work in" line under the client wall. Page stays live + in sitemap; hero eyebrow "Industries · Clinics & medspas" + intro sentence framing it as one industry.
+- Client wall reordered (non-clinic brands first). Founder bio leads with e-commerce/DTC/B2B. Meta page, blog index and case-studies meta de-medspa'd.
+- Footer stat boxes 107px → 104px from the extra footer link; no overflow (measured).
+- Previews: `_preview/v5b/` (gitignored).
