@@ -2025,3 +2025,16 @@
   .footer-stat{min-width:0}
   .footer-stat .value,
   .footer-stat .label{overflow-wrap:anywhere}
+
+  /* v5: positioning */
+  a.utility-left{color:#D4E7DB;text-decoration:none}
+  a.utility-left:hover{color:#fff}
+  a.utility-left:hover strong{color:#4CD693}
+  .hero h1{
+    font-size:clamp(38px,4.9vw,60px);
+    line-height:1.02;
+    max-width:17ch;
+  }
+  @media (max-width:700px){
+    .hero h1{font-size:clamp(32px,9vw,44px)}
+  }
