@@ -24,7 +24,7 @@ Rewrite `index.html` (overwrite it) as a much richer, agency-grade one-pager mod
 ## Facts (unchanged from BRIEF.md — reuse exactly; never invent)
 Brand Triple S (S³), founded 2022, founder Aviel Bolatkhan, 4+ yrs, remote EU timezone.
 Stats: $30K+/mo managed · 200%+ avg lead growth · up to 90% CPL reduction · 6 ad platforms · 7 markets (US, UK, Australia, UAE, Turkey, Poland, Kazakhstan).
-Email abzal.bolatkhan.01@gmail.com · Upwork https://www.upwork.com/agencies/1553470846164299776/ · LinkedIn https://www.linkedin.com/in/aviel-bolatkhan
+Email hello@triples.agency · Upwork https://www.upwork.com/agencies/1553470846164299776/ · LinkedIn https://www.linkedin.com/in/aviel-bolatkhan
 Offers: 48-Hour Ads Audit $200 flat · Monthly Ads Management from $800/mo (accounts $1–10K/mo spend, flat or 10–15% of spend, fixed deliverables: setup, weekly optimization, monthly Looker Studio report) · AI Lead Response $400–800 setup + $150/mo (voice/WhatsApp agent answering leads in minutes).
 Certifications: Google Partner (contributor) · Google Ads Search/Display/Video/Measurement · Google Analytics GA4 · DV360 · CM360 · Meta Social Media Marketing · HubSpot · Semrush PPC.
 

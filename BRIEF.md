@@ -16,7 +16,7 @@ Open `style-reference.html` in this directory and reuse its exact design languag
 - Founder: **Aviel Bolatkhan**, AI Performance Marketer, 4+ years experience
 - Tagline concept: "Most agencies sell clicks. We sell unit economics."
 - Founded 2022. Software-engineer-turned-performance-marketer. Remote, EU timezone.
-- Email: abzal.bolatkhan.01@gmail.com
+- Email: hello@triples.agency
 - Upwork agency: https://www.upwork.com/agencies/1553470846164299776/
 - LinkedIn: https://www.linkedin.com/in/aviel-bolatkhan
 - Minimum project: $1K+. Hourly range on Upwork: $25–100.
@@ -51,7 +51,7 @@ Google Partner (contributor) · Google Ads Search, Display, Video & Measurement 
 
 ## CTA / Contact section (final section, prominent)
 - Headline: get the 48-hour audit.
-- Primary button: mailto:abzal.bolatkhan.01@gmail.com?subject=48-Hour%20Ads%20Audit (amber filled button)
+- Primary button: mailto:hello@triples.agency?subject=48-Hour%20Ads%20Audit (amber filled button)
 - Secondary buttons (outlined): "Hire us on Upwork" → Upwork agency URL, "LinkedIn" → LinkedIn URL
 - Small line: "Reply within 24 hours · EU timezone · English / Russian / Kazakh"
 
