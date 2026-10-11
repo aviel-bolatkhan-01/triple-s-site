@@ -2317,6 +2317,21 @@
   }
   .text-link:hover{border-bottom-color:var(--green)}
 
+  /* v5: conversion details */
+  .form-reassure{
+    margin-top:10px;
+    max-width:60ch;
+    color:var(--dim);
+    font-size:14px;
+    line-height:1.5;
+  }
+  .quotes{display:grid;gap:26px}
+  .quotes .quote + .quote{
+    padding-top:22px;
+    border-top:1px solid rgba(255,255,255,.1);
+  }
+  .quotes .quote + .quote blockquote{font-size:clamp(18px,2.2vw,22px);max-width:34ch}
+
   /* v5: lead magnet */
   .magnet{
     display:grid;

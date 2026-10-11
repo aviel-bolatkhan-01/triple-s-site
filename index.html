@@ -2456,6 +2456,21 @@
   }
   .text-link:hover{border-bottom-color:var(--green)}
 
+  /* v5: conversion details */
+  .form-reassure{
+    margin-top:10px;
+    max-width:60ch;
+    color:var(--dim);
+    font-size:14px;
+    line-height:1.5;
+  }
+  .quotes{display:grid;gap:26px}
+  .quotes .quote + .quote{
+    padding-top:22px;
+    border-top:1px solid rgba(255,255,255,.1);
+  }
+  .quotes .quote + .quote blockquote{font-size:clamp(18px,2.2vw,22px);max-width:34ch}
+
   /* v5: lead magnet */
   .magnet{
     display:grid;
@@ -2629,6 +2644,7 @@
             </div>
             <p class="form-status" id="form-status" role="status" aria-live="polite" hidden></p>
           </form>
+          <p class="form-reassure">Just your site and email. I reply personally with a short proposal &mdash; no newsletter, no sales sequence.</p>
           <div class="hero-fineprint">Reply within 24 hours · No obligation</div>
           <div class="proof-chips">
             <div class="proof-chip">
@@ -2704,10 +2720,22 @@
 
     <section class="trust-band">
       <div class="wrap trust-inner">
-        <figure class="quote">
-          <blockquote>We had to stop the sales department because we are flooded with leads.</blockquote>
-          <figcaption>Director of Marketing<span>NKB Group</span></figcaption>
-        </figure>
+        <div class="quotes">
+          <figure class="quote">
+            <blockquote>We had to stop the sales department because we are flooded with leads.</blockquote>
+            <figcaption>Director of Marketing<span>NKB Group</span></figcaption>
+          </figure>
+          <!-- TODO(aviel): testimonial slot 1. Paste a REAL client quote + name/role + company, then delete the word "hidden" so it shows. Never invent one. -->
+          <figure class="quote quote--slot" hidden>
+            <blockquote>Client quote goes here.</blockquote>
+            <figcaption>Name, role<span>Company</span></figcaption>
+          </figure>
+          <!-- TODO(aviel): testimonial slot 2. Same as above. -->
+          <figure class="quote quote--slot" hidden>
+            <blockquote>Client quote goes here.</blockquote>
+            <figcaption>Name, role<span>Company</span></figcaption>
+          </figure>
+        </div>
         <div class="partner-badge cert-badge" aria-label="Certifications">
           <svg class="cert-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9" r="6.5"/><path d="M9.2 9.2l2 2 3.8-4"/><path d="M8.4 14.6L7 22l5-2.8 5 2.8-1.4-7.4"/></svg>
           <div class="partner-text">
@@ -3185,6 +3213,8 @@
       </div>
     </div>
   </footer>
+
+  <a class="mobile-cta" href="https://calendly.com/abzal-bolatkhan-01/30min" target="_blank" rel="noreferrer">Book a free 30-min call <span aria-hidden="true">&rarr;</span></a>
 
   <script>
     (() => {
