@@ -2191,7 +2191,11 @@
   .proof-copy a:hover{border-bottom-color:var(--green)}
   @media (min-width:560px){
     .proof-chips{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .proof-chips .proof-chip--compact{grid-column:1/-1}
   }
+  .proof-chips .proof-chip--compact{padding:12px 18px}
+  .proof-chips .proof-chip--compact .proof-copy{margin-top:4px}
+  .proof-chips .proof-chip--compact .proof-value{display:inline;margin:0 4px 0 0;font-size:22px;letter-spacing:-.03em}
   .upwork-proof{
     display:flex;
     align-items:center;
@@ -2649,15 +2653,19 @@
           <div class="hero-fineprint">Reply within 24 hours · No obligation</div>
           <div class="proof-chips">
             <div class="proof-chip">
-              <div class="proof-label"><span class="dot" aria-hidden="true"></span>US aesthetics clinic · Meta</div>
-              <span class="proof-value">$22.70</span>
-              <p class="proof-copy">per qualified lead from Meta lead-gen. <a href="/case-studies/medspa-lead-generation/">See the case</a></p>
-            </div>
-            <div class="proof-chip">
               <div class="proof-label"><span class="dot" aria-hidden="true"></span>DTC brand · Google Ads</div>
               <span class="proof-value">$0.14</span>
               <!-- TODO(aviel): confirm this wording (market + conversion type) before it goes live -->
               <p class="proof-copy">per conversion, 8,492 conversions. Lead-gen, Central Asia market. <a href="/case-studies/dtc-mattress-rebuild/">See the case</a></p>
+            </div>
+            <div class="proof-chip">
+              <div class="proof-label"><span class="dot" aria-hidden="true"></span>Enterprise retail</div>
+              <span class="proof-value">$30K+/mo</span>
+              <p class="proof-copy">across Google, DV360 and Meta for Leroy Merlin and BIC, via a partner agency. <a href="/case-studies/enterprise-retail-media/">See the case</a></p>
+            </div>
+            <div class="proof-chip proof-chip--compact">
+              <div class="proof-label"><span class="dot" aria-hidden="true"></span>US aesthetics clinic · Meta</div>
+              <p class="proof-copy"><span class="proof-value">$22.70</span> per qualified lead from Meta lead-gen. <a href="/case-studies/medspa-lead-generation/">See the case</a></p>
             </div>
           </div>
           <!-- TODO(aviel): add the real Upwork rating + review count here (e.g. "5.0 &#9733; · 12 reviews"). Only write "Top Rated" if Upwork actually shows that badge on the profile. -->
