@@ -2298,6 +2298,182 @@
     font-weight:700;
     line-height:1.35;
   }
+
+  /* v5: subpages (case studies, medspa, blog) */
+  .page-top{padding:56px 0 48px}
+  .page-h1{
+    font-size:clamp(34px,4.6vw,56px);
+    line-height:1.02;
+    max-width:20ch;
+  }
+  .crumbs{
+    display:flex;
+    flex-wrap:wrap;
+    gap:6px 8px;
+    margin-bottom:22px;
+    color:var(--dim);
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+  }
+  .crumbs a{color:var(--green-dark)}
+  .crumbs a:hover{color:var(--green)}
+  .page-top .section-intro{margin-top:16px;margin-bottom:28px}
+  .kpi-grid{
+    display:grid;
+    gap:12px;
+    grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));
+  }
+  .kpi{
+    padding:18px 18px 16px;
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:14px;
+    box-shadow:var(--shadow);
+  }
+  .kpi .v{
+    display:block;
+    color:var(--navy);
+    font-family:var(--display);
+    font-size:clamp(24px,2.6vw,32px);
+    font-weight:800;
+    line-height:1.05;
+    letter-spacing:-.03em;
+    font-variant-numeric:tabular-nums;
+  }
+  .kpi .l{
+    display:block;
+    margin-top:8px;
+    color:var(--dim);
+    font-family:var(--mono);
+    font-size:10.5px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+  }
+  .section--flush{padding:16px 0 72px}
+  .case-block{
+    display:grid;
+    gap:16px;
+    padding:40px 0;
+    border-top:1px solid var(--line);
+  }
+  .case-block:first-child{border-top:0}
+  .case-block > h2{
+    font-size:clamp(22px,2.4vw,28px);
+    font-weight:800;
+    line-height:1.1;
+  }
+  .case-block-body{display:grid;gap:14px;min-width:0}
+  .case-block-body p{max-width:66ch;line-height:1.66}
+  .case-block-body--split{gap:22px}
+  .did-grid{display:grid;gap:12px}
+  .did-grid .tier p{max-width:none}
+  .result-list{
+    list-style:none;
+    display:grid;
+    gap:10px;
+    max-width:70ch;
+  }
+  .result-list li{
+    position:relative;
+    padding-left:20px;
+    line-height:1.6;
+  }
+  .result-list li::before{
+    content:"";
+    position:absolute;
+    left:2px;
+    top:.62em;
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:var(--green);
+  }
+  .result-list strong{color:var(--navy)}
+  .quote--light{
+    margin-top:10px;
+    padding:24px;
+    border-radius:16px;
+    background:var(--dark);
+  }
+  .case-shots{gap:18px}
+  .case-shot figcaption{
+    padding:10px 14px;
+    border-top:1px solid var(--line);
+    color:var(--dim);
+    font-size:13px;
+  }
+  .case-index{
+    display:grid;
+    gap:12px;
+    grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));
+  }
+  .case-index--main{margin-bottom:8px}
+  .case-index-card{
+    display:grid;
+    align-content:start;
+    gap:8px;
+    padding:22px;
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:16px;
+    box-shadow:var(--shadow);
+    color:var(--body);
+    transition:border-color .2s ease, transform .2s ease;
+  }
+  .case-index-card:hover{border-color:rgba(23,160,94,.55);transform:translateY(-2px);color:var(--body)}
+  .case-index-card strong{
+    color:var(--navy);
+    font-family:var(--display);
+    font-size:22px;
+    font-weight:800;
+    line-height:1.12;
+    letter-spacing:-.02em;
+  }
+  .case-index-sum{line-height:1.55}
+  .case-index-go{
+    margin-top:6px;
+    color:var(--green-dark);
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+  }
+  @media (min-width:700px){
+    .did-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 28px}
+  }
+  @media (min-width:860px){
+    .case-block{grid-template-columns:220px minmax(0,1fr);gap:40px}
+    .case-block-body--split{grid-template-columns:minmax(0,1fr) minmax(0,.9fr);align-items:start}
+  }
+
+  /* v5: sticky mobile CTA */
+  .mobile-cta{display:none}
+  @media (max-width:700px){
+    .mobile-cta{
+      position:fixed;
+      left:12px;
+      right:12px;
+      bottom:calc(12px + env(safe-area-inset-bottom));
+      z-index:60;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      min-height:52px;
+      border-radius:12px;
+      background:var(--green);
+      color:#fff;
+      font-family:var(--mono);
+      font-size:12px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      box-shadow:0 14px 30px rgba(14,31,23,.28);
+    }
+    .mobile-cta:hover{background:var(--green-dark);color:#fff}
+    body{padding-bottom:76px}
+  }
 </style>
 </head>
 <body>
@@ -2482,45 +2658,10 @@
                   <span class="l">per qualified lead</span>
                 </div>
               </div>
-              <button class="report-btn" type="button" data-dialog="report-4">
+              <a class="report-btn" href="/case-studies/medspa-lead-generation/">
                 <span>View performance report</span>
-                <span class="report-btn-icon" aria-hidden="true">&#8599;</span>
-              </button>
-              <dialog class="report-modal" id="report-4" aria-labelledby="report-4-title">
-                <div class="report-head">
-                  <h4 id="report-4-title">US medical-aesthetics clinics — the numbers</h4>
-                  <button class="report-close" type="button" data-close aria-label="Close report">&#10005;</button>
-                </div>
-                <div class="report-body">
-                  <figure class="browser-frame frame-row">
-                    <div class="browser-top" aria-hidden="true">
-                      <span class="browser-dot"></span>
-                      <span class="browser-dot"></span>
-                      <span class="browser-dot"></span>
-                      <span class="browser-url">meta ads · lead generation</span>
-                    </div>
-                    <img class="browser-shot" src="assets/clinic-meta-leadgen.webp" width="1176" height="543" alt="Meta Ads Manager showing clinic lead generation campaigns at $22.70 and $30.21 per lead." loading="lazy" decoding="async">
-                  </figure>
-                  <figure class="browser-frame frame-row">
-                    <div class="browser-top" aria-hidden="true">
-                      <span class="browser-dot"></span>
-                      <span class="browser-dot"></span>
-                      <span class="browser-dot"></span>
-                      <span class="browser-url">meta ads · campaign level</span>
-                    </div>
-                    <img class="browser-shot" src="assets/clinic-meta-campaigns.webp" width="1600" height="464" alt="Meta Ads campaign level view across treatment and recruitment campaigns." loading="lazy" decoding="async">
-                  </figure>
-                  <figure class="browser-frame frame-row">
-                    <div class="browser-top" aria-hidden="true">
-                      <span class="browser-dot"></span>
-                      <span class="browser-dot"></span>
-                      <span class="browser-dot"></span>
-                      <span class="browser-url">meta ads · ad set level</span>
-                    </div>
-                    <img class="browser-shot" src="assets/clinic-meta-adsets.webp" width="1470" height="267" alt="Meta ad set level view with purchases at $37 to $68." loading="lazy" decoding="async">
-                  </figure>
-                </div>
-              </dialog>
+                <span class="report-btn-icon" aria-hidden="true">&rarr;</span>
+              </a>
             </div>
           </article>
           <article class="case-card flip reveal">
@@ -2537,27 +2678,10 @@
                 <img src="assets/brand-carrots.webp" width="1440" height="900" alt="Twenty Four Carrots website homepage." loading="lazy" decoding="async">
                 <figcaption>twentyfourc.com · Santa Barbara, CA</figcaption>
               </figure>
-              <button class="report-btn" type="button" data-dialog="report-5">
+              <a class="report-btn" href="/case-studies/twenty-four-carrots/">
                 <span>View performance report</span>
-                <span class="report-btn-icon" aria-hidden="true">&#8599;</span>
-              </button>
-              <dialog class="report-modal" id="report-5" aria-labelledby="report-5-title">
-                <div class="report-head">
-                  <h4 id="report-5-title">Twenty Four Carrots — conversion tracking</h4>
-                  <button class="report-close" type="button" data-close aria-label="Close report">&#10005;</button>
-                </div>
-                <div class="report-body">
-                  <figure class="browser-frame frame-row">
-                    <div class="browser-top" aria-hidden="true">
-                      <span class="browser-dot"></span>
-                      <span class="browser-dot"></span>
-                      <span class="browser-dot"></span>
-                      <span class="browser-url">google ads · conversion tracking</span>
-                    </div>
-                    <img class="browser-shot" src="assets/ecom-google-conversions.webp" width="1335" height="660" alt="Google Ads conversion diagnostics showing enhanced conversions and cart data." loading="lazy" decoding="async">
-                  </figure>
-                </div>
-              </dialog>
+                <span class="report-btn-icon" aria-hidden="true">&rarr;</span>
+              </a>
             </div>
           </article>
           <article class="case-card reveal">
@@ -2581,36 +2705,10 @@
                   <span class="brand-tile-sector">Home improvement retail</span>
                 </div>
               </div>
-              <button class="report-btn" type="button" data-dialog="report-3">
+              <a class="report-btn" href="/case-studies/enterprise-retail-media/">
                 <span>View performance report</span>
-                <span class="report-btn-icon" aria-hidden="true">&#8599;</span>
-              </button>
-              <dialog class="report-modal" id="report-3" aria-labelledby="report-3-title">
-                <div class="report-head">
-                  <h4 id="report-3-title">Leroy Merlin and BIC — enterprise media</h4>
-                  <button class="report-close" type="button" data-close aria-label="Close report">&#10005;</button>
-                </div>
-                <div class="report-body">
-                  <figure class="browser-frame frame-row">
-                    <div class="browser-top" aria-hidden="true">
-                      <span class="browser-dot"></span>
-                      <span class="browser-dot"></span>
-                      <span class="browser-dot"></span>
-                      <span class="browser-url">google ads · leroy merlin</span>
-                    </div>
-                    <img class="browser-shot" src="assets/leroy-merlin-google-ads.webp" width="1600" height="899" alt="Google Ads dashboard screenshot for Leroy Merlin." loading="lazy" decoding="async">
-                  </figure>
-                  <figure class="browser-frame">
-                    <div class="browser-top" aria-hidden="true">
-                      <span class="browser-dot"></span>
-                      <span class="browser-dot"></span>
-                      <span class="browser-dot"></span>
-                      <span class="browser-url">dv360 · bic</span>
-                    </div>
-                    <img class="browser-shot" src="assets/bic-dv360.webp" width="1600" height="899" alt="Display &amp; Video 360 screenshot for BIC." loading="lazy" decoding="async">
-                  </figure>
-                </div>
-              </dialog>
+                <span class="report-btn-icon" aria-hidden="true">&rarr;</span>
+              </a>
             </div>
           </article>
           <article class="case-card flip reveal">
@@ -2629,36 +2727,10 @@
                 <span class="brand-tile-sector">Food delivery · UAE</span>
                 <!-- TODO(aviel): the old "$0.35 CPM, down from $0.46" stat was taken from the mattress brand's TikTok account (tiktok-cpm-case.webp shows "Center Matrasov"), so it moved to that case. Add a real Noodlers headline number if you have one. -->
               </div>
-              <button class="report-btn" type="button" data-dialog="report-2">
+              <a class="report-btn" href="/case-studies/noodlers-tiktok/">
                 <span>View performance report</span>
-                <span class="report-btn-icon" aria-hidden="true">&#8599;</span>
-              </button>
-              <dialog class="report-modal" id="report-2" aria-labelledby="report-2-title">
-                <div class="report-head">
-                  <h4 id="report-2-title">Noodlers — TikTok performance</h4>
-                  <button class="report-close" type="button" data-close aria-label="Close report">&#10005;</button>
-                </div>
-                <div class="report-body">
-                  <figure class="browser-frame frame-row">
-                    <div class="browser-top" aria-hidden="true">
-                      <span class="browser-dot"></span>
-                      <span class="browser-dot"></span>
-                      <span class="browser-dot"></span>
-                      <span class="browser-url">tiktok ads</span>
-                    </div>
-                    <img class="browser-shot" src="assets/noodlers-tiktok.webp" width="1600" height="727" alt="TikTok Ads dashboard screenshot for Noodlers." loading="lazy" decoding="async">
-                  </figure>
-                  <figure class="browser-frame">
-                    <div class="browser-top" aria-hidden="true">
-                      <span class="browser-dot"></span>
-                      <span class="browser-dot"></span>
-                      <span class="browser-dot"></span>
-                      <span class="browser-url">cpm case</span>
-                    </div>
-                    <img class="browser-shot" src="assets/tiktok-cpm-case.webp" width="1600" height="729" alt="TikTok Ads screenshot showing CPM cut from $0.46 to $0.35." loading="lazy" decoding="async">
-                  </figure>
-                </div>
-              </dialog>
+                <span class="report-btn-icon" aria-hidden="true">&rarr;</span>
+              </a>
             </div>
           </article>
           <article class="case-card reveal">
@@ -2692,39 +2764,14 @@
                   <span class="l">per conversion</span>
                 </div>
               </div>
-              <button class="report-btn" type="button" data-dialog="report-1">
+              <a class="report-btn" href="/case-studies/dtc-mattress-rebuild/">
                 <span>View performance report</span>
-                <span class="report-btn-icon" aria-hidden="true">&#8599;</span>
-              </button>
-              <dialog class="report-modal" id="report-1" aria-labelledby="report-1-title">
-                <div class="report-head">
-                  <h4 id="report-1-title">8-month multi-channel rebuild</h4>
-                  <button class="report-close" type="button" data-close aria-label="Close report">&#10005;</button>
-                </div>
-                <div class="report-body">
-                  <figure class="browser-frame frame-row">
-                    <div class="browser-top" aria-hidden="true">
-                      <span class="browser-dot"></span>
-                      <span class="browser-dot"></span>
-                      <span class="browser-dot"></span>
-                      <span class="browser-url">google ads</span>
-                    </div>
-                    <img class="browser-shot" src="assets/center-matrasov-google-ads.webp" width="1600" height="730" alt="Google Ads dashboard showing 8,492 conversions, $0.14 per conversion, and a 66.8% conversion rate." loading="lazy" decoding="async">
-                  </figure>
-                  <figure class="browser-frame">
-                    <div class="browser-top" aria-hidden="true">
-                      <span class="browser-dot"></span>
-                      <span class="browser-dot"></span>
-                      <span class="browser-dot"></span>
-                      <span class="browser-url">meta ads</span>
-                    </div>
-                    <img class="browser-shot" src="assets/center-matrasov-meta.webp" width="1600" height="709" alt="Meta Ads dashboard screenshot for the same account." loading="lazy" decoding="async">
-                  </figure>
-                </div>
-              </dialog>
+                <span class="report-btn-icon" aria-hidden="true">&rarr;</span>
+              </a>
             </div>
           </article>
         </div>
+        <p class="tier-note reveal"><a href="/case-studies/">All case studies, with the dashboards behind each number</a></p>
       </div>
     </section>
 
