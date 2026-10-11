@@ -262,3 +262,14 @@ Owner: "it's an universal agency… mostly Ecom, DTC, B2B… keep [medspa] very 
 - Client wall reordered (non-clinic brands first). Founder bio leads with e-commerce/DTC/B2B. Meta page, blog index and case-studies meta de-medspa'd.
 - Footer stat boxes 107px → 104px from the extra footer link; no overflow (measured).
 - Previews: `_preview/v5b/` (gitignored).
+
+## 2026-10-12 — v5c contact/proof cleanup (same branch `site-v5b-universal`, NOT pushed)
+Owner: new email hello@triples.agency everywhere, new Calendly, remove "ad budget managed" everywhere, remove Upwork altogether.
+- **Email:** live pages were already hello@; the last gmail copies (2 design backups + 3 BRIEF docs) switched too. Mailbox must exist before merge.
+- **Calendly:** all 92 links → `https://calendly.com/triples-agency/30min` (17 pages + template). Old slug: 0.
+- **$30K+/mo stat removed:** footer stat on 15 pages + homepage, hero chip, homepage enterprise case card, 5 "More case studies" summaries, enterprise case page (meta/OG/Twitter/JSON-LD description, intro, KPI tile, results bullet), Google + Meta service-page intros. Hero chip replaced by the existing **"$10 → $1" EV dealership CPL** claim (links to the enterprise case). Footer stats grid 4 → 3 columns (boxes 104px → 141px at 1440). OG image: stat → "300% ROAS on Meta".
+- **Upwork removed:** top-bar link, hero "Agency profile on Upwork" card + its TODO, contact "Also on" link, footer link, JSON-LD sameAs, `.upwork-*` CSS. 0 in live pages.
+- **New `_config.yml`:** Jekyll `exclude` stops GitHub Pages publishing STATUS.md, BRIEF*.md, the 3 index backups, style-reference.html and tools/. **They were all publicly reachable (200) on triples.agency** — including this file and the personal "EXIT-30 · $3K plan" doc. Those archives still contain Upwork/$30K text; they just won't be served after merge. Restore points remain as git tags.
+- **Screenshots that can't be edited:** `ecom-google-conversions.webp` (Twenty Four Carrots case) and `leroy-merlin-google-ads.webp` (enterprise case) show `abzal.business.01@gmail.com` in the Google Ads header; `center-matrasov-meta.webp` (DTC mattress case) shows "logged in as Abzal Bolatkhan". No image shows Upwork or $30K.
+- Pre-existing, not fixed: at ~860–1000px wide the footer stat boxes are still narrow enough to break words ("Glob/al"). Was worse before (58px boxes, now 81–85px).
+- Previews: `_preview/v5c/` (gitignored).
