@@ -1,0 +1,11 @@
+# Internal files kept in the repo but not published to triples.agency
+exclude:
+  - STATUS.md
+  - BRIEF.md
+  - BRIEF-V2.md
+  - BRIEF-V3.md
+  - style-reference.html
+  - index-v2-amber-backup.html
+  - index-v4-founder-backup.html
+  - index-v5-maximalist-backup.html
+  - tools/
