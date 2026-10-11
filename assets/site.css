@@ -2057,35 +2057,6 @@
   .proof-chips .proof-chip--compact{padding:12px 18px}
   .proof-chips .proof-chip--compact .proof-copy{margin-top:4px}
   .proof-chips .proof-chip--compact .proof-value{display:inline;margin:0 4px 0 0;font-size:22px;letter-spacing:-.03em}
-  .upwork-proof{
-    display:flex;
-    align-items:center;
-    gap:12px;
-    margin-top:12px;
-    padding:12px 16px;
-    border:1px solid var(--line);
-    border-radius:14px;
-    background:#fff;
-    color:var(--navy);
-    transition:border-color .2s ease;
-  }
-  .upwork-proof:hover{border-color:rgba(23,160,94,.55);color:var(--navy)}
-  .upwork-mark{
-    flex:none;
-    display:grid;
-    place-items:center;
-    width:34px;
-    height:34px;
-    border-radius:10px;
-    background:#14A800;
-    color:#fff;
-    font-family:var(--display);
-    font-weight:800;
-    font-size:14px;
-  }
-  .upwork-text{flex:1;min-width:0}
-  .upwork-text strong{display:block;font-family:var(--display);font-size:15px;line-height:1.2}
-  .upwork-text span{display:block;margin-top:2px;color:var(--dim);font-size:13px;line-height:1.4}
   .strip-note{
     margin-top:12px;
     color:var(--dim);
