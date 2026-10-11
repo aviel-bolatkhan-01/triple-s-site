@@ -233,3 +233,11 @@ set up (headless renders proven byte-identical across runs at 1440px and 390px),
 usage limit mid-run — locked until 2026-10-15** — and made no changes. Not delegated to Codestral:
 too risky for a 1,800-line cascade rewrite. Redo it when Codex is back, and only keep it if the
 screenshots match byte for byte.
+
+## 2026-10-11 — worldwide copy, calculator back, simpler hero/contact (LOCAL ONLY, not pushed)
+- Region lists removed everywhere: hero now says "brands worldwide, with campaigns run across US, European and Asian markets"; About "across five regions" → "worldwide"; mini-stat → "Worldwide / US, European and Asian markets"; footer stat "5 regions" → "Global / client markets" (homepage + 3 service pages); JSON-LD `areaServed` → "Worldwide" on all 4 pages.
+- Hero ring diagram ("Unit Economics Engine") replaced by a plain 4-step card: Ads → Visitors → Leads & sales → Profit, plus "Up to 90% lower cost per lead for our clients" (existing claim).
+- `#calculator` section restored between Results and Services. Two sliders (monthly spend $500–$100K, share not bringing customers 5–60%, default 20%); result = spend × share, ×12 for the year; labelled as an estimate, NOT a benchmark (the old "25–40% we typically find" claim was dropped). CTA → /ads-audit/.
+- Contact band: one primary green button (Calendly), email proposal as secondary, Upwork/LinkedIn underneath. Old `.route-card` CSS removed.
+- Small polish: nav underline on hover, FAQ hover/open state, step-number hover, tier hover, shadows on client wall + audit band, balanced h1 wrap.
+- Previews: `_preview/before/`, `_preview/after/` (gitignored).

@@ -35,24 +35,7 @@
       "email": "abzal.business.01@gmail.com",
       "priceRange": "$$",
       "serviceType": "Performance Marketing",
-      "areaServed": [
-        {
-          "@type": "Place",
-          "name": "United States"
-        },
-        {
-          "@type": "Place",
-          "name": "Europe"
-        },
-        {
-          "@type": "Place",
-          "name": "Australia"
-        },
-        {
-          "@type": "Place",
-          "name": "Middle East"
-        }
-      ]
+      "areaServed": "Worldwide"
     },
     {
       "@type": "WebSite",
@@ -295,7 +278,26 @@
     letter-spacing:.14em;
     text-transform:uppercase;
   }
-  .nav-links a{white-space:nowrap}
+  .nav-links a{
+    position:relative;
+    white-space:nowrap;
+    padding:4px 0;
+    transition:color .2s ease;
+  }
+  .nav-links a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:-2px;
+    height:2px;
+    border-radius:2px;
+    background:var(--green);
+    transform:scaleX(0);
+    transform-origin:left;
+    transition:transform .25s ease;
+  }
+  .nav-links a:hover::after{transform:scaleX(1)}
 
   .btn{
     display:inline-flex;
@@ -400,7 +402,8 @@
     font-size:clamp(44px,6.5vw,78px);
     line-height:.94;
     font-weight:800;
-    max-width:11ch;
+    max-width:13ch;
+    text-wrap:balance;
   }
   .hero-lede{
     margin-top:16px;
@@ -527,90 +530,110 @@
     color:var(--dim);
   }
 
-  .engine-card{
-    padding:18px;
+  .how-card{
+    padding:30px 30px 26px;
     background:#fff;
     border:1px solid var(--line);
     border-radius:20px;
     box-shadow:var(--shadow-strong);
   }
-  .engine-head{
-    display:flex;
-    align-items:flex-start;
-    justify-content:space-between;
-    gap:12px;
-    margin-bottom:10px;
-  }
-  .engine-head h2{
+  .how-card h2{
+    margin-top:8px;
     color:var(--navy);
-    font-size:clamp(24px,2.8vw,32px);
-    line-height:1.06;
-    margin-top:5px;
+    font-size:clamp(24px,2.6vw,30px);
+    font-weight:800;
+    line-height:1.1;
+    max-width:18ch;
   }
-  .engine-head p{
-    color:var(--dim);
-    font-family:var(--mono);
-    font-size:11px;
-    line-height:1.4;
-    letter-spacing:.12em;
-    text-transform:uppercase;
-    max-width:17ch;
-    text-align:right;
+  .how-steps{
+    list-style:none;
+    display:grid;
+    gap:0;
+    margin-top:24px;
   }
-  .engine-svg{
-    display:block;
-    width:100%;
-    height:auto;
+  .how-step{
+    position:relative;
+    display:grid;
+    grid-template-columns:48px minmax(0,1fr);
+    gap:16px;
+    align-items:center;
+    padding:12px 0;
   }
-  .engine-svg text{
-    fill:var(--navy);
-    font-family:var(--display);
+  .how-step:not(:last-child)::after{
+    content:"";
+    position:absolute;
+    left:23px;
+    top:calc(50% + 26px);
+    height:calc(100% - 52px);
+    width:2px;
+    border-radius:2px;
+    background:linear-gradient(180deg, rgba(23,160,94,.45), rgba(23,160,94,.15));
   }
-  .engine-svg .segment{
+  .how-icon{
+    display:grid;
+    place-items:center;
+    width:48px;
+    height:48px;
+    border-radius:14px;
+    background:var(--bg-tint);
+    border:1px solid rgba(23,160,94,.2);
+    color:var(--green-dark);
+    transition:transform .2s ease, background-color .2s ease;
+  }
+  .how-icon svg{
+    width:22px;
+    height:22px;
     fill:none;
-    stroke-width:26;
-    stroke-linecap:round;
-    transform-origin:280px 280px;
-    transform:rotate(-90deg);
-  }
-  .engine-svg .segment-1{stroke:var(--green);stroke-dasharray:240 9999;stroke-dashoffset:0}
-  .engine-svg .segment-2{stroke:#2AB3A6;stroke-dasharray:240 9999;stroke-dashoffset:-275px}
-  .engine-svg .segment-3{stroke:var(--gold);stroke-dasharray:240 9999;stroke-dashoffset:-550px}
-  .engine-svg .segment-4{stroke:var(--navy);stroke-dasharray:240 9999;stroke-dashoffset:-825px}
-  .engine-svg .ring-line{
-    stroke:#B7C7BE;
+    stroke:currentColor;
     stroke-width:1.8;
     stroke-linecap:round;
+    stroke-linejoin:round;
   }
-  .engine-svg .center-disc{
-    fill:#fff;
-    stroke:var(--line);
-    stroke-width:1;
+  .how-step--end .how-icon{
+    background:var(--green);
+    border-color:var(--green);
+    color:#fff;
+    box-shadow:0 10px 24px rgba(23,160,94,.22);
   }
-  .engine-svg .center-mark{
-    font-size:42px;
-    font-weight:800;
-    letter-spacing:-.05em;
-  }
-  .engine-svg .center-value{
-    font-size:18px;
+  .how-step:hover .how-icon{transform:scale(1.06)}
+  .how-step strong{
+    display:block;
+    color:var(--navy);
+    font-family:var(--display);
+    font-size:19px;
     font-weight:700;
+    line-height:1.2;
     letter-spacing:-.02em;
   }
-  .engine-svg .center-sub{
-    font-family:var(--mono);
-    font-size:10px;
-    letter-spacing:.14em;
-    text-transform:uppercase;
+  .how-step span:not(.how-icon){
+    display:block;
+    margin-top:2px;
+    color:var(--dim);
+    font-size:15px;
+    line-height:1.45;
   }
-  .engine-svg .label{
-    font-family:var(--mono);
-    font-size:10px;
-    letter-spacing:.14em;
-    text-transform:uppercase;
+  .how-result{
+    display:flex;
+    align-items:baseline;
+    flex-wrap:wrap;
+    gap:6px 12px;
+    margin-top:20px;
+    padding:18px 20px;
+    border-radius:14px;
+    background:var(--dark);
   }
-  .engine-svg .label text{
-    fill:var(--dim);
+  .how-result-value{
+    color:#4CD693;
+    font-family:var(--display);
+    font-size:30px;
+    font-weight:800;
+    line-height:1;
+    letter-spacing:-.03em;
+  }
+  .how-result-label{
+    color:#C9D7D0;
+    font-size:15px;
+    line-height:1.4;
   }
 
   .client-strip{
@@ -634,6 +657,7 @@
     border:1px solid var(--line);
     border-radius:14px;
     overflow:hidden;
+    box-shadow:var(--shadow);
   }
   .client-tile{
     display:grid;
@@ -1028,6 +1052,7 @@
     background:var(--dark);
     border-radius:20px;
     color:#C9D7D0;
+    box-shadow:var(--shadow-strong);
   }
   .audit-tag{
     display:inline-flex;
@@ -1113,6 +1138,8 @@
     padding:22px 0 0;
     border-top:1px solid var(--line);
   }
+  .tier{transition:border-color .2s ease}
+  .tier:hover{border-color:var(--green)}
   .tier--mid{border-color:rgba(23,160,94,.5)}
   .tier-band{
     font-family:var(--mono);
@@ -1258,6 +1285,8 @@
     margin-bottom:8px;
   }
   .step p{color:var(--body)}
+  .step-no{transition:background-color .2s ease, color .2s ease, border-color .2s ease}
+  .step:hover .step-no{background:var(--green);border-color:var(--green);color:#fff}
   .art-frame{
     padding:18px;
     background:var(--dark);
@@ -1558,108 +1587,99 @@
     text-transform:uppercase;
   }
 
-  .route-grid{
+  .contact-grid{
     display:grid;
-    gap:16px;
-    margin-top:30px;
-  }
-  .route-card{
-    position:relative;
-    display:flex;
-    flex-direction:column;
-    padding:26px 26px 22px;
-    border-radius:20px;
-    background:rgba(255,255,255,.045);
-    border:1px solid rgba(255,255,255,.1);
-    color:#F4FAF6;
-    text-decoration:none;
-    transition:transform .25s ease, border-color .25s ease, background .25s ease, box-shadow .25s ease;
-  }
-  .route-card:hover{
-    transform:translateY(-4px);
-    background:rgba(255,255,255,.07);
-    border-color:rgba(23,160,94,.55);
-    box-shadow:0 22px 44px rgba(0,0,0,.28);
-  }
-  .route-card--primary{
-    background:rgba(23,160,94,.12);
-    border-color:rgba(23,160,94,.5);
-    box-shadow:0 18px 40px rgba(0,0,0,.24), inset 0 1px 0 rgba(255,255,255,.06);
-  }
-  .route-card--primary:hover{
-    background:rgba(23,160,94,.17);
-  }
-  .route-top{
-    display:flex;
+    gap:32px;
     align-items:center;
-    justify-content:space-between;
-    gap:12px;
+  }
+  .contact-grid .cta-meta{margin-top:18px}
+  .contact-card{
+    display:grid;
+    justify-items:start;
+    gap:16px;
+    padding:30px;
+    border-radius:20px;
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(23,160,94,.45);
+    box-shadow:0 22px 48px rgba(0,0,0,.26), inset 0 1px 0 rgba(255,255,255,.06);
+    backdrop-filter:blur(4px);
+    -webkit-backdrop-filter:blur(4px);
+  }
+  .contact-kicker{
+    color:#7FC9A2;
     font-family:var(--mono);
     font-size:11px;
     letter-spacing:.14em;
     text-transform:uppercase;
   }
-  .route-kicker{color:#7FC9A2}
-  .route-time{
-    padding:5px 10px;
-    border-radius:999px;
-    background:rgba(255,255,255,.08);
-    border:1px solid rgba(255,255,255,.12);
-    color:#C9D7D0;
-    font-size:10px;
-    white-space:nowrap;
+  .contact-primary{
+    width:100%;
+    min-height:58px;
+    gap:10px;
+    font-size:12px;
   }
-  .route-card h3{
-    margin-top:16px;
-    font-family:var(--display);
-    font-size:clamp(22px,2.6vw,27px);
-    font-weight:800;
-    line-height:1.12;
-    color:#fff;
-  }
-  .route-card p{
-    margin-top:10px;
-    color:#C9D7D0;
-    line-height:1.62;
-    max-width:44ch;
-  }
-  .route-list{
+  .contact-points{
     list-style:none;
-    margin-top:16px;
-    display:grid;
-    gap:8px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px 22px;
   }
-  .route-list li{
+  .contact-points li{
     position:relative;
-    padding-left:22px;
+    padding-left:20px;
     color:#A8C7B7;
     font-size:14px;
     line-height:1.5;
   }
-  .route-list li::before{
+  .contact-points li::before{
     content:"";
     position:absolute;
     left:2px;
-    top:8px;
+    top:7px;
     width:8px;
     height:8px;
     border-radius:50%;
     background:rgba(23,160,94,.85);
   }
-  .route-action{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    margin-top:auto;
+  .contact-alt{
+    width:100%;
+    margin-top:6px;
     padding-top:20px;
+    border-top:1px solid rgba(255,255,255,.12);
+  }
+  .contact-alt-title{
+    color:#fff;
+    font-family:var(--display);
+    font-size:18px;
+    font-weight:700;
+    line-height:1.25;
+  }
+  .contact-alt-copy{
+    margin-top:4px;
+    color:#A8C7B7;
+    font-size:14px;
+    line-height:1.55;
+  }
+  .contact-mail{
+    display:inline-flex;
+    gap:8px;
+    margin-top:10px;
     color:#4CD693;
     font-family:var(--mono);
     font-size:12px;
-    letter-spacing:.06em;
+    letter-spacing:.04em;
     word-break:break-word;
+    border-bottom:1px solid rgba(76,214,147,.35);
+    padding-bottom:2px;
+    transition:color .2s ease, border-color .2s ease;
   }
-  .route-arrow{transition:transform .25s ease}
-  .route-card:hover .route-arrow{transform:translateX(4px)}
+  .contact-mail:hover{color:#fff;border-bottom-color:#4CD693}
+  .contact-card .cta-secondary{
+    width:100%;
+    margin-top:2px;
+    padding-top:16px;
+    border-top:1px solid rgba(255,255,255,.08);
+  }
 
   .cta-secondary{
     display:flex;
@@ -1746,8 +1766,6 @@
 
   .browser-frame{transition:transform .28s ease, box-shadow .28s ease}
   .browser-frame:hover{transform:translateY(-4px);box-shadow:var(--shadow-strong)}
-  .engine-svg .segment{transform-origin:280px 280px;animation:ringspin 90s linear infinite}
-  @keyframes ringspin{to{transform:rotate(360deg)}}
 
   .partner-chip{
     display:inline-flex;
@@ -1797,7 +1815,121 @@
   .cpl-side.after i::after{background:var(--green)}
   .reveal.is-visible .cpl-side i::after{width:var(--w)}
 
-  @media (min-width:700px){.calc-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+  .calc-card{
+    display:grid;
+    gap:26px;
+    padding:30px;
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:20px;
+    box-shadow:var(--shadow-strong);
+  }
+  .calc-inputs{
+    display:grid;
+    gap:24px;
+  }
+  .calc-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-bottom:10px;
+  }
+  .calc-label{
+    color:var(--dim);
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+  }
+  .calc-value{
+    color:var(--navy);
+    font-family:var(--display);
+    font-size:30px;
+    font-weight:800;
+    line-height:1;
+    letter-spacing:-.03em;
+    font-variant-numeric:tabular-nums;
+  }
+  .calc-card input[type=range]{
+    display:block;
+    width:100%;
+    height:28px;
+    margin:0;
+    accent-color:var(--green);
+    cursor:pointer;
+  }
+  .calc-scale{
+    display:flex;
+    justify-content:space-between;
+    margin-top:2px;
+    color:var(--dim);
+    font-family:var(--mono);
+    font-size:10.5px;
+    letter-spacing:.08em;
+  }
+  .calc-results{
+    display:grid;
+    gap:12px;
+  }
+  .calc-stat{
+    padding:16px 18px;
+    border:1px solid var(--line);
+    border-radius:14px;
+    background:var(--bg);
+  }
+  .calc-stat .label{
+    display:block;
+    color:var(--dim);
+    font-family:var(--mono);
+    font-size:10.5px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+  }
+  .calc-stat .value{
+    display:block;
+    margin-top:8px;
+    color:var(--navy);
+    font-family:var(--display);
+    font-size:clamp(24px,2.6vw,30px);
+    font-weight:800;
+    line-height:1.05;
+    letter-spacing:-.03em;
+    font-variant-numeric:tabular-nums;
+    overflow-wrap:anywhere;
+  }
+  .calc-stat--loss .value{color:#B0483A}
+  .calc-stat--audit{
+    background:var(--bg-tint);
+    border-color:rgba(23,160,94,.3);
+  }
+  .calc-stat--audit .value{color:var(--green-dark)}
+  .calc-foot{
+    display:grid;
+    gap:16px;
+    justify-items:start;
+    padding-top:22px;
+    border-top:1px solid var(--line);
+  }
+  .calc-note{
+    color:var(--dim);
+    font-size:14px;
+    line-height:1.55;
+    max-width:62ch;
+  }
+  @media (min-width:700px){
+    .calc-results{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .calc-foot{
+      grid-template-columns:minmax(0,1fr) auto;
+      align-items:center;
+      gap:28px;
+    }
+  }
+  @media (min-width:860px){
+    .calc-card{padding:38px 40px}
+    .calc-inputs{grid-template-columns:repeat(2,minmax(0,1fr));gap:40px}
+  }
 
   .faq-list{
     max-width:820px;
@@ -1810,7 +1942,10 @@
     border-radius:var(--radius);
     box-shadow:var(--shadow);
     padding:0 18px;
+    transition:border-color .2s ease, box-shadow .2s ease;
   }
+  .faq-list details:hover{border-color:rgba(23,160,94,.4)}
+  .faq-list details[open]{border-color:rgba(23,160,94,.45);box-shadow:var(--shadow-strong)}
   .faq-list summary{
     cursor:pointer;
     list-style:none;
@@ -1898,10 +2033,11 @@
       grid-template-columns:minmax(0,1.05fr) minmax(320px,.95fr);
       align-items:start;
     }
-    .route-grid{
-      grid-template-columns:repeat(2,minmax(0,1fr));
-      gap:20px;
+    .contact-grid{
+      grid-template-columns:minmax(0,1fr) minmax(360px,460px);
+      gap:64px;
     }
+    .contact-card{padding:34px 34px 28px}
     .about-grid{
       grid-template-columns:minmax(0,1fr);
       align-items:start;
@@ -1978,6 +2114,9 @@
       align-items:flex-start;
     }
     .cta-panel h2{max-width:10ch}
+    .how-card,
+    .calc-card,
+    .contact-card{padding:24px 20px}
   }
   @media (max-width:560px){
     .brand-copy span{display:none}
@@ -2042,7 +2181,7 @@
         <div class="hero-copy reveal">
           <div class="eyebrow">Performance marketing agency · Google · Meta · TikTok</div>
           <h1>Your Performance Marketing Partner in the AI Era</h1>
-          <p class="hero-lede">Most agencies sell clicks — we sell unit economics. Full-funnel performance marketing for e-commerce, B2B, B2C and D2C brands across the US, Europe, Australia, CIS and the Middle East. Every dollar tracked from click to conversion.</p>
+          <p class="hero-lede">Most agencies sell clicks — we sell unit economics. Full-funnel performance marketing for e-commerce, B2B, B2C and D2C brands worldwide, with campaigns run across US, European and Asian markets. Every dollar tracked from click to conversion.</p>
           <form class="proposal-form" id="proposal-form">
             <input type="hidden" name="access_key" value="eaaf4af3-428e-4271-b661-1d4900d1aaf5">
             <input type="hidden" name="subject" value="New proposal request — triples.agency">
@@ -2071,43 +2210,31 @@
           </div>
         </div>
 
-        <div class="engine-card reveal" aria-label="Unit Economics Engine">
-          <div class="engine-head">
-            <div>
-              <div class="eyebrow">The framework</div>
-              <h2>Unit Economics Engine</h2>
-            </div>
-            <p>From first click to booked revenue — one tracked loop.</p>
+        <div class="how-card reveal" aria-label="How it works">
+          <div class="eyebrow">How it works</div>
+          <h2>We follow every ad dollar to a sale.</h2>
+          <ol class="how-steps">
+            <li class="how-step">
+              <span class="how-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 10v4a1 1 0 0 0 1 1h2l5 4V5L6 9H4a1 1 0 0 0-1 1z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg></span>
+              <div><strong>Ads</strong><span>Your ads run on Google, Meta and TikTok.</span></div>
+            </li>
+            <li class="how-step">
+              <span class="how-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 3v3M4.2 5.2l2.1 2.1M3 10h3M10 10l10 4-4 1.5-1.5 4z"/></svg></span>
+              <div><strong>Visitors</strong><span>The right people click through to your site.</span></div>
+            </li>
+            <li class="how-step">
+              <span class="how-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 6h16v12H4z"/><path d="M4 7l8 6 8-6"/></svg></span>
+              <div><strong>Leads &amp; sales</strong><span>Every enquiry and order gets counted.</span></div>
+            </li>
+            <li class="how-step how-step--end">
+              <span class="how-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 17l5-5 4 4 7-8"/><path d="M15 8h5v5"/></svg></span>
+              <div><strong>Profit</strong><span>We cut what doesn&rsquo;t pay and grow what does.</span></div>
+            </li>
+          </ol>
+          <div class="how-result">
+            <span class="how-result-value">Up to 90%</span>
+            <span class="how-result-label">lower cost per lead for our clients</span>
           </div>
-          <svg class="engine-svg" viewBox="0 0 560 560" role="img" aria-label="Circular Unit Economics Engine diagram">
-            <circle class="segment segment-1" cx="280" cy="280" r="175"></circle>
-            <circle class="segment segment-2" cx="280" cy="280" r="175"></circle>
-            <circle class="segment segment-3" cx="280" cy="280" r="175"></circle>
-            <circle class="segment segment-4" cx="280" cy="280" r="175"></circle>
-
-            <circle class="center-disc" cx="280" cy="280" r="101"></circle>
-            <text class="center-mark" x="280" y="256" text-anchor="middle">S³</text>
-            <text class="center-value" x="280" y="286" text-anchor="middle">Up to 90% CPL reduction</text>
-            <text class="center-sub" x="280" y="308" text-anchor="middle">unit-economics framework</text>
-
-            <g class="label">
-              <line class="ring-line" x1="280" y1="103" x2="280" y2="72"></line>
-              <text x="280" y="60" text-anchor="middle">Acquisition</text>
-            </g>
-            <g class="label">
-              <line class="ring-line" x1="456" y1="280" x2="492" y2="280"></line>
-              <text x="500" y="284">Tracking</text>
-            </g>
-            <g class="label">
-              <line class="ring-line" x1="280" y1="457" x2="280" y2="488"></line>
-              <text x="280" y="514" text-anchor="middle">Optimization</text>
-            </g>
-            <g class="label">
-              <line class="ring-line" x1="104" y1="280" x2="68" y2="280"></line>
-              <text x="60" y="284" text-anchor="end">Revenue</text>
-            </g>
-          </svg>
-
         </div>
       </div>
     </section>
@@ -2434,6 +2561,56 @@
       </div>
     </section>
 
+    <section id="calculator" class="section section--tint">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <h2>How much ad budget could you be losing?</h2>
+        </div>
+        <p class="section-intro reveal">A quick estimate. Set your monthly ad spend and how much of it you think isn&rsquo;t bringing in customers.</p>
+
+        <div class="calc-card reveal">
+          <div class="calc-inputs">
+            <div class="calc-field">
+              <div class="calc-row">
+                <label class="calc-label" for="spend-range">Monthly ad spend</label>
+                <output class="calc-value" id="spend-value" for="spend-range">$5,000</output>
+              </div>
+              <input type="range" id="spend-range" min="500" max="100000" step="500" value="5000">
+              <div class="calc-scale"><span>$500</span><span>$100K</span></div>
+            </div>
+            <div class="calc-field">
+              <div class="calc-row">
+                <label class="calc-label" for="waste-range">Share not bringing customers</label>
+                <output class="calc-value" id="waste-value" for="waste-range">20%</output>
+              </div>
+              <input type="range" id="waste-range" min="5" max="60" step="5" value="20">
+              <div class="calc-scale"><span>5%</span><span>60%</span></div>
+            </div>
+          </div>
+
+          <div class="calc-results" aria-live="polite">
+            <div class="calc-stat calc-stat--loss">
+              <span class="label">Lost per month</span>
+              <span class="value" id="waste-month">$1,000</span>
+            </div>
+            <div class="calc-stat calc-stat--loss">
+              <span class="label">Lost per year</span>
+              <span class="value" id="waste-year">$12,000</span>
+            </div>
+            <div class="calc-stat calc-stat--audit">
+              <span class="label">To find the real number</span>
+              <span class="value">$200 audit</span>
+            </div>
+          </div>
+
+          <div class="calc-foot">
+            <p class="calc-note">Rough estimate only: spend &times; the share you picked. It is not a benchmark or a promise. The 48-hour audit shows what is actually being wasted in your account.</p>
+            <a class="btn btn-green" href="/ads-audit/">Find my real number</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="services" class="section">
       <div class="wrap">
         <div class="section-head reveal">
@@ -2518,7 +2695,7 @@
         <div class="founder-copy reveal">
           <div class="eyebrow eyebrow--dark">About Triple S</div>
           <h2>Built by engineers, not account managers.</h2>
-          <p>Triple S was founded in 2022 at the intersection of software engineering and media buying. We run acquisition for e-commerce, B2B, B2C and D2C brands across five regions — with GA4, GTM and server-side tracking built in-house, and AI systems that answer every lead within minutes. Restaurants, auto dealerships, medical procedures, cosmetics and furniture are all accounts we've run.</p>
+          <p>Triple S was founded in 2022 at the intersection of software engineering and media buying. We run acquisition for e-commerce, B2B, B2C and D2C brands worldwide — with GA4, GTM and server-side tracking built in-house, and AI systems that answer every lead within minutes. Restaurants, auto dealerships, medical procedures, cosmetics and furniture are all accounts we've run.</p>
           <div class="about-stats" aria-label="Agency stats">
             <div class="mini-stat">
               <span class="value">4+ years</span>
@@ -2529,8 +2706,8 @@
               <span class="label">Google, Meta, TikTok, LinkedIn, DV360</span>
             </div>
             <div class="mini-stat">
-              <span class="value">5 regions</span>
-              <span class="label">US, Europe, Australia, CIS, Middle East</span>
+              <span class="value">Worldwide</span>
+              <span class="label">US, European and Asian markets</span>
             </div>
           </div>
           <div class="partner-chip" aria-label="Google Partner contributor 2023">
@@ -2596,47 +2773,34 @@
 
     <section id="contact" class="cta-band">
       <div class="wrap">
-        <div class="cta-panel reveal">
-          <div class="eyebrow eyebrow--dark">Contact</div>
-          <h2>Two ways to start.</h2>
-          <p class="cta-sub">Talk it through first, or go straight to the audit. Either way you get a prioritized list of what's wrong in the account and what we'd fix first.</p>
-          <p class="cta-sub">We take on a maximum of 2 new accounts per month — senior attention doesn't scale past that.</p>
-        </div>
+        <div class="contact-grid">
+          <div class="cta-panel reveal">
+            <div class="eyebrow eyebrow--dark">Contact</div>
+            <h2>Let&rsquo;s look at your account.</h2>
+            <p class="cta-sub">Book a free 30-minute call. Screen-share the account and leave with the two or three changes worth making first.</p>
+            <p class="cta-meta">We take on a maximum of 2 new accounts per month</p>
+          </div>
 
-        <div class="route-grid reveal">
-          <a class="route-card route-card--primary" href="https://calendly.com/abzal-bolatkhan-01/30min" target="_blank" rel="noreferrer">
-            <div class="route-top">
-              <span class="route-kicker">Option 01</span>
-              <span class="route-time">30 min · free</span>
-            </div>
-            <h3>Book a strategy call</h3>
-            <p>Screen-share the account. We go through the tracking, where the spend leaks, and the two or three changes worth making first.</p>
-            <ul class="route-list">
+          <div class="contact-card reveal">
+            <span class="contact-kicker">Recommended · 30 min · free</span>
+            <a class="btn btn-green contact-primary" href="https://calendly.com/abzal-bolatkhan-01/30min" target="_blank" rel="noreferrer">Book a free strategy call <span aria-hidden="true">&rarr;</span></a>
+            <ul class="contact-points">
               <li>No deck, no pitch</li>
               <li>You keep the fix list either way</li>
             </ul>
-            <span class="route-action">Pick a time on Calendly <span class="route-arrow" aria-hidden="true">→</span></span>
-          </a>
 
-          <a class="route-card" href="mailto:abzal.business.01@gmail.com?subject=Proposal%20Request">
-            <div class="route-top">
-              <span class="route-kicker">Option 02</span>
-              <span class="route-time">24 h reply</span>
+            <div class="contact-alt">
+              <p class="contact-alt-title">Prefer email? Get a written proposal.</p>
+              <p class="contact-alt-copy">Send your website and the platforms you run. Reply within 24 hours.</p>
+              <a class="contact-mail" href="mailto:abzal.business.01@gmail.com?subject=Proposal%20Request">abzal.business.01@gmail.com <span aria-hidden="true">&rarr;</span></a>
             </div>
-            <h3>Get a proposal</h3>
-            <p>Send your website and the platforms you run. We reply with scope, the tier you'd fall into and a start date — no call needed.</p>
-            <ul class="route-list">
-              <li>Written scope, not a sales deck</li>
-              <li>The 48-hour audit is the usual first step</li>
-            </ul>
-            <span class="route-action">abzal.business.01@gmail.com <span class="route-arrow" aria-hidden="true">→</span></span>
-          </a>
-        </div>
 
-        <div class="cta-secondary reveal">
-          <span class="cta-meta">Also on</span>
-          <a href="https://www.upwork.com/agencies/1553470846164299776/" target="_blank" rel="noreferrer">Upwork</a>
-          <a href="https://www.linkedin.com/company/triple-s-agency" target="_blank" rel="noreferrer">LinkedIn</a>
+            <div class="cta-secondary">
+              <span class="cta-meta">Also on</span>
+              <a href="https://www.upwork.com/agencies/1553470846164299776/" target="_blank" rel="noreferrer">Upwork</a>
+              <a href="https://www.linkedin.com/company/triple-s-agency" target="_blank" rel="noreferrer">LinkedIn</a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -2662,8 +2826,8 @@
           <span class="label">largest CPL reduction</span>
         </div>
         <div class="footer-stat">
-          <span class="value">5</span>
-          <span class="label">regions</span>
+          <span class="value">Global</span>
+          <span class="label">client markets</span>
         </div>
       </div>
       <div>
@@ -2699,6 +2863,30 @@
           }, { threshold: 0.22 });
           revealTargets.forEach((node) => revealObserver.observe(node));
         }
+      }
+
+      const spendRange = document.getElementById('spend-range');
+      const wasteRange = document.getElementById('waste-range');
+      if (spendRange && wasteRange) {
+        const fmt = (n) => '$' + Math.round(n).toLocaleString('en-US');
+        const set = (id, text) => {
+          const node = document.getElementById(id);
+          if (node) node.textContent = text;
+        };
+        const updateCalc = () => {
+          const spend = Number(spendRange.value);
+          const share = Number(wasteRange.value);
+          const monthly = spend * share / 100;
+          set('spend-value', fmt(spend));
+          set('waste-value', share + '%');
+          set('waste-month', fmt(monthly));
+          set('waste-year', fmt(monthly * 12));
+          spendRange.setAttribute('aria-valuetext', fmt(spend) + ' per month');
+          wasteRange.setAttribute('aria-valuetext', share + ' percent');
+        };
+        spendRange.addEventListener('input', updateCalc);
+        wasteRange.addEventListener('input', updateCalc);
+        updateCalc();
       }
 
       if (form && input) {
