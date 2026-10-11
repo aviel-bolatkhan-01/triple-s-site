@@ -605,6 +605,8 @@
   }
   .quote figcaption span{color:#4CD693}
   .quote figcaption span::before{content:"· "}
+  .quote-link{color:#fff;text-decoration:underline;text-underline-offset:3px}
+  .quote-link:hover{color:#4CD693}
 
   .partner-badge{
     display:flex;
