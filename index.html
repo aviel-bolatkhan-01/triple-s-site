@@ -2456,6 +2456,35 @@
   }
   .text-link:hover{border-bottom-color:var(--green)}
 
+  /* v5: lead magnet */
+  .magnet{
+    display:grid;
+    gap:20px;
+    margin-top:20px;
+    padding:26px 24px;
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:20px;
+    box-shadow:var(--shadow);
+  }
+  .magnet-copy h3{
+    margin:8px 0 8px;
+    font-size:clamp(21px,2.4vw,26px);
+    font-weight:800;
+    line-height:1.15;
+  }
+  .magnet-copy p{color:var(--body);max-width:52ch;line-height:1.6}
+  .magnet-form{margin-top:0;max-width:none}
+  .magnet-fine{
+    color:var(--dim);
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.08em;
+  }
+  @media (min-width:860px){
+    .magnet{grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;gap:40px;padding:32px 40px}
+  }
+
   /* v5: blog */
   .article-meta{
     margin:16px 0 8px;
@@ -2885,6 +2914,31 @@
             <a class="btn btn-green" href="/ads-audit/">Find my real number</a>
           </div>
         </div>
+
+        <div class="magnet reveal">
+          <div class="magnet-copy">
+            <span class="eyebrow">Checklist · PDF</span>
+            <h3>Get the 12-point ads tracking checklist (PDF)</h3>
+            <p>The checks the 48-hour audit starts with: whether your conversions fire, fire once, and report the right value. Run it on your own account.</p>
+          </div>
+          <!-- TODO(aviel): create the PDF at /assets/tracking-checklist.pdf. Web3Forms only emails YOU the request (same key as the hero form), so you send the PDF by hand, or swap in an email tool with an autoresponder. If you'd rather not use Web3Forms here, change the form to: action="mailto:hello@triples.agency?subject=Tracking%20checklist" -->
+          <form class="proposal-form magnet-form" id="magnet-form">
+            <input type="hidden" name="access_key" value="eaaf4af3-428e-4271-b661-1d4900d1aaf5">
+            <input type="hidden" name="subject" value="Checklist request — triples.agency">
+            <input type="hidden" name="from_name" value="Triple S website">
+            <input type="hidden" name="request" value="12-point ads tracking checklist (PDF)">
+            <div class="form-trap" aria-hidden="true">
+              <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off">
+            </div>
+            <div class="proposal-fields">
+              <label class="sr-only" for="magnet-email">Your email</label>
+              <input id="magnet-email" name="email" type="email" placeholder="Your email" autocomplete="email" required>
+              <button class="btn btn-dark" type="submit">Email me the checklist</button>
+            </div>
+            <p class="form-status" id="magnet-status" role="status" aria-live="polite" hidden></p>
+            <p class="magnet-fine">One email with the PDF. No newsletter.</p>
+          </form>
+        </div>
       </div>
     </section>
 
@@ -3246,6 +3300,52 @@
             if (button) {
               button.disabled = false;
               button.textContent = buttonLabel;
+            }
+          }
+        });
+      }
+
+      const magnet = document.getElementById('magnet-form');
+      if (magnet) {
+        const MAGNET_MAIL = 'hello@triples.agency';
+        const mEmail = document.getElementById('magnet-email');
+        const mStatus = document.getElementById('magnet-status');
+        const mButton = magnet.querySelector('button[type="submit"]');
+        const mLabel = mButton ? mButton.textContent : '';
+        const mSay = (message, tone) => {
+          if (!mStatus) return;
+          mStatus.innerHTML = message;
+          mStatus.className = tone ? `form-status form-status--${tone}` : 'form-status';
+          mStatus.hidden = false;
+        };
+        magnet.addEventListener('submit', async (event) => {
+          event.preventDefault();
+          const address = mEmail ? mEmail.value.trim() : '';
+          if (!address || !/^\S+@\S+\.\S+$/.test(address)) {
+            mSay('Add a valid email so we can send it.', 'err');
+            if (mEmail) mEmail.focus();
+            return;
+          }
+          if (mButton) {
+            mButton.disabled = true;
+            mButton.textContent = 'Sending…';
+          }
+          try {
+            const response = await fetch('https://api.web3forms.com/submit', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+              body: JSON.stringify(Object.fromEntries(new FormData(magnet)))
+            });
+            const result = await response.json();
+            if (!result.success) throw new Error(result.message || 'Submission failed');
+            magnet.reset();
+            mSay('Got it. The checklist will be in your inbox within 24 hours.', 'ok');
+          } catch (error) {
+            mSay(`Couldn’t send that. Email <a href="mailto:${MAGNET_MAIL}?subject=Tracking%20checklist">${MAGNET_MAIL}</a> and we’ll send it over.`, 'err');
+          } finally {
+            if (mButton) {
+              mButton.disabled = false;
+              mButton.textContent = mLabel;
             }
           }
         });

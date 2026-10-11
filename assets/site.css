@@ -2317,6 +2317,35 @@
   }
   .text-link:hover{border-bottom-color:var(--green)}
 
+  /* v5: lead magnet */
+  .magnet{
+    display:grid;
+    gap:20px;
+    margin-top:20px;
+    padding:26px 24px;
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:20px;
+    box-shadow:var(--shadow);
+  }
+  .magnet-copy h3{
+    margin:8px 0 8px;
+    font-size:clamp(21px,2.4vw,26px);
+    font-weight:800;
+    line-height:1.15;
+  }
+  .magnet-copy p{color:var(--body);max-width:52ch;line-height:1.6}
+  .magnet-form{margin-top:0;max-width:none}
+  .magnet-fine{
+    color:var(--dim);
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.08em;
+  }
+  @media (min-width:860px){
+    .magnet{grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;gap:40px;padding:32px 40px}
+  }
+
   /* v5: blog */
   .article-meta{
     margin:16px 0 8px;
