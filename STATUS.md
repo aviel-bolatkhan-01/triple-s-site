@@ -241,3 +241,14 @@ screenshots match byte for byte.
 - Contact band: one primary green button (Calendly), email proposal as secondary, Upwork/LinkedIn underneath. Old `.route-card` CSS removed.
 - Small polish: nav underline on hover, FAQ hover/open state, step-number hover, tier hover, shadows on client wall + audit band, balanced h1 wrap.
 - Previews: `_preview/before/`, `_preview/after/` (gitignored).
+
+## 2026-10-12 — v5 positioning round (branch `site-v5-positioning`, NOT pushed, NOT merged)
+- Homepage repositioned to US medspas + DTC: new H1/subhead/title/meta/OG/Twitter, new og-image.jpg, top bar links to #results, "For medspas" in nav.
+- Email is now hello@triples.agency everywhere (all pages, JSON-LD, form JS, privacy). **Mailbox must exist before merge.**
+- Google Partner badge + "Contributor · 2023" replaced by a "Certified" block; client wall renamed "Brands I've managed media for" + enterprise footnote; $22.70 clinic proof chip + $0.14 chip (market wording TODO); Upwork proof link (rating TODO).
+- Founder block "You work directly with me" (initials tile until a real headshot exists) + Person JSON-LD.
+- New pages: /case-studies/ + 5 case pages, /medspa-ads/, /blog/ + 3 outline stubs (noindex), article template in `_templates/` (not published by Jekyll). Sitemap now 16 URLs.
+- Lead magnet form (Web3Forms) under the calculator: PDF does not exist yet. Sticky mobile "Book a free 30-min call". 2 hidden testimonial slots.
+- **Correction:** the "$0.35 CPM, down from $0.46" stat was on Noodlers but the screenshot is the mattress brand's TikTok account. Moved to the mattress case.
+- All TODOs are marked `TODO(aviel)` in the HTML: `grep -rn "TODO(aviel)" --include=*.html .`
+- Previews: `_preview/v5/` (gitignored). New pages are generated from scratchpad scripts. They are plain HTML now; edit them directly.
