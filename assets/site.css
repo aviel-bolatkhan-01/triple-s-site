@@ -2038,3 +2038,65 @@
   @media (max-width:700px){
     .hero h1{font-size:clamp(32px,9vw,44px)}
   }
+
+  /* v5: trust */
+  .proof-chips{display:grid;gap:12px;margin-top:22px}
+  .proof-chips .proof-chip{margin-top:0}
+  .proof-chips .proof-value{font-size:clamp(32px,3.6vw,44px)}
+  .proof-copy a,
+  .strip-note a{
+    color:var(--green-dark);
+    border-bottom:1px solid rgba(23,160,94,.4);
+    white-space:nowrap;
+  }
+  .proof-copy a:hover{border-bottom-color:var(--green)}
+  @media (min-width:560px){
+    .proof-chips{grid-template-columns:repeat(2,minmax(0,1fr))}
+  }
+  .upwork-proof{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-top:12px;
+    padding:12px 16px;
+    border:1px solid var(--line);
+    border-radius:14px;
+    background:#fff;
+    color:var(--navy);
+    transition:border-color .2s ease;
+  }
+  .upwork-proof:hover{border-color:rgba(23,160,94,.55);color:var(--navy)}
+  .upwork-mark{
+    flex:none;
+    display:grid;
+    place-items:center;
+    width:34px;
+    height:34px;
+    border-radius:10px;
+    background:#14A800;
+    color:#fff;
+    font-family:var(--display);
+    font-weight:800;
+    font-size:14px;
+  }
+  .upwork-text{flex:1;min-width:0}
+  .upwork-text strong{display:block;font-family:var(--display);font-size:15px;line-height:1.2}
+  .upwork-text span{display:block;margin-top:2px;color:var(--dim);font-size:13px;line-height:1.4}
+  .strip-note{
+    margin-top:12px;
+    color:var(--dim);
+    font-size:13px;
+    line-height:1.5;
+  }
+  .cert-badge{max-width:460px}
+  .cert-icon{
+    flex:none;
+    width:38px;
+    height:38px;
+    fill:none;
+    stroke:#4CD693;
+    stroke-width:1.6;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+  }
+  .partner-text .cert-note{color:#A8D7BC}

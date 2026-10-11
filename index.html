@@ -32,7 +32,7 @@
       "logo": "https://triples.agency/assets/og-image.jpg",
       "image": "https://triples.agency/assets/og-image.jpg",
       "description": "Meta and Google ads for US medical-aesthetics clinics, medspas and DTC e-commerce brands. Tracking-first media buying (GA4, GTM, server-side) run by a senior specialist.",
-      "email": "abzal.business.01@gmail.com",
+      "email": "hello@triples.agency",
       "priceRange": "$$",
       "serviceType": "Performance Marketing",
       "areaServed": "Worldwide"
@@ -2155,6 +2155,68 @@
   @media (max-width:700px){
     .hero h1{font-size:clamp(32px,9vw,44px)}
   }
+
+  /* v5: trust */
+  .proof-chips{display:grid;gap:12px;margin-top:22px}
+  .proof-chips .proof-chip{margin-top:0}
+  .proof-chips .proof-value{font-size:clamp(32px,3.6vw,44px)}
+  .proof-copy a,
+  .strip-note a{
+    color:var(--green-dark);
+    border-bottom:1px solid rgba(23,160,94,.4);
+    white-space:nowrap;
+  }
+  .proof-copy a:hover{border-bottom-color:var(--green)}
+  @media (min-width:560px){
+    .proof-chips{grid-template-columns:repeat(2,minmax(0,1fr))}
+  }
+  .upwork-proof{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-top:12px;
+    padding:12px 16px;
+    border:1px solid var(--line);
+    border-radius:14px;
+    background:#fff;
+    color:var(--navy);
+    transition:border-color .2s ease;
+  }
+  .upwork-proof:hover{border-color:rgba(23,160,94,.55);color:var(--navy)}
+  .upwork-mark{
+    flex:none;
+    display:grid;
+    place-items:center;
+    width:34px;
+    height:34px;
+    border-radius:10px;
+    background:#14A800;
+    color:#fff;
+    font-family:var(--display);
+    font-weight:800;
+    font-size:14px;
+  }
+  .upwork-text{flex:1;min-width:0}
+  .upwork-text strong{display:block;font-family:var(--display);font-size:15px;line-height:1.2}
+  .upwork-text span{display:block;margin-top:2px;color:var(--dim);font-size:13px;line-height:1.4}
+  .strip-note{
+    margin-top:12px;
+    color:var(--dim);
+    font-size:13px;
+    line-height:1.5;
+  }
+  .cert-badge{max-width:460px}
+  .cert-icon{
+    flex:none;
+    width:38px;
+    height:38px;
+    fill:none;
+    stroke:#4CD693;
+    stroke-width:1.6;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+  }
+  .partner-text .cert-note{color:#A8D7BC}
 </style>
 </head>
 <body>
@@ -2219,11 +2281,25 @@
             <p class="form-status" id="form-status" role="status" aria-live="polite" hidden></p>
           </form>
           <div class="hero-fineprint">Reply within 24 hours · No obligation</div>
-          <div class="proof-chip">
-            <div class="proof-label"><span class="dot" aria-hidden="true"></span>From a live client account</div>
-            <span class="proof-value">8,492 conversions at $0.14 each</span>
-            <p class="proof-copy">One account. Full report in the case study below.</p>
+          <div class="proof-chips">
+            <div class="proof-chip">
+              <div class="proof-label"><span class="dot" aria-hidden="true"></span>US aesthetics clinic · Meta</div>
+              <span class="proof-value">$22.70</span>
+              <p class="proof-copy">per qualified lead from Meta lead-gen. <a href="/case-studies/medspa-lead-generation/">See the case</a></p>
+            </div>
+            <div class="proof-chip">
+              <div class="proof-label"><span class="dot" aria-hidden="true"></span>DTC brand · Google Ads</div>
+              <span class="proof-value">$0.14</span>
+              <!-- TODO(aviel): confirm this wording (market + conversion type) before it goes live -->
+              <p class="proof-copy">per conversion, 8,492 conversions. Lead-gen, Central Asia market. <a href="/case-studies/dtc-mattress-rebuild/">See the case</a></p>
+            </div>
           </div>
+          <!-- TODO(aviel): add the real Upwork rating + review count here (e.g. "5.0 &#9733; · 12 reviews"). Only write "Top Rated" if Upwork actually shows that badge on the profile. -->
+          <a class="upwork-proof" href="https://www.upwork.com/agencies/1553470846164299776/" target="_blank" rel="noreferrer">
+            <span class="upwork-mark" aria-hidden="true">Up</span>
+            <span class="upwork-text"><strong>Agency profile on Upwork</strong><span>Prefer to hire through Upwork? See the profile</span></span>
+            <span aria-hidden="true">&rarr;</span>
+          </a>
         </div>
 
         <div class="how-card reveal" aria-label="How it works">
@@ -2257,7 +2333,7 @@
 
     <section class="client-strip">
       <div class="wrap">
-        <div class="strip-label reveal">Campaigns run for</div>
+        <div class="strip-label reveal">Brands I&rsquo;ve managed media for</div>
         <div class="client-wall reveal" aria-label="Clients">
           <div class="client-tile">Leroy Merlin</div>
           <div class="client-tile">BIC</div>
@@ -2272,6 +2348,7 @@
           <div class="client-tile">Croissant Atelier</div>
           <div class="client-tile">Atelier Beaute</div>
         </div>
+        <p class="strip-note reveal">Enterprise brands (Leroy Merlin, BIC) were managed while embedded with partner agencies.</p>
       </div>
     </section>
 
@@ -2282,16 +2359,12 @@
           <blockquote>We had to stop the sales department because we are flooded with leads.</blockquote>
           <figcaption>Director of Marketing<span>NKB Group</span></figcaption>
         </figure>
-        <div class="partner-badge" aria-label="Google Partner">
-          <svg class="g-mark" viewBox="0 0 48 48" role="img" aria-label="Google">
-            <path fill="#4285F4" d="M45.1 24.5c0-1.6-.1-3.2-.4-4.7H24v8.9h11.9c-.5 2.8-2.1 5.1-4.4 6.7v5.6h7.1c4.2-3.8 6.5-9.5 6.5-16.5z"></path>
-            <path fill="#34A853" d="M24 46c5.9 0 10.9-2 14.6-5.3l-7.1-5.6c-2 1.3-4.5 2.1-7.5 2.1-5.8 0-10.6-3.9-12.4-9.1H4.3v5.7C8 41.3 15.4 46 24 46z"></path>
-            <path fill="#FBBC05" d="M11.6 28.1c-.4-1.3-.7-2.7-.7-4.1s.3-2.8.7-4.1v-5.7H4.3C2.8 17.1 2 20.4 2 24s.8 6.9 2.3 9.8l7.3-5.7z"></path>
-            <path fill="#EA4335" d="M24 10.8c3.3 0 6.2 1.1 8.5 3.3l6.3-6.3C34.9 4.3 29.9 2 24 2 15.4 2 8 6.7 4.3 14.2l7.3 5.7c1.8-5.2 6.6-9.1 12.4-9.1z"></path>
-          </svg>
+        <div class="partner-badge cert-badge" aria-label="Certifications">
+          <svg class="cert-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9" r="6.5"/><path d="M9.2 9.2l2 2 3.8-4"/><path d="M8.4 14.6L7 22l5-2.8 5 2.8-1.4-7.4"/></svg>
           <div class="partner-text">
-            <strong>Google Partner</strong>
-            <span>Certified on live accounts · Search, Display, Video, Measurement</span>
+            <strong>Certified</strong>
+            <span>Google Ads certified (Search, Display, Video, Measurement) · Google Analytics · DV360 · CM360 · Meta</span>
+            <span class="cert-note">Earned on live accounts inside a Google Partner agency</span>
           </div>
         </div>
       </div>
@@ -2302,7 +2375,7 @@
         <div class="section-head reveal">
           <h2>Results. The receipt matters.</h2>
         </div>
-        <p class="section-intro reveal">Five engagements, US and Europe first. Real numbers — open the report on any of them.</p>
+        <p class="section-intro reveal">Five engagements, US clinics first. Real numbers from real dashboards &mdash; open the full case study on any of them.</p>
 
         <div class="results-grid">
           <article class="case-card reveal">
@@ -2463,7 +2536,7 @@
             <div class="case-copy">
               <div class="case-eyebrow">The receipt</div>
               <h3>Noodlers — food delivery brand</h3>
-              <p>TikTok CPM optimization in a high-competition delivery market. Full-funnel tracking via GTM.</p>
+              <p>TikTok campaigns in a high-competition delivery market, with full-funnel tracking via GTM.</p>
               <div class="receipt-points">
                 <p><span class="mono">Tracking:</span> spend tied to conversion data, not platform noise.</p>
               </div>
@@ -2473,10 +2546,7 @@
                 <span class="brand-tile-kicker">Client</span>
                 <strong>Noodlers</strong>
                 <span class="brand-tile-sector">Food delivery · UAE</span>
-                <div class="brand-tile-stat">
-                  <span class="v">$0.35</span>
-                  <span class="l">CPM, down from $0.46</span>
-                </div>
+                <!-- TODO(aviel): the old "$0.35 CPM, down from $0.46" stat was taken from the mattress brand's TikTok account (tiktok-cpm-case.webp shows "Center Matrasov"), so it moved to that case. Add a real Noodlers headline number if you have one. -->
               </div>
               <button class="report-btn" type="button" data-dialog="report-2">
                 <span>View performance report</span>
@@ -2514,7 +2584,7 @@
             <div class="case-copy">
               <div class="case-eyebrow">The receipt</div>
               <h3>8-month multi-channel rebuild</h3>
-              <p>8 months of multi-channel optimization. Google Ads CPL $0.82 → $0.18. Meta CPL $1.02 → $0.36. 200%+ lead growth. Channels: Google, Meta, TikTok.</p>
+              <p>8 months of multi-channel optimization. Google Ads CPL $0.82 → $0.18. Meta CPL $1.02 → $0.36. TikTok CPM $0.46 → $0.35. 200%+ lead growth. Channels: Google, Meta, TikTok.</p>
               <div class="receipt-points">
                 <p><span class="mono">In the report:</span> 8,492 conversions at $0.14 each, 66.8% conversion rate.</p>
               </div>
@@ -2726,11 +2796,11 @@
               <span class="label">US, European and Asian markets</span>
             </div>
           </div>
-          <div class="partner-chip" aria-label="Google Partner contributor 2023">
-            <span class="partner-g" aria-hidden="true">G</span>
+          <div class="partner-chip" aria-label="Certifications">
+            <span class="partner-g" aria-hidden="true">&#10003;</span>
             <div>
-              <strong>Google Partner</strong>
-              <span>Contributor · 2023</span>
+              <strong>Certified</strong>
+              <span>Google Ads · Google Analytics · DV360 · CM360 · Meta</span>
             </div>
           </div>
         </div>
@@ -2808,7 +2878,7 @@
             <div class="contact-alt">
               <p class="contact-alt-title">Prefer email? Get a written proposal.</p>
               <p class="contact-alt-copy">Send your website and the platforms you run. Reply within 24 hours.</p>
-              <a class="contact-mail" href="mailto:abzal.business.01@gmail.com?subject=Proposal%20Request">abzal.business.01@gmail.com <span aria-hidden="true">&rarr;</span></a>
+              <a class="contact-mail" href="mailto:hello@triples.agency?subject=Proposal%20Request">hello@triples.agency <span aria-hidden="true">&rarr;</span></a>
             </div>
 
             <div class="cta-secondary">
@@ -2849,7 +2919,7 @@
       <div>
         <div class="footer-links">
           <a href="https://calendly.com/abzal-bolatkhan-01/30min" target="_blank" rel="noreferrer">Book a call</a>
-          <a href="mailto:abzal.business.01@gmail.com">Email</a>
+          <a href="mailto:hello@triples.agency">Email</a>
           <a href="/privacy.html">Privacy</a>
           <a href="https://www.upwork.com/agencies/1553470846164299776/" target="_blank" rel="noreferrer">Upwork</a>
           <a href="https://www.linkedin.com/company/triple-s-agency" target="_blank" rel="noreferrer">LinkedIn</a>
@@ -2912,7 +2982,7 @@
         const buttonLabel = button ? button.textContent : '';
         const keyField = form.querySelector('[name="access_key"]');
         const PLACEHOLDER_KEY = 'REPLACE_WITH_WEB3FORMS_ACCESS_KEY';
-        const MAIL = 'abzal.business.01@gmail.com';
+        const MAIL = 'hello@triples.agency';
 
         const say = (message, tone) => {
           if (!status) return;
