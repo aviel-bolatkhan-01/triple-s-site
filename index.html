@@ -33,9 +33,31 @@
       "image": "https://triples.agency/assets/og-image.jpg",
       "description": "Meta and Google ads for US medical-aesthetics clinics, medspas and DTC e-commerce brands. Tracking-first media buying (GA4, GTM, server-side) run by a senior specialist.",
       "email": "hello@triples.agency",
+      "foundingDate": "2022",
+      "founder": {
+        "@id": "https://triples.agency/#founder"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/triple-s-agency",
+        "https://www.upwork.com/agencies/1553470846164299776/"
+      ],
       "priceRange": "$$",
       "serviceType": "Performance Marketing",
       "areaServed": "Worldwide"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://triples.agency/#founder",
+      "name": "Aviel Bolatkhan",
+      "jobTitle": "Founder & lead media buyer",
+      "url": "https://triples.agency/#about",
+      "worksFor": {
+        "@id": "https://triples.agency/#org"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/aviel-bolatkhan"
+      ],
+      "knowsAbout": ["Google Ads", "Meta Ads", "TikTok Ads", "LinkedIn Ads", "Display & Video 360", "Google Analytics 4", "Google Tag Manager", "Server-side tracking"]
     },
     {
       "@type": "WebSite",
@@ -2217,6 +2239,65 @@
     stroke-linejoin:round;
   }
   .partner-text .cert-note{color:#A8D7BC}
+
+  /* v5: founder */
+  .founder-card{
+    display:flex;
+    align-items:center;
+    gap:18px;
+  }
+  .founder-avatar{
+    flex:none;
+    width:92px;
+    height:92px;
+    border-radius:20px;
+    object-fit:cover;
+    border:1px solid rgba(255,255,255,.14);
+  }
+  .founder-avatar--initials{
+    display:grid;
+    place-items:center;
+    background:linear-gradient(145deg,var(--green) 0%, var(--green-dark) 100%);
+    color:#fff;
+    font-family:var(--display);
+    font-size:32px;
+    font-weight:800;
+    letter-spacing:-.04em;
+    box-shadow:0 14px 30px rgba(0,0,0,.24);
+  }
+  .founder-id{display:grid;gap:4px;min-width:0}
+  .founder-name{
+    color:#fff;
+    font-family:var(--display);
+    font-size:22px;
+    font-weight:800;
+    line-height:1.1;
+    letter-spacing:-.02em;
+  }
+  .founder-title{
+    color:#A8D7BC;
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+  }
+  .founder-link{
+    justify-self:start;
+    margin-top:4px;
+    color:#4CD693;
+    font-family:var(--mono);
+    font-size:12px;
+    letter-spacing:.04em;
+    border-bottom:1px solid rgba(76,214,147,.35);
+  }
+  .founder-link:hover{color:#fff}
+  .founder-copy .founder-promise{
+    color:#fff;
+    font-family:var(--display);
+    font-size:clamp(18px,2vw,21px);
+    font-weight:700;
+    line-height:1.35;
+  }
 </style>
 </head>
 <body>
@@ -2780,8 +2861,21 @@
       <div class="wrap about-grid">
         <div class="founder-copy reveal">
           <div class="eyebrow eyebrow--dark">About Triple S</div>
-          <h2>Built by engineers, not account managers.</h2>
-          <p>Triple S was founded in 2022 at the intersection of software engineering and media buying. We run acquisition for e-commerce, B2B, B2C and D2C brands worldwide — with GA4, GTM and server-side tracking built in-house, and AI systems that answer every lead within minutes. Restaurants, auto dealerships, medical procedures, cosmetics and furniture are all accounts we've run.</p>
+          <h2>You work directly with me.</h2>
+          <div class="founder-card">
+            <!-- TODO(aviel): add a real headshot at /assets/founder.webp (square, ~600px, convert with: cwebp -q 82 in.jpg -o assets/founder.webp), then swap the initials tile below for:
+                 <img class="founder-avatar" src="/assets/founder.webp" width="600" height="600" alt="Aviel Bolatkhan, founder of Triple S" loading="lazy" decoding="async">
+                 (assets/founder.jpg exists but is a casual selfie from an older version; not used.) -->
+            <div class="founder-avatar founder-avatar--initials" role="img" aria-label="Aviel Bolatkhan">AB</div>
+            <div class="founder-id">
+              <strong class="founder-name">Aviel Bolatkhan</strong>
+              <span class="founder-title">Founder &amp; lead media buyer</span>
+              <!-- TODO(aviel): confirm this is your current personal LinkedIn URL (it was on the site in an earlier version) -->
+              <a class="founder-link" href="https://www.linkedin.com/in/aviel-bolatkhan" target="_blank" rel="noreferrer">LinkedIn profile <span aria-hidden="true">&rarr;</span></a>
+            </div>
+          </div>
+          <p>I&rsquo;ve spent 4+ years in paid media across Google Ads, Meta, TikTok, LinkedIn and DV360, for clinics, DTC brands, restaurants, auto dealerships and, while embedded with partner agencies, enterprise retail. I work tracking-first: GA4, GTM and server-side tagging get checked before any bid or budget changes, because optimizing on bad data only scales the mistake. I&rsquo;m currently also running Google and Meta campaigns for a US agency. I founded Triple S in 2022 to stay small on purpose.</p>
+          <p class="founder-promise">No juniors, no hand-offs. The person on the call is the person in your ad account.</p>
           <div class="about-stats" aria-label="Agency stats">
             <div class="mini-stat">
               <span class="value">4+ years</span>
