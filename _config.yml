@@ -9,3 +9,5 @@ exclude:
   - index-v4-founder-backup.html
   - index-v5-maximalist-backup.html
   - tools/
+  # Blog posts are unwritten outlines: kept in the repo, not published until written.
+  - blog/
