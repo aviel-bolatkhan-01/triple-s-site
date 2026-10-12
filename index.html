@@ -107,7 +107,7 @@
           "name": "What does it cost?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The 5-minute video review is free. The 48-Hour Ads Audit, for businesses already running ads, is $200 flat, refunded if it doesn't find at least $500/mo in waste or tracking errors. Monthly management runs in three tiers by ad budget: $800/mo flat for $3K-$5K of spend, 12% of spend from $5K-$25K (minimum $1,200/mo, so the effective rate is above 12% below $10K of spend), and custom above $25K."
+            "text": "The 5-minute video review is free. The 48-Hour Ads Audit is an optional paid deep-dive for businesses already running ads: $200 flat, credited to your first month if we work together. Monthly management runs in three tiers by ad budget: $800/mo flat under $5K of spend, 12% of spend from $5K-$25K (minimum $1,200/mo, so the effective rate is above 12% below $10K of spend), and custom above $25K."
           }
         },
         {
@@ -115,7 +115,7 @@
           "name": "What ad spend do I need?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Monthly management starts at $3K/mo of ad spend, and there's no upper limit: the fee is flat from $3K to $5K and 12% above it. New to ads? After the video review we plan the launch budget with you. Already advertising on under $3K/mo? Start with the $200 audit: you'll know exactly what to fix before spending more."
+            "text": "Management is priced by ad spend, at any budget: $800/mo flat under $5K of spend, 12% of spend from $5K to $25K (minimum $1,200/mo), custom above $25K. New to ads? After the video review we recommend a starting budget and the tier that fits."
           }
         },
         {
@@ -2740,8 +2740,6 @@
   .calc-foot .text-link{font-size:15px}
   .tier-fine{color:var(--dim);font-size:14px;line-height:1.55}
   .tier-fine a{color:var(--green-dark);border-bottom:1px solid rgba(23,160,94,.35)}
-  .audit-guarantee{color:#C9D7D0;font-size:14px;line-height:1.55;max-width:34ch}
-  .audit-guarantee strong{color:#fff}
   .footer-op{
     margin-top:10px;
     color:#AFC0B8;
@@ -2842,6 +2840,38 @@
     .flow-node .how-icon{grid-row:auto;margin-bottom:10px}
     .flow-node:not(:last-child)::after{left:60px;right:-12px;top:23px;height:2px;width:auto;background:linear-gradient(90deg, rgba(23,160,94,.45), rgba(23,160,94,.15))}
   }
+  /* v8: results trim */
+  .results-callout{width:fit-content;max-width:100%;padding:12px 18px;gap:4px 14px;align-items:center}
+  .results-callout-value{font-size:24px}
+  .results-callout-label{flex:1 1 auto;font-size:14.5px}
+  .case-card .case-link{margin-top:14px;color:var(--green-dark);border-bottom:1px solid rgba(23,160,94,.4);align-self:start}
+  .more-cases{margin-top:8px;padding-top:22px;border-top:1px solid var(--line)}
+  .more-cases > summary{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    min-height:44px;
+    cursor:pointer;
+    list-style:none;
+    color:var(--navy);
+    font-family:var(--display);
+    font-size:19px;
+    font-weight:700;
+    letter-spacing:-0.012em;
+  }
+  .more-cases > summary::-webkit-details-marker{display:none}
+  .more-cases > summary::after{content:"+";color:var(--green);font-size:22px;line-height:1}
+  .more-cases[open] > summary::after{content:"\2013"}
+  .more-cases > summary:hover{color:var(--green-dark)}
+  .more-cases-count{display:inline-grid;place-items:center;min-width:24px;height:24px;padding:0 7px;border-radius:999px;background:var(--bg-tint);color:var(--green-dark);font-size:12.5px;font-weight:700}
+  .more-cases .case-index{margin-top:14px}
+  .case-index-value{color:var(--navy);font-family:var(--display);font-size:22px;font-weight:700;line-height:1.15;font-variant-numeric:tabular-nums}
+  .case-index-value small{color:var(--dim);font-size:12.5px;font-weight:600;font-family:var(--label);margin-left:4px}
+  /* v9: agency-first about */
+  .founder-line{display:flex;align-items:center;gap:14px;margin-top:4px;color:#AFC0B8;font-size:14px;line-height:1.5}
+  .founder-line img{flex:none;width:56px;height:56px;border-radius:50%;object-fit:cover;background:#fff;border:1px solid rgba(255,255,255,.18)}
+  .founder-line a{color:#4CD693;border-bottom:1px solid rgba(76,214,147,.35);white-space:nowrap}
+  .founder-line a:hover{color:#fff}
 </style>
 </head>
 <body>
@@ -2878,15 +2908,14 @@
     <section class="hero">
       <div class="wrap hero-grid">
         <div class="hero-copy reveal">
-          <div class="eyebrow">E-commerce · Lead gen · B2B · New to ads or already advertising</div>
+          <div class="eyebrow">E-commerce · Lead gen · B2B</div>
           <!-- TODO(aviel): pick the H1. Using option 1 until you choose.
-            1) "Get customers from Google and Meta ads, with every lead and sale tracked to revenue."
+            1) "Get customers from ads, with every lead and sale tracked to revenue."
             2) "Ads that bring in customers, with tracking built in from day one."
             3) "Google and Meta ads for businesses starting out or scaling up, with every sale tracked to revenue." -->
-          <h1>Get customers from Google and Meta ads, with every lead and sale tracked to revenue.</h1>
-          <p class="hero-lede">Whether you have never run ads or your current ones aren&rsquo;t paying off, we set up and run Google, Meta and TikTok ads for e-commerce, lead-gen and B2B, with tracking built in so you know what every dollar brings back.</p>
+          <h1>Get customers from ads, with every lead and sale tracked to revenue.</h1>
+          <p class="hero-lede">We set up and run Google, Meta and TikTok ads with tracking built in, whether you&rsquo;re new to ads or already advertising.</p>
           <strong class="form-title" id="hero-review">Get a free 5-minute video review of your website.</strong>
-          <p class="form-sub">Already running ads? Add your ad spend and we&rsquo;ll look at the account too.</p>
           <form id="hero-review-form" class="proposal-form" data-review-form>
             <input type="hidden" name="access_key" value="eaaf4af3-428e-4271-b661-1d4900d1aaf5">
             <input type="hidden" name="subject" value="New video review request — triples.agency">
@@ -2921,7 +2950,7 @@
         <div class="hero-motion reveal">
           <figure class="motion-card">
             <canvas id="motion-canvas" class="motion-canvas" role="img" aria-label="Animation: about 107,000 ad impressions become about 12,700 clicks, pass a GA4 and GTM tracking gate, and become 8,492 tracked conversions at $0.14 each, while Google Ads cost per lead falls from $0.82 to $0.18. Every sale tracked to revenue."></canvas>
-            <figcaption class="motion-cap">Figures from one DTC mattress brand&rsquo;s best Google Ads campaign (Central Asia market, lead-generation campaigns, so a conversion here is a lead): 8,492 conversions at $0.14 each. Impressions and clicks are approximate, worked out from the campaign&rsquo;s cost, CPM and 66.8% conversion rate in the case study. Cost per lead $0.82 &rarr; $0.18 is the whole account over 8 months. <a href="/case-studies/dtc-mattress-rebuild/">See the case &rarr;</a></figcaption>
+            <figcaption class="motion-cap">One DTC brand&rsquo;s best Google Ads campaign (Central Asia, lead gen): 8,492 leads at $0.14. Impressions and clicks approx. <a href="/case-studies/dtc-mattress-rebuild/">See the case &rarr;</a></figcaption>
           </figure>
         </div>
       </div>
@@ -2984,7 +3013,7 @@
         <div class="section-head reveal">
           <h2>Results. The receipt matters.</h2>
         </div>
-        <p class="section-intro reveal">Six engagements across enterprise retail, DTC e-commerce, an EV dealership, food delivery and clinics. Real numbers from client accounts &mdash; open the full case study on any of them.</p>
+        <p class="section-intro reveal">Selected results. Real numbers from client accounts; more case studies below.</p>
         <div class="results-callout reveal">
           <span class="results-callout-value">65&ndash;78%</span>
           <p class="results-callout-label">lower cost per lead on one DTC account over 8 months (Meta and Google, Central Asia market) <a href="/case-studies/dtc-mattress-rebuild/">See the case&nbsp;&rarr;</a></p>
@@ -2993,26 +3022,31 @@
         <div class="results-grid">
           <article class="case-card reveal">
             <div class="case-copy">
-              <div class="case-eyebrow">The receipt</div>
-              <h3>Enterprise media buying — Leroy Merlin and BIC (via MCA, Google Partner agency)</h3>
-              <p>Media buying across Google Ads, DV360 and Meta for enterprise retail. Work contributed to the agency's Google Partner badge.</p>
+              <div class="case-eyebrow">US &middot; Lead generation</div>
+              <h3>US medical-aesthetics clinics</h3>
+              <p>Meta and Google lead generation for US clinics, with one campaign per location run to cost per lead.</p>
               <div class="receipt-points">
-                <p><span class="mono">In the report:</span> Leroy Merlin Google Ads split by product category and region; BIC video line items on DV360.</p>
+                <p><span class="mono">In the report:</span> 20 leads at $22.70 and 15 at $30.21 across two clinic locations.</p>
               </div>
+              <a class="case-link" href="/medspa-ads/">How we run ads for medspas &rarr;</a>
             </div>
             <div class="case-media">
               <div class="brand-row">
                 <figure class="brand-tile brand-tile--shot">
-                  <img src="assets/brand-bic.webp" width="1440" height="900" alt="BIC company website homepage." loading="lazy" decoding="async">
-                  <figcaption>BIC · consumer goods</figcaption>
+                  <img src="assets/brand-premier.webp" width="1440" height="900" alt="Premier Medical Aesthetics website homepage." loading="lazy" decoding="async">
+                  <figcaption>premiermedct.com · Berlin &amp; Ridgefield, CT</figcaption>
                 </figure>
                 <div class="brand-tile brand-tile--mark">
-                  <span class="brand-tile-kicker">Client</span>
-                  <strong>Leroy Merlin</strong>
-                  <span class="brand-tile-sector">Home improvement retail</span>
+                  <span class="brand-tile-kicker">Client portfolio</span>
+                  <strong>Medical aesthetics</strong>
+                  <span class="brand-tile-sector">Clinics &amp; medspa · United States</span>
+                  <div class="brand-tile-stat">
+                    <span class="v">$22.70</span>
+                    <span class="l">per lead</span>
+                  </div>
                 </div>
               </div>
-              <a class="report-btn" href="/case-studies/enterprise-retail-media/">
+              <a class="report-btn" href="/case-studies/medspa-lead-generation/">
                 <span>View performance report</span>
                 <span class="report-btn-icon" aria-hidden="true">&rarr;</span>
               </a>
@@ -3020,85 +3054,11 @@
           </article>
           <article class="case-card flip reveal">
             <div class="case-copy">
-              <div class="case-eyebrow">The receipt</div>
-              <h3>EV dealership — full account rebuild</h3>
-              <p>Cost per lead cut from $10 to $1 in one month after a full account rebuild. Lead volume climbed so fast the client paused its outbound sales team until it could work the backlog.</p>
+              <div class="case-eyebrow">US &middot; DTC e-commerce</div>
+              <h3>Twenty Four Carrots &mdash; equine nutrition</h3>
+              <p>Google Ads for a US direct-to-consumer brand, tracked to purchases and revenue, not form fills.</p>
               <div class="receipt-points">
-                <p><span class="mono">From the client:</span> &ldquo;We had to stop the sales department because we are flooded with leads.&rdquo; &mdash; Director of Marketing, NKB Group</p>
-              </div>
-              <div class="cpl-compare" role="img" aria-label="Cost per lead: $10 before, $1 one month after the rebuild">
-                <div class="cpl-side before">
-                  <span class="clabel">CPL before</span>
-                  <span class="num">$10</span>
-                  <i style="--w:100%"></i>
-                </div>
-                <div class="cpl-side after">
-                  <span class="clabel">CPL after 1 mo</span>
-                  <span class="num">$1</span>
-                  <i style="--w:10%"></i>
-                </div>
-              </div>
-            </div>
-            <div class="case-media">
-              <div class="brand-tile brand-tile--mark">
-                <span class="brand-tile-kicker">Client</span>
-                <strong>NKB Group</strong>
-                <span class="brand-tile-sector">Auto dealership · EV</span>
-                <div class="brand-tile-stat">
-                  <span class="v">$10 &rarr; $1</span>
-                  <span class="l">cost per lead</span>
-                </div>
-              </div>
-              <a class="report-btn" href="/case-studies/ev-dealership-lead-gen/">
-                <span>Read the case study</span>
-                <span class="report-btn-icon" aria-hidden="true">&rarr;</span>
-              </a>
-            </div>
-          </article>
-          <article class="case-card reveal">
-            <div class="case-copy">
-              <div class="case-eyebrow">The receipt</div>
-              <h3>8-month multi-channel rebuild</h3>
-              <p>8 months of multi-channel optimization for a DTC brand in the Central Asia market, on lead-generation campaigns. Google Ads CPL $0.82 → $0.18. Meta CPL $1.02 → $0.36. TikTok CPM $0.46 → $0.35. 200%+ lead growth. Channels: Google, Meta, TikTok.</p>
-              <div class="receipt-points">
-                <p><span class="mono">In the report:</span> 8,492 conversions at $0.14 each, 66.8% conversion rate. A conversion here is a lead.</p>
-              </div>
-              <div class="cpl-compare" role="img" aria-label="Google Ads cost per lead: $0.82 before, $0.18 after eight months">
-                <div class="cpl-side before">
-                  <span class="clabel">CPL before</span>
-                  <span class="num">$0.82</span>
-                  <i style="--w:100%"></i>
-                </div>
-                <div class="cpl-side after">
-                  <span class="clabel">CPL after 8 mo</span>
-                  <span class="num">$0.18</span>
-                  <i style="--w:22%"></i>
-                </div>
-              </div>
-            </div>
-            <div class="case-media">
-              <div class="brand-tile brand-tile--mark">
-                <span class="brand-tile-kicker">Client</span>
-                <strong>DTC mattress brand</strong>
-                <span class="brand-tile-sector">Sleep &amp; home · e-commerce</span>
-                <div class="brand-tile-stat">
-                  <span class="v">$0.14</span>
-                  <span class="l">per conversion</span>
-                </div>
-              </div>
-              <a class="report-btn" href="/case-studies/dtc-mattress-rebuild/">
-                <span>View performance report</span>
-                <span class="report-btn-icon" aria-hidden="true">&rarr;</span>
-              </a>
-            </div>
-          </article>
-          <article class="case-card flip reveal">
-            <div class="case-copy">
-              <div class="case-eyebrow">The receipt</div>
-              <h3>Twenty Four Carrots — equine nutrition e-commerce</h3>
-              <p>Google Ads for a US direct-to-consumer supplement brand. Enhanced conversions and cart data wired up so the account optimises on purchases and revenue, not form fills.</p>
-              <div class="receipt-points">
-                <p><span class="mono">In the report:</span> six enhanced conversion actions live, purchase conversions reporting cart data, and the diagnostics that flagged what was still misfiring.</p>
+                <p><span class="mono">In the report:</span> six enhanced conversion actions live and purchase conversions reporting cart data.</p>
               </div>
             </div>
             <div class="case-media">
@@ -3114,11 +3074,11 @@
           </article>
           <article class="case-card reveal">
             <div class="case-copy">
-              <div class="case-eyebrow">The receipt</div>
-              <h3>Noodlers — food delivery brand</h3>
-              <p>TikTok campaigns in a high-competition delivery market, with full-funnel tracking via GTM.</p>
+              <div class="case-eyebrow">UAE &middot; Food delivery</div>
+              <h3>Noodlers &mdash; TikTok ads</h3>
+              <p>TikTok campaigns in a crowded delivery market, with full-funnel tracking via GTM.</p>
               <div class="receipt-points">
-                <p><span class="mono">Tracking:</span> spend tied to conversion data, not platform noise.</p>
+                <p><span class="mono">In the report:</span> one Dubai campaign at $1.73 per conversion on a $247 budget.</p>
               </div>
             </div>
             <div class="case-media">
@@ -3126,7 +3086,10 @@
                 <span class="brand-tile-kicker">Client</span>
                 <strong>Noodlers</strong>
                 <span class="brand-tile-sector">Food delivery · UAE</span>
-                <!-- TODO(aviel): the old "$0.35 CPM, down from $0.46" stat was taken from the mattress brand's TikTok account (tiktok-cpm-case.webp shows "Center Matrasov"), so it moved to that case. Add a real Noodlers headline number if you have one. -->
+                <div class="brand-tile-stat">
+                  <span class="v">$1.73</span>
+                  <span class="l">per conversion, one campaign</span>
+                </div>
               </div>
               <a class="report-btn" href="/case-studies/noodlers-tiktok/">
                 <span>View performance report</span>
@@ -3134,36 +3097,34 @@
               </a>
             </div>
           </article>
-          <article class="case-card flip reveal">
-            <div class="case-copy">
-              <div class="case-eyebrow">The receipt</div>
-              <h3>US medical-aesthetics clinics — lead generation</h3>
-              <p>Meta and Google lead generation for US clinics: injectables, TMJ and skin treatments, plus nurse recruitment. Multi-location campaigns run to cost per lead, not reach.</p>
-              <div class="receipt-points">
-                <p><span class="mono">In the report:</span> 20 leads at $22.70 and 15 at $30.21 across two clinic locations. Antiwrinkle campaigns purchasing at $37–68.</p>
-              </div>
-            </div>
-            <div class="case-media">
-              <figure class="brand-tile brand-tile--shot">
-                <img src="assets/brand-premier.webp" width="1440" height="900" alt="Premier Medical Aesthetics website homepage." loading="lazy" decoding="async">
-                <figcaption>premiermedct.com · Berlin &amp; Ridgefield, CT</figcaption>
-              </figure>
-              <div class="brand-tile brand-tile--mark">
-                <span class="brand-tile-kicker">Client portfolio</span>
-                <strong>Medical aesthetics</strong>
-                <span class="brand-tile-sector">Clinics &amp; medspa · United States</span>
-                <div class="brand-tile-stat">
-                  <span class="v">$22.70</span>
-                  <span class="l">per lead</span>
-                </div>
-              </div>
-              <a class="report-btn" href="/case-studies/medspa-lead-generation/">
-                <span>View performance report</span>
-                <span class="report-btn-icon" aria-hidden="true">&rarr;</span>
-              </a>
-            </div>
-          </article>
         </div>
+
+        <details class="more-cases reveal">
+          <summary>More case studies <span class="more-cases-count">3</span></summary>
+          <div class="case-index">
+            <a class="case-index-card" href="/case-studies/ev-dealership-lead-gen/">
+              <span class="tier-band">Auto dealership &middot; lead generation</span>
+              <strong>EV dealership</strong>
+              <span class="case-index-value">$10 &rarr; $1 <small>cost per lead</small></span>
+              <span class="case-index-sum">Full account rebuild, one month.</span>
+              <span class="case-index-go">Read the case study <span aria-hidden="true">&rarr;</span></span>
+            </a>
+            <a class="case-index-card" href="/case-studies/dtc-mattress-rebuild/">
+              <span class="tier-band">DTC &middot; lead gen &middot; Central Asia</span>
+              <strong>DTC mattress brand</strong>
+              <span class="case-index-value">$0.82 &rarr; $0.18 <small>Google Ads CPL</small></span>
+              <span class="case-index-sum">8-month multi-channel rebuild.</span>
+              <span class="case-index-go">Read the case study <span aria-hidden="true">&rarr;</span></span>
+            </a>
+            <a class="case-index-card" href="/case-studies/enterprise-retail-media/">
+              <span class="tier-band">Enterprise retail &amp; consumer goods</span>
+              <strong>Leroy Merlin and BIC</strong>
+              <span class="case-index-value">Google Ads &middot; DV360 &middot; Meta</span>
+              <span class="case-index-sum">Managed while embedded with MCA, a Google Partner agency.</span>
+              <span class="case-index-go">Read the case study <span aria-hidden="true">&rarr;</span></span>
+            </a>
+          </div>
+        </details>
         <p class="tier-note reveal"><a href="/case-studies/">All case studies, with the dashboards behind each number</a></p>
       </div>
     </section>
@@ -3226,15 +3187,14 @@
         <div class="section-head reveal">
           <h2>Monthly management, priced by ad budget.</h2>
         </div>
-        <p class="section-intro reveal">Fixed deliverables in writing. No vague retainers, no scope creep, no lock-in. Campaign setup, weekly optimization and a monthly Looker Studio report at every tier.</p>
+        <p class="section-intro reveal">Fixed deliverables in writing, no lock-in. Setup, weekly optimization and a clear monthly report on unit economics at every tier.</p>
 
         <div class="tier-grid reveal">
           <article class="tier">
-            <span class="tier-band">$3K–5K/mo ad spend</span>
+            <span class="tier-band">Under $5K/mo ad spend</span>
             <h3>Starter</h3>
             <span class="tier-price">$800<span class="per">/mo</span></span>
             <p>Flat fee. One platform, one market. Weekly optimization and a monthly report.</p>
-            <p class="tier-fine">Already advertising on under $3K/mo? Start with <a href="/ads-audit/">the $200 audit</a> instead.</p>
           </article>
           <article class="tier tier--mid">
             <span class="tier-band">$5K–$25K/mo ad spend</span>
@@ -3250,19 +3210,18 @@
             <p>Scope, reporting cadence and fee agreed together. Talk to us about what the account needs.</p>
           </article>
         </div>
-        <p class="tier-note reveal">Month-to-month — no lock-in at any tier. New to advertising? Start with the free video review; we plan the launch budget with you and you start on the tier that fits it. Already advertising? Your tier is confirmed once we&rsquo;ve seen the account.</p>
+        <p class="tier-note reveal">Month-to-month, no lock-in at any tier. New to ads? Start with the free video review and we&rsquo;ll recommend the tier that fits.</p>
         <p class="tier-note reveal">Platform detail: <a href="/google-ads-management/">Google Ads management</a> · <a href="/meta-ads-agency/">Meta Ads management</a> · <a href="/ads-audit/">the 48-Hour Ads Audit</a>.</p>
 
         <div class="audit-band reveal">
           <div class="audit-copy">
-            <span class="audit-tag">Paid deep dive</span>
+            <span class="audit-tag">Optional paid deep dive</span>
             <h3>48-Hour Ads Audit</h3>
             <p>For businesses already running ads (with no ads running, there&rsquo;s nothing to audit yet). Before any retainer: a full account scan, every tracking gap, where the spend leaks, and a prioritized fix list — walked through on a Loom. Non-running campaigns diagnosed and restored. Delivered in 48 hours.</p>
           </div>
           <div class="audit-action">
             <span class="audit-price">$200<span class="per">flat</span></span>
             <span class="audit-note">Credited to your first month</span>
-            <p class="audit-guarantee"><strong>Guarantee:</strong> If the audit doesn&rsquo;t find at least $500/mo in waste or tracking errors, your $200 is refunded.</p>
             <a class="btn btn-green" href="/ads-audit/">Start with the audit</a>
           </div>
           <div class="audit-scan-wrap">
@@ -3278,7 +3237,7 @@
           <div class="section-head reveal">
             <h2>Tracking first. Everything in writing.</h2>
           </div>
-          <p class="section-intro reveal">Every ad dollar is followed to a lead or a sale, and the work runs on a simple runbook: tracking first, changes in writing, reporting on unit economics, not vanity metrics.</p>
+          <p class="section-intro reveal">Every ad dollar followed to a lead or a sale, on a simple written runbook.</p>
 
           <p class="process-label reveal">What we track: the path every ad dollar takes</p>
           <ol class="flow-strip reveal" aria-label="What we track">
@@ -3324,7 +3283,7 @@
             <article class="step">
               <div class="step-no">04</div>
               <h3>Report</h3>
-              <p>Monthly Looker Studio reports on unit economics, not vanity metrics.</p>
+              <p>A clear monthly report on unit economics, not vanity metrics.</p>
             </article>
           </div>
         </div>
@@ -3335,18 +3294,8 @@
       <div class="wrap about-grid">
         <div class="founder-copy reveal">
           <div class="eyebrow eyebrow--dark">About Triple S</div>
-          <h2>Founded by Aviel Bolatkhan.</h2>
-          <div class="founder-card">
-            <img class="founder-avatar" src="/assets/aviel-480.webp" srcset="/assets/aviel-480.webp 480w, /assets/aviel-600.webp 600w" sizes="132px" width="480" height="480" alt="Aviel Bolatkhan, founder of Triple S" loading="lazy" decoding="async">
-            <div class="founder-id">
-              <strong class="founder-name">Aviel Bolatkhan</strong>
-              <span class="founder-title">Founder &middot; Google Ads certified</span>
-              <!-- TODO(aviel): confirm this is your current personal LinkedIn URL (it was on the site in an earlier version) -->
-              <a class="founder-link" href="https://www.linkedin.com/in/aviel-bolatkhan" target="_blank" rel="noreferrer">LinkedIn profile <span aria-hidden="true">&rarr;</span></a>
-            </div>
-          </div>
-          <p>Aviel founded Triple S in 2022. He has 4+ years in paid media across Google Ads, Meta, TikTok, LinkedIn and DV360. Triple S runs ad accounts tracking-first: measurement is fixed before any budget moves.</p>
-          <p>Triple S is based in Almaty, Kazakhstan, and works US &amp; EU hours.</p>
+          <h2>A performance marketing agency built on tracking.</h2>
+          <p>Triple S sets up and runs Google, Meta and TikTok ads for e-commerce, lead-gen and B2B businesses, with measurement fixed before any budget moves.</p>
           <p class="about-note">Enterprise brands (Leroy Merlin, BIC) were managed while embedded with partner agencies.</p>
           <div class="about-stats" aria-label="Track record">
             <div class="mini-stat">
@@ -3362,13 +3311,10 @@
               <span class="label">US, European and Asian markets</span>
             </div>
           </div>
-          <div class="partner-chip" aria-label="Certifications">
-            <span class="partner-g" aria-hidden="true">&#10003;</span>
-            <div>
-              <strong>Certified</strong>
-              <span>Google Ads · Google Analytics · DV360 · CM360 · Meta</span>
-            </div>
-          </div>
+          <p class="founder-line">
+            <img src="/assets/aviel-480.webp" sizes="56px" srcset="/assets/aviel-480.webp 480w" width="480" height="480" alt="Aviel Bolatkhan, founder of Triple S" loading="lazy" decoding="async">
+            <span>Founded in 2022 by Aviel Bolatkhan &middot; Google Ads certified &middot; <!-- TODO(aviel): confirm this is your current personal LinkedIn URL --><a href="https://www.linkedin.com/in/aviel-bolatkhan" target="_blank" rel="noreferrer">LinkedIn &rarr;</a></span>
+          </p>
         </div>
       </div>
 
@@ -3401,11 +3347,11 @@
           </details>
           <details>
             <summary>What does it cost?</summary>
-            <p>The 5-minute video review is free. The 48-Hour Ads Audit, for businesses already running ads, is $200 flat, refunded if it doesn&rsquo;t find at least $500/mo in waste or tracking errors. Monthly management runs in three tiers by ad budget: $800/mo flat for $3K–$5K of spend, 12% of spend from $5K–$25K (minimum $1,200/mo, so the effective rate is above 12% below $10K of spend), and custom above $25K.</p>
+            <p>The 5-minute video review is free. The 48-Hour Ads Audit is an optional paid deep-dive for businesses already running ads: $200 flat, credited to your first month if we work together. Monthly management runs in three tiers by ad budget: $800/mo flat under $5K of spend, 12% of spend from $5K–$25K (minimum $1,200/mo, so the effective rate is above 12% below $10K of spend), and custom above $25K.</p>
           </details>
           <details>
             <summary>What ad spend do I need?</summary>
-            <p>Monthly management starts at $3K/mo of ad spend, and there&rsquo;s no upper limit: the fee is flat from $3K to $5K and 12% above it. New to ads? After the video review we plan the launch budget with you. Already advertising on under $3K/mo? Start with <a href="/ads-audit/">the $200 audit</a>: you&rsquo;ll know exactly what to fix before spending more.</p>
+            <p>Management is priced by ad spend, at any budget: $800/mo flat under $5K of spend, 12% of spend from $5K to $25K (minimum $1,200/mo), custom above $25K. New to ads? After the video review we recommend a starting budget and the tier that fits.</p>
           </details>
           <details>
             <summary>Which platforms do you work with?</summary>
@@ -3433,11 +3379,7 @@
           <div class="cta-panel cta-panel--wide reveal">
             <div class="eyebrow eyebrow--dark">Contact</div>
             <h2>Get a free 5-minute video review of your website.</h2>
-            <p class="cta-sub">Already running ads? Add your ad spend and we&rsquo;ll look at the account too. We&rsquo;ll reply with a short Loom video within 24 hours.</p>
-            <div class="cta-founder">
-              <img src="/assets/aviel-480.webp" srcset="/assets/aviel-480.webp 480w, /assets/aviel-600.webp 600w" sizes="56px" width="480" height="480" alt="Aviel Bolatkhan, founder of Triple S" loading="lazy" decoding="async">
-              <p><strong>Aviel Bolatkhan, founder</strong><br>Almaty, Kazakhstan &middot; working US &amp; EU hours.</p>
-            </div>
+            <p class="cta-sub">New to ads or already advertising: send your website and we&rsquo;ll take a look.</p>
             <p class="cta-meta">We take on a maximum of 2 new accounts per month.</p>
           </div>
 
@@ -3495,7 +3437,6 @@
           <a href="/" aria-current="page">Home</a>
           <a href="/for-agencies/">For agencies</a>
           <a href="/case-studies/">Case studies</a>
-          <a href="/medspa-ads/">Medspa ads</a>
           <a href="/privacy.html">Privacy</a>
         </div>
       </div>

@@ -309,3 +309,18 @@ Owner: "ev dealership case doesn't match. fix that. and all similar issues." + f
 - Free offer = "free 5-minute video review of your website" (+ "Already running ads? Add your ad spend and we'll look at the account too."). Spend dropdown "Ad spend per month (optional)", first option "Not running ads yet".
 - New FAQ "We've never run ads. Is this for us?" (visible + schema); audit labelled as for businesses already running ads; pricing note for newcomers; calculator link "Already running ads? Estimate your wasted spend."
 - site.css v5, review-form.js v4 (JS file itself unchanged).
+
+## 2026-10-13 (3) — shorter hero, 3 featured cases (working tree, NOT committed by implementer)
+- Hero: eyebrow "E-commerce · Lead gen · B2B", H1 "Get customers from ads, with every lead and sale tracked to revenue.", one-sentence subhead, extra form line removed, 2-line animation caption.
+- Results: featured = US clinics → Twenty Four Carrots → Noodlers (UAE); EV, DTC mattress, Leroy Merlin/BIC in a closed "More case studies" <details>. 65–78% callout one line. /case-studies/ index reordered (cards + ItemList).
+- "Medspa ads" footer link removed everywhere; /medspa-ads/ linked from the clinic case (homepage), /case-studies/ index and the clinic case page. site.css v6.
+
+## 2026-10-13 (4) — agency-first About, founder once; no Looker Studio (working tree, NOT committed by implementer)
+- About: H2 "A performance marketing agency built on tracking."; founder = one small line (56px round avatar, "Founded in 2022 by Aviel Bolatkhan · Google Ads certified · LinkedIn →"). Big photo/name card and the duplicate cert chip removed.
+- Contact band photo + founder block removed on every page; /for-agencies/ hero photo card removed.
+- Owner has no Looker Studio experience: all "Looker Studio report(s)" → "a clear monthly report on unit economics" (homepage pricing intro + runbook step 4, Google page, medspa page). Backups still mention it (not published).
+- site.css v7.
+
+## 2026-10-13 (5) — pricing clarity, no waste guarantee (working tree, NOT committed by implementer)
+- Starter back to "Under $5K/mo ad spend" ($800 flat). All "$3K floor" / "under $3K → audit" routing removed (homepage, FAQ + schema, Google/Meta/medspa pages + Offer schema). Footnote: "Month-to-month, no lock-in at any tier. New to ads? Start with the free video review and we'll recommend the tier that fits."
+- $200 audit = "Optional paid deep dive" for businesses already running ads, credited to month one. The $500 waste refund guarantee is removed everywhere (bands, /ads-audit/ order block, FAQ + schema, meta/OG, Offer schema). site.css v8.
