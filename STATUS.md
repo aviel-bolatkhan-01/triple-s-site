@@ -289,3 +289,11 @@ Owner: "ev dealership case doesn't match. fix that. and all similar issues." + f
 - Numbers are ONLY from the DTC mattress case: 8,492 tracked conversions, $0.14/conversion, Google CPL $0.82→$0.18 (8 months), 200%+ lead growth. No impressions/clicks/revenue figures (not on the site) — stages show names only; caption says dot counts are illustrative.
 - **Claims NOT on the site:** "300% ROAS" and "$30K+/mo" (listed above as real) appear nowhere on the live pages — confirm with the client data before using them anywhere.
 - Unverified: continuous playback in a real browser, a real phone, Web3Forms form (still untested). Preview copy remains at `_preview/triples-motion.html`.
+
+## 2026-10-12 — trust / CTA / agency round (working tree on main, NOT committed by the implementer)
+- One primary CTA everywhere: free 5-minute Loom video review form (website, email, monthly ad spend → Web3Forms, same key) in the hero + a shared `#contact`/`#review` band on every page; secondary = Calendly 30-min call. Handler moved to `assets/review-form.js` (all pages).
+- "Up to 90%" removed (utility bar, hero). Hero card now "65–78% lower CPL on one DTC account over 8 months (Central Asia)". H1 option 1 in use; 3 options in a TODO above the H1.
+- Founder photo `assets/aviel-480.webp` / `aviel-600.webp` (About, contact band, /for-agencies/). First-person copy site-wide. Footer: "Operated by Bolatkhan LLC, Almaty, Kazakhstan · Working US & EU hours".
+- Pricing: Starter $3K–5K spend; under $3K → audit; effective-rate note on Growth; audit refund guarantee ($500/mo threshold).
+- New `/for-agencies/` (white-label, $600 / $1,000 / custom per account). In nav + footer on every page, sitemap.
+- Mobile: utility bar hidden <560px; nav is a single scrollable row <700px; tap targets ≥44px.

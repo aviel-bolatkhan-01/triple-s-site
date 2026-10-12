@@ -25,7 +25,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400..800&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=2">
+<link rel="stylesheet" href="/assets/site.css?v=3">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -104,10 +104,9 @@
 <body>
   <div class="utility-bar">
     <div class="wrap utility-inner">
-      <a class="utility-left" href="/#results">CPL CUT FOR OUR CLIENTS <strong>&#9660;</strong> up to 90%</a>
+      <a class="utility-left" href="#review">Free 5-minute video review of your ads <strong>&rarr;</strong></a>
       <div class="utility-right">
         <a href="https://calendly.com/triples-agency/30min" target="_blank" rel="noreferrer">Book a 30-min call</a>
-        <a href="mailto:hello@triples.agency">Email</a>
       </div>
     </div>
   </div>
@@ -126,9 +125,9 @@
         <a href="/google-ads-management/">Google Ads</a>
         <a href="/meta-ads-agency/">Meta Ads</a>
         <a href="/ads-audit/">Ads Audit</a>
-        <a href="/#contact">Contact</a>
+        <a href="/for-agencies/">For agencies</a>
       </nav>
-      <a class="btn btn-green btn-nav" href="https://calendly.com/triples-agency/30min" target="_blank" rel="noreferrer">Book a call</a>
+      <a class="btn btn-green btn-nav" href="#review">Free video review</a>
     </div>
   </header>
 
@@ -155,7 +154,7 @@
           <a class="case-index-card" href="/case-studies/dtc-mattress-rebuild/">
             <span class="tier-band">Sleep &amp; home · e-commerce</span>
             <strong>DTC mattress brand</strong>
-            <span class="case-index-sum">8-month multi-channel rebuild: Google CPL $0.82 &rarr; $0.18, Meta CPL $1.02 &rarr; $0.36.</span>
+            <span class="case-index-sum">8-month lead-gen rebuild, Central Asia market: Google CPL $0.82 &rarr; $0.18, Meta CPL $1.02 &rarr; $0.36.</span>
             <span class="case-index-go">Read the case study <span aria-hidden="true">&rarr;</span></span>
           </a>
           <a class="case-index-card" href="/case-studies/twenty-four-carrots/">
@@ -181,16 +180,54 @@
       </div>
     </section>
 
-    <section class="cta-band">
+    <section id="contact" class="cta-band">
       <div class="wrap">
-        <div class="cta-panel reveal">
-          <div class="eyebrow eyebrow--dark">Next step</div>
-          <h2>Start with your account.</h2>
-          <p class="cta-sub">Book a free 30-minute call and screen-share the account, or start with the $200 48-hour audit &mdash; credited to your first month if we work together.</p>
-          <p class="cta-buttons">
-            <a class="btn btn-green" href="https://calendly.com/triples-agency/30min" target="_blank" rel="noreferrer">Book a free 30-min call</a>
-            <a class="btn btn-outline-light" href="/ads-audit/">Start with the $200 audit</a>
-          </p>
+        <div class="contact-grid">
+          <div class="cta-panel cta-panel--wide reveal">
+            <div class="eyebrow eyebrow--dark">Contact</div>
+            <h2>Get a free 5-minute video review of your ads.</h2>
+            <p class="cta-sub">Send your website, email and monthly ad spend. I&rsquo;ll reply with a personal Loom video within 24 hours.</p>
+            <div class="cta-founder">
+              <img src="/assets/aviel-480.webp" srcset="/assets/aviel-480.webp 480w, /assets/aviel-600.webp 600w" sizes="56px" width="480" height="480" alt="Aviel Bolatkhan, founder of Triple S" loading="lazy" decoding="async">
+              <p><strong>You&rsquo;ll hear back from me, Aviel.</strong><br>Almaty, Kazakhstan &middot; working US &amp; EU hours.</p>
+            </div>
+            <p class="cta-meta">I take on a maximum of 2 new accounts per month.</p>
+          </div>
+
+          <div class="contact-card reveal" id="review">
+            <span class="contact-kicker">Free &middot; 5-minute Loom &middot; reply within 24 hours</span>
+            <form class="proposal-form" data-review-form>
+              <input type="hidden" name="access_key" value="eaaf4af3-428e-4271-b661-1d4900d1aaf5">
+              <input type="hidden" name="subject" value="New video review request — triples.agency">
+              <input type="hidden" name="from_name" value="Triple S website">
+              <div class="form-trap" aria-hidden="true">
+                <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off">
+              </div>
+              <div class="proposal-fields">
+                <label class="sr-only" for="cta-website">Your website</label>
+                <input id="cta-website" name="website" type="text" placeholder="Your website" autocomplete="url" required>
+                <label class="sr-only" for="cta-email">Your email</label>
+                <input id="cta-email" name="email" type="email" placeholder="Your email" autocomplete="email" required>
+                <label class="sr-only" for="cta-spend">Monthly ad spend</label>
+                <select id="cta-spend" name="ad_spend" required>
+                  <option value="" selected disabled>Monthly ad spend</option>
+                  <option>Under $3K/mo</option>
+                  <option>$3K–10K/mo</option>
+                  <option>$10K–25K/mo</option>
+                  <option>$25K+/mo</option>
+                </select>
+              </div>
+              <div class="proposal-actions">
+                <button class="btn btn-green contact-primary" type="submit">Get my free video review</button>
+              </div>
+              <p class="form-status" role="status" aria-live="polite" hidden></p>
+            </form>
+            <p class="form-note">I&rsquo;ll reply with a personal Loom video within 24 hours.</p>
+            <div class="contact-or">
+              <span class="contact-or-label">Prefer to talk first?</span>
+              <a class="btn btn-outline-light" href="https://calendly.com/triples-agency/30min" target="_blank" rel="noreferrer">Book a 30-min call</a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -201,17 +238,18 @@
       <div>
         <div class="footer-brand"><span>S</span>&#179;</div>
         <div class="footer-note">Triple S &middot; Founded 2022</div>
+        <p class="footer-op">Operated by Bolatkhan LLC, Almaty, Kazakhstan &middot; Working US &amp; EU hours<br><a href="mailto:hello@triples.agency">hello@triples.agency</a> &middot; <a href="https://www.linkedin.com/in/aviel-bolatkhan" target="_blank" rel="noreferrer">LinkedIn</a></p>
       </div>
       <div class="footer-mini" aria-label="Mini stats">
         <div class="footer-stat"><span class="value">200%+</span><span class="label">lead growth, DTC case</span></div>
-        <div class="footer-stat"><span class="value">90%</span><span class="label">largest CPL reduction</span></div>
+        <div class="footer-stat"><span class="value">90%</span><span class="label">largest CPL cut, EV case</span></div>
         <div class="footer-stat"><span class="value">Global</span><span class="label">client markets</span></div>
       </div>
       <div>
         <div class="footer-links">
           <a href="/">Home</a>
-          <a href="https://calendly.com/triples-agency/30min" target="_blank" rel="noreferrer">Book a call</a>
-          <a href="mailto:hello@triples.agency">Email</a>
+          <a href="/for-agencies/">For agencies</a>
+          <a href="/case-studies/" aria-current="page">Case studies</a>
           <a href="/medspa-ads/">Medspa ads</a>
           <a href="/privacy.html">Privacy</a>
         </div>
@@ -219,7 +257,7 @@
     </div>
   </footer>
 
-  <a class="mobile-cta" href="https://calendly.com/triples-agency/30min" target="_blank" rel="noreferrer">Book a free 30-min call <span aria-hidden="true">&rarr;</span></a>
+  <a class="mobile-cta" href="#review">Get a free video review <span aria-hidden="true">&rarr;</span></a>
 
   <script>
     (() => {
@@ -239,5 +277,6 @@
     })();
   </script>
   <noscript><style>.reveal{opacity:1 !important;transform:none !important}</style></noscript>
+  <script src="/assets/review-form.js?v=1" defer></script>
 </body>
 </html>
