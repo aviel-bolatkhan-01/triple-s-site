@@ -1195,6 +1195,8 @@
     .stepper.is-live .step{padding-left:50px}
     .stepper.is-live .step-no{position:absolute;left:0;top:16px;margin:0}
   }
+  .cta-mark{position:absolute;inset:0;display:block;width:100%;height:100%;pointer-events:none}
+  .cta-band.mark-live::after{visibility:hidden}
   @media (prefers-reduced-motion:reduce){
     .stepper.is-live .step.is-done .step-no::before{animation:none}
     .stepper.is-live .step-no::after{transition:none}

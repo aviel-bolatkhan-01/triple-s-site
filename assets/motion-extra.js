@@ -251,4 +251,34 @@ function stage(cv,opt){
   });
 })();
 
+
+/* ---------- 4. Contact band: the outlined S³ watermark draws itself once on entry ----------
+   Replaces the CSS ::after watermark with a canvas copy at the exact same size and spot
+   (read from the pseudo-element's computed style), so the settled frame is unchanged. */
+(function(){
+  const band=document.querySelector('.cta-band'); if(!band||!document.createElement('canvas').getContext) return;
+  const cv=document.createElement('canvas'); cv.className='cta-mark'; cv.setAttribute('aria-hidden','true');
+  band.insertBefore(cv,band.firstChild);
+  const DUR=2.6;
+  stage(cv,{fill:true,dur:DUR,still:DUR,
+    layout(cw,ch){
+      const cs=getComputedStyle(band,'::after'), fs=parseFloat(cs.fontSize)||400;
+      let lh=parseFloat(cs.lineHeight); if(!(lh>fs*.2)) lh=fs*.8;
+      const pct=(v,ref)=>/%$/.test(v)?parseFloat(v)/100*ref:parseFloat(v)||0;
+      return {W:cw,H:ch,fs,lh,right:pct(cs.right,cw),bottom:pct(cs.bottom,ch),op:parseFloat(cs.opacity)||.85};
+    },
+    draw(ctx,t,L){
+      const p=eio(seg(t,0,DUR)); if(p<=0) return;
+      ctx.font=`800 ${L.fs}px ${DISP}`; ctx.textAlign='left'; ctx.textBaseline='alphabetic';
+      if('letterSpacing' in ctx) ctx.letterSpacing='0px';
+      const m=ctx.measureText('S³'), A=m.fontBoundingBoxAscent||L.fs*.9, D=m.fontBoundingBoxDescent||L.fs*.25;
+      const x=L.W+(-L.right)-m.width, top=L.H+(-L.bottom)-L.lh, base=top+(L.lh-(A+D))/2+A;
+      ctx.globalAlpha=L.op; ctx.strokeStyle='rgba(23,160,94,.22)'; ctx.lineWidth=1.5; ctx.lineJoin='round';
+      if(p<1) ctx.setLineDash([p*L.fs*4,L.fs*8]);
+      ctx.strokeText('S³',x,base); ctx.setLineDash([]); ctx.globalAlpha=1;
+    }
+  });
+  fontsReady.then(()=>band.classList.add('mark-live'));
+})();
+
 })();
