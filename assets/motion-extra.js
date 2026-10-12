@@ -9,7 +9,7 @@ const FP=Q.has('motion_p')?parseFloat(Q.get('motion_p')):(FT!==null?1:null);
 const RM=!!(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches);
 const NARROW='(max-width:600px)';
 const C={ink:'#0E1F17',dim:'#6B7F74',green:'#17A05E',dgreen:'#0E7A45',gold:'#C79A2E',line:'#DCE8E0',tint:'#EAF4EE'};
-const DISP="'Bricolage Grotesque', sans-serif", MONO="'Spline Sans Mono', monospace";
+const DISP="'Manrope', system-ui, sans-serif", MONO="'Manrope', system-ui, sans-serif", DW=700;
 const clamp=(v,a,b)=>Math.min(b,Math.max(a,v));
 const lerp=(a,b,t)=>a+(b-a)*t;
 const seg=(t,a,b)=>clamp((t-a)/(b-a),0,1);
@@ -28,7 +28,7 @@ function text(ctx,s,x,y,size,fam,weight,color,align,alpha,ls,maxW){
 }
 const mono=(ctx,s,x,y,sz,col,al,a,ls,mw)=>text(ctx,s,x,y,sz,MONO,500,col,al,a,ls,mw);
 const fontsReady=Promise.race([
-  Promise.all([document.fonts.load("800 64px 'Bricolage Grotesque'"),document.fonts.load("500 14px 'Spline Sans Mono'")]),
+  Promise.all([document.fonts.load("700 64px 'Manrope'"),document.fonts.load("500 14px 'Manrope'")]),
   new Promise(r=>setTimeout(r,1500))
 ]).catch(()=>{});
 
@@ -269,7 +269,7 @@ function stage(cv,opt){
     },
     draw(ctx,t,L){
       const p=eio(seg(t,0,DUR)); if(p<=0) return;
-      ctx.font=`800 ${L.fs}px ${DISP}`; ctx.textAlign='left'; ctx.textBaseline='alphabetic';
+      ctx.font=`${DW} ${L.fs}px ${DISP}`; ctx.textAlign='left'; ctx.textBaseline='alphabetic';
       if('letterSpacing' in ctx) ctx.letterSpacing='0px';
       const m=ctx.measureText('S³'), A=m.fontBoundingBoxAscent||L.fs*.9, D=m.fontBoundingBoxDescent||L.fs*.25;
       const x=L.W+(-L.right)-m.width, top=L.H+(-L.bottom)-L.lh, base=top+(L.lh-(A+D))/2+A;

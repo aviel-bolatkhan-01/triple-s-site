@@ -10,7 +10,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2317A05E'/%3E%3Cpath d='M17 18h30v7H31.5c-4.7 0-7.5 2.4-7.5 6.5S26.8 38 31.5 38H47v8H32.5C21.4 46 15 40.5 15 31.5 15 23.4 20.2 18 29.5 18H17z' fill='%23FFFFFF'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&amp;family=Spline+Sans:wght@400;500;600&amp;family=Spline+Sans+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400..800&amp;display=swap" rel="stylesheet">
 <style>
   :root{
     --bg:#F6FAF7;
@@ -22,9 +22,9 @@
     --green-dark:#0E7A45;
     --line:#DCE8E0;
     --dark:#0E1F17;
-    --mono:'Spline Sans Mono',monospace;
-    --sans:'Spline Sans',system-ui,sans-serif;
-    --display:'Bricolage Grotesque',sans-serif;
+    --label:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;
+    --sans:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;
+    --display:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   body{
@@ -64,51 +64,54 @@
     background:var(--green);
     color:#fff;
     font-family:var(--display);
-    font-weight:800;
+    font-weight:700;
     font-size:15px;
   }
-  .brand strong{color:#fff;font-family:var(--display);font-size:17px;font-weight:800}
+  .brand strong{color:#fff;font-family:var(--display);font-size:17px;font-weight:700}
   .topbar a.back{
-    font-family:var(--mono);
-    font-size:11px;
-    letter-spacing:.12em;
-    text-transform:uppercase;
+    font-family:var(--label);
+    font-size:13px;
+    letter-spacing:0.01em;
+    text-transform:none;
     color:#A8D7BC;
     text-decoration:none;
+    font-weight:600;
   }
   .topbar a.back:hover{color:#fff}
 
   main{padding:56px 0 24px}
   .eyebrow{
-    font-family:var(--mono);
-    font-size:11px;
-    letter-spacing:.18em;
-    text-transform:uppercase;
+    font-family:var(--label);
+    font-size:13px;
+    letter-spacing:0.01em;
+    text-transform:none;
     color:var(--green-dark);
     margin-bottom:14px;
+    font-weight:600;
   }
   h1{
     font-family:var(--display);
     font-size:clamp(32px,5.4vw,46px);
-    font-weight:800;
+    font-weight:700;
     line-height:1.06;
     color:var(--navy);
     margin-bottom:12px;
   }
   .updated{
-    font-family:var(--mono);
-    font-size:11px;
-    letter-spacing:.12em;
-    text-transform:uppercase;
+    font-family:var(--label);
+    font-size:13px;
+    letter-spacing:0.01em;
+    text-transform:none;
     color:var(--dim);
     padding-bottom:26px;
     border-bottom:1px solid var(--line);
     margin-bottom:34px;
+    font-weight:600;
   }
   h2{
     font-family:var(--display);
     font-size:22px;
-    font-weight:800;
+    font-weight:700;
     line-height:1.2;
     color:var(--navy);
     margin:34px 0 10px;
@@ -140,10 +143,11 @@
     gap:10px 22px;
     align-items:center;
     justify-content:space-between;
-    font-family:var(--mono);
-    font-size:11px;
-    letter-spacing:.12em;
-    text-transform:uppercase;
+    font-family:var(--label);
+    font-size:13px;
+    letter-spacing:0.01em;
+    text-transform:none;
+    font-weight:600;
   }
   footer a{color:#C9D7D0;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.24)}
   footer a:hover{color:#fff}

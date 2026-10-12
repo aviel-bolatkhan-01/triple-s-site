@@ -10,7 +10,7 @@ const ctx=cv.getContext('2d');
 const LOOP=14;
 const C={bg:'#FFFFFF',tint:'#EAF4EE',white:'#FFFFFF',ink:'#0E1F17',dim:'#6B7F74',
   green:'#17A05E',dgreen:'#0E7A45',gold:'#C79A2E',line:'#DCE8E0'};
-const DISP="'Bricolage Grotesque', sans-serif", MONO="'Spline Sans Mono', monospace";
+const DISP="'Manrope', system-ui, sans-serif", MONO="'Manrope', system-ui, sans-serif", DW=700;
 const CPL_FROM=0.82, CPL_TO=0.18, CONVERSIONS=8492;
 /* Derived from the campaign row in assets/center-matrasov-google-ads.webp
    (cost US$1,224.75, avg CPM US$11.43, conv. rate 66.80%, CTR 11.87%):
@@ -112,7 +112,7 @@ function text(str,x,y,size,fam,weight,color,align,alpha,ls,maxW){
   if(hasLS) ctx.letterSpacing='0px';
 }
 const mono=(s,x,y,sz,col,al,a,ls,mw)=>text(s,x,y,sz,MONO,500,col,al,a,ls,mw);
-const disp=(s,x,y,sz,col,al,a,mw)=>text(s,x,y,sz,DISP,800,col,al,a,'0px',mw);
+const disp=(s,x,y,sz,col,al,a,mw)=>text(s,x,y,sz,DISP,DW,col,al,a,'0px',mw);
 function rr(x,y,w,h,r){ctx.beginPath();ctx.roundRect?ctx.roundRect(x,y,w,h,r):ctx.rect(x,y,w,h)}
 const fmt=n=>Math.round(n).toLocaleString('en-US');
 
@@ -273,7 +273,7 @@ function play(){ if(playing||frozen!==null||reduced) return; playing=true; start
 function pause(){ if(!playing) return; playing=false; cancelAnimationFrame(raf); base=lastT; }
 
 const ready=Promise.race([
-  Promise.all([document.fonts.load("800 64px 'Bricolage Grotesque'"),document.fonts.load("500 14px 'Spline Sans Mono'")]),
+  Promise.all([document.fonts.load("700 64px 'Manrope'"),document.fonts.load("500 14px 'Manrope'")]),
   new Promise(r=>setTimeout(r,1500))
 ]).catch(()=>{});
 ready.then(()=>{
