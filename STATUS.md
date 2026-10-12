@@ -283,3 +283,9 @@ Owner: "ev dealership case doesn't match. fix that. and all similar issues." + f
 - **Founder block:** "Founded by Aviel Bolatkhan." / title "Founder" / 2-sentence third-person bio; promise line removed. Person JSON-LD jobTitle "Founder".
 - **Voice sweep:** senior specialist/buyer, no juniors/hand-offs, "I reply personally", "Brands I've managed", "senior attention", "one senior media buyer", "lead media buyer" bylines all gone. New meta description (155 chars max) + hero lede. OG image regenerated (source `_preview/v5d/og-card-source.html`).
 - Previews: `_preview/v5d/` (gitignored). TODO(aviel) new: confirm NKB = EV dealership + platform/market; EV screenshot; Leroy/BIC numbers; 300% ROAS brand/screenshot.
+
+## 2026-10-12 — motion graphic live
+- Added canvas animation (`assets/motion.js`, section "Tracking first. Everything in writing.", under the 4-step runbook). Commit b4c4bd2. Pure function of t; `?motion_t=8` freezes a frame; pauses off-screen; reduced-motion = static end frame; mobile uses a taller 4:5 layout.
+- Numbers are ONLY from the DTC mattress case: 8,492 tracked conversions, $0.14/conversion, Google CPL $0.82→$0.18 (8 months), 200%+ lead growth. No impressions/clicks/revenue figures (not on the site) — stages show names only; caption says dot counts are illustrative.
+- **Claims NOT on the site:** "300% ROAS" and "$30K+/mo" (listed above as real) appear nowhere on the live pages — confirm with the client data before using them anywhere.
+- Unverified: continuous playback in a real browser, a real phone, Web3Forms form (still untested). Preview copy remains at `_preview/triples-motion.html`.
