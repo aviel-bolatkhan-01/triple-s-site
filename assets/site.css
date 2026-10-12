@@ -2486,6 +2486,8 @@
     letter-spacing:-0.012em;
   }
   .form-title + .proposal-form{margin-top:12px}
+  .form-sub{margin-top:4px;color:var(--body);font-size:15px;line-height:1.5}
+  .form-sub + .proposal-form{margin-top:12px}
   .proposal-form select{
     flex:1 1 260px;
     min-height:52px;

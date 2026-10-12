@@ -303,3 +303,9 @@ Owner: "ev dealership case doesn't match. fix that. and all similar issues." + f
 - Hero row removed: Ads→Visitors→Leads & sales→Profit flow now a strip in #process above the runbook; 65–78% callout in #results header; the 3 proof chips deleted (Results already covers them).
 - Only free offer: 5-minute video review (ad spend optional, "Not running ads yet" option, blank sent as "Not provided"). Checklist magnet, free agency audit and all Calendly buttons removed; Calendly only as "Prefer to talk? Book a call" in the contact band + /for-agencies/. Agency form = white-label enquiry (id agency-audit-form kept).
 - review-form.js v3 (generic fields, one form_success push), site.css v4.
+
+## 2026-10-13 (2) — no-ads-history friendly (working tree, NOT committed by implementer)
+- H1 "Get customers from Google and Meta ads, with every lead and sale tracked to revenue." + newcomer-inclusive subhead; title/meta/OG/JSON-LD match.
+- Free offer = "free 5-minute video review of your website" (+ "Already running ads? Add your ad spend and we'll look at the account too."). Spend dropdown "Ad spend per month (optional)", first option "Not running ads yet".
+- New FAQ "We've never run ads. Is this for us?" (visible + schema); audit labelled as for businesses already running ads; pricing note for newcomers; calculator link "Already running ads? Estimate your wasted spend."
+- site.css v5, review-form.js v4 (JS file itself unchanged).
