@@ -20,9 +20,10 @@ function rr(ctx,x,y,w,h,r){ctx.beginPath();ctx.roundRect?ctx.roundRect(x,y,w,h,r
 function text(ctx,s,x,y,size,fam,weight,color,align,alpha,ls,maxW){
   if(alpha<=0) return;
   ctx.globalAlpha=alpha; ctx.fillStyle=color; ctx.textAlign=align||'left'; ctx.textBaseline='alphabetic';
-  const hasLS='letterSpacing' in ctx; if(hasLS) ctx.letterSpacing=ls||'0px';
+  const hasLS='letterSpacing' in ctx; if(hasLS) ctx.letterSpacing='0px';
   ctx.font=`${weight} ${size}px ${fam}`;
-  if(maxW){const w=ctx.measureText(s).width; if(w>maxW) ctx.font=`${weight} ${size*maxW/w}px ${fam}`}
+  if(maxW){const w=ctx.measureText(s).width+(hasLS?parseFloat(ls||0)*s.length:0); if(w>maxW) ctx.font=`${weight} ${size*maxW/w}px ${fam}`}
+  if(hasLS) ctx.letterSpacing=ls||'0px';
   ctx.fillText(s,x,y); if(hasLS) ctx.letterSpacing='0px'; ctx.globalAlpha=1;
 }
 const mono=(ctx,s,x,y,sz,col,al,a,ls,mw)=>text(ctx,s,x,y,sz,MONO,500,col,al,a,ls,mw);
@@ -132,6 +133,63 @@ function stage(cv,opt){
     }
   });
   function mix(a,b,p){const h=s=>[1,3,5].map(i=>parseInt(s.slice(i,i+2),16)),x=h(a),y=h(b);return `rgb(${x.map((v,i)=>Math.round(lerp(v,y[i],p))).join(',')})`}
+})();
+
+
+/* ---------- 2. Leaking pipe next to the wasted-spend calculator (illustrative) ----------
+   Reads the calculator's "share not bringing customers" slider each frame;
+   that share of the flow drips out of the pipe. The calculator itself is untouched. */
+(function(){
+  const cv=document.getElementById('leak-canvas'); if(!cv) return;
+  const wr=document.getElementById('waste-range');
+  const share=()=>{const v=wr?parseFloat(wr.value):20;return isFinite(v)?clamp(v,0,100):20};
+  const st=stage(cv,{still:8,
+    layout(cw){
+      if(matchMedia(NARROW).matches) return {W:600,H:300,n:1,x0:0,x1:600,py:100,hh:24,holes:[150,250,350,450],fs:22,hs:17};
+      const f=clamp(880/cw,1,1.45);
+      return {W:1000,H:190,n:0,x0:170,x1:770,py:62,hh:15,holes:[310,420,530,640],fs:14*f,hs:11*f};
+    },
+    draw(ctx,t,L){
+      const w=share()/100, A=seg(t,0,.4), py=L.py, hh=L.hh, hy=py+hh, dt=.035, v=(L.x1-L.x0)/3.2;
+      // pipe body
+      ctx.globalAlpha=A; ctx.fillStyle=C.tint; ctx.fillRect(L.x0,py-hh,L.x1-L.x0,hh*2);
+      ctx.strokeStyle=C.ink; ctx.lineWidth=1.5; ctx.lineCap='butt';
+      ctx.beginPath(); ctx.moveTo(L.x0,py-hh+.75); ctx.lineTo(L.x1,py-hh+.75);
+      let x=L.x0; for(const h of L.holes){ctx.moveTo(x,hy-.75);ctx.lineTo(h-6,hy-.75);x=h+6} ctx.moveTo(x,hy-.75); ctx.lineTo(L.x1,hy-.75);
+      ctx.stroke();
+      ctx.strokeStyle=C.gold; ctx.lineWidth=2;
+      for(const h of L.holes){ctx.beginPath();ctx.moveTo(h-6,hy-4);ctx.lineTo(h-6,hy+2);ctx.moveTo(h+6,hy-4);ctx.lineTo(h+6,hy+2);ctx.stroke()}
+      // flow: dot j enters at j*dt; a fixed share of dots leaves through a hole
+      const jmax=Math.floor(t/dt), jmin=Math.max(0,Math.floor((t-5)/dt));
+      for(let j=jmin;j<=jmax;j++){
+        const age=t-j*dt; let dx=L.x0+v*age, dy=py+(hash(j*3+1)-.5)*hh*1.3, col=C.green, a=1;
+        if(hash(j*3+2)<w){
+          const hx=L.holes[Math.floor(hash(j*3+3)*L.holes.length)], ta=(hx-L.x0)/v;
+          if(age>ta){
+            const fa=age-ta; dx=hx+(hash(j*3+4)-.5)*24*fa; dy=hy+3+18*fa+(L.n?150:90)*fa*fa; col=C.gold;
+            a=1-seg(dy,hy+(L.n?80:56),hy+(L.n?118:84));
+          }
+        } else if(dx>L.x1){ a=1-seg(dx,L.x1,L.x1+(L.n?0:26)); }
+        if(a<=0||dx<L.x0) continue;
+        const r=(L.n?4.5:3)*(col===C.gold?1.2:1);
+        if(col===C.gold){ctx.globalAlpha=A*a*.5; ctx.strokeStyle=C.gold; ctx.lineWidth=r*.8; ctx.beginPath(); ctx.moveTo(dx,Math.max(hy,dy-r*4)); ctx.lineTo(dx,dy); ctx.stroke()}
+        ctx.globalAlpha=A*a; ctx.fillStyle=col; ctx.beginPath(); ctx.arc(dx,dy,r,0,6.283); ctx.fill();
+      }
+      const pct=Math.round(share())+'%';
+      if(L.n){
+        mono(ctx,'AD SPEND',0,44,L.fs,C.ink,'left',A,'2px');
+        mono(ctx,'REACHES CUSTOMERS',600,44,L.fs,C.dgreen,'right',A,'2px',330);
+        mono(ctx,pct+' NOT BRINGING CUSTOMERS',300,248,L.fs,C.gold,'center',A,'1.5px',580);
+        mono(ctx,'ILLUSTRATIVE',300,288,L.hs,C.dim,'center',A,'1.5px');
+      } else {
+        mono(ctx,'AD SPEND',L.x0-16,py+L.fs*.36,L.fs,C.ink,'right',A,'2px',L.x0-20);
+        mono(ctx,'REACHES CUSTOMERS',L.x1+34,py+L.fs*.36,L.fs,C.dgreen,'left',A,'2px',L.W-L.x1-34);
+        mono(ctx,pct+' NOT BRINGING CUSTOMERS',(L.holes[0]+L.holes[L.holes.length-1])/2,178,L.fs,C.gold,'center',A,'1.5px',520);
+        mono(ctx,'ILLUSTRATIVE',L.W,178,L.hs,C.dim,'right',A,'1.5px');
+      }
+    }
+  });
+  if(st&&wr) wr.addEventListener('input',()=>st.redraw());
 })();
 
 })();

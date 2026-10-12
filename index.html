@@ -1318,6 +1318,8 @@
   .audit-scan-wrap{grid-column:1/-1;padding-top:22px;border-top:1px solid rgba(255,255,255,.12)}
   .audit-scan{display:block;width:100%;aspect-ratio:1000/352}
   @media (max-width:600px){.audit-scan{aspect-ratio:600/470}}
+  .leak-canvas{display:block;width:100%;aspect-ratio:1000/190}
+  @media (max-width:600px){.leak-canvas{aspect-ratio:600/300}}
   .hero-proof{display:grid;gap:14px;margin-top:30px}
   .hero-motion .motion-card{margin:0}
   .hero-proof .how-card{margin:0}
@@ -2953,6 +2955,8 @@
             </div>
           </div>
 
+          <canvas id="leak-canvas" class="leak-canvas" role="img" aria-label="Illustration: ad spend flows through a pipe and the share you picked leaks out before it reaches customers."></canvas>
+
           <div class="calc-results" aria-live="polite">
             <div class="calc-stat calc-stat--loss">
               <span class="label">Lost per month</span>
@@ -3439,6 +3443,6 @@
     })();
   </script>
   <script src="/assets/motion.js?v=3" defer></script>
-  <script src="/assets/motion-extra.js?v=1" defer></script>
+  <script src="/assets/motion-extra.js?v=2" defer></script>
 </body>
 </html>
