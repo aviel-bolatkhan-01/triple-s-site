@@ -1,6 +1,6 @@
 /* Tracked-funnel motion graphic for the Process section.
    The scene is a pure function render(t) over a 14s loop.
-   Every number shown is taken from the DTC mattress case study
+   Every number shown comes from the DTC mattress case study
    (/case-studies/dtc-mattress-rebuild/). Dot counts are illustrative.
    Freeze a frame for testing: add ?motion_t=SECONDS to the page URL. */
 (function(){
@@ -12,6 +12,11 @@ const C={bg:'#FFFFFF',tint:'#EAF4EE',white:'#FFFFFF',ink:'#0E1F17',dim:'#6B7F74'
   green:'#17A05E',dgreen:'#0E7A45',gold:'#C79A2E',line:'#DCE8E0'};
 const DISP="'Bricolage Grotesque', sans-serif", MONO="'Spline Sans Mono', monospace";
 const CPL_FROM=0.82, CPL_TO=0.18, CONVERSIONS=8492;
+/* Derived from the campaign row in assets/center-matrasov-google-ads.webp
+   (cost US$1,224.75, avg CPM US$11.43, conv. rate 66.80%, CTR 11.87%):
+   impressions = cost / CPM x 1000 = 107,152; clicks = 8,492 / 0.668 = 12,713
+   (cross-check: 107,152 x 11.87% = 12,719). Shown rounded and marked approx. */
+const IMPRESSIONS=107000, CLICKS=12700;
 
 const clamp=(v,a,b)=>Math.min(b,Math.max(a,v));
 const lerp=(a,b,t)=>a+(b-a)*t;
@@ -27,7 +32,7 @@ function mix(h1,h2,p){const a=hexRGB(h1),b=hexRGB(h2);return `rgb(${Math.round(l
 const LAYOUTS={
   wide:{W:1280,H:720,mouth:420,throat:700,gate:800,
     top:[[420,170],[700,335],[800,335]],bot:[[420,550],[700,385],[800,385]],
-    y0:[130,460],ym:[200,520],cy0:360,gateY:[290,430],gateLbl:470,
+    y0:[190,400],ym:[200,520],cy0:360,gateY:[290,430],gateLbl:470,
     ox:[880,30],oy:160,ctrl:[900,250],cx:[1000,150],cyR:[420,50],dot:1,
     card:[900,224,308,316],cLbl:[924,258],cVal:[924,304],cSub:[924,332],cGrow:[924,512],
     chart:[924,356,216,110],meter:[1170,300,20,200],cTextW:236,
@@ -199,10 +204,10 @@ function render(t){
     ctx.globalAlpha=a; ctx.fillStyle=s.col; ctx.beginPath(); ctx.arc(s.x,s.y,d.r*L.dot,0,6.283); ctx.fill();
   }
 
-  // stage stats: only "8,492" and "$0.14" are numbers, both real
+  // stage stats (sources: see IMPRESSIONS/CLICKS note above)
   const stats=[
-    ['Impressions','ADS SERVED',0,null],
-    ['Clicks','VISITS TO YOUR SITE',3.5,null],
+    ['≈'+fmt(Math.round(IMPRESSIONS*eout(seg(t,0,2.5))/1000)*1000),'IMPRESSIONS · APPROX.',0,null],
+    ['≈'+fmt(Math.round(CLICKS*eout(seg(t,3.5,6))/100)*100),'CLICKS · APPROX.',3.5,null],
     [fmt(CONVERSIONS*eout(seg(t,6.5,9.5))),'TRACKED CONVERSIONS',6.5,'$0.14 / CONVERSION']];
   const nextStart=[3.5,6.5,99];
   const S=L.stats;

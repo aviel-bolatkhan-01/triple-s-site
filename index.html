@@ -1315,6 +1315,14 @@
   .motion-cap{padding:14px 20px 16px;border-top:1px solid var(--line);color:var(--dim);font-size:14px;line-height:1.55}
   .motion-cap a{color:var(--green);font-weight:500;white-space:nowrap}
   @media (max-width:671px){.motion-canvas{aspect-ratio:4/5}}
+  .hero-proof{display:grid;gap:14px;margin-top:30px}
+  .hero-proof .motion-card{margin:0}
+  .hero-proof .proof-chips{margin-top:0;align-content:start;align-items:start}
+  .hero-proof .proof-chips .proof-chip--compact{grid-column:auto}
+  @media (min-width:1100px){
+    .hero-proof{grid-template-columns:minmax(0,2fr) minmax(0,1fr);align-items:start}
+    .hero-proof .proof-chips{grid-template-columns:1fr}
+  }
   .art-frame{
     padding:18px;
     background:var(--dark);
@@ -2626,23 +2634,6 @@
           </form>
           <p class="form-reassure">Just your site and email. We reply with a short proposal &mdash; no newsletter, no sales sequence.</p>
           <div class="hero-fineprint">Reply within 24 hours · No obligation</div>
-          <div class="proof-chips">
-            <div class="proof-chip">
-              <div class="proof-label"><span class="dot" aria-hidden="true"></span>DTC brand · Google Ads</div>
-              <span class="proof-value">$0.14</span>
-              <!-- TODO(aviel): confirm this wording (market + conversion type) before it goes live -->
-              <p class="proof-copy">per conversion, 8,492 conversions. Lead-gen, Central Asia market. <a href="/case-studies/dtc-mattress-rebuild/">See the case</a></p>
-            </div>
-            <div class="proof-chip">
-              <div class="proof-label"><span class="dot" aria-hidden="true"></span>EV dealership · Lead gen</div>
-              <span class="proof-value">$10 &rarr; $1</span>
-              <p class="proof-copy">cost per lead in one month, after a full account rebuild. <a href="/case-studies/ev-dealership-lead-gen/">See the case</a></p>
-            </div>
-            <div class="proof-chip proof-chip--compact">
-              <div class="proof-label"><span class="dot" aria-hidden="true"></span>US aesthetics clinic · Meta</div>
-              <p class="proof-copy"><span class="proof-value">$22.70</span> per lead from Meta lead-gen. <a href="/case-studies/medspa-lead-generation/">See the case</a></p>
-            </div>
-          </div>
         </div>
 
         <div class="how-card reveal" aria-label="How it works">
@@ -2669,6 +2660,23 @@
           <div class="how-result">
             <span class="how-result-value">Up to 90%</span>
             <span class="how-result-label">lower cost per lead for our clients</span>
+          </div>
+        </div>
+      </div>
+      <div class="wrap hero-proof reveal">
+        <figure class="motion-card">
+          <canvas id="motion-canvas" class="motion-canvas" role="img" aria-label="Animation: about 107,000 ad impressions become about 12,700 clicks, pass a GA4 and GTM tracking gate, and become 8,492 tracked conversions at $0.14 each, while Google Ads cost per lead falls from $0.82 to $0.18. Every sale tracked to revenue."></canvas>
+          <figcaption class="motion-cap">Figures from one DTC client&rsquo;s best Google Ads campaign: 8,492 conversions at $0.14 each. Impressions and clicks are approximate, worked out from the campaign&rsquo;s cost, CPM and 66.8% conversion rate in the case study. Cost per lead $0.82 &rarr; $0.18 is the whole account over 8 months. <a href="/case-studies/dtc-mattress-rebuild/">See the case &rarr;</a></figcaption>
+        </figure>
+        <div class="proof-chips">
+          <div class="proof-chip">
+            <div class="proof-label"><span class="dot" aria-hidden="true"></span>EV dealership · Lead gen</div>
+            <span class="proof-value">$10 &rarr; $1</span>
+            <p class="proof-copy">cost per lead in one month, after a full account rebuild. <a href="/case-studies/ev-dealership-lead-gen/">See the case</a></p>
+          </div>
+          <div class="proof-chip proof-chip--compact">
+            <div class="proof-label"><span class="dot" aria-hidden="true"></span>US aesthetics clinic · Meta</div>
+            <p class="proof-copy"><span class="proof-value">$22.70</span> per lead from Meta lead-gen. <a href="/case-studies/medspa-lead-generation/">See the case</a></p>
           </div>
         </div>
       </div>
@@ -3061,11 +3069,6 @@
               <p>Monthly Looker Studio reports on unit economics, not vanity metrics.</p>
             </article>
           </div>
-
-          <figure class="motion-card reveal">
-            <canvas id="motion-canvas" class="motion-canvas" role="img" aria-label="Animation: ad impressions become clicks, pass a GA4 and GTM tracking gate, and become 8,492 tracked conversions at $0.14 each, while Google Ads cost per lead falls from $0.82 to $0.18. Every sale tracked to revenue."></canvas>
-            <figcaption class="motion-cap">Figures from one DTC client: 8,492 tracked conversions at $0.14 each on Google Ads, and Google Ads cost per lead cut from $0.82 to $0.18 over 8 months. Dot counts are illustrative. <a href="/case-studies/dtc-mattress-rebuild/">See the case &rarr;</a></figcaption>
-          </figure>
         </div>
       </div>
     </section>
@@ -3425,6 +3428,6 @@
       });
     })();
   </script>
-  <script src="/assets/motion.js?v=1" defer></script>
+  <script src="/assets/motion.js?v=2" defer></script>
 </body>
 </html>
