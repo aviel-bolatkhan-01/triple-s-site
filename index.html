@@ -1316,11 +1316,13 @@
   .motion-cap a{color:var(--green);font-weight:500;white-space:nowrap}
   @media (max-width:671px){.motion-canvas{aspect-ratio:4/5}}
   .hero-proof{display:grid;gap:14px;margin-top:30px}
-  .hero-proof .motion-card{margin:0}
+  .hero-motion .motion-card{margin:0}
+  .hero-proof .how-card{margin:0}
+  @media (min-width:860px){.hero-motion .motion-canvas{aspect-ratio:4/5}}
   .hero-proof .proof-chips{margin-top:0;align-content:start;align-items:start}
   .hero-proof .proof-chips .proof-chip--compact{grid-column:auto}
-  @media (min-width:1100px){
-    .hero-proof{grid-template-columns:minmax(0,2fr) minmax(0,1fr);align-items:start}
+  @media (min-width:860px){
+    .hero-proof{grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:start}
     .hero-proof .proof-chips{grid-template-columns:1fr}
   }
   .art-frame{
@@ -2636,6 +2638,14 @@
           <div class="hero-fineprint">Reply within 24 hours · No obligation</div>
         </div>
 
+        <div class="hero-motion reveal">
+          <figure class="motion-card">
+            <canvas id="motion-canvas" class="motion-canvas" role="img" aria-label="Animation: about 107,000 ad impressions become about 12,700 clicks, pass a GA4 and GTM tracking gate, and become 8,492 tracked conversions at $0.14 each, while Google Ads cost per lead falls from $0.82 to $0.18. Every sale tracked to revenue."></canvas>
+            <figcaption class="motion-cap">Figures from one DTC client&rsquo;s best Google Ads campaign: 8,492 conversions at $0.14 each. Impressions and clicks are approximate, worked out from the campaign&rsquo;s cost, CPM and 66.8% conversion rate in the case study. Cost per lead $0.82 &rarr; $0.18 is the whole account over 8 months. <a href="/case-studies/dtc-mattress-rebuild/">See the case &rarr;</a></figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="wrap hero-proof reveal">
         <div class="how-card reveal" aria-label="How it works">
           <div class="eyebrow">How it works</div>
           <h2>We follow every ad dollar to a sale.</h2>
@@ -2662,12 +2672,6 @@
             <span class="how-result-label">lower cost per lead for our clients</span>
           </div>
         </div>
-      </div>
-      <div class="wrap hero-proof reveal">
-        <figure class="motion-card">
-          <canvas id="motion-canvas" class="motion-canvas" role="img" aria-label="Animation: about 107,000 ad impressions become about 12,700 clicks, pass a GA4 and GTM tracking gate, and become 8,492 tracked conversions at $0.14 each, while Google Ads cost per lead falls from $0.82 to $0.18. Every sale tracked to revenue."></canvas>
-          <figcaption class="motion-cap">Figures from one DTC client&rsquo;s best Google Ads campaign: 8,492 conversions at $0.14 each. Impressions and clicks are approximate, worked out from the campaign&rsquo;s cost, CPM and 66.8% conversion rate in the case study. Cost per lead $0.82 &rarr; $0.18 is the whole account over 8 months. <a href="/case-studies/dtc-mattress-rebuild/">See the case &rarr;</a></figcaption>
-        </figure>
         <div class="proof-chips">
           <div class="proof-chip">
             <div class="proof-label"><span class="dot" aria-hidden="true"></span>EV dealership · Lead gen</div>
@@ -3428,6 +3432,6 @@
       });
     })();
   </script>
-  <script src="/assets/motion.js?v=2" defer></script>
+  <script src="/assets/motion.js?v=3" defer></script>
 </body>
 </html>
