@@ -1315,6 +1315,9 @@
   .motion-cap{padding:14px 20px 16px;border-top:1px solid var(--line);color:var(--dim);font-size:14px;line-height:1.55}
   .motion-cap a{color:var(--green);font-weight:500;white-space:nowrap}
   @media (max-width:671px){.motion-canvas{aspect-ratio:4/5}}
+  .audit-scan-wrap{grid-column:1/-1;padding-top:22px;border-top:1px solid rgba(255,255,255,.12)}
+  .audit-scan{display:block;width:100%;aspect-ratio:1000/352}
+  @media (max-width:600px){.audit-scan{aspect-ratio:600/470}}
   .hero-proof{display:grid;gap:14px;margin-top:30px}
   .hero-motion .motion-card{margin:0}
   .hero-proof .how-card{margin:0}
@@ -3039,6 +3042,9 @@
             <span class="audit-note">Credited to your first month</span>
             <a class="btn btn-green" href="/ads-audit/">Start with the audit</a>
           </div>
+          <div class="audit-scan-wrap">
+            <canvas id="audit-scan" class="audit-scan" role="img" aria-label="Illustration: an audit scan line passes over an ad account's campaigns and flags the ones wasting spend."></canvas>
+          </div>
         </div>
       </div>
     </section>
@@ -3433,5 +3439,6 @@
     })();
   </script>
   <script src="/assets/motion.js?v=3" defer></script>
+  <script src="/assets/motion-extra.js?v=1" defer></script>
 </body>
 </html>
