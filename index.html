@@ -1310,6 +1310,11 @@
   .step p{color:var(--body)}
   .step-no{transition:background-color .2s ease, color .2s ease, border-color .2s ease}
   .step:hover .step-no{background:var(--green);border-color:var(--green);color:#fff}
+  .motion-card{margin:44px 0 0;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+  .motion-canvas{display:block;width:100%;aspect-ratio:16/9}
+  .motion-cap{padding:14px 20px 16px;border-top:1px solid var(--line);color:var(--dim);font-size:14px;line-height:1.55}
+  .motion-cap a{color:var(--green);font-weight:500;white-space:nowrap}
+  @media (max-width:671px){.motion-canvas{aspect-ratio:4/5}}
   .art-frame{
     padding:18px;
     background:var(--dark);
@@ -3056,6 +3061,11 @@
               <p>Monthly Looker Studio reports on unit economics, not vanity metrics.</p>
             </article>
           </div>
+
+          <figure class="motion-card reveal">
+            <canvas id="motion-canvas" class="motion-canvas" role="img" aria-label="Animation: ad impressions become clicks, pass a GA4 and GTM tracking gate, and become 8,492 tracked conversions at $0.14 each, while Google Ads cost per lead falls from $0.82 to $0.18. Every sale tracked to revenue."></canvas>
+            <figcaption class="motion-cap">Figures from one DTC client: 8,492 tracked conversions at $0.14 each on Google Ads, and Google Ads cost per lead cut from $0.82 to $0.18 over 8 months. Dot counts are illustrative. <a href="/case-studies/dtc-mattress-rebuild/">See the case &rarr;</a></figcaption>
+          </figure>
         </div>
       </div>
     </section>
@@ -3415,5 +3425,6 @@
       });
     })();
   </script>
+  <script src="/assets/motion.js?v=1" defer></script>
 </body>
 </html>

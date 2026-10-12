@@ -1172,6 +1172,11 @@
   .step p{color:var(--body)}
   .step-no{transition:background-color .2s ease, color .2s ease, border-color .2s ease}
   .step:hover .step-no{background:var(--green);border-color:var(--green);color:#fff}
+  .motion-card{margin:44px 0 0;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+  .motion-canvas{display:block;width:100%;aspect-ratio:16/9}
+  .motion-cap{padding:14px 20px 16px;border-top:1px solid var(--line);color:var(--dim);font-size:14px;line-height:1.55}
+  .motion-cap a{color:var(--green);font-weight:500;white-space:nowrap}
+  @media (max-width:671px){.motion-canvas{aspect-ratio:4/5}}
   .art-frame{
     padding:18px;
     background:var(--dark);
