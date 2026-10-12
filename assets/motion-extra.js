@@ -192,4 +192,63 @@ function stage(cv,opt){
   if(st&&wr) wr.addEventListener('input',()=>st.redraw());
 })();
 
+
+/* ---------- 3. Process stepper: progress line + node ring + check, driven by scroll position ---------- */
+(function(){
+  const sp=document.querySelector('#process .stepper'); if(!sp) return;
+  const nodes=[...sp.querySelectorAll('.step-no')], steps=nodes.map(n=>n.closest('.step'));
+  if(nodes.length<2) return;
+  sp.classList.add('is-live');
+  const track=document.createElement('span'), bar=document.createElement('span');
+  track.className='stepper-track'; bar.className='stepper-bar';
+  track.setAttribute('aria-hidden','true'); bar.setAttribute('aria-hidden','true');
+  sp.append(track,bar);
+  let geo=null, raf=0;
+  function measure(){
+    const r=sp.getBoundingClientRect();
+    const c=nodes.map(n=>{const b=n.getBoundingClientRect();return [b.left+b.width/2-r.left,b.top+b.height/2-r.top]});
+    const f=c[0], l=c[c.length-1];
+    const mode=Math.abs(l[1]-f[1])<2?'h':Math.abs(l[0]-f[0])<2?'v':'grid';
+    geo={c,mode};
+    const show=mode!=='grid';
+    track.style.display=bar.style.display=show?'':'none';
+    if(mode==='h'){
+      const y=parseFloat(getComputedStyle(sp,'::before').top)||f[1];
+      for(const e of [track,bar]) Object.assign(e.style,{left:f[0]+'px',top:y+'px',width:(l[0]-f[0])+'px',height:'2px'});
+      track.style.visibility='hidden';                 // the section already draws this track
+    } else if(mode==='v'){
+      for(const e of [track,bar]) Object.assign(e.style,{left:(f[0]-1)+'px',top:f[1]+'px',width:'2px',height:(l[1]-f[1])+'px'});
+      track.style.visibility='';
+    }
+  }
+  function apply(){
+    raf=0; if(!geo) return;
+    const r=sp.getBoundingClientRect(), vh=innerHeight||800, n=nodes.length;
+    let p, done;
+    if(FP!==null||RM){ p=FP!==null?clamp(FP,0,1):1; done=i=>p>0&&p>=i/(n-1)-1e-6; }
+    else if(geo.mode==='h'){ p=clamp((vh*.85-r.top)/(vh*.4),0,1); done=i=>p>0&&p>=i/(n-1)-1e-6; }
+    else {
+      const line=vh*.75, y0=r.top+geo.c[0][1], len=geo.c[n-1][1]-geo.c[0][1]||1;
+      p=clamp((line-y0)/len,0,1); done=i=>r.top+geo.c[i][1]<=line;
+    }
+    bar.style.transform=geo.mode==='v'?`scaleY(${p})`:`scaleX(${p})`;
+    steps.forEach((s,i)=>s.classList.toggle('is-done',done(i)));
+  }
+  const req=()=>{if(!raf) raf=requestAnimationFrame(apply)};
+  let watching=false;
+  fontsReady.then(()=>{
+    measure(); apply();
+    if('ResizeObserver' in window) new ResizeObserver(()=>{measure();req()}).observe(sp); else addEventListener('resize',()=>{measure();req()});
+    if(FP!==null||RM) return;
+    const onScroll=()=>req();
+    if('IntersectionObserver' in window){
+      new IntersectionObserver(es=>{
+        const v=es[0].isIntersecting;
+        if(v&&!watching){addEventListener('scroll',onScroll,{passive:true});watching=true;req()}
+        else if(!v&&watching){removeEventListener('scroll',onScroll);watching=false;req()}
+      },{rootMargin:'20% 0px'}).observe(sp);
+    } else addEventListener('scroll',onScroll,{passive:true});
+  });
+})();
+
 })();
