@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-NFD63BGW');</script>
+<!-- End Google Tag Manager -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Google, Meta &amp; TikTok Ads, Tracking First | Triple S</title>
 <meta name="description" content="Google, Meta and TikTok ads for e-commerce, lead-gen and B2B. Tracking fixed first, then the spend, with every lead or sale tracked to revenue.">
@@ -120,7 +123,7 @@
           "name": "How is Triple S different from a big agency?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "You work with me directly: I run every account personally. Measurement comes first, because if the data is wrong, everything downstream is wrong. And everything is in writing, month-to-month, with no lock-in."
+            "text": "Engineering-grade measurement: if the data is wrong, everything downstream is wrong, so tracking gets fixed first. And everything is in writing, month-to-month, with no lock-in."
           }
         },
         {
@@ -136,7 +139,7 @@
           "name": "How do we start?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "With the free 5-minute video review: send your website, email and monthly ad spend, and I reply with a personal Loom video within 24 hours. For the full picture, the 48-Hour Ads Audit is $200, credited to your first month if we work together. If you'd rather talk first, book a 30-minute call."
+            "text": "With the free 5-minute video review of your ads, or of your site and tracking if you're not running ads yet: send your website and email, and we reply with a short Loom video within 24 hours. From there, the paid 48-Hour Ads Audit ($200, credited to your first month if we work together) or monthly management."
           }
         }
       ]
@@ -2540,35 +2543,6 @@
   }
   .quotes .quote + .quote blockquote{font-size:clamp(18px,2.2vw,22px);max-width:34ch}
 
-  /* v5: lead magnet */
-  .magnet{
-    display:grid;
-    gap:20px;
-    margin-top:20px;
-    padding:26px 24px;
-    background:var(--surface);
-    border:1px solid var(--line);
-    border-radius:20px;
-    box-shadow:var(--shadow);
-  }
-  .magnet-copy h3{
-    margin:8px 0 8px;
-    font-size:clamp(21px,2.4vw,26px);
-    font-weight:800;
-    line-height:1.15;
-  }
-  .magnet-copy p{color:var(--body);max-width:52ch;line-height:1.6}
-  .magnet-form{margin-top:0;max-width:none}
-  .magnet-fine{
-    color:var(--dim);
-    font-family:var(--label);
-    font-size:13px;
-    letter-spacing:0.01em;
-  }
-  @media (min-width:860px){
-    .magnet{grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;gap:40px;padding:32px 40px}
-  }
-
   /* v5: blog */
   .article-meta{
     margin:16px 0 8px;
@@ -2753,21 +2727,6 @@
   }
   .contact-or .btn{width:100%}
   .contact-or-label{color:#A8C7B7;font-size:14px}
-  .magnet-toggle{margin-top:18px}
-  .magnet-toggle > summary{
-    display:inline;
-    list-style:none;
-    cursor:pointer;
-    color:var(--green-dark);
-    font-size:15px;
-    font-weight:600;
-    border-bottom:1px solid rgba(23,160,94,.35);
-  }
-  .magnet-toggle > summary::-webkit-details-marker{display:none}
-  .magnet-toggle > summary:hover{border-bottom-color:var(--green)}
-  .magnet-toggle[open] > summary{color:var(--navy)}
-  .magnet-toggle .magnet-form{margin-top:14px;max-width:620px}
-  .magnet-toggle .magnet-copy{margin-top:12px;max-width:62ch;color:var(--body);font-size:15px;line-height:1.6}
   .calc-foot .text-link{font-size:15px}
   .tier-fine{color:var(--dim);font-size:14px;line-height:1.55}
   .tier-fine a{color:var(--green-dark);border-bottom:1px solid rgba(23,160,94,.35)}
@@ -2796,15 +2755,92 @@
   .rate-list li:last-child{border-bottom:1px solid var(--line)}
   .rate-list .rate-band{color:var(--body)}
   .rate-list .rate-price{color:var(--navy);font-family:var(--display);font-weight:700;font-size:22px;white-space:nowrap}
+  /* v7: agency voice, one free offer, process flow */
+  @media (min-width:860px){.hero-grid{align-items:center}}
+  .proposal-form select:has(option[value=""]:checked){color:#8A9B90}
+  .proposal-form textarea{
+    flex:1 1 100%;
+    min-height:96px;
+    padding:14px 16px;
+    border:1px solid var(--line);
+    border-radius:var(--radius-sm);
+    background:#fff;
+    color:var(--navy);
+    font:inherit;
+    resize:vertical;
+  }
+  .proposal-form textarea::placeholder{color:#8A9B90}
+  .proposal-form textarea:focus{border-color:rgba(23,160,94,.55);outline:none;box-shadow:0 0 0 4px rgba(23,160,94,.12)}
+  .contact-talk{color:#A8C7B7;font-size:14px;line-height:1.5}
+  .contact-talk a{color:#fff;border-bottom:1px solid rgba(255,255,255,.35)}
+  .contact-talk a:hover{color:#4CD693;border-bottom-color:#4CD693}
+  .contact-talk--light{margin-top:8px;color:var(--dim)}
+  .contact-talk--light a{color:var(--green-dark);border-bottom-color:rgba(23,160,94,.4)}
+  .results-callout{
+    display:flex;
+    align-items:baseline;
+    flex-wrap:wrap;
+    gap:6px 16px;
+    max-width:780px;
+    margin:-18px 0 34px;
+    padding:18px 22px;
+    border-radius:14px;
+    background:var(--dark);
+    box-shadow:var(--shadow);
+  }
+  .results-callout-value{color:#4CD693;font-family:var(--display);font-size:30px;font-weight:700;line-height:1;letter-spacing:-0.018em}
+  .results-callout-label{flex:1 1 300px;color:#C9D7D0;font-size:15px;line-height:1.5}
+  .results-callout-label a{color:#fff;border-bottom:1px solid rgba(255,255,255,.35);white-space:nowrap}
+  .results-callout-label a:hover{color:#4CD693}
+  .process-label{margin:0 0 14px;color:var(--green-dark);font-size:13px;font-weight:600;letter-spacing:0.01em}
+  .flow-strip{
+    list-style:none;
+    display:grid;
+    margin:0 0 44px;
+    padding:18px 22px;
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:20px;
+    box-shadow:var(--shadow);
+  }
+  .flow-node{
+    position:relative;
+    display:grid;
+    grid-template-columns:48px minmax(0,1fr);
+    column-gap:16px;
+    align-content:center;
+    padding:12px 0;
+  }
+  .flow-node .how-icon{grid-row:1 / 3;align-self:center}
+  .flow-node strong{color:var(--navy);font-family:var(--display);font-size:18px;font-weight:700;line-height:1.2;letter-spacing:-0.012em}
+  .flow-text{color:var(--dim);font-size:15px;line-height:1.45}
+  .flow-node--end .how-icon{background:var(--green);border-color:var(--green);color:#fff;box-shadow:0 10px 24px rgba(23,160,94,.22)}
+  .flow-node:not(:last-child)::after{
+    content:"";
+    position:absolute;
+    left:23px;
+    top:calc(50% + 26px);
+    height:calc(100% - 52px);
+    width:2px;
+    border-radius:2px;
+    background:linear-gradient(180deg, rgba(23,160,94,.45), rgba(23,160,94,.15));
+  }
+  .flow-node:hover .how-icon{transform:scale(1.06)}
+  @media (min-width:860px){
+    .flow-strip{grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;padding:28px 30px}
+    .flow-node{grid-template-columns:1fr;row-gap:4px;align-content:start;padding:0}
+    .flow-node .how-icon{grid-row:auto;margin-bottom:10px}
+    .flow-node:not(:last-child)::after{left:60px;right:-12px;top:23px;height:2px;width:auto;background:linear-gradient(90deg, rgba(23,160,94,.45), rgba(23,160,94,.15))}
+  }
 </style>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFD63BGW" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
   <div class="utility-bar">
     <div class="wrap utility-inner">
-      <a class="utility-left" href="#review">Free 5-minute video review of your ads <strong>&rarr;</strong></a>
-      <div class="utility-right">
-        <a href="https://calendly.com/triples-agency/30min" target="_blank" rel="noreferrer">Book a 30-min call</a>
-      </div>
+      <a class="utility-left" href="#review">Free 5-minute video review <strong>&rarr;</strong></a>
     </div>
   </div>
 
@@ -2834,13 +2870,13 @@
         <div class="hero-copy reveal">
           <div class="eyebrow">E-commerce · Lead gen · B2B · US, EU &amp; Gulf</div>
           <!-- TODO(aviel): pick the H1. Using option 1 until you choose.
-            1) "Your ad platforms are counting the wrong things. I fix the tracking first, then the spend."
-            2) "Most ad accounts optimise on bad data. I fix the tracking first, then the spend."
-            3) "Before I touch your budget, I make sure your ads count real leads and sales." -->
-          <h1>Your ad platforms are counting the wrong things. I fix the tracking first, then the spend.</h1>
+            1) "Your ad platforms are counting the wrong things. We fix the tracking first, then the spend."
+            2) "Most ad accounts optimise on bad data. We fix the tracking first, then the spend."
+            3) "Before we touch your budget, we make sure your ads count real leads and sales." -->
+          <h1>Your ad platforms are counting the wrong things. We fix the tracking first, then the spend.</h1>
           <p class="hero-lede">Google, Meta and TikTok for e-commerce, lead-gen and B2B, with every lead or sale tracked to revenue.</p>
-          <strong class="form-title" id="hero-review">Get a free 5-minute video review of your ads.</strong>
-          <form class="proposal-form" data-review-form>
+          <strong class="form-title" id="hero-review">Get a free 5-minute video review of your ads &mdash; or of your site and tracking if you&rsquo;re not running ads yet.</strong>
+          <form id="hero-review-form" class="proposal-form" data-review-form>
             <input type="hidden" name="access_key" value="eaaf4af3-428e-4271-b661-1d4900d1aaf5">
             <input type="hidden" name="subject" value="New video review request — triples.agency">
             <input type="hidden" name="from_name" value="Triple S website">
@@ -2852,9 +2888,10 @@
               <input id="hero-website" name="website" type="text" placeholder="Your website" autocomplete="url" required>
               <label class="sr-only" for="hero-email">Your email</label>
               <input id="hero-email" name="email" type="email" placeholder="Your email" autocomplete="email" required>
-              <label class="sr-only" for="hero-spend">Monthly ad spend</label>
-              <select id="hero-spend" name="ad_spend" required>
-                <option value="" selected disabled>Monthly ad spend</option>
+              <label class="sr-only" for="hero-spend">Monthly ad spend (optional)</label>
+              <select id="hero-spend" name="ad_spend">
+                <option value="" selected>Monthly ad spend (optional)</option>
+                <option>Not running ads yet</option>
                 <option>Under $3K/mo</option>
                 <option>$3K–10K/mo</option>
                 <option>$10K–25K/mo</option>
@@ -2863,12 +2900,11 @@
             </div>
             <div class="proposal-actions">
               <button class="btn btn-green" type="submit">Get my free video review</button>
-              <a class="btn btn-outline-dark" href="https://calendly.com/triples-agency/30min" target="_blank" rel="noreferrer">Book a 30-min call</a>
             </div>
             <p class="form-status" role="status" aria-live="polite" hidden></p>
           </form>
-          <p class="form-note">I&rsquo;ll reply with a personal Loom video within 24 hours.</p>
-          <p class="cta-links">Not ready? <a href="#calculator">Estimate your wasted spend</a><span aria-hidden="true">·</span><a href="#checklist">Get the 12-point tracking checklist</a></p>
+          <p class="form-note">We&rsquo;ll reply with a short Loom video within 24 hours.</p>
+          <p class="cta-links">Not ready? <a href="#calculator">Estimate your wasted spend</a></p>
         </div>
 
         <div class="hero-motion reveal">
@@ -2878,54 +2914,11 @@
           </figure>
         </div>
       </div>
-      <div class="wrap hero-proof reveal">
-        <div class="how-card reveal" aria-label="How it works">
-          <div class="eyebrow">How it works</div>
-          <h2>I follow every ad dollar to a lead or a sale.</h2>
-          <ol class="how-steps">
-            <li class="how-step">
-              <span class="how-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 10v4a1 1 0 0 0 1 1h2l5 4V5L6 9H4a1 1 0 0 0-1 1z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg></span>
-              <div><strong>Ads</strong><span>Your ads run on Google, Meta and TikTok.</span></div>
-            </li>
-            <li class="how-step">
-              <span class="how-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 3v3M4.2 5.2l2.1 2.1M3 10h3M10 10l10 4-4 1.5-1.5 4z"/></svg></span>
-              <div><strong>Visitors</strong><span>The right people click through to your site.</span></div>
-            </li>
-            <li class="how-step">
-              <span class="how-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 6h16v12H4z"/><path d="M4 7l8 6 8-6"/></svg></span>
-              <div><strong>Leads &amp; sales</strong><span>Every enquiry and order gets counted.</span></div>
-            </li>
-            <li class="how-step how-step--end">
-              <span class="how-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 17l5-5 4 4 7-8"/><path d="M15 8h5v5"/></svg></span>
-              <div><strong>Profit</strong><span>I cut what doesn&rsquo;t pay and grow what does.</span></div>
-            </li>
-          </ol>
-          <div class="how-result">
-            <span class="how-result-value">65&ndash;78%</span>
-            <span class="how-result-label">lower cost per lead on one DTC account over 8 months (Meta and Google, Central Asia market)</span>
-          </div>
-        </div>
-        <div class="proof-chips">
-          <div class="proof-chip">
-            <div class="proof-label"><span class="dot" aria-hidden="true"></span>Lead gen · EV dealership</div>
-            <span class="proof-value">$10 &rarr; $1</span>
-            <p class="proof-copy">cost per lead in one month, after a full account rebuild. <a href="/case-studies/ev-dealership-lead-gen/">See the case</a></p>
-          </div>
-          <div class="proof-chip proof-chip--compact">
-            <div class="proof-label"><span class="dot" aria-hidden="true"></span>Lead gen · US aesthetics clinic · Meta</div>
-            <p class="proof-copy"><span class="proof-value">$22.70</span> per lead from Meta lead-gen. <a href="/case-studies/medspa-lead-generation/">See the case</a></p>
-          </div>
-          <div class="proof-chip proof-chip--compact">
-            <div class="proof-label"><span class="dot" aria-hidden="true"></span>E-commerce · US DTC brand · Google Ads</div>
-            <p class="proof-copy">Enhanced conversions and cart data wired up so bidding optimises on purchases and revenue. <a href="/case-studies/twenty-four-carrots/">See the case</a></p>
-          </div>
-        </div>
-      </div>
     </section>
 
     <section class="client-strip">
       <div class="wrap">
-        <div class="strip-label reveal">Brands I&rsquo;ve managed media for</div>
+        <div class="strip-label reveal">Brands we&rsquo;ve managed media for</div>
         <div class="client-wall reveal" aria-label="Clients">
           <div class="client-tile">Leroy Merlin</div>
           <div class="client-tile">BIC</div>
@@ -2941,7 +2934,7 @@
           <div class="client-tile">Beauty Space Clinic</div>
         </div>
         <p class="strip-note reveal">Enterprise brands (Leroy Merlin, BIC) were managed while embedded with partner agencies.</p>
-        <p class="strip-note reveal">Industries I work in: e-commerce · DTC · B2B · lead generation · <a href="/medspa-ads/">clinics &amp; medspas</a></p>
+        <p class="strip-note reveal">Industries we work in: e-commerce · DTC · B2B · lead generation · <a href="/medspa-ads/">clinics &amp; medspas</a></p>
       </div>
     </section>
 
@@ -2981,6 +2974,10 @@
           <h2>Results. The receipt matters.</h2>
         </div>
         <p class="section-intro reveal">Six engagements across enterprise retail, DTC e-commerce, an EV dealership, food delivery and clinics. Real numbers from client accounts &mdash; open the full case study on any of them.</p>
+        <div class="results-callout reveal">
+          <span class="results-callout-value">65&ndash;78%</span>
+          <p class="results-callout-label">lower cost per lead on one DTC account over 8 months (Meta and Google, Central Asia market) <a href="/case-studies/dtc-mattress-rebuild/">See the case&nbsp;&rarr;</a></p>
+        </div>
 
         <div class="results-grid">
           <article class="case-card reveal">
@@ -3210,27 +3207,6 @@
           </div>
         </div>
 
-        <details class="magnet-toggle reveal" id="checklist">
-          <summary>Get the 12-point ads tracking checklist (PDF) by email <span aria-hidden="true">&rarr;</span></summary>
-          <p class="magnet-copy">The checks the 48-hour audit starts with: whether your conversions fire, fire once, and report the right value. Run it on your own account.</p>
-          <!-- TODO(aviel): create the PDF at /assets/tracking-checklist.pdf. Web3Forms only emails YOU the request (same key as the hero form), so you send the PDF by hand, or swap in an email tool with an autoresponder. -->
-          <form class="proposal-form magnet-form" id="magnet-form">
-            <input type="hidden" name="access_key" value="eaaf4af3-428e-4271-b661-1d4900d1aaf5">
-            <input type="hidden" name="subject" value="Checklist request — triples.agency">
-            <input type="hidden" name="from_name" value="Triple S website">
-            <input type="hidden" name="request" value="12-point ads tracking checklist (PDF)">
-            <div class="form-trap" aria-hidden="true">
-              <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off">
-            </div>
-            <div class="proposal-fields">
-              <label class="sr-only" for="magnet-email">Your email</label>
-              <input id="magnet-email" name="email" type="email" placeholder="Your email" autocomplete="email" required>
-              <button class="btn btn-outline-dark" type="submit">Email me the checklist</button>
-            </div>
-            <p class="form-status" id="magnet-status" role="status" aria-live="polite" hidden></p>
-            <p class="magnet-fine">One email with the PDF. No newsletter.</p>
-          </form>
-        </details>
       </div>
     </section>
 
@@ -3260,10 +3236,10 @@
             <span class="tier-band">$25K+/mo ad spend</span>
             <h3>Enterprise</h3>
             <span class="tier-price">Custom</span>
-            <p>Scope, reporting cadence and fee agreed together. Talk to me about what the account needs.</p>
+            <p>Scope, reporting cadence and fee agreed together. Talk to us about what the account needs.</p>
           </article>
         </div>
-        <p class="tier-note reveal">Month-to-month — no lock-in at any tier. Your tier is confirmed once I&rsquo;ve seen the account.</p>
+        <p class="tier-note reveal">Month-to-month — no lock-in at any tier. Your tier is confirmed once we&rsquo;ve seen the account.</p>
         <p class="tier-note reveal">Platform detail: <a href="/google-ads-management/">Google Ads management</a> · <a href="/meta-ads-agency/">Meta Ads management</a> · <a href="/ads-audit/">the 48-Hour Ads Audit</a>.</p>
 
         <div class="audit-band reveal">
@@ -3291,13 +3267,38 @@
           <div class="section-head reveal">
             <h2>Tracking first. Everything in writing.</h2>
           </div>
-          <p class="section-intro reveal">A simple runbook. Tracking first. Changes in writing. Reporting on unit economics, not vanity metrics.</p>
+          <p class="section-intro reveal">Every ad dollar is followed to a lead or a sale, and the work runs on a simple runbook: tracking first, changes in writing, reporting on unit economics, not vanity metrics.</p>
 
+          <p class="process-label reveal">What we track: the path every ad dollar takes</p>
+          <ol class="flow-strip reveal" aria-label="What we track">
+            <li class="flow-node">
+              <span class="how-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 10v4a1 1 0 0 0 1 1h2l5 4V5L6 9H4a1 1 0 0 0-1 1z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg></span>
+              <strong>Ads</strong>
+              <span class="flow-text">Your ads run on Google, Meta and TikTok.</span>
+            </li>
+            <li class="flow-node">
+              <span class="how-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 3v3M4.2 5.2l2.1 2.1M3 10h3M10 10l10 4-4 1.5-1.5 4z"/></svg></span>
+              <strong>Visitors</strong>
+              <span class="flow-text">The right people click through to your site.</span>
+            </li>
+            <li class="flow-node">
+              <span class="how-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 6h16v12H4z"/><path d="M4 7l8 6 8-6"/></svg></span>
+              <strong>Leads &amp; sales</strong>
+              <span class="flow-text">Every enquiry and order gets counted.</span>
+            </li>
+            <li class="flow-node flow-node--end">
+              <span class="how-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 17l5-5 4 4 7-8"/><path d="M15 8h5v5"/></svg></span>
+              <strong>Profit</strong>
+              <span class="flow-text">We cut what doesn&rsquo;t pay and grow what does.</span>
+            </li>
+          </ol>
+
+          <p class="process-label reveal">How we work: the runbook</p>
           <div class="stepper reveal">
             <article class="step">
               <div class="step-no">01</div>
               <h3>Audit</h3>
-              <p>48 hours. I map the account, the data and the waste.</p>
+              <p>48 hours. We map the account, the data and the waste.</p>
             </article>
             <article class="step">
               <div class="step-no">02</div>
@@ -3323,7 +3324,7 @@
       <div class="wrap about-grid">
         <div class="founder-copy reveal">
           <div class="eyebrow eyebrow--dark">About Triple S</div>
-          <h2>I&rsquo;m Aviel Bolatkhan. I run every account personally.</h2>
+          <h2>Founded by Aviel Bolatkhan.</h2>
           <div class="founder-card">
             <img class="founder-avatar" src="/assets/aviel-480.webp" srcset="/assets/aviel-480.webp 480w, /assets/aviel-600.webp 600w" sizes="132px" width="480" height="480" alt="Aviel Bolatkhan, founder of Triple S" loading="lazy" decoding="async">
             <div class="founder-id">
@@ -3333,8 +3334,8 @@
               <a class="founder-link" href="https://www.linkedin.com/in/aviel-bolatkhan" target="_blank" rel="noreferrer">LinkedIn profile <span aria-hidden="true">&rarr;</span></a>
             </div>
           </div>
-          <p>I founded Triple S in 2022. It&rsquo;s a one-person operation: I run every account personally, from the tracking setup to the weekly changes and the monthly report. I have 4+ years in paid media across Google Ads, Meta, TikTok, LinkedIn and DV360.</p>
-          <p>I&rsquo;m based in Almaty, Kazakhstan, and work US &amp; EU hours.</p>
+          <p>Aviel founded Triple S in 2022. He has 4+ years in paid media across Google Ads, Meta, TikTok, LinkedIn and DV360. Triple S runs ad accounts tracking-first: measurement is fixed before any budget moves.</p>
+          <p>Triple S is based in Almaty, Kazakhstan, and works US &amp; EU hours.</p>
           <p class="about-note">Enterprise brands (Leroy Merlin, BIC) were managed while embedded with partner agencies.</p>
           <div class="about-stats" aria-label="Track record">
             <div class="mini-stat">
@@ -3363,10 +3364,10 @@
       <div class="wrap about-lower">
         <section class="subsection reveal" id="why">
           <div class="eyebrow eyebrow--dark">The difference</div>
-          <h3>Why work with me.</h3>
+          <h3>Why work with us.</h3>
           <div class="diff-list">
             <p><strong>Everything in writing.</strong> Fixed deliverables, weekly changes logged, and a monthly report on unit economics, not vanity metrics.</p>
-            <p><strong>Tracking built in-house.</strong> GA4, GTM and server-side tagging handled by me, so every dollar is traced from click to conversion.</p>
+            <p><strong>Tracking built in-house.</strong> GA4, GTM and server-side tagging handled by us, so every dollar is traced from click to conversion.</p>
             <p><strong>Certified on real accounts.</strong> Google Ads Search, Display, Video and Measurement, Google Analytics, DV360, CM360, Meta and Semrush — earned on live accounts under MCA (Google Partner) and Emotion Technology.</p>
           </div>
         </section>
@@ -3397,7 +3398,7 @@
           </details>
           <details>
             <summary>How is Triple S different from a big agency?</summary>
-            <p>You work with me directly: I run every account personally. Measurement comes first, because if the data is wrong, everything downstream is wrong. And everything is in writing, month-to-month, with no lock-in.</p>
+            <p>Engineering-grade measurement: if the data is wrong, everything downstream is wrong, so tracking gets fixed first. And everything is in writing, month-to-month, with no lock-in.</p>
           </details>
           <details>
             <summary>Do you require long-term contracts?</summary>
@@ -3405,7 +3406,7 @@
           </details>
           <details>
             <summary>How do we start?</summary>
-            <p>With the free 5-minute video review: send your website, email and monthly ad spend <a href="#review">in the form below</a>, and I reply with a personal Loom video within 24 hours. For the full picture, <a href="/ads-audit/">the 48-Hour Ads Audit</a> is $200, credited to your first month if we work together. If you'd rather talk it through first, <a href="https://calendly.com/triples-agency/30min" target="_blank" rel="noreferrer">book a 30-minute call</a>.</p>
+            <p>With the free 5-minute video review of your ads, or of your site and tracking if you&rsquo;re not running ads yet: send your website and email <a href="#review">in the form below</a>, and we reply with a short Loom video within 24 hours. From there, <a href="/ads-audit/">the paid 48-Hour Ads Audit</a> ($200, credited to your first month if we work together) or monthly management.</p>
           </details>
         </div>
       </div>
@@ -3416,18 +3417,18 @@
         <div class="contact-grid">
           <div class="cta-panel cta-panel--wide reveal">
             <div class="eyebrow eyebrow--dark">Contact</div>
-            <h2>Get a free 5-minute video review of your ads.</h2>
-            <p class="cta-sub">Send your website, email and monthly ad spend. I&rsquo;ll reply with a personal Loom video within 24 hours.</p>
+            <h2>Get a free 5-minute video review.</h2>
+            <p class="cta-sub">Of your ads, or of your site and tracking if you&rsquo;re not running ads yet. Send your website and email, and we&rsquo;ll reply with a short Loom video within 24 hours.</p>
             <div class="cta-founder">
               <img src="/assets/aviel-480.webp" srcset="/assets/aviel-480.webp 480w, /assets/aviel-600.webp 600w" sizes="56px" width="480" height="480" alt="Aviel Bolatkhan, founder of Triple S" loading="lazy" decoding="async">
-              <p><strong>You&rsquo;ll hear back from me, Aviel.</strong><br>Almaty, Kazakhstan &middot; working US &amp; EU hours.</p>
+              <p><strong>Aviel Bolatkhan, founder</strong><br>Almaty, Kazakhstan &middot; working US &amp; EU hours.</p>
             </div>
-            <p class="cta-meta">I take on a maximum of 2 new accounts per month.</p>
+            <p class="cta-meta">We take on a maximum of 2 new accounts per month.</p>
           </div>
 
           <div class="contact-card reveal" id="review">
             <span class="contact-kicker">Free &middot; 5-minute Loom &middot; reply within 24 hours</span>
-            <form class="proposal-form" data-review-form>
+            <form id="contact-review-form" class="proposal-form" data-review-form>
               <input type="hidden" name="access_key" value="eaaf4af3-428e-4271-b661-1d4900d1aaf5">
               <input type="hidden" name="subject" value="New video review request — triples.agency">
               <input type="hidden" name="from_name" value="Triple S website">
@@ -3439,9 +3440,10 @@
                 <input id="cta-website" name="website" type="text" placeholder="Your website" autocomplete="url" required>
                 <label class="sr-only" for="cta-email">Your email</label>
                 <input id="cta-email" name="email" type="email" placeholder="Your email" autocomplete="email" required>
-                <label class="sr-only" for="cta-spend">Monthly ad spend</label>
-                <select id="cta-spend" name="ad_spend" required>
-                  <option value="" selected disabled>Monthly ad spend</option>
+                <label class="sr-only" for="cta-spend">Monthly ad spend (optional)</label>
+                <select id="cta-spend" name="ad_spend">
+                  <option value="" selected>Monthly ad spend (optional)</option>
+                  <option>Not running ads yet</option>
                   <option>Under $3K/mo</option>
                   <option>$3K–10K/mo</option>
                   <option>$10K–25K/mo</option>
@@ -3453,11 +3455,8 @@
               </div>
               <p class="form-status" role="status" aria-live="polite" hidden></p>
             </form>
-            <p class="form-note">I&rsquo;ll reply with a personal Loom video within 24 hours.</p>
-            <div class="contact-or">
-              <span class="contact-or-label">Prefer to talk first?</span>
-              <a class="btn btn-outline-light" href="https://calendly.com/triples-agency/30min" target="_blank" rel="noreferrer">Book a 30-min call</a>
-            </div>
+            <p class="form-note">We&rsquo;ll reply with a short Loom video within 24 hours.</p>
+            <p class="contact-talk">Prefer to talk? <a href="https://calendly.com/triples-agency/30min" target="_blank" rel="noreferrer">Book a call</a></p>
           </div>
         </div>
       </div>
@@ -3535,52 +3534,6 @@
         updateCalc();
       }
 
-      const magnet = document.getElementById('magnet-form');
-      if (magnet) {
-        const MAGNET_MAIL = 'hello@triples.agency';
-        const mEmail = document.getElementById('magnet-email');
-        const mStatus = document.getElementById('magnet-status');
-        const mButton = magnet.querySelector('button[type="submit"]');
-        const mLabel = mButton ? mButton.textContent : '';
-        const mSay = (message, tone) => {
-          if (!mStatus) return;
-          mStatus.innerHTML = message;
-          mStatus.className = tone ? `form-status form-status--${tone}` : 'form-status';
-          mStatus.hidden = false;
-        };
-        magnet.addEventListener('submit', async (event) => {
-          event.preventDefault();
-          const address = mEmail ? mEmail.value.trim() : '';
-          if (!address || !/^\S+@\S+\.\S+$/.test(address)) {
-            mSay('Add a valid email so I can send it.', 'err');
-            if (mEmail) mEmail.focus();
-            return;
-          }
-          if (mButton) {
-            mButton.disabled = true;
-            mButton.textContent = 'Sending…';
-          }
-          try {
-            const response = await fetch('https://api.web3forms.com/submit', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-              body: JSON.stringify(Object.fromEntries(new FormData(magnet)))
-            });
-            const result = await response.json();
-            if (!result.success) throw new Error(result.message || 'Submission failed');
-            magnet.reset();
-            mSay('Got it. The checklist will be in your inbox within 24 hours.', 'ok');
-          } catch (error) {
-            mSay(`Couldn’t send that. Email <a href="mailto:${MAGNET_MAIL}?subject=Tracking%20checklist">${MAGNET_MAIL}</a> and I’ll send it over.`, 'err');
-          } finally {
-            if (mButton) {
-              mButton.disabled = false;
-              mButton.textContent = mLabel;
-            }
-          }
-        });
-      }
-
       document.querySelectorAll('[data-dialog]').forEach((trigger) => {
         const dialog = document.getElementById(trigger.dataset.dialog);
         if (!dialog) return;
@@ -3611,7 +3564,7 @@
       });
     })();
   </script>
-  <script src="/assets/review-form.js?v=1" defer></script>
+  <script src="/assets/review-form.js?v=3" defer></script>
   <script src="/assets/motion.js?v=4" defer></script>
   <script src="/assets/motion-extra.js?v=5" defer></script>
 </body>

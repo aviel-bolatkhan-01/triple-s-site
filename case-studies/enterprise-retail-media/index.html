@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-NFD63BGW');</script>
+<!-- End Google Tag Manager -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Enterprise Media Buying: Leroy Merlin &amp; BIC | Triple S</title>
 <meta name="description" content="Enterprise media buying for Leroy Merlin and BIC, managed while embedded with MCA, a Google Partner agency, across Google Ads, DV360 and Meta.">
@@ -25,7 +28,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400..800&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=3">
+<link rel="stylesheet" href="/assets/site.css?v=4">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -71,12 +74,12 @@
 </script>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFD63BGW" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
   <div class="utility-bar">
     <div class="wrap utility-inner">
-      <a class="utility-left" href="#review">Free 5-minute video review of your ads <strong>&rarr;</strong></a>
-      <div class="utility-right">
-        <a href="https://calendly.com/triples-agency/30min" target="_blank" rel="noreferrer">Book a 30-min call</a>
-      </div>
+      <a class="utility-left" href="#review">Free 5-minute video review <strong>&rarr;</strong></a>
     </div>
   </div>
 
@@ -200,18 +203,18 @@
         <div class="contact-grid">
           <div class="cta-panel cta-panel--wide reveal">
             <div class="eyebrow eyebrow--dark">Contact</div>
-            <h2>Get a free 5-minute video review of your ads.</h2>
-            <p class="cta-sub">Send your website, email and monthly ad spend. I&rsquo;ll reply with a personal Loom video within 24 hours.</p>
+            <h2>Get a free 5-minute video review.</h2>
+            <p class="cta-sub">Of your ads, or of your site and tracking if you&rsquo;re not running ads yet. Send your website and email, and we&rsquo;ll reply with a short Loom video within 24 hours.</p>
             <div class="cta-founder">
               <img src="/assets/aviel-480.webp" srcset="/assets/aviel-480.webp 480w, /assets/aviel-600.webp 600w" sizes="56px" width="480" height="480" alt="Aviel Bolatkhan, founder of Triple S" loading="lazy" decoding="async">
-              <p><strong>You&rsquo;ll hear back from me, Aviel.</strong><br>Almaty, Kazakhstan &middot; working US &amp; EU hours.</p>
+              <p><strong>Aviel Bolatkhan, founder</strong><br>Almaty, Kazakhstan &middot; working US &amp; EU hours.</p>
             </div>
-            <p class="cta-meta">I take on a maximum of 2 new accounts per month.</p>
+            <p class="cta-meta">We take on a maximum of 2 new accounts per month.</p>
           </div>
 
           <div class="contact-card reveal" id="review">
             <span class="contact-kicker">Free &middot; 5-minute Loom &middot; reply within 24 hours</span>
-            <form class="proposal-form" data-review-form>
+            <form id="contact-review-form" class="proposal-form" data-review-form>
               <input type="hidden" name="access_key" value="eaaf4af3-428e-4271-b661-1d4900d1aaf5">
               <input type="hidden" name="subject" value="New video review request — triples.agency">
               <input type="hidden" name="from_name" value="Triple S website">
@@ -223,9 +226,10 @@
                 <input id="cta-website" name="website" type="text" placeholder="Your website" autocomplete="url" required>
                 <label class="sr-only" for="cta-email">Your email</label>
                 <input id="cta-email" name="email" type="email" placeholder="Your email" autocomplete="email" required>
-                <label class="sr-only" for="cta-spend">Monthly ad spend</label>
-                <select id="cta-spend" name="ad_spend" required>
-                  <option value="" selected disabled>Monthly ad spend</option>
+                <label class="sr-only" for="cta-spend">Monthly ad spend (optional)</label>
+                <select id="cta-spend" name="ad_spend">
+                  <option value="" selected>Monthly ad spend (optional)</option>
+                  <option>Not running ads yet</option>
                   <option>Under $3K/mo</option>
                   <option>$3K–10K/mo</option>
                   <option>$10K–25K/mo</option>
@@ -237,11 +241,8 @@
               </div>
               <p class="form-status" role="status" aria-live="polite" hidden></p>
             </form>
-            <p class="form-note">I&rsquo;ll reply with a personal Loom video within 24 hours.</p>
-            <div class="contact-or">
-              <span class="contact-or-label">Prefer to talk first?</span>
-              <a class="btn btn-outline-light" href="https://calendly.com/triples-agency/30min" target="_blank" rel="noreferrer">Book a 30-min call</a>
-            </div>
+            <p class="form-note">We&rsquo;ll reply with a short Loom video within 24 hours.</p>
+            <p class="contact-talk">Prefer to talk? <a href="https://calendly.com/triples-agency/30min" target="_blank" rel="noreferrer">Book a call</a></p>
           </div>
         </div>
       </div>
@@ -325,6 +326,6 @@
     })();
   </script>
   <noscript><style>.reveal{opacity:1 !important;transform:none !important}</style></noscript>
-  <script src="/assets/review-form.js?v=1" defer></script>
+  <script src="/assets/review-form.js?v=3" defer></script>
 </body>
 </html>

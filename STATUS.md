@@ -297,3 +297,9 @@ Owner: "ev dealership case doesn't match. fix that. and all similar issues." + f
 - Pricing: Starter $3K–5K spend; under $3K → audit; effective-rate note on Growth; audit refund guarantee ($500/mo threshold).
 - New `/for-agencies/` (white-label, $600 / $1,000 / custom per account). In nav + footer on every page, sitemap.
 - Mobile: utility bar hidden <560px; nav is a single scrollable row <700px; tap targets ≥44px.
+
+## 2026-10-13 — agency voice, one free offer, hero row moved (working tree, NOT committed by implementer)
+- Agency "we" voice site-wide again; About = "Founded by Aviel Bolatkhan." (no team-size or solo claims).
+- Hero row removed: Ads→Visitors→Leads & sales→Profit flow now a strip in #process above the runbook; 65–78% callout in #results header; the 3 proof chips deleted (Results already covers them).
+- Only free offer: 5-minute video review (ad spend optional, "Not running ads yet" option, blank sent as "Not provided"). Checklist magnet, free agency audit and all Calendly buttons removed; Calendly only as "Prefer to talk? Book a call" in the contact band + /for-agencies/. Agency form = white-label enquiry (id agency-audit-form kept).
+- review-form.js v3 (generic fields, one form_success push), site.css v4.
