@@ -1,7 +1,13 @@
-/* Tracked-funnel motion graphic for the Process section.
+/* Tracked-funnel motion graphic for the homepage hero.
    The scene is a pure function render(t) over a 14s loop.
-   Every number shown comes from the DTC mattress case study
-   (/case-studies/dtc-mattress-rebuild/). Dot counts are illustrative.
+   Every number shown comes from the US medical-aesthetics clinics case
+   (/case-studies/medspa-lead-generation/), read off assets/clinic-meta-leadgen.webp:
+   Meta Ads Manager, Premier Medical Aesthetics, "Last 30 days: Jul 12, 2026 - Aug 10, 2026",
+     LeadGen | CBO | Ridgefield - CT: 20 Leads (Form), reach 3,019, $22.70 per lead, $453.99 spent
+     LeadGen | CBO | Berlin - CT:     15 Leads (Form), reach 3,351, $30.21 per lead, $453.20 spent
+   Totals shown are plain sums of those rows (35 leads, $907.19). Reach is NOT summed
+   (people can overlap between campaigns). Impressions and clicks are not in the
+   screenshot, so no impression/click numbers are shown: the dots are illustrative.
    Freeze a frame for testing: add ?motion_t=SECONDS to the page URL. */
 (function(){
 const cv=document.getElementById('motion-canvas');
@@ -11,12 +17,9 @@ const LOOP=14;
 const C={bg:'#FFFFFF',tint:'#EAF4EE',white:'#FFFFFF',ink:'#0E1F17',dim:'#6B7F74',
   green:'#17A05E',dgreen:'#0E7A45',gold:'#C79A2E',line:'#DCE8E0'};
 const DISP="'Manrope', system-ui, sans-serif", MONO="'Manrope', system-ui, sans-serif", DW=700;
-const CPL_FROM=0.82, CPL_TO=0.18, CONVERSIONS=8492;
-/* Derived from the campaign row in assets/center-matrasov-google-ads.webp
-   (cost US$1,224.75, avg CPM US$11.43, conv. rate 66.80%, CTR 11.87%):
-   impressions = cost / CPM x 1000 = 107,152; clicks = 8,492 / 0.668 = 12,713
-   (cross-check: 107,152 x 11.87% = 12,719). Shown rounded and marked approx. */
-const IMPRESSIONS=107000, CLICKS=12700;
+const REACH=[3019,3351], SPEND=453.99+453.20, LEADS=[20,15];
+const CLINICS=[{name:'RIDGEFIELD, CT',cpl:22.70,leads:20},{name:'BERLIN, CT',cpl:30.21,leads:15}];
+const CPL_MAX=30.21;
 
 const clamp=(v,a,b)=>Math.min(b,Math.max(a,v));
 const lerp=(a,b,t)=>a+(b-a)*t;
@@ -33,21 +36,21 @@ const LAYOUTS={
   wide:{W:1280,H:720,mouth:420,throat:700,gate:800,
     top:[[420,170],[700,335],[800,335]],bot:[[420,550],[700,385],[800,385]],
     y0:[190,400],ym:[200,520],cy0:360,gateY:[290,430],gateLbl:470,
-    ox:[880,30],oy:160,ctrl:[900,250],cx:[1000,150],cyR:[420,50],dot:1,
+    ox:[880,30],oy:160,ctrl:[900,250],cx:[960,200],cyR:[202,10],dot:1,
     card:[900,224,308,316],cLbl:[924,258],cVal:[924,304],cSub:[924,332],cGrow:[924,512],
     chart:[924,356,216,110],meter:[1170,300,20,200],cTextW:236,
     hud:[72,50],bars:{x:72,step:170,w:156,y:664,ly:690},
     stats:{x:[72,400,728],y:112,maxW:[300,300,460]},
-    end:{tile:[592,214,96],lines:['Every sale tracked to revenue.'],ly:[396],size:60,maxW:1120,url:446}},
+    end:{tile:[592,214,96],lines:['Every lead and sale tracked to revenue.'],ly:[396],size:56,maxW:1120,url:446}},
   narrow:{W:720,H:900,mouth:150,throat:400,gate:480,
     top:[[150,260],[400,380],[480,380]],bot:[[150,540],[400,420],[480,420]],
     y0:[230,340],ym:[270,530],cy0:400,gateY:[340,460],gateLbl:500,
-    ox:[560,40],oy:140,ctrl:[640,470],cx:[400,180],cyR:[690,60],dot:1.4,
+    ox:[560,40],oy:140,ctrl:[640,470],cx:[430,220],cyR:[592,14],dot:1.4,
     card:[40,580,640,220],cLbl:[68,620],cVal:[68,684],cSub:[68,718],cGrow:[68,772],
     chart:[360,620,230,130],meter:[630,612,22,164],cTextW:270,
     hud:[40,70],bars:{x:40,step:164,w:150,y:836,ly:870},
     stats:{x:[40],y:156,maxW:[640]},
-    end:{tile:[300,220,120],lines:['Every sale','tracked to revenue.'],ly:[470,546],size:66,maxW:640,url:612}}
+    end:{tile:[300,220,120],lines:['Every lead and sale','tracked to revenue.'],ly:[470,546],size:62,maxW:640,url:612}}
 };
 let L=LAYOUTS.wide, narrow=false, fm=1;
 
@@ -116,9 +119,6 @@ const disp=(s,x,y,sz,col,al,a,mw)=>text(s,x,y,sz,DISP,DW,col,al,a,'0px',mw);
 function rr(x,y,w,h,r){ctx.beginPath();ctx.roundRect?ctx.roundRect(x,y,w,h,r):ctx.rect(x,y,w,h)}
 const fmt=n=>Math.round(n).toLocaleString('en-US');
 
-/* chart: abstract downward trend (cost per lead falling), no axis values */
-const jit=[];{const r=mulberry32(7);for(let i=0;i<12;i++) jit.push((i>0&&i<11)?(r()-.5):0)}
-function chartPts(){const [x,y,w,h]=L.chart;return jit.map((j,i)=>[x+i*(w/11), y+(i/11)*h+j*h*.16])}
 
 function render(t){
   const k=cv.width/L.W, W=L.W, H=L.H;
@@ -160,37 +160,29 @@ function render(t){
       ctx.globalAlpha=fa*A5; ctx.strokeStyle=C.green; ctx.lineWidth=2.5;
       ctx.beginPath(); ctx.moveTo(L.gate-16,sy); ctx.lineTo(L.gate+16,sy); ctx.stroke();
     }
-    mono('GA4 · GTM',L.gate,L.gateLbl,(narrow?22:13*fmo),C.dim,'center',gp*A5*(t>9.5?.6:1),'1.5px',narrow?200:150);
+    mono('LEAD FORMS',L.gate,L.gateLbl,(narrow?22:13*fmo),C.dim,'center',gp*A5*(t>9.5?.6:1),'1.5px',narrow?200:150);
   }
 
-  // cost-per-lead card (real: Google Ads CPL $0.82 -> $0.18, DTC case)
+  // cost-per-lead card (real: Meta CPL per clinic location, see header note)
   const cp=seg(t,9.0,9.8), prog=eout(seg(t,9.5,12));
   if(cp>0){
     const [x,y,w,h]=L.card, a=cp*A5, tw=L.cTextW;
     ctx.save(); ctx.globalAlpha=a; ctx.shadowColor='rgba(14,31,23,.08)'; ctx.shadowBlur=30; ctx.shadowOffsetY=12;
     rr(x,y,w,h,18); ctx.fillStyle=C.white; ctx.fill(); ctx.restore();
     ctx.globalAlpha=a; ctx.strokeStyle=C.line; ctx.lineWidth=1; rr(x+.5,y+.5,w-1,h-1,18); ctx.stroke();
-    const cpl=lerp(CPL_FROM,CPL_TO,prog);
-    mono('GOOGLE ADS CPL',L.cLbl[0],L.cLbl[1],narrow?24:12*fmo,C.dim,'left',a,'2px',tw);
-    disp('$'+cpl.toFixed(2),L.cVal[0],L.cVal[1],narrow?62:34*fd,C.ink,'left',a,tw);
-    mono('from $0.82 · 8 months',L.cSub[0],L.cSub[1],narrow?22:12*fmo,C.dim,'left',a,'0px',tw);
-    mono('200%+ LEAD GROWTH',L.cGrow[0],L.cGrow[1],narrow?22:12*fmo,C.dgreen,'left',a*seg(t,11,11.6),'1.5px',tw);
-    const [mx,my,mw,mh]=L.meter;
-    rr(mx,my,mw,mh,mw/2); ctx.globalAlpha=a; ctx.fillStyle=C.tint; ctx.fill();
-    const fh=mh*(cpl/CPL_FROM); if(fh>1){rr(mx,my+mh-fh,mw,fh,mw/2); ctx.fillStyle=C.green; ctx.fill()}
-    const pts=chartPts(), lp=seg(t,9.8,11.8), n=(pts.length-1)*eio(lp);
-    const [chx,chy,chw,chh]=L.chart;
-    ctx.globalAlpha=a; ctx.strokeStyle=C.line; ctx.lineWidth=1; ctx.beginPath(); ctx.moveTo(chx,chy+chh+12.5); ctx.lineTo(chx+chw,chy+chh+12.5); ctx.stroke();
-    if(lp>0){
-      ctx.globalAlpha=a; ctx.strokeStyle=C.green; ctx.lineWidth=2.5; ctx.lineJoin='round'; ctx.beginPath();
-      ctx.moveTo(pts[0][0],pts[0][1]);
-      const full=Math.floor(n); let hx=pts[0][0],hy=pts[0][1];
-      for(let i=1;i<=full;i++){ctx.lineTo(pts[i][0],pts[i][1]);hx=pts[i][0];hy=pts[i][1]}
-      if(full<pts.length-1){const f=n-full,p0=pts[full],p1=pts[full+1];hx=lerp(p0[0],p1[0],f);hy=lerp(p0[1],p1[1],f);ctx.lineTo(hx,hy)}
-      ctx.stroke();
-      ctx.fillStyle=C.gold; ctx.beginPath(); ctx.arc(hx,hy,5,0,6.283); ctx.fill();
-      ctx.strokeStyle=C.gold; ctx.lineWidth=1.5; ctx.beginPath(); ctx.arc(hx,hy,9,0,6.283); ctx.stroke();
-    }
+    mono('META · COST PER LEAD',L.cLbl[0],L.cLbl[1],narrow?24:12*fmo,C.dim,'left',a,'2px',narrow?560:tw);
+    CLINICS.forEach((c,i)=>{
+      const ai=a*seg(t,9.6+i*.5,10.2+i*.5);
+      let vx,vy,bw;
+      if(narrow){ vx=x+28+i*306; vy=y+104; bw=270; }
+      else { vx=x+24; vy=y+92+i*120; bw=w-48; }
+      disp('$'+c.cpl.toFixed(2),vx,vy,narrow?56:34*fd,C.ink,'left',ai,bw);
+      mono(c.name+' · '+c.leads+' LEADS',vx,vy+(narrow?32:24),narrow?20:11*fmo,C.dim,'left',ai,'1.5px',bw);
+      const by=vy+(narrow?50:38), bh=narrow?12:10, p=eout(seg(t,9.8+i*.5,11.6+i*.5));
+      ctx.globalAlpha=ai; rr(vx,by,bw,bh,bh/2); ctx.fillStyle=C.tint; ctx.fill();
+      const fw=bw*(c.cpl/CPL_MAX)*p; if(fw>1){rr(vx,by,fw,bh,bh/2); ctx.fillStyle=i?C.dgreen:C.green; ctx.fill()}
+    });
+    mono('LAST 30 DAYS · 2 LOCATIONS',narrow?x+28:x+24,y+h-(narrow?22:24),narrow?18:11*fmo,C.dgreen,'left',a*prog,'1.5px',narrow?560:tw);
   }
 
   // dots
@@ -204,11 +196,12 @@ function render(t){
     ctx.globalAlpha=a; ctx.fillStyle=s.col; ctx.beginPath(); ctx.arc(s.x,s.y,d.r*L.dot,0,6.283); ctx.fill();
   }
 
-  // stage stats (sources: see IMPRESSIONS/CLICKS note above)
+  // stage stats (real figures only, see header note)
+  const r0=eout(seg(t,0,2.5)), s1=eout(seg(t,3.5,6)), l2=eout(seg(t,6.5,9.5));
   const stats=[
-    ['≈'+fmt(Math.round(IMPRESSIONS*eout(seg(t,0,2.5))/1000)*1000),'IMPRESSIONS · APPROX.',0,null],
-    ['≈'+fmt(Math.round(CLICKS*eout(seg(t,3.5,6))/100)*100),'CLICKS · APPROX.',3.5,null],
-    [fmt(CONVERSIONS*eout(seg(t,6.5,9.5))),'TRACKED CONVERSIONS',6.5,'$0.14 / CONVERSION']];
+    [fmt(REACH[0]*r0)+' · '+fmt(REACH[1]*r0),'PEOPLE REACHED, PER CLINIC',0,null],
+    ['$'+(SPEND*s1).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2}),'META AD SPEND · 30 DAYS',3.5,null],
+    [fmt((LEADS[0]+LEADS[1])*l2),'TRACKED LEADS (FORM)',6.5,'20 RIDGEFIELD · 15 BERLIN']];
   const nextStart=[3.5,6.5,99];
   const S=L.stats;
   stats.forEach(([big,label,start,extra],idx)=>{
@@ -227,7 +220,7 @@ function render(t){
   ctx.globalAlpha=1; ctx.fillStyle=C.green;
   const hs=narrow?14:10; ctx.fillRect(L.hud[0],L.hud[1]-hs,hs,hs);
   mono('TRIPLE S',L.hud[0]+hs+10,L.hud[1],narrow?24:13*fmo,C.ink,'left',1,'3px');
-  const B=L.bars, wins=[[0,2.5,'IMPRESSIONS'],[2.5,6,'CLICKS'],[6,9.5,'TRACKED'],[9.5,12,'COST / LEAD']];
+  const B=L.bars, wins=[[0,2.5,'REACH'],[2.5,6,'CLICKS'],[6,9.5,'LEADS'],[9.5,12,'COST / LEAD']];
   wins.forEach((w,i)=>{
     const x=B.x+i*B.step, p=seg(t,w[0],w[1]), cur=t>=w[0]&&t<w[1];
     ctx.globalAlpha=1; rr(x,B.y,B.w,4,2); ctx.fillStyle=C.line; ctx.fill();

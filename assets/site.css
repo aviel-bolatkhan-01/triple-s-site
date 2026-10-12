@@ -2711,3 +2711,36 @@
   .founder-line img{flex:none;width:56px;height:56px;border-radius:50%;object-fit:cover;background:#fff;border:1px solid rgba(255,255,255,.18)}
   .founder-line a{color:#4CD693;border-bottom:1px solid rgba(76,214,147,.35);white-space:nowrap}
   .founder-line a:hover{color:#fff}
+  /* v10: 30-min call restored as the secondary action */
+  .utility-right a{color:#FFFFFF;text-decoration:none}
+  .utility-right a:hover{color:#4CD693}
+  .contact-card .contact-or .btn{min-height:48px}
+  .agency-call{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;margin-top:16px}
+  .agency-call-label{color:var(--dim);font-size:14px}
+  .mobile-call{display:none}
+  @media (max-width:700px){
+    .mobile-cta{right:calc(12px + 132px)}
+    .mobile-call{
+      position:fixed;
+      right:12px;
+      bottom:calc(12px + env(safe-area-inset-bottom));
+      z-index:60;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      width:124px;
+      min-height:52px;
+      padding:4px 10px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      background:#fff;
+      color:var(--navy);
+      font-family:var(--label);
+      font-size:12px;
+      font-weight:600;
+      line-height:1.25;
+      text-align:center;
+      box-shadow:0 14px 30px rgba(14,31,23,.18);
+    }
+    .mobile-call:hover{color:var(--green-dark);border-color:rgba(23,160,94,.6)}
+  }

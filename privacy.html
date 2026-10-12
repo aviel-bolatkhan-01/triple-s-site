@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-NFD63BGW');</script>
 <!-- End Google Tag Manager -->
@@ -27,168 +27,59 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400..800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css?v=9">
 <style>
-  :root{
-    --bg:#F6FAF7;
-    --surface:#FFFFFF;
-    --navy:#0E1F17;
-    --body:#3D4F46;
-    --dim:#6B7F74;
-    --green:#17A05E;
-    --green-dark:#0E7A45;
-    --line:#DCE8E0;
-    --dark:#0E1F17;
-    --label:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;
-    --sans:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;
-    --display:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{
-    font-family:var(--sans);
-    color:var(--body);
-    background:
-      radial-gradient(900px 420px at 8% 0%, rgba(23,160,94,.08), transparent 56%),
-      var(--bg);
-    line-height:1.68;
-    -webkit-font-smoothing:antialiased;
-  }
-  .wrap{width:min(760px,calc(100% - 32px));margin:0 auto}
-
-  .topbar{
-    background:var(--dark);
-    padding:14px 0;
-  }
-  .topbar .wrap{
-    width:min(1180px,calc(100% - 32px));
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:16px;
-  }
-  .brand{
-    display:inline-flex;
-    align-items:center;
-    gap:11px;
-    text-decoration:none;
-  }
-  .brand-mark{
-    display:grid;
-    place-items:center;
-    width:34px;
-    height:34px;
-    border-radius:10px;
-    background:var(--green);
-    color:#fff;
-    font-family:var(--display);
-    font-weight:700;
-    font-size:15px;
-  }
-  .brand strong{color:#fff;font-family:var(--display);font-size:17px;font-weight:700}
-  .topbar a.back{
-    font-family:var(--label);
-    font-size:13px;
-    letter-spacing:0.01em;
-    text-transform:none;
-    color:#A8D7BC;
-    text-decoration:none;
-    font-weight:600;
-  }
-  .topbar a.back:hover{color:#fff}
-
-  main{padding:56px 0 24px}
-  .eyebrow{
-    font-family:var(--label);
-    font-size:13px;
-    letter-spacing:0.01em;
-    text-transform:none;
-    color:var(--green-dark);
-    margin-bottom:14px;
-    font-weight:600;
-  }
-  h1{
-    font-family:var(--display);
-    font-size:clamp(32px,5.4vw,46px);
-    font-weight:700;
-    line-height:1.06;
-    color:var(--navy);
-    margin-bottom:12px;
-  }
-  .updated{
-    font-family:var(--label);
-    font-size:13px;
-    letter-spacing:0.01em;
-    text-transform:none;
-    color:var(--dim);
-    padding-bottom:26px;
-    border-bottom:1px solid var(--line);
-    margin-bottom:34px;
-    font-weight:600;
-  }
-  h2{
-    font-family:var(--display);
-    font-size:22px;
-    font-weight:700;
-    line-height:1.2;
-    color:var(--navy);
-    margin:34px 0 10px;
-  }
-  p{margin-bottom:14px}
-  ul{margin:0 0 14px 0;padding-left:20px}
-  li{margin-bottom:8px}
-  strong{color:var(--navy);font-weight:600}
-  a{color:var(--green-dark)}
-  .box{
-    background:var(--surface);
-    border:1px solid var(--line);
-    border-radius:14px;
-    padding:22px 24px;
-    margin:24px 0;
-  }
-  .box p:last-child{margin-bottom:0}
-
-  footer{
-    margin-top:48px;
-    background:var(--dark);
-    color:#C9D7D0;
-    padding:26px 0;
-  }
-  footer .wrap{
-    width:min(1180px,calc(100% - 32px));
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px 22px;
-    align-items:center;
-    justify-content:space-between;
-    font-family:var(--label);
-    font-size:13px;
-    letter-spacing:0.01em;
-    text-transform:none;
-    font-weight:600;
-  }
-  footer a{color:#C9D7D0;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.24)}
-  footer a:hover{color:#fff}
+  .legal{max-width:760px}
+  .legal .updated{color:var(--dim);font-size:13px;font-weight:600;padding-bottom:26px;border-bottom:1px solid var(--line);margin:12px 0 34px}
+  .legal h2{font-family:var(--display);font-size:22px;font-weight:700;line-height:1.2;color:var(--navy);margin:34px 0 10px}
+  .legal p{margin-bottom:14px;line-height:1.68}
+  .legal ul{margin:0 0 14px 0;padding-left:20px;line-height:1.68}
+  .legal li{margin-bottom:8px}
+  .legal strong{color:var(--navy);font-weight:600}
+  .legal a{color:var(--green-dark);border-bottom:1px solid rgba(23,160,94,.4)}
+  .legal .box{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px 24px;margin:24px 0}
+  .legal .box p:last-child{margin-bottom:0}
 </style>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFD63BGW" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-
-  <div class="topbar">
-    <div class="wrap">
-      <a class="brand" href="/">
-        <span class="brand-mark" aria-hidden="true">S³</span>
-        <strong>Triple S</strong>
-      </a>
-      <span><a class="back" href="/for-agencies/">For agencies</a> &nbsp;·&nbsp; <a class="back" href="/">← Back to site</a></span>
+  <div class="utility-bar">
+    <div class="wrap utility-inner">
+      <a class="utility-left" href="#review">Free 5-minute video review <strong>&rarr;</strong></a>
+      <div class="utility-right"><a href="https://calendly.com/triples-agency/30min" target="_blank" rel="noreferrer">Book a 30-min call</a></div>
     </div>
   </div>
 
-  <main>
-    <div class="wrap">
+  <header class="site-nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="/" aria-label="Triple S home">
+        <div class="brand-mark" aria-hidden="true">S&#179;</div>
+        <div class="brand-copy">
+          <strong>Triple S</strong>
+          <span>Performance Marketing That Drives Profit</span>
+        </div>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="/#results">Results</a>
+        <a href="/#services">Services</a>
+        <a href="/#process">Process</a>
+        <a href="/#about">About</a>
+        <a href="/for-agencies/">For agencies</a>
+      </nav>
+      <a class="btn btn-green btn-nav" href="#review">Free video review</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="section page-top">
+      <div class="wrap legal">
+    
+      <nav class="crumbs reveal" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><span aria-current="page">Privacy</span></nav>
       <div class="eyebrow">Legal</div>
-      <h1>Privacy Policy</h1>
-      <div class="updated">Last updated 12 October 2026</div>
+      <h1 class="page-h1">Privacy Policy</h1>
+      <div class="updated">Last updated 13 October 2026</div>
 
       <p>This policy explains what personal data Triple S collects through <strong>triples.agency</strong>, why we collect it, and what you can ask us to do with it. Triple S is a performance marketing business founded in 2022 and operated by Bolatkhan LLC, Almaty, Kazakhstan.</p>
 
@@ -205,13 +96,14 @@
       </ul>
 
       <h2>Why we collect it</h2>
-      <p>To reply to your enquiry, to prepare a proposal or audit, and to run any engagement you go on to agree with us. That is the entire purpose. Where the law requires a legal basis, ours is your consent when you choose to contact us, and our legitimate interest in responding to a business enquiry.</p>
+      <p>To reply to your enquiry, to prepare your free video review, a call or a paid audit, and to run any engagement you go on to agree with us. That is the entire purpose. Where the law requires a legal basis, ours is your consent when you choose to contact us, and our legitimate interest in responding to a business enquiry.</p>
 
       <h2>Who else sees it</h2>
       <p>We use a small number of third-party services to run the site. Each one receives only what it needs:</p>
       <ul>
         <li><strong>Web3Forms</strong> — processes contact form submissions and forwards them to our inbox.</li>
         <li><strong>Calendly</strong> — handles call bookings and holds the details you enter there.</li>
+        <li><strong>Google Tag Manager and Google Analytics</strong> — measure page views, clicks on our contact links and form submissions (see Cookies and tracking below).</li>
         <li><strong>GitHub Pages</strong> — hosts and serves this website.</li>
         <li><strong>Google Workspace</strong> — hosts our email.</li>
       </ul>
@@ -238,14 +130,102 @@
       <h2>Contact</h2>
       <p>Questions, requests, or complaints about this policy: <a href="mailto:hello@triples.agency">hello@triples.agency</a>.</p>
     </div>
+    </section>
+
+    <section id="contact" class="cta-band">
+      <div class="wrap">
+        <div class="contact-grid">
+          <div class="cta-panel cta-panel--wide reveal">
+            <div class="eyebrow eyebrow--dark">Contact</div>
+            <h2>Get a free 5-minute video review of your website.</h2>
+            <p class="cta-sub">New to ads or already advertising: send your website and we&rsquo;ll take a look.</p>
+            <p class="cta-meta">We take on a maximum of 2 new accounts per month.</p>
+          </div>
+
+          <div class="contact-card reveal" id="review">
+            <span class="contact-kicker">Free &middot; 5-minute Loom &middot; reply within 24 hours</span>
+            <form id="contact-review-form" class="proposal-form" data-review-form>
+              <input type="hidden" name="access_key" value="eaaf4af3-428e-4271-b661-1d4900d1aaf5">
+              <input type="hidden" name="subject" value="New video review request — triples.agency">
+              <input type="hidden" name="from_name" value="Triple S website">
+              <div class="form-trap" aria-hidden="true">
+                <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off">
+              </div>
+              <div class="proposal-fields">
+                <label class="sr-only" for="cta-website">Your website</label>
+                <input id="cta-website" name="website" type="text" placeholder="Your website" autocomplete="url" required>
+                <label class="sr-only" for="cta-email">Your email</label>
+                <input id="cta-email" name="email" type="email" placeholder="Your email" autocomplete="email" required>
+                <label class="sr-only" for="cta-spend">Ad spend per month (optional)</label>
+                <select id="cta-spend" name="ad_spend">
+                  <option value="" selected>Ad spend per month (optional)</option>
+                  <option>Not running ads yet</option>
+                  <option>Under $5K/mo</option>
+                  <option>$5K–10K/mo</option>
+                  <option>$10K–25K/mo</option>
+                  <option>$25K+/mo</option>
+                </select>
+              </div>
+              <div class="proposal-actions">
+                <button class="btn btn-green contact-primary" type="submit">Get my free video review</button>
+              </div>
+              <p class="form-status" role="status" aria-live="polite" hidden></p>
+            </form>
+            <p class="form-note">We&rsquo;ll reply with a short Loom video within 24 hours.</p>
+            <div class="contact-or">
+              <span class="contact-or-label">Prefer to talk?</span>
+              <a class="btn btn-outline-light" href="https://calendly.com/triples-agency/30min" target="_blank" rel="noreferrer">Book a 30-min call</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer>
-    <div class="wrap">
-      <span>Triple S · Founded 2022 · Operated by Bolatkhan LLC, Almaty, Kazakhstan · Working US &amp; EU hours</span>
-      <span><a href="/">triples.agency</a> · <a href="/for-agencies/">For agencies</a> · <a href="mailto:hello@triples.agency">hello@triples.agency</a> · <a href="https://www.linkedin.com/in/aviel-bolatkhan" target="_blank" rel="noreferrer">LinkedIn</a></span>
+    <div class="wrap footer-grid">
+      <div>
+        <div class="footer-brand"><span>S</span>&#179;</div>
+        <div class="footer-note">Triple S &middot; Founded 2022</div>
+        <p class="footer-op">Operated by Bolatkhan LLC, Almaty, Kazakhstan &middot; Working US &amp; EU hours<br><a href="mailto:hello@triples.agency">hello@triples.agency</a> &middot; <a href="https://www.linkedin.com/in/aviel-bolatkhan" target="_blank" rel="noreferrer">LinkedIn</a></p>
+      </div>
+      <div class="footer-mini" aria-label="Mini stats">
+        <div class="footer-stat"><span class="value">200%+</span><span class="label">lead growth, DTC case</span></div>
+        <div class="footer-stat"><span class="value">90%</span><span class="label">largest CPL cut, EV case</span></div>
+        <div class="footer-stat"><span class="value">4 regions</span><span class="label">US, EU, Asia, Gulf</span></div>
+      </div>
+      <div>
+        <div class="footer-links">
+          <a href="/">Home</a>
+          <a href="/for-agencies/">For agencies</a>
+          <a href="/case-studies/">Case studies</a>
+          <a href="/privacy.html" aria-current="page">Privacy</a>
+        </div>
+      </div>
     </div>
   </footer>
 
+  <a class="mobile-cta" href="#review">Get a free video review <span aria-hidden="true">&rarr;</span></a>
+  <a class="mobile-call" href="https://calendly.com/triples-agency/30min" target="_blank" rel="noreferrer">Book a 30-min call</a>
+
+  <script>
+    (() => {
+      const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const targets = document.querySelectorAll('.reveal');
+      if (!targets.length) return;
+      if (reduced || !('IntersectionObserver' in window)) {
+        targets.forEach((n) => n.classList.add('is-visible'));
+        return;
+      }
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) { e.target.classList.add('is-visible'); obs.unobserve(e.target); }
+        });
+      }, { threshold: 0.15 });
+      targets.forEach((n) => obs.observe(n));
+    })();
+  </script>
+  <noscript><style>.reveal{opacity:1 !important;transform:none !important}</style></noscript>
+  <script src="/assets/review-form.js?v=4" defer></script>
 </body>
 </html>

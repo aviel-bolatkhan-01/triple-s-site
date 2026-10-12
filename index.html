@@ -51,7 +51,7 @@
       ],
       "priceRange": "$$",
       "serviceType": "Performance Marketing",
-      "areaServed": "Worldwide"
+      "areaServed": ["United States", "Europe", "Asia", "Gulf region"]
     },
     {
       "@type": "Person",
@@ -91,7 +91,7 @@
           "name": "How fast will I see results?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Tracking fixes land within the first weeks. Meaningful CPL improvements typically take 60-90 days of data collection and optimization. Anyone promising overnight results is guessing."
+            "text": "Tracking fixes land within the first weeks. Meaningful CPL improvements typically take 60–90 days of data collection and optimization. Anyone promising overnight results is guessing."
           }
         },
         {
@@ -107,7 +107,7 @@
           "name": "What does it cost?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The 5-minute video review is free. The 48-Hour Ads Audit is an optional paid deep-dive for businesses already running ads: $200 flat, credited to your first month if we work together. Monthly management runs in three tiers by ad budget: $800/mo flat under $5K of spend, 12% of spend from $5K-$25K (minimum $1,200/mo, so the effective rate is above 12% below $10K of spend), and custom above $25K."
+            "text": "The 5-minute video review is free. The 48-Hour Ads Audit is an optional paid deep-dive for businesses already running ads: $200 flat, credited to your first month if we work together. Monthly management runs in three tiers by ad budget: $800/mo flat under $5K of spend, 12% of spend from $5K–$25K (minimum $1,200/mo, so the effective rate is above 12% below $10K of spend), and custom above $25K."
           }
         },
         {
@@ -123,7 +123,7 @@
           "name": "Which platforms do you work with?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Google (Search, PMax, Demand Gen, YouTube), Meta, TikTok, LinkedIn and DV360, with GA4, GTM and server-side tracking handled in-house."
+            "text": "We run Google (Search, PMax, Demand Gen, YouTube), Meta and TikTok, with GA4, GTM and server-side tracking handled in-house. Past experience also covers LinkedIn and DV360."
           }
         },
         {
@@ -139,7 +139,7 @@
           "name": "Do you require long-term contracts?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "No. Engagements are month-to-month. If the numbers stop justifying the fee, you leave, no lock-in."
+            "text": "No. Engagements are month-to-month. If the numbers stop justifying the fee, you leave — no lock-in."
           }
         },
         {
@@ -147,7 +147,7 @@
           "name": "How do we start?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "With the free 5-minute video review of your website: send your website and email in the form below, plus your ad spend if you already run ads, and we reply with a short Loom video within 24 hours. New to ads: we recommend a launch plan and budget, then monthly management. Already advertising: the paid 48-Hour Ads Audit ($200, credited to your first month if we work together) or straight into management."
+            "text": "With the free 5-minute video review of your website: send your website and email in the form below, plus your ad spend if you already run ads, and we reply with a short Loom video within 24 hours. Prefer to talk first? You can also book a free 30-minute call; it is optional, not a required step. New to ads: we recommend a launch plan and budget, then monthly management. Already advertising: the paid 48-Hour Ads Audit ($200, credited to your first month if we work together) or straight into management."
           }
         }
       ]
@@ -2872,6 +2872,39 @@
   .founder-line img{flex:none;width:56px;height:56px;border-radius:50%;object-fit:cover;background:#fff;border:1px solid rgba(255,255,255,.18)}
   .founder-line a{color:#4CD693;border-bottom:1px solid rgba(76,214,147,.35);white-space:nowrap}
   .founder-line a:hover{color:#fff}
+  /* v10: 30-min call restored as the secondary action */
+  .utility-right a{color:#FFFFFF;text-decoration:none}
+  .utility-right a:hover{color:#4CD693}
+  .contact-card .contact-or .btn{min-height:48px}
+  .agency-call{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;margin-top:16px}
+  .agency-call-label{color:var(--dim);font-size:14px}
+  .mobile-call{display:none}
+  @media (max-width:700px){
+    .mobile-cta{right:calc(12px + 132px)}
+    .mobile-call{
+      position:fixed;
+      right:12px;
+      bottom:calc(12px + env(safe-area-inset-bottom));
+      z-index:60;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      width:124px;
+      min-height:52px;
+      padding:4px 10px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      background:#fff;
+      color:var(--navy);
+      font-family:var(--label);
+      font-size:12px;
+      font-weight:600;
+      line-height:1.25;
+      text-align:center;
+      box-shadow:0 14px 30px rgba(14,31,23,.18);
+    }
+    .mobile-call:hover{color:var(--green-dark);border-color:rgba(23,160,94,.6)}
+  }
 </style>
 </head>
 <body>
@@ -2881,6 +2914,7 @@
   <div class="utility-bar">
     <div class="wrap utility-inner">
       <a class="utility-left" href="#review">Free 5-minute video review <strong>&rarr;</strong></a>
+      <div class="utility-right"><a href="https://calendly.com/triples-agency/30min" target="_blank" rel="noreferrer">Book a 30-min call</a></div>
     </div>
   </div>
 
@@ -2932,8 +2966,8 @@
               <select id="hero-spend" name="ad_spend">
                 <option value="" selected>Ad spend per month (optional)</option>
                 <option>Not running ads yet</option>
-                <option>Under $3K/mo</option>
-                <option>$3K–10K/mo</option>
+                <option>Under $5K/mo</option>
+                <option>$5K–10K/mo</option>
                 <option>$10K–25K/mo</option>
                 <option>$25K+/mo</option>
               </select>
@@ -2949,8 +2983,8 @@
 
         <div class="hero-motion reveal">
           <figure class="motion-card">
-            <canvas id="motion-canvas" class="motion-canvas" role="img" aria-label="Animation: about 107,000 ad impressions become about 12,700 clicks, pass a GA4 and GTM tracking gate, and become 8,492 tracked conversions at $0.14 each, while Google Ads cost per lead falls from $0.82 to $0.18. Every sale tracked to revenue."></canvas>
-            <figcaption class="motion-cap">One DTC brand&rsquo;s best Google Ads campaign (Central Asia, lead gen): 8,492 leads at $0.14. Impressions and clicks approx. <a href="/case-studies/dtc-mattress-rebuild/">See the case &rarr;</a></figcaption>
+            <canvas id="motion-canvas" class="motion-canvas" role="img" aria-label="Animation: Meta lead ads for two US medical-aesthetics clinic locations over 30 days. 3,019 and 3,351 people reached, $907.19 ad spend, 35 tracked form leads, at $22.70 per lead in Ridgefield and $30.21 in Berlin, Connecticut. The moving dots are illustrative. Every lead and sale tracked to revenue."></canvas>
+            <figcaption class="motion-cap">US medical-aesthetics clinics, Meta lead ads, last 30 days (Jul 12&ndash;Aug 10, 2026): 35 form leads across two locations, at $22.70 and $30.21 per lead. Figures from the ad report; the dots are illustrative. <a href="/case-studies/medspa-lead-generation/">See the case &rarr;</a></figcaption>
           </figure>
         </div>
       </div>
@@ -3013,7 +3047,7 @@
         <div class="section-head reveal">
           <h2>Results. The receipt matters.</h2>
         </div>
-        <p class="section-intro reveal">Selected results. Real numbers from client accounts; more case studies below.</p>
+        <p class="section-intro reveal">Selected client work, with the real numbers where the report shows them; more case studies below.</p>
         <div class="results-callout reveal">
           <span class="results-callout-value">65&ndash;78%</span>
           <p class="results-callout-label">lower cost per lead on one DTC account over 8 months (Meta and Google, Central Asia market) <a href="/case-studies/dtc-mattress-rebuild/">See the case&nbsp;&rarr;</a></p>
@@ -3054,19 +3088,26 @@
           </article>
           <article class="case-card flip reveal">
             <div class="case-copy">
-              <div class="case-eyebrow">US &middot; DTC e-commerce</div>
-              <h3>Twenty Four Carrots &mdash; equine nutrition</h3>
-              <p>Google Ads for a US direct-to-consumer brand, tracked to purchases and revenue, not form fills.</p>
+              <div class="case-eyebrow">Enterprise &middot; Retail &amp; consumer goods</div>
+              <h3>Enterprise media buying &mdash; Leroy Merlin and BIC</h3>
+              <p>Google Ads, DV360 and Meta for two enterprise brands, managed while embedded with MCA, a Google Partner agency.</p>
               <div class="receipt-points">
-                <p><span class="mono">In the report:</span> six enhanced conversion actions live and purchase conversions reporting cart data.</p>
+                <p><span class="mono">In the report:</span> Leroy Merlin Search and display campaigns split by product category and region; BIC video on DV360.</p>
               </div>
             </div>
             <div class="case-media">
-              <figure class="brand-tile brand-tile--shot">
-                <img src="assets/brand-carrots.webp" width="1440" height="900" alt="Twenty Four Carrots website homepage." loading="lazy" decoding="async">
-                <figcaption>twentyfourc.com · Santa Barbara, CA</figcaption>
-              </figure>
-              <a class="report-btn" href="/case-studies/twenty-four-carrots/">
+              <div class="brand-row">
+                <figure class="brand-tile brand-tile--shot">
+                  <img src="assets/brand-bic.webp" width="1440" height="900" alt="BIC company website homepage." loading="lazy" decoding="async">
+                  <figcaption>BIC · consumer goods</figcaption>
+                </figure>
+                <div class="brand-tile brand-tile--mark">
+                  <span class="brand-tile-kicker">Client</span>
+                  <strong>Leroy Merlin</strong>
+                  <span class="brand-tile-sector">Home improvement retail</span>
+                </div>
+              </div>
+              <a class="report-btn" href="/case-studies/enterprise-retail-media/">
                 <span>View performance report</span>
                 <span class="report-btn-icon" aria-hidden="true">&rarr;</span>
               </a>
@@ -3102,6 +3143,13 @@
         <details class="more-cases reveal">
           <summary>More case studies <span class="more-cases-count">3</span></summary>
           <div class="case-index">
+            <a class="case-index-card" href="/case-studies/twenty-four-carrots/">
+              <span class="tier-band">US &middot; DTC e-commerce</span>
+              <strong>Twenty Four Carrots</strong>
+              <span class="case-index-value">6 <small>enhanced conversion actions</small></span>
+              <span class="case-index-sum">Google Ads tracked to purchases, with cart data.</span>
+              <span class="case-index-go">Read the case study <span aria-hidden="true">&rarr;</span></span>
+            </a>
             <a class="case-index-card" href="/case-studies/ev-dealership-lead-gen/">
               <span class="tier-band">Auto dealership &middot; lead generation</span>
               <strong>EV dealership</strong>
@@ -3114,13 +3162,6 @@
               <strong>DTC mattress brand</strong>
               <span class="case-index-value">$0.82 &rarr; $0.18 <small>Google Ads CPL</small></span>
               <span class="case-index-sum">8-month multi-channel rebuild.</span>
-              <span class="case-index-go">Read the case study <span aria-hidden="true">&rarr;</span></span>
-            </a>
-            <a class="case-index-card" href="/case-studies/enterprise-retail-media/">
-              <span class="tier-band">Enterprise retail &amp; consumer goods</span>
-              <strong>Leroy Merlin and BIC</strong>
-              <span class="case-index-value">Google Ads &middot; DV360 &middot; Meta</span>
-              <span class="case-index-sum">Managed while embedded with MCA, a Google Partner agency.</span>
               <span class="case-index-go">Read the case study <span aria-hidden="true">&rarr;</span></span>
             </a>
           </div>
@@ -3304,11 +3345,11 @@
             </div>
             <div class="mini-stat">
               <span class="value">5 platforms</span>
-              <span class="label">Google, Meta, TikTok, LinkedIn, DV360</span>
+              <span class="label">experience across Google, Meta, TikTok, LinkedIn, DV360</span>
             </div>
             <div class="mini-stat">
-              <span class="value">Worldwide</span>
-              <span class="label">US, European and Asian markets</span>
+              <span class="value">4 regions</span>
+              <span class="label">US, Europe, Asia and the Gulf</span>
             </div>
           </div>
           <p class="founder-line">
@@ -3355,7 +3396,7 @@
           </details>
           <details>
             <summary>Which platforms do you work with?</summary>
-            <p>Google (Search, PMax, Demand Gen, YouTube), Meta, TikTok, LinkedIn and DV360 — with GA4, GTM and server-side tracking handled in-house.</p>
+            <p>We run Google (Search, PMax, Demand Gen, YouTube), Meta and TikTok, with GA4, GTM and server-side tracking handled in-house. Past experience also covers LinkedIn and DV360.</p>
           </details>
           <details>
             <summary>How is Triple S different from a big agency?</summary>
@@ -3367,7 +3408,7 @@
           </details>
           <details>
             <summary>How do we start?</summary>
-            <p>With the free 5-minute video review of your website: send your website and email <a href="#review">in the form below</a>, plus your ad spend if you already run ads, and we reply with a short Loom video within 24 hours. New to ads: we recommend a launch plan and budget, then monthly management. Already advertising: <a href="/ads-audit/">the paid 48-Hour Ads Audit</a> ($200, credited to your first month if we work together) or straight into management.</p>
+            <p>With the free 5-minute video review of your website: send your website and email <a href="#review">in the form below</a>, plus your ad spend if you already run ads, and we reply with a short Loom video within 24 hours. Prefer to talk first? You can also <a href="https://calendly.com/triples-agency/30min" target="_blank" rel="noreferrer">book a free 30-minute call</a>; it is optional, not a required step. New to ads: we recommend a launch plan and budget, then monthly management. Already advertising: <a href="/ads-audit/">the paid 48-Hour Ads Audit</a> ($200, credited to your first month if we work together) or straight into management.</p>
           </details>
         </div>
       </div>
@@ -3401,8 +3442,8 @@
                 <select id="cta-spend" name="ad_spend">
                   <option value="" selected>Ad spend per month (optional)</option>
                   <option>Not running ads yet</option>
-                  <option>Under $3K/mo</option>
-                  <option>$3K–10K/mo</option>
+                  <option>Under $5K/mo</option>
+                  <option>$5K–10K/mo</option>
                   <option>$10K–25K/mo</option>
                   <option>$25K+/mo</option>
                 </select>
@@ -3413,7 +3454,10 @@
               <p class="form-status" role="status" aria-live="polite" hidden></p>
             </form>
             <p class="form-note">We&rsquo;ll reply with a short Loom video within 24 hours.</p>
-            <p class="contact-talk">Prefer to talk? <a href="https://calendly.com/triples-agency/30min" target="_blank" rel="noreferrer">Book a call</a></p>
+            <div class="contact-or">
+              <span class="contact-or-label">Prefer to talk?</span>
+              <a class="btn btn-outline-light" href="https://calendly.com/triples-agency/30min" target="_blank" rel="noreferrer">Book a 30-min call</a>
+            </div>
           </div>
         </div>
       </div>
@@ -3430,7 +3474,7 @@
       <div class="footer-mini" aria-label="Mini stats">
         <div class="footer-stat"><span class="value">200%+</span><span class="label">lead growth, DTC case</span></div>
         <div class="footer-stat"><span class="value">90%</span><span class="label">largest CPL cut, EV case</span></div>
-        <div class="footer-stat"><span class="value">Global</span><span class="label">client markets</span></div>
+        <div class="footer-stat"><span class="value">4 regions</span><span class="label">US, EU, Asia, Gulf</span></div>
       </div>
       <div>
         <div class="footer-links">
@@ -3444,6 +3488,7 @@
   </footer>
 
   <a class="mobile-cta" href="#review">Get a free video review <span aria-hidden="true">&rarr;</span></a>
+  <a class="mobile-call" href="https://calendly.com/triples-agency/30min" target="_blank" rel="noreferrer">Book a 30-min call</a>
 
   <script>
     (() => {
@@ -3521,7 +3566,7 @@
     })();
   </script>
   <script src="/assets/review-form.js?v=4" defer></script>
-  <script src="/assets/motion.js?v=4" defer></script>
+  <script src="/assets/motion.js?v=5" defer></script>
   <script src="/assets/motion-extra.js?v=5" defer></script>
 </body>
 </html>
