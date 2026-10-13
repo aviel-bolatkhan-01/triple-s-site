@@ -2905,6 +2905,44 @@
     }
     .mobile-call:hover{color:var(--green-dark);border-color:rgba(23,160,94,.6)}
   }
+  /* v11: Services dropdown */
+  .nav-drop{position:relative;display:inline-flex;align-items:center;gap:2px}
+  .nav-drop-toggle{display:inline-grid;place-items:center;width:22px;height:22px;padding:0;border:0;border-radius:6px;background:transparent;color:var(--navy);cursor:pointer}
+  .nav-drop-toggle svg{width:12px;height:12px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;transition:transform .2s ease}
+  .nav-drop-toggle:hover{color:var(--green)}
+  .nav-drop-panel{
+    position:absolute;
+    top:calc(100% + 10px);
+    left:-16px;
+    z-index:70;
+    display:none;
+    min-width:236px;
+    padding:8px;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    background:#fff;
+    box-shadow:var(--shadow-strong);
+  }
+  .nav-drop-panel::before{content:"";position:absolute;left:0;right:0;top:-12px;height:12px}
+  .nav-links .nav-drop-panel a{display:flex;align-items:center;min-height:40px;padding:0 12px;border-radius:var(--radius-sm);color:var(--navy);white-space:nowrap}
+  .nav-links .nav-drop-panel a::after{display:none}
+  .nav-links .nav-drop-panel a:hover,
+  .nav-links .nav-drop-panel a:focus-visible{background:var(--bg-tint);color:var(--green-dark)}
+  .nav-links .nav-drop-panel a[aria-current="page"]{color:var(--green-dark)}
+  .nav-drop.is-open .nav-drop-panel{display:block}
+  .nav-drop.is-open .nav-drop-toggle svg{transform:rotate(180deg)}
+  @media (hover:hover) and (min-width:701px){
+    .nav-drop:not(.is-dismissed):hover .nav-drop-panel,
+    .nav-drop:not(.is-dismissed):focus-within .nav-drop-panel{display:block}
+    .nav-drop:not(.is-dismissed):hover .nav-drop-toggle svg{transform:rotate(180deg)}
+  }
+  @media (max-width:700px){
+    .nav-drop{position:static}
+    .nav-links{column-gap:12px}
+    .nav-drop-toggle{width:44px;height:44px;margin:0 -12px 0 -4px;place-items:center start;padding-left:2px}
+    .nav-drop-panel{top:100%;left:12px;right:12px;min-width:0}
+    .nav-links .nav-drop-panel a{min-height:44px}
+  }
 </style>
 </head>
 <body>
@@ -2929,7 +2967,16 @@
       </a>
       <nav class="nav-links" aria-label="Primary">
         <a href="#results">Results</a>
-        <a href="#services">Services</a>
+        <div class="nav-drop">
+          <a class="nav-drop-link" href="#services">Services</a>
+          <button class="nav-drop-toggle" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="nav-services"><span class="sr-only">Show services</span><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></button>
+          <div class="nav-drop-panel" id="nav-services">
+            <a href="/google-ads-management/">Google Ads management</a>
+            <a href="/meta-ads-agency/">Meta Ads management</a>
+            <a href="/medspa-ads/">Ads for medspas</a>
+            <a href="/ads-audit/">48-hour ads audit</a>
+          </div>
+        </div>
         <a href="#process">Process</a>
         <a href="#about">About</a>
         <a href="/for-agencies/">For agencies</a>
@@ -3566,6 +3613,7 @@
     })();
   </script>
   <script src="/assets/review-form.js?v=4" defer></script>
+  <script src="/assets/nav.js?v=1" defer></script>
   <script src="/assets/motion.js?v=5" defer></script>
   <script src="/assets/motion-extra.js?v=5" defer></script>
 </body>

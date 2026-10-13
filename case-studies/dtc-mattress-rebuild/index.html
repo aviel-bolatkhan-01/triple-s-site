@@ -28,7 +28,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400..800&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=9">
+<link rel="stylesheet" href="/assets/site.css?v=11">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -95,7 +95,16 @@
       </a>
       <nav class="nav-links" aria-label="Primary">
         <a href="/#results">Results</a>
-        <a href="/#services">Services</a>
+        <div class="nav-drop">
+          <a class="nav-drop-link" href="/#services">Services</a>
+          <button class="nav-drop-toggle" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="nav-services"><span class="sr-only">Show services</span><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></button>
+          <div class="nav-drop-panel" id="nav-services">
+            <a href="/google-ads-management/">Google Ads management</a>
+            <a href="/meta-ads-agency/">Meta Ads management</a>
+            <a href="/medspa-ads/">Ads for medspas</a>
+            <a href="/ads-audit/">48-hour ads audit</a>
+          </div>
+        </div>
         <a href="/#process">Process</a>
         <a href="/#about">About</a>
         <a href="/for-agencies/">For agencies</a>
@@ -356,5 +365,6 @@
   </script>
   <noscript><style>.reveal{opacity:1 !important;transform:none !important}</style></noscript>
   <script src="/assets/review-form.js?v=4" defer></script>
+  <script src="/assets/nav.js?v=1" defer></script>
 </body>
 </html>
